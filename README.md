@@ -1,0 +1,2 @@
+# Hailo Camera Configurations
+
