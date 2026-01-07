@@ -1,0 +1,117 @@
+version: ">=2.0.0"  # Component/profile version these rules apply to
+
+rules:              # List of validation rules
+- id: gamma_table_monotonous
+  if:
+    field: automatic_algorithms.AGamma64.curve
+    type: array
+  checks:
+    per_element:
+      monotonic_increasing: true
+  message: "Gamma table values must be in monotonically increasing order."
+  
+- id: exclusive_ae_algorithm
+	checks:
+		mutually_exclusive:
+		- automatic_algorithms.Aev1.enable
+		- automatic_algorithms.Aev2.enable
+		- automatic_algorithms.Aehdr.enable
+		- automatic_algorithms.AdaptiveAe.enable
+		- automatic_algorithms.HDRAdaptiveAE.enable
+  message: "Only one auto exposure algorithm can be enabled."
+  
+- id: disable_multiple_denoise_algorithms
+  if:
+    all:
+      - field: denoise.enabled
+        eq: true
+      - field: denoise.bayer
+        eq: false
+  checks:
+    mutually_exclusive:
+      - denoise.enabled
+	  - automatic_algorithms.ADpf.enable
+      - automatic_algorithms.A2dnrv5.enable
+      - automatic_algorithms.A3dnrv1.enable
+  message: "Post ISP denoise is enabled make sure Adpf, 2D and 3D noise reduction algorithms are disabled"
+  
+- id: disabled_post_processing_on_denoise_disabled
+  if:
+    field: denoise.enabled
+    eq: false
+  checks:
+    field: automatic_algorithms.ACprocPost.auto_luma
+    eq: false
+  message: "When ai denoise is disabled so should the auto luma feature in the post processing be"
+  
+ - id: manual_contrast_and_brightness_during_histogram_equalization
+  if:
+    all:
+      - field: denoise.enabled
+        eq: true
+      - field: automatic_algorithms.ACprocPost.auto_luma
+        eq: false
+      - field: automatic_algorithms.ACprocPost.histogram_equalization
+        eq: true
+  checks:
+    all:
+	  - field: automatic_algorithms.ACprocPost.manual_contrast
+		per_element:
+          eq_numeric: 1
+	  - field: automatic_algorithms.ACprocPost.manual_brightness
+		per_element:
+          eq_numeric: 0
+  message: "When histogram equalization is enabled and auto luma isn't, manual contrast must be set to 1 and manual brightness must be set to 0" 
+  
+ - id: adaptiveae_priority_ranges_continuous
+  if:
+    all:
+      - field: automatic_algorithms.AdaptiveAe.enable
+        eq: true
+      - field: automatic_algorithms.AdaptiveAe.priority
+        type: array
+  checks:
+    range_continuity:
+      range_element_index: 0    # Index of range array within each priority entry
+      allow_overlap: true       # Overlapping ranges are permitted
+      sort_first: false         # Don't auto-sort, validate as-is
+      tolerance: 0.000001       # Floating-point tolerance for gap detection
+  message: "Priority table ranges must be continuous with no gaps."
+
+- id: hdradaptiveae_priority_ranges_continuous
+  if:
+    all:
+      - field: automatic_algorithms.HDRAdaptiveAE.enable
+        eq: true
+      - field: automatic_algorithms.HDRAdaptiveAE.priority
+        type: array
+  checks:
+    range_continuity:
+      range_element_index: 0    # Index of range array within each priority entry
+      allow_overlap: true       # Overlapping ranges are permitted
+      sort_first: false         # Don't auto-sort, validate as-is
+      tolerance: 0.000001       # Floating-point tolerance for gap detection
+  message: "Priority table ranges must be continuous with no gaps."
+
+- id: dmsc_range_check
+  if:
+    field: automatic_algorithms.ADmscv2.enabled
+    eq: true
+  checks:
+    per_element:
+      - expr: "(automatic_algorithms.ADmscv2.dmsc_sharpen_t1 + (2 << automatic_algorithms.ADmscv2.dmsc_sharpen_t2_shift)) < automatic_algorithms.ADmscv2.dmsc_sharpen_t3"
+      - expr: "(automatic_algorithms.ADmscv2.dmsc_sharpen_t3 + (2 << automatic_algorithms.ADmscv2.dmsc_sharpen_t4_shift)) < 2047"
+  message: "for dmsc block t2 < t3 < t4 < 2047" 
+  
+- id: algorithms_array_size_match
+  for_each: automatic_algorithms.*
+  if:
+    all:
+      - field: enable
+        eq: true
+      - field: gains
+        exists: true
+  checks:
+    all_numeric_arrays:
+      same_outer_length_as: gains
+  message: "When an algorithm is enabled, all top-level numeric arrays must have the same length as 'gains'."

@@ -1,0 +1,77 @@
+version: ">=2.0.0"  # Component/profile version these rules apply to
+
+rules:              # List of validation rules
+- id: monitor_frames_intra_pic_rate_multiplication
+  if:
+    all:
+	  - field: hailo_encoder.monitor_frames
+	    exists: true
+	  - field: hailo_encoder.intra_pic_rate
+	    exists: true
+  checks:
+    field: hailo_encoder.monitor_frames
+    mod_field: hailo_encoder.intra_pic_rate  # monitor_frames % intra_pic_rate == 0
+  message: "When both monitor_frames and intra_pic_rate are specified, monitor_frames must be a multiple of intra_pic_rate."
+  
+- id: gop_length_intra_pic_rate_multiplication
+  if:
+    all:
+	  - field: hailo_encoder.gop_length
+	    exists: true
+	  - field: hailo_encoder.intra_pic_rate
+	    exists: true
+  checks:
+    field: hailo_encoder.gop_length
+    mod_field: hailo_encoder.intra_pic_rate  # gop_length % intra_pic_rate == 0
+  message: "When both gop_length and intra_pic_rate are specified, gop_length must be a multiple of intra_pic_rate."
+  
+- id: cvbr_pq_hdr_constraint
+  if:
+    all:
+      - field: hailo_encoder.rate_control
+        eq: "CVBR"
+      - field: hailo_encoder.quantization.qp_hdr
+        exists: true
+  checks:
+    any:
+      - field: hailo_encoder.quantization.qp_hdr
+        eq: -1
+      - all:
+          - field: hailo_encoder.quantization.qp_hdr
+            gte_field: hailo_encoder.quantization.qp_min
+          - field: hailo_encoder.quantization.qp_hdr
+            lte_field: hailo_encoder.quantization.qp_max
+  message: "When rate control is CVBR, qp_hdr must be either -1 or within the range [qp_min, qp_max]."
+  
+- id: cqp_pq_hdr_constraint
+  if:
+    all:
+      - field: hailo_encoder.rate_control
+        eq: "CQP"
+      - field: hailo_encoder.quantization.qp_hdr
+        exists: true
+  checks:
+    any:
+      - field: hailo_encoder.quantization.qp_hdr
+        eq: -1
+      - all:
+          - field: hailo_encoder.quantization.qp_hdr
+            gte_field: hailo_encoder.quantization.qp_min
+          - field: hailo_encoder.quantization.qp_hdr
+            lte_field: hailo_encoder.quantization.qp_max
+  message: "When rate control is CQP, qp_hdr must be either -1 or within the range [qp_min, qp_max]."
+  
+ - id: vbr_pq_hdr_constraint
+  if:
+    all:
+      - field: hailo_encoder.rate_control
+        eq: "VBR"
+      - field: hailo_encoder.quantization.qp_hdr
+        exists: true
+  checks:
+    all:
+	  - field: hailo_encoder.quantization.qp_hdr
+		gte_field: hailo_encoder.quantization.qp_min
+	  - field: hailo_encoder.quantization.qp_hdr
+		lte_field: hailo_encoder.quantization.qp_max
+  message: "When rate control is VBR, qp_hdr must be within the range [qp_min, qp_max]." 

@@ -1,0 +1,306 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "osd_schema",
+    "title": "Media Library schema for on screen display configuration",
+    "type": "object",
+    "$defs": {
+        "color": {
+            "type": "array",
+            "items": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 255
+            }
+        },
+        "angle": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 359
+        },
+        "rotation_policy": {
+            "type": "string",
+            "enum": [
+                "CENTER",
+                "TOP_LEFT"
+            ]
+        },
+        "coordinate": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+        },
+        "z-index": {
+            "type": "integer"
+        },
+        "horizontal_alignment": {
+            "oneOf": [
+                {
+                    "type": "string",
+                    "enum": [
+                        "RIGHT",
+                        "LEFT",
+                        "CENTER"
+                    ]
+                },
+                {
+                    "type": "number"
+                }
+            ]
+        },
+        "vertical_alignment": {
+            "oneOf": [
+                {
+                    "type": "string",
+                    "enum": [
+                        "TOP",
+                        "BOTTOM",
+                        "CENTER"
+                    ]
+                },
+                {
+                    "type": "number"
+                }
+            ]
+        },
+        "font_weight": {
+            "type": "string",
+            "enum": [
+                "NORMAL",
+                "BOLD"
+            ]
+        },
+        "outline_size": {
+            "type": "integer",
+            "minimum": 0
+        },
+        "line_thickness": {
+            "type": "integer",
+            "minimum": 1
+        }
+    },
+    "properties": {
+        "osd": {
+            "type": "object",
+            "properties": {
+                "image": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "id": {
+                                "type": "string"
+                            },
+                            "image_path": {
+                                "type": "string"
+                            },
+                            "width": {
+                                "type": "number"
+                            },
+                            "height": {
+                                "type": "number"
+                            },
+                            "angle": {
+                                "$ref": "#/$defs/angle"
+                            },
+                            "rotation_policy": {
+                                "$ref": "#/$defs/rotation_policy"
+                            },
+                            "x": {
+                                "$ref": "#/$defs/coordinate"
+                            },
+                            "y": {
+                                "$ref": "#/$defs/coordinate"
+                            },
+                            "z-index": {
+                                "$ref": "#/$defs/z-index"
+                            },
+                            "horizontal_alignment": {
+                                "$ref": "#/$defs/horizontal_alignment"
+                            },
+                            "vertical_alignment": {
+                                "$ref": "#/$defs/vertical_alignment"
+                            }
+                        },
+                        "required": [
+                            "id",
+                            "image_path",
+                            "width",
+                            "height",
+                            "angle",
+                            "rotation_policy",
+                            "x",
+                            "y",
+                            "z-index"
+                        ],
+                        "additionalProperties": false
+                    }
+                },
+                "dateTime": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "id": {
+                                "type": "string"
+                            },
+                            "font_size": {
+                                "type": "integer",
+                                "minimum": 1
+                            },
+                            "font_path": {
+                                "type": "string"
+                            },
+                            "font_weight": {
+                                "$ref": "#/$defs/font_weight"
+                            },
+                            "datetime_format": {
+                                "type": "string"
+                            },
+                            "line_thickness": {
+                                "$ref": "#/$defs/line_thickness"
+                            },
+                            "text_color": {
+                                "$ref": "#/$defs/color"
+                            },
+                            "background_color": {
+                                "$ref": "#/$defs/color"
+                            },
+                            "outline_size": {
+                                "$ref": "#/$defs/outline_size"
+                            },
+                            "outline_color": {
+                                "$ref": "#/$defs/color"
+                            },
+                            "angle": {
+                                "$ref": "#/$defs/angle"
+                            },
+                            "rotation_policy": {
+                                "$ref": "#/$defs/rotation_policy"
+                            },
+                            "x": {
+                                "$ref": "#/$defs/coordinate"
+                            },
+                            "y": {
+                                "$ref": "#/$defs/coordinate"
+                            },
+                            "z-index": {
+                                "$ref": "#/$defs/z-index"
+                            },
+                            "shadow_color": {
+                                "$ref": "#/$defs/color"
+                            },
+                            "shadow_offset_x": {
+                                "type": "number"
+                            },
+                            "shadow_offset_y": {
+                                "type": "number"
+                            },
+                            "horizontal_alignment": {
+                                "$ref": "#/$defs/horizontal_alignment"
+                            },
+                            "vertical_alignment": {
+                                "$ref": "#/$defs/vertical_alignment"
+                            }
+                        },
+                        "required": [
+                            "id",
+                            "font_size",
+                            "font_path",
+                            "text_color",
+                            "angle",
+                            "rotation_policy",
+                            "x",
+                            "y",
+                            "z-index"
+                        ],
+                        "additionalProperties": false
+                    }
+                },
+                "text": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "id": {
+                                "type": "string"
+                            },
+                            "label": {
+                                "type": "string"
+                            },
+                            "font_size": {
+                                "type": "integer",
+                                "minimum": 1
+                            },
+                            "font_path": {
+                                "type": "string"
+                            },
+                            "font_weight": {
+                                "$ref": "#/$defs/font_weight"
+                            },
+                            "line_thickness": {
+                                "$ref": "#/$defs/line_thickness"
+                            },
+                            "text_color": {
+                                "$ref": "#/$defs/color"
+                            },
+                            "background_color": {
+                                "$ref": "#/$defs/color"
+                            },
+                            "outline_size": {
+                                "$ref": "#/$defs/outline_size"
+                            },
+                            "outline_color": {
+                                "$ref": "#/$defs/color"
+                            },
+                            "angle": {
+                                "$ref": "#/$defs/angle"
+                            },
+                            "rotation_policy": {
+                                "$ref": "#/$defs/rotation_policy"
+                            },
+                            "x": {
+                                "$ref": "#/$defs/coordinate"
+                            },
+                            "y": {
+                                "$ref": "#/$defs/coordinate"
+                            },
+                            "z-index": {
+                                "$ref": "#/$defs/z-index"
+                            },
+                            "shadow_color": {
+                                "$ref": "#/$defs/color"
+                            },
+                            "shadow_offset_x": {
+                                "type": "number"
+                            },
+                            "shadow_offset_y": {
+                                "type": "number"
+                            },
+                            "horizontal_alignment": {
+                                "$ref": "#/$defs/horizontal_alignment"
+                            },
+                            "vertical_alignment": {
+                                "$ref": "#/$defs/vertical_alignment"
+                            }
+                        },
+                        "required": [
+                            "id",
+                            "label",
+                            "font_size",
+                            "font_path",
+                            "angle",
+                            "rotation_policy",
+                            "text_color",
+                            "x",
+                            "y",
+                            "z-index"
+                        ],
+                        "additionalProperties": false
+                    }
+                }
+            },
+            "additionalProperties": false
+        }
+    },
+    "additionalProperties": true
+}

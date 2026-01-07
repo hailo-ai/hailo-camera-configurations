@@ -1,0 +1,472 @@
+{
+    "allOf": [
+        {
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "title": "Media Library schema for multi-resize configuration",
+            "type": "object",
+            "properties": {
+                "application_input_streams": {
+                    "type": "object",
+                    "properties": {
+                        "method": {
+                            "type": "string"
+                        },
+                        "format": {
+                            "type": "string"
+                        },
+                        "resolutions": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "stream_id": {
+                                        "type": "string"
+                                    },
+                                    "width": {
+                                        "type": "number"
+                                    },
+                                    "height": {
+                                        "type": "number"
+                                    },
+                                    "framerate": {
+                                        "type": "number"
+                                    },
+                                    "pool_max_buffers": {
+                                        "type": "number"
+                                    },
+                                    "scaling_mode": { 
+                                      "type": "string",
+                                      "enum": ["STRETCH", "LETTERBOX_MIDDLE", "LETTERBOX_UP_LEFT", "SCALE_AND_CROP"]
+									}
+                                },
+                                "additionalProperties": false,
+                                "required": [
+                                    "width",
+                                    "height",
+                                    "framerate",
+                                    "pool_max_buffers"
+                                ]
+                            }
+                        }
+                    },
+                    "additionalProperties": false,
+                    "required": [
+                        "method",
+                        "format",
+                        "resolutions"
+                    ]
+                }
+            },
+            "additionalProperties": true,
+            "required": [
+                "application_input_streams"
+            ]
+        },
+        {
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "title": "GMV Configuration",
+            "type": "object",
+            "properties": {
+                "gmv": {
+                    "type": "object",
+                    "properties": {
+                        "source": {
+                            "type": "string"
+                        },
+                        "frequency": {
+                            "type": "number"
+                        }
+                    },
+                    "additionalProperties": false,
+                    "required": [
+                        "source",
+                        "frequency"
+                    ]
+                }
+            },
+            "required": [
+                "gmv"
+            ]
+        },
+        {
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "title": "Optical Zoom Configuration",
+            "type": "object",
+            "properties": {
+                "optical_zoom": {
+                    "type": "object",
+                    "properties": {
+                        "enabled": {
+                            "type": "boolean"
+                        },
+                        "magnification": {
+                            "type": "number"
+                        },
+                        "max_dewarping_magnification": {
+                            "type": "number"
+                        },
+                        "max_zoom_level": {
+                            "type": "number"
+                        }
+                    },
+                    "additionalProperties": false,
+                    "required": [
+                        "magnification",
+                        "enabled"
+                    ]
+                }
+            },
+            "required": [
+                "optical_zoom"
+            ]
+        },
+        {
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "title": "Digital Zoom Configuration",
+            "type": "object",
+            "properties": {
+                "digital_zoom": {
+                    "type": "object",
+                    "properties": {
+                        "enabled": {
+                            "type": "boolean"
+                        },
+                        "mode": {
+                            "type": "string"
+                        },
+                        "magnification": {
+                            "type": "number"
+                        },
+                        "roi": {
+                            "type": "object",
+                            "properties": {
+                                "x": {
+                                    "type": "number"
+                                },
+                                "y": {
+                                    "type": "number"
+                                },
+                                "width": {
+                                    "type": "number"
+                                },
+                                "height": {
+                                    "type": "number"
+                                }
+                            },
+                            "additionalProperties": false,
+                            "required": [
+                                "x",
+                                "y",
+                                "width",
+                                "height"
+                            ]
+                        }
+                    },
+                    "additionalProperties": false,
+                    "required": [
+                        "enabled",
+                        "mode",
+                        "magnification",
+                        "roi"
+                    ]
+                }
+            },
+            "required": [
+                "digital_zoom"
+            ]
+        },
+        {
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "title": "Motion Detection Configuration",
+            "type": "object",
+            "properties": {
+                "motion_detection": {
+                    "type": "object",
+                    "properties": {
+                        "enabled": {
+                            "type": "boolean"
+                        },
+                        "roi": {
+                            "type": "object",
+                            "properties": {
+                                "x": {
+                                    "type": "number"
+                                },
+                                "y": {
+                                    "type": "number"
+                                },
+                                "width": {
+                                    "type": "number"
+                                },
+                                "height": {
+                                    "type": "number"
+                                }
+                            },
+                            "additionalProperties": false,
+                            "required": [
+                                "x",
+                                "y",
+                                "width",
+                                "height"
+                            ]
+                        },
+                        "resolution": {
+                            "type": "object",
+                            "properties": {
+                                "width": {
+                                    "type": "number"
+                                },
+                                "height": {
+                                    "type": "number"
+                                },
+                                "framerate": {
+                                    "type": "number"
+                                },
+                                "pool_max_buffers": {
+                                    "type": "number"
+                                }
+                            },
+                            "additionalProperties": false,
+                            "required": [
+                                "width",
+                                "height",
+                                "framerate"
+                            ]
+                        },
+                        "threshold": {
+                            "type": "number",
+                            "minimum": 0,
+                            "maximum": 1
+                        },
+                        "sensitivity_level": {
+                            "type": "string"
+                        }
+                    },
+                    "additionalProperties": false,
+                    "required": [
+                        "enabled",
+                        "roi",
+                        "resolution",
+                        "threshold",
+                        "sensitivity_level"
+                    ]
+                }
+            }
+        },
+        {
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "title": "Rotation Configuration",
+            "type": "object",
+            "properties": {
+                "rotation": {
+                    "type": "object",
+                    "properties": {
+                        "enabled": {
+                            "type": "boolean"
+                        },
+                        "angle": {
+                            "type": "string"
+                        }
+                    },
+                    "additionalProperties": false,
+                    "required": [
+                        "enabled",
+                        "angle"
+                    ]
+                }
+            },
+            "required": [
+                "rotation"
+            ]
+        },
+        {
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "title": "Flip Configuration",
+            "type": "object",
+            "properties": {
+                "flip": {
+                    "type": "object",
+                    "properties": {
+                        "enabled": {
+                            "type": "boolean"
+                        },
+                        "direction": {
+                            "type": "string"
+                        }
+                    },
+                    "additionalProperties": false,
+                    "required": [
+                        "enabled",
+                        "direction"
+                    ]
+                }
+            },
+            "required": [
+                "flip"
+            ]
+        },
+        {
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "title": "Media Library schema for HailoRT configuration",
+            "type": "object",
+            "properties": {
+                "hailort": {
+                    "type": "object",
+                    "properties": {
+                        "device-id": {
+                            "type": "string"
+                        }
+                    },
+                    "additionalProperties": false,
+                    "required": [
+                        "device-id"
+                    ]
+                }
+            },
+            "required": [
+                "hailort"
+            ]
+        },
+        {
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "title": "Application Analytics Configuration",
+            "type": "object",
+            "properties": {
+                "application_analytics": {
+                    "type": "object",
+                    "properties": {
+                        "detection": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "analytics_data_id": {
+                                        "type": "string"
+                                    },
+                                    "scaling_mode": {
+                                        "type": "string",
+                                        "enum": [
+                                            "STRETCH",
+                                            "LETTERBOX_MIDDLE",
+                                            "LETTERBOX_UP_LEFT"
+                                        ]
+                                    },
+                                    "width": {
+                                        "type": "integer"
+                                    },
+                                    "height": {
+                                        "type": "integer"
+                                    },
+                                    "original_width_ratio": {
+                                        "type": "integer"
+                                    },
+                                    "original_height_ratio": {
+                                        "type": "integer"
+                                    },
+                                    "max_entries": {
+                                        "type": "integer"
+                                    },
+                                    "labels": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object",
+                                            "properties": {
+                                                "label": {
+                                                    "type": "string"
+                                                },
+                                                "id": {
+                                                    "type": "integer"
+                                                }
+                                            },
+                                            "required": [
+                                                "label",
+                                                "id"
+                                            ]
+                                        }
+                                    }
+                                },
+                                "required": [
+                                    "analytics_data_id",
+                                    "scaling_mode",
+                                    "width",
+                                    "height",
+                                    "original_width_ratio",
+                                    "original_height_ratio",
+                                    "labels",
+                                    "max_entries"
+                                ],
+                                "additionalProperties": false
+                            }
+                        },
+                        "instance_segmentation": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "analytics_data_id": {
+                                        "type": "string"
+                                    },
+                                    "scaling_mode": {
+                                        "type": "string",
+                                        "enum": [
+                                            "STRETCH",
+                                            "LETTERBOX_MIDDLE",
+                                            "LETTERBOX_UP_LEFT"
+                                        ]
+                                    },
+                                    "width": {
+                                        "type": "integer"
+                                    },
+                                    "height": {
+                                        "type": "integer"
+                                    },
+                                    "original_width_ratio": {
+                                        "type": "integer"
+                                    },
+                                    "original_height_ratio": {
+                                        "type": "integer"
+                                    },
+                                    "max_entries": {
+                                        "type": "integer"
+                                    },
+                                    "labels": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object",
+                                            "properties": {
+                                                "label": {
+                                                    "type": "string"
+                                                },
+                                                "id": {
+                                                    "type": "integer"
+                                                }
+                                            },
+                                            "required": [
+                                                "label",
+                                                "id"
+                                            ]
+                                        }
+                                    }
+                                },
+                                "required": [
+                                    "analytics_data_id",
+                                    "scaling_mode",
+                                    "width",
+                                    "height",
+                                    "original_width_ratio",
+                                    "original_height_ratio",
+                                    "labels",
+                                    "max_entries"
+                                ],
+                                "additionalProperties": false
+                            }
+                        }
+                    },
+                    "additionalProperties": false
+                }
+            },
+            "additionalProperties": true
+        }
+    ],
+    "$id": "application_settings_schema"
+}

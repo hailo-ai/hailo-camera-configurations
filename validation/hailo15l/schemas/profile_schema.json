@@ -1,0 +1,58 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+        "application_settings": {
+            "type": "string"
+        },
+        "encoded_output_streams": {
+            "type": "array",
+            "items": [
+                {
+                    "type": "object",
+                    "properties": {
+                        "encoding": {
+                            "type": "string"
+                        },
+                        "masking": {
+                            "type": "string"
+                        },
+                        "osd": {
+                            "type": "string"
+                        },
+                        "stream_id": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "encoding",
+                        "masking",
+                        "osd",
+                        "stream_id"
+                    ]
+                }
+            ]
+        },
+        "iq_settings": {
+            "type": "string"
+        },
+        "sensor_config": {
+            "type": "string"
+        },
+        "stabilizer_settings": {
+            "type": "string"
+        },
+        "version": {
+            "type": "string"
+        }
+    },
+    "required": [
+        "application_settings",
+        "encoded_output_streams",
+        "iq_settings",
+        "sensor_config",
+        "stabilizer_settings",
+        "version"
+    ],
+    "$id": "profile_schema"
+}

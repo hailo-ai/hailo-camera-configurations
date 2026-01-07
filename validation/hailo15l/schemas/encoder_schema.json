@@ -1,0 +1,582 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Media Library schema for encoder configuration",
+    "type": "object",
+    "definitions": {
+        "roi": {
+            "$id": "roi",
+            "type": "object",
+            "properties": {
+                "enable": {
+                    "type": "boolean"
+                },
+                "top": {
+                    "type": "integer"
+                },
+                "left": {
+                    "type": "integer"
+                },
+                "bottom": {
+                    "type": "integer"
+                },
+                "right": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "enable",
+                "top",
+                "left",
+                "bottom",
+                "right"
+            ],
+            "additionalProperties": false
+        },
+        "roi_area": {
+            "$id": "roi_area",
+            "type": "object",
+            "properties": {
+                "enable": {
+                    "type": "boolean"
+                },
+                "top": {
+                    "type": "integer"
+                },
+                "left": {
+                    "type": "integer"
+                },
+                "bottom": {
+                    "type": "integer"
+                },
+                "right": {
+                    "type": "integer"
+                },
+                "qp_delta": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "enable",
+                "top",
+                "left",
+                "bottom",
+                "right",
+                "qp_delta"
+            ],
+            "additionalProperties": false
+        },
+        "input_stream": {
+            "$id": "input_stream",
+            "type": "object",
+            "properties": {
+                "width": {
+                    "type": "integer"
+                },
+                "height": {
+                    "type": "integer"
+                },
+                "framerate": {
+                    "type": "integer"
+                },
+                "format": {
+                    "type": "string"
+                },
+                "max_pool_size": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "width",
+                "height",
+                "framerate",
+                "format"
+            ],
+            "additionalProperties": false
+        },
+        "hailo_encoder": {
+            "$id": "hailo_encoder",
+            "type": "object",
+            "properties": {
+                "config": {
+                    "type": "object",
+                    "properties": {
+                        "output_stream": {
+                            "type": "object",
+                            "properties": {
+                                "codec": {
+                                    "type": "string",
+                                    "enum": [
+                                        "CODEC_TYPE_H264",
+                                        "CODEC_TYPE_HEVC"
+                                    ]
+                                },
+                                "profile": {
+                                    "type": "string",
+                                    "enum": [
+                                        "VCENC_HEVC_MAIN_PROFILE",
+                                        "VCENC_HEVC_MAIN_STILL_PICTURE_PROFILE",
+                                        "VCENC_H264_BASE_PROFILE",
+                                        "VCENC_H264_MAIN_PROFILE",
+                                        "VCENC_H264_HIGH_PROFILE",
+                                        "auto"
+                                    ]
+                                },
+                                "level": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "codec"
+                            ],
+                            "additionalProperties": false,
+                            "if": {
+                                "properties": {
+                                    "output_stream": {
+                                        "codec": "CODEC_TYPE_HEVC"
+                                    }
+                                },
+                                "then": {
+                                    "properties": {
+                                        "output_stream": {
+                                            "profile": {
+                                                "enum": [
+                                                    "VCENC_HEVC_MAIN_PROFILE",
+                                                    "VCENC_HEVC_MAIN_STILL_PICTURE_PROFILE",
+                                                    "auto"
+                                                ]
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "else": {
+                                "properties": {
+                                    "output_stream": {
+                                        "profile": {
+                                            "enum": [
+                                                "VCENC_H264_BASE_PROFILE",
+                                                "VCENC_H264_MAIN_PROFILE",
+                                                "VCENC_H264_HIGH_PROFILE",
+                                                "auto"
+                                            ]
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "required": [
+                        "output_stream"
+                    ],
+                    "additionalProperties": false
+                },
+                "gop_config": {
+                    "type": "object",
+                    "properties": {
+                        "gop_size": {
+                            "type": "integer",
+                            "minimum": 0
+                        },
+                        "b_frame_qp_delta": {
+                            "type": "integer"
+                        }
+                    },
+                    "required": [
+                        "gop_size",
+                        "b_frame_qp_delta"
+                    ],
+                    "additionalProperties": false
+                },
+                "coding_control": {
+                    "type": "object",
+                    "properties": {
+                        "sei_messages": {
+                            "type": "boolean"
+                        },
+                        "deblocking_filter": {
+                            "type": "object",
+                            "properties": {
+                                "type": {
+                                    "type": "string",
+                                    "enum": [
+                                        "DEBLOCKING_FILTER_ENABLED",
+                                        "DEBLOCKING_FILTER_DISABLED",
+                                        "DEBLOCKING_FILTER_DISABLED_ON_SLICE_EDGES"
+                                    ]
+                                },
+                                "tc_offset": {
+                                    "type": "integer"
+                                },
+                                "beta_offset": {
+                                    "type": "integer"
+                                },
+                                "deblock_override": {
+                                    "type": "boolean"
+                                }
+                            },
+                            "required": [
+                                "type",
+                                "tc_offset",
+                                "beta_offset",
+                                "deblock_override"
+                            ],
+                            "additionalProperties": false
+                        },
+                        "intra_area": {
+                            "$ref": "encoder_schema#/definitions/roi"
+                        },
+                        "ipcm_area1": {
+                            "$ref": "encoder_schema#/definitions/roi"
+                        },
+                        "ipcm_area2": {
+                            "$ref": "encoder_schema#/definitions/roi"
+                        },
+                        "roi_area1": {
+                            "$ref": "encoder_schema#/definitions/roi_area"
+                        },
+                        "roi_area2": {
+                            "$ref": "encoder_schema#/definitions/roi_area"
+                        }
+                    },
+                    "required": [
+                        "sei_messages",
+                        "deblocking_filter",
+                        "intra_area",
+                        "ipcm_area1",
+                        "ipcm_area2",
+                        "roi_area1",
+                        "roi_area2"
+                    ],
+                    "additionalProperties": false
+                },
+                "rate_control": {
+                    "type": "object",
+                    "properties": {
+                        "rc_mode": {
+                            "type": "string",
+                            "enum": [
+                                "VBR",
+                                "CVBR",
+                                "HRD",
+                                "CQP"
+                            ]
+                        },
+                        "picture_rc": {
+                            "type": "boolean"
+                        },
+                        "picture_skip": {
+                            "type": "boolean"
+                        },
+                        "ctb_rc": {
+                            "type": "boolean"
+                        },
+                        "block_rc_size": {
+                            "type": "integer"
+                        },
+                        "hrd": {
+                            "type": "boolean"
+                        },
+                        "padding": {
+                            "type": "boolean"
+                        },
+                        "cvbr": {
+                            "type": "integer"
+                        },
+                        "hrd_cpb_size": {
+                            "type": "integer"
+                        },
+                        "intra_pic_rate": {
+                            "type": "integer"
+                        },
+                        "gop_length": {
+                            "type": "integer"
+                        },
+                        "monitor_frames": {
+                            "type": "integer"
+                        },
+                        "quantization": {
+                            "type": "object",
+                            "properties": {
+                                "qp_min": {
+                                    "type": "integer"
+                                },
+                                "qp_max": {
+                                    "type": "integer"
+                                },
+                                "qp_hdr": {
+                                    "type": "integer"
+                                },
+                                "intra_qp_delta": {
+                                    "type": "integer"
+                                },
+                                "fixed_intra_qp": {
+                                    "type": "integer"
+                                }
+                            },
+                            "required": [
+                                "qp_hdr"
+                            ],
+                            "additionalProperties": false
+                        },
+                        "bitrate": {
+                            "type": "object",
+                            "properties": {
+                                "target_bitrate": {
+                                    "type": "integer"
+                                },
+                                "bit_var_range_i": {
+                                    "type": "integer"
+                                },
+                                "bit_var_range_p": {
+                                    "type": "integer"
+                                },
+                                "bit_var_range_b": {
+                                    "type": "integer"
+                                },
+                                "tolerance_moving_bitrate": {
+                                    "type": "integer"
+                                },
+                                "variation": {
+                                    "type": "integer"
+                                }
+                            },
+                            "required": [
+                                "target_bitrate"
+                            ],
+                            "additionalProperties": false
+                        },
+                        "zoom_bitrate_adjuster": {
+                            "type": "object",
+                            "properties": {
+                                "mode": {
+                                    "type": "string",
+                                    "enum": [
+                                        "DISABLED",
+                                        "ZOOMING_PROCESS",
+                                        "ZOOM_LEVEL",
+                                        "BOTH"
+                                    ]
+                                },
+                                "zooming_process_bitrate_factor": {
+                                    "type": "number",
+                                    "minimum": 1.0
+                                },
+                                "zooming_process_timeout_ms": {
+                                    "type": "integer",
+                                    "minimum": 0
+                                },
+                                "zooming_process_max_bitrate": {
+                                    "type": "integer",
+                                    "minimum": 0
+                                },
+                                "zooming_process_force_keyframe": {
+                                    "type": "boolean"
+                                },
+                                "zoom_level_threshold": {
+                                    "type": "number",
+                                    "minimum": 1.0
+                                },
+                                "zoom_level_bitrate_factor": {
+                                    "type": "number",
+                                    "minimum": 1.0
+                                }
+                            },
+                            "additionalProperties": false
+                        },
+                        "qp_smooth_settings": {
+                            "type": "object",
+                            "properties": {
+                                "qp_delta": {
+                                    "type": "integer"
+                                },
+                                "qp_delta_limit": {
+                                    "type": "integer"
+                                },
+                                "qp_delta_step": {
+                                    "type": "integer"
+                                },
+                                "qp_delta_limit_step": {
+                                    "type": "integer"
+                                },
+                                "q_step_divisor": {
+                                    "type": "integer"
+                                },
+                                "alpha": {
+                                    "type": "number"
+                                }
+                            },
+                            "additionalProperties": false
+                        },
+                        "gop_anomaly_bitrate_adjuster": {
+                            "type": "object",
+                            "properties": {
+                                "enable": {
+                                    "type": "boolean"
+                                },
+                                "threshold_high": {
+                                    "type": "number"
+                                },
+                                "threshold_low": {
+                                    "type": "number"
+                                },
+                                "max_target_bitrate_factor": {
+                                    "type": "number"
+                                },
+                                "adjustment_factor": {
+                                    "type": "number"
+                                }
+                            },
+                            "required": [
+                                "enable"
+                            ],
+                            "additionalProperties": false
+                        }
+                    },
+                    "required": [
+                        "rc_mode",
+                        "picture_rc",
+                        "picture_skip",
+                        "intra_pic_rate",
+                        "quantization",
+                        "bitrate"
+                    ],
+                    "additionalProperties": false
+                },
+                "monitors_control": {
+                    "type": "object",
+                    "properties": {
+                        "bitrate_monitor": {
+                            "type": "object",
+                            "properties": {
+                                "enable": {
+                                    "type": "boolean"
+                                },
+                                "period": {
+                                    "type": "integer"
+                                },
+                                "result_output_path": {
+                                    "type": "string"
+                                },
+                                "output_result_to_file": {
+                                    "type": "boolean"
+                                }
+                            },
+                            "required": [
+                                "enable",
+                                "period",
+                                "result_output_path",
+                                "output_result_to_file"
+                            ],
+                            "additionalProperties": false
+                        },
+                        "cycle_monitor": {
+                            "type": "object",
+                            "properties": {
+                                "enable": {
+                                    "type": "boolean"
+                                },
+                                "start_delay": {
+                                    "type": "integer"
+                                },
+                                "deviation_threshold": {
+                                    "type": "integer"
+                                },
+                                "result_output_path": {
+                                    "type": "string"
+                                },
+                                "output_result_to_file": {
+                                    "type": "boolean"
+                                }
+                            },
+                            "required": [
+                                "enable",
+                                "start_delay",
+                                "deviation_threshold",
+                                "result_output_path",
+                                "output_result_to_file"
+                            ],
+                            "additionalProperties": false
+                        }
+                    },
+                    "required": [
+                        "bitrate_monitor",
+                        "cycle_monitor"
+                    ],
+                    "additionalProperties": false
+                }
+            },
+            "required": [
+                "config",
+                "gop_config",
+                "coding_control",
+                "rate_control"
+            ],
+            "additionalProperties": false
+        },
+        "jpeg_encoder": {
+            "$id": "jpeg_encoder",
+            "type": "object",
+            "properties": {
+                "n_threads": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 4
+                },
+                "quality": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 100
+                }
+            },
+            "required": [
+                "n_threads",
+                "quality"
+            ],
+            "additionalProperties": false
+        }
+    },
+    "properties": {
+        "encoding": {
+            "type": "object",
+            "oneOf": [
+                {
+                    "type": "object",
+                    "properties": {
+                        "hailo_encoder": {
+                            "$ref": "encoder_schema#/definitions/hailo_encoder"
+                        },
+                        "input_stream": {
+                            "$ref": "encoder_schema#/definitions/input_stream"
+                        }
+                    },
+                    "required": [
+                        "input_stream",
+                        "hailo_encoder"
+                    ],
+                    "additionalProperties": false
+                },
+                {
+                    "type": "object",
+                    "properties": {
+                        "jpeg_encoder": {
+                            "$ref": "encoder_schema#/definitions/jpeg_encoder"
+                        },
+                        "input_stream": {
+                            "$ref": "encoder_schema#/definitions/input_stream"
+                        }
+                    },
+                    "required": [
+                        "input_stream",
+                        "jpeg_encoder"
+                    ],
+                    "additionalProperties": false
+                }
+            ]
+        }
+    },
+    "required": [
+        "encoding"
+    ],
+    "additionalProperties": true,
+    "$id": "encoder_schema"
+}

@@ -1,0 +1,9 @@
+application_settings_schema
+encoding_config_schema = encoder_schema
+iq_settings_schema
+privacy_mask_config_schema = masking_schema
+osd_config_schema = osd_schema
+profile_config_schema = profile_schema
+sensor_config_file_schema = sensor_configuration_schema
+stebilizer_schema = stabilizer_schema
+medialib_config_schema

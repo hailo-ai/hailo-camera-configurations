@@ -1,0 +1,20 @@
+# Configuration management and validation tools dependencies
+
+# XML processing
+xmltodict>=0.13.0
+
+# Excel file generation
+openpyxl>=3.0.0
+
+# Core Python libraries (usually included with Python)
+# argparse - standard library
+# json - standard library 
+# os - standard library
+# pathlib - standard library (Python 3.4+)
+# re - standard library
+# sys - standard library
+# logging - standard library
+# shutil - standard library
+# collections - standard library
+# typing - standard library (Python 3.5+)
+# copy - standard library
