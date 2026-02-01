@@ -1,20 +1,27 @@
 {
-    "version": "2.0.0",
-    "input_video": {
-        "resolution": {
-            "width": 3840,
-            "height": 2160,
-            "framerate": 30
-        }
+  "version": "1.1.0",
+  "metadata": {
+    "architecture": "hailo15l",
+    "content_hash": "d69c871f679b2d488e1768bc4f467fd1cded1ceae29bfe06c1f8723731795b2e",
+    "description": "",
+    "generation_timestamp": "2025-11-24T12:15:22.523540+00:00"
+  },
+  "input_video": {
+    "resolution": {
+      "framerate": 30,
+      "height": 2160,
+      "width": 3840
     },
-    "sensor_configuration": {
-        "name": "imx678",
-        "drv": "HAILO_IMX678.drv",
-        "mode": 0,
-        "pixel_mode": 0,
-        "sensor_only": 0,
-        "af_i2c_bus": -1,
-        "af_i2c_addr": "0x0"
-    },
-    "sensor_calibration_file": "/etc/imaging/cfg/hailo15l/imx678/kit/4k/profiles/daylight/detection_daylight/calib.json"
+    "sensor_id": "SENSOR_0"
+  },
+  "sensor_calibration_file": "/etc/imaging/cfg/hailo15l/imx678/kit/4k/profiles/daylight/detection_daylight/calib.json",
+  "sensor_configuration": {
+    "af_i2c_addr": "0x0",
+    "af_i2c_bus": -1,
+    "drv": "HAILO_IMX678.drv",
+    "mode": 0,
+    "name": "imx678",
+    "pixel_mode": 0,
+    "sensor_only": 0
+  }
 }

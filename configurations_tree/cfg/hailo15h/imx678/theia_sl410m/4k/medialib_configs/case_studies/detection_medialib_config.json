@@ -1,10 +1,17 @@
 {
-    "version": "1.0.0",
-    "default_profile": "Daylight",
-    "profiles": [
-        {
-            "name": "Daylight",
-            "config_file": "/etc/imaging/cfg/hailo15h/imx678/theia_sl410m/4k/profiles/daylight/detection_daylight/detection_daylight_profile.json"
-        }
-    ]
+  "version": "2.0.0",
+  "metadata": {
+    "architecture": "hailo15h",
+    "content_hash": "6ee35fd65b6ba39e969350a1a4bbfe7c55f35b6b2ae37ffaa6b931045ca9ab98",
+    "description": "",
+    "generation_timestamp": "2026-01-04T16:18:48.464692+00:00"
+  },
+  "backup_folder_path": "/etc/imaging/cfg/backups/detection",
+  "default_profile": "Daylight",
+  "profiles": [
+    {
+      "config_file": "/etc/imaging/cfg/hailo15h/imx678/theia_sl410m/4k/profiles/daylight/detection_daylight/detection_daylight_profile.json",
+      "name": "Daylight"
+    }
+  ]
 }

@@ -1,10 +1,25 @@
 {
-    "version": "1.0.0",
-    "default_profile": "Daylight",
-    "profiles": [
-        {
-            "name": "Daylight",
-            "config_file": "/etc/imaging/cfg/hailo15l/imx675/kit/5mp/profiles/daylight/dynamic_privacy_mask_daylight/dynamic_privacy_mask_daylight_profile.json"
-        }
-    ]
+  "version": "2.0.0",
+  "metadata": {
+    "architecture": "hailo15l",
+    "content_hash": "fb769be445682f0a45085f4ea79844dceb216d8c27beb758c0243d9b28692b77",
+    "description": "",
+    "generation_timestamp": "2026-01-15T14:49:10.549414+00:00"
+  },
+  "backup_folder_path": "",
+  "default_profile": "Daylight",
+  "profiles": [
+    {
+      "config_file": "/etc/imaging/cfg/hailo15l/imx675/kit/5mp/profiles/daylight/dynamic_privacy_mask_daylight/dynamic_privacy_mask_daylight_profile.json",
+      "name": "Daylight"
+    },
+    {
+      "config_file": "/etc/imaging/cfg/hailo15l/imx675/kit/5mp/profiles/HDR/dynamic_privacy_mask_HDR/dynamic_privacy_mask_HDR_profile.json",
+      "name": "High_Dynamic_Range"
+    },
+    {
+      "config_file": "/etc/imaging/cfg/hailo15l/imx675/kit/5mp/profiles/lowlight/dynamic_privacy_mask_lowlight/dynamic_privacy_mask_lowlight_profile.json",
+      "name": "Lowlight"
+    }
+  ]
 }

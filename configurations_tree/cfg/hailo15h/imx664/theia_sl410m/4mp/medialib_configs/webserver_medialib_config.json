@@ -1,18 +1,37 @@
 {
-    "version": "1.0.0",
-    "default_profile": "Daylight",
-    "profiles": [
-        {
-            "name": "Daylight",
-            "config_file": "/etc/imaging/cfg/hailo15h/imx664/theia_sl410m/4mp/profiles/daylight/webserver_daylight/webserver_daylight_profile.json"
-        },
-        {
-            "name": "High_Dynamic_Range",
-            "config_file": "/etc/imaging/cfg/hailo15h/imx664/theia_sl410m/4mp/profiles/HDR/webserver_HDR/webserver_HDR_profile.json"
-        },
-        {
-            "name": "Lowlight",
-            "config_file": "/etc/imaging/cfg/hailo15h/imx664/theia_sl410m/4mp/profiles/lowlight/webserver_lowlight/webserver_lowlight_profile.json"
-        }
-    ]
+  "version": "2.0.0",
+  "metadata": {
+    "architecture": "hailo15h",
+    "content_hash": "0a5caf2639b94c5c04c862a4ad83c80b416cde9a8834d51ea3a7baf26400cc54",
+    "description": "",
+    "generation_timestamp": "2026-01-04T16:18:49.318170+00:00"
+  },
+  "backup_folder_path": "/etc/imaging/cfg/backups/webserver",
+  "default_profile": "Daylight_Basic",
+  "profiles": [
+    {
+      "config_file": "/etc/imaging/cfg/hailo15h/imx664/theia_sl410m/4mp/profiles/daylight/webserver_daylight/webserver_daylight_basic_profile.json",
+      "name": "Daylight_Basic"
+    },
+    {
+      "config_file": "/etc/imaging/cfg/hailo15h/imx664/theia_sl410m/4mp/profiles/HDR/webserver_HDR/webserver_HDR_basic_profile.json",
+      "name": "High_Dynamic_Range_Basic"
+    },
+    {
+      "config_file": "/etc/imaging/cfg/hailo15h/imx664/theia_sl410m/4mp/profiles/lowlight/webserver_lowlight/webserver_lowlight_basic_profile.json",
+      "name": "Lowlight_Basic"
+    },
+    {
+      "config_file": "/etc/imaging/cfg/hailo15h/imx664/theia_sl410m/4mp/profiles/daylight/webserver_daylight/webserver_daylight_detection_profile.json",
+      "name": "Daylight_Detection"
+    },
+    {
+      "config_file": "/etc/imaging/cfg/hailo15h/imx664/theia_sl410m/4mp/profiles/HDR/webserver_HDR/webserver_HDR_detection_profile.json",
+      "name": "High_Dynamic_Range_Detection"
+    },
+    {
+      "config_file": "/etc/imaging/cfg/hailo15h/imx664/theia_sl410m/4mp/profiles/lowlight/webserver_lowlight/webserver_lowlight_detection_profile.json",
+      "name": "Lowlight_Detection"
+    }
+  ]
 }

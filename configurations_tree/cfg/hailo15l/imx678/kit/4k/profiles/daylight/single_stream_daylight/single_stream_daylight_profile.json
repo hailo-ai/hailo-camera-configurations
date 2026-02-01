@@ -1,15 +1,21 @@
 {
-    "version": "2.0.0",
-    "sensor_config": "/etc/imaging/cfg/hailo15l/imx678/kit/4k/profiles/daylight/single_stream_daylight/sensor_config.json",
-    "application_settings": "/etc/imaging/cfg/hailo15l/imx678/kit/4k/profiles/daylight/single_stream_daylight/application_settings.json",
-    "stabilizer_settings": "/etc/imaging/cfg/hailo15l/imx678/kit/4k/profiles/daylight/single_stream_daylight/stabilizer_settings.json",
-    "iq_settings": "/etc/imaging/cfg/hailo15l/imx678/kit/4k/profiles/daylight/single_stream_daylight/iq_settings.json",
-    "encoded_output_streams": [
-        {
-            "stream_id": "sink0",
-            "encoding": "/etc/imaging/cfg/hailo15l/imx678/kit/4k/profiles/daylight/single_stream_daylight/encoder_sink0.json",
-            "osd": "/etc/imaging/cfg/hailo15l/imx678/kit/4k/profiles/daylight/single_stream_daylight/osd_sink0.json",
-            "masking": ""
-        }
-    ]
+  "version": "1.0.0",
+  "metadata": {
+    "architecture": "hailo15l",
+    "content_hash": "7e80f1e610c3a8c8d995dab93e0f24b294e9a1fb2fedd408ab4c38164b05c752",
+    "description": "",
+    "generation_timestamp": "2025-11-24T12:15:22.542604+00:00"
+  },
+  "application_settings": "/etc/imaging/cfg/hailo15l/imx678/kit/4k/profiles/daylight/single_stream_daylight/application_settings.json",
+  "encoded_output_streams": [
+    {
+      "encoding": "/etc/imaging/cfg/hailo15l/imx678/kit/4k/profiles/daylight/single_stream_daylight/encoder_sink0.json",
+      "masking": "",
+      "osd": "/etc/imaging/cfg/hailo15l/imx678/kit/4k/profiles/daylight/single_stream_daylight/osd_sink0.json",
+      "stream_id": "sink0"
+    }
+  ],
+  "iq_settings": "/etc/imaging/cfg/hailo15l/imx678/kit/4k/profiles/daylight/single_stream_daylight/iq_settings.json",
+  "sensor_config": "/etc/imaging/cfg/hailo15l/imx678/kit/4k/profiles/daylight/single_stream_daylight/sensor_config.json",
+  "stabilizer_settings": "/etc/imaging/cfg/hailo15l/imx678/kit/4k/profiles/daylight/single_stream_daylight/stabilizer_settings.json"
 }

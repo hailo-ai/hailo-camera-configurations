@@ -1,7 +1,38 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Media Library schema for version configuration",
     "type": "object",
     "properties": {
+        "version": {
+            "type": "string"
+        },
+        "metadata": {
+            "type": "object",
+            "properties": {
+                "architecture": {
+                    "type": "string",
+                    "enum": [
+                        "hailo15h",
+                        "hailo15l"
+                    ]
+                },
+                "description": {
+                    "type": "string"
+                },
+                "content_hash": {
+                    "type": "string"
+                },
+                "generation_timestamp": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "architecture",
+                "description",
+                "content_hash",
+                "generation_timestamp"
+            ]
+        },
         "default_profile": {
             "type": "string"
         },
@@ -22,11 +53,18 @@
                     "config_file"
                 ]
             }
+        },
+        "backup_folder_path": {
+            "type": "string"
         }
     },
     "required": [
+        "version",
+        "metadata",
         "default_profile",
-        "profiles"
+        "profiles",
+        "backup_folder_path"
     ],
+    "additionalProperties": true,
     "$id": "medialib_config_schema"
 }

@@ -1,0 +1,107 @@
+{
+  "version": "2.0.0",
+  "metadata": {
+    "architecture": "hailo15h",
+    "content_hash": "62a6091487fde61197821e77485bbfab99f20bc23dd269ef8f02e3b514202ea0",
+    "description": "",
+    "generation_timestamp": "2026-01-26T14:08:08.645097+00:00"
+  },
+  "application_analytics": {
+    "semantic_segmentation": [
+      {
+        "analytics_data_id": "semantic_segmentation",
+        "height": 760,
+        "labels": [
+          {
+            "id": 1,
+            "label": "person_face"
+          },
+          {
+            "id": 0,
+            "label": "vehicle"
+          }
+        ],
+        "max_entries": 10,
+        "original_height_ratio": 95,
+        "original_width_ratio": 168,
+        "scaling_mode": "LETTERBOX_MIDDLE",
+        "width": 1344
+      }
+    ]
+  },
+  "application_input_streams": {
+    "format": "IMAGE_FORMAT_NV12",
+    "method": "INTERPOLATION_TYPE_BILINEAR",
+    "resolutions": [
+      {
+        "framerate": 30,
+        "height": 1520,
+        "pool_max_buffers": 30,
+        "stream_id": "sink0",
+        "width": 2688
+      },
+      {
+        "framerate": 30,
+        "height": 720,
+        "pool_max_buffers": 30,
+        "stream_id": "sink1",
+        "width": 1280
+      },
+      {
+        "framerate": 15,
+        "height": 760,
+        "pool_max_buffers": 15,
+        "stream_id": "sink2",
+        "width": 1344
+      }
+    ]
+  },
+  "digital_zoom": {
+    "enabled": false,
+    "magnification": 1.0,
+    "mode": "DIGITAL_ZOOM_MODE_MAGNIFICATION",
+    "roi": {
+      "height": 1200,
+      "width": 2300,
+      "x": 200,
+      "y": 200
+    }
+  },
+  "flip": {
+    "direction": "FLIP_DIRECTION_NONE",
+    "enabled": false
+  },
+  "gmv": {
+    "frequency": 0.0,
+    "source": "isp"
+  },
+  "hailort": {
+    "device-id": "device0"
+  },
+  "motion_detection": {
+    "buffer_pool_size": 8,
+    "enabled": false,
+    "resolution": {
+      "framerate": 30,
+      "height": 480,
+      "width": 640
+    },
+    "roi": {
+      "height": 480,
+      "width": 640,
+      "x": 0,
+      "y": 0
+    },
+    "sensitivity_level": "MEDIUM",
+    "threshold": 0.5
+  },
+  "optical_zoom": {
+    "enabled": false,
+    "magnification": 1.0,
+    "max_dewarping_magnification": 3.0
+  },
+  "rotation": {
+    "angle": "ROTATION_ANGLE_0",
+    "enabled": false
+  }
+}

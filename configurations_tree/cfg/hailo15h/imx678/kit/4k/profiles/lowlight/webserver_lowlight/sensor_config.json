@@ -1,20 +1,27 @@
 {
-    "version": "1.0.0",
-    "input_video": {
-        "resolution": {
-            "width": 3840,
-            "height": 2160,
-            "framerate": 30
-        }
+  "version": "1.1.0",
+  "metadata": {
+    "architecture": "hailo15h",
+    "content_hash": "faa4c8fd50a09f9a66112f10ff194d1711d4a50d4b969657e14e20dc99649e79",
+    "description": "",
+    "generation_timestamp": "2025-11-24T12:15:21.755551+00:00"
+  },
+  "input_video": {
+    "resolution": {
+      "framerate": 30,
+      "height": 2160,
+      "width": 3840
     },
-    "sensor_configuration": {
-        "name": "imx678",
-        "drv": "HAILO_IMX678.drv",
-        "mode": 0,
-        "pixel_mode": 0,
-        "sensor_only": 0,
-        "af_i2c_bus": -1,
-        "af_i2c_addr": "0x0"
-    },
-    "sensor_calibration_file": "/etc/imaging/cfg/hailo15h/imx678/kit/4k/profiles/lowlight/webserver_lowlight/calib.json"
+    "sensor_id": "SENSOR_0"
+  },
+  "sensor_calibration_file": "/etc/imaging/cfg/hailo15h/imx678/kit/4k/profiles/lowlight/webserver_lowlight/calib.json",
+  "sensor_configuration": {
+    "af_i2c_addr": "0x0",
+    "af_i2c_bus": -1,
+    "drv": "HAILO_IMX678.drv",
+    "mode": 0,
+    "name": "imx678",
+    "pixel_mode": 0,
+    "sensor_only": 0
+  }
 }

@@ -1,0 +1,28 @@
+{
+  "version": "1.1.0",
+  "metadata": {
+    "architecture": "hailo15l",
+    "content_hash": "d87f1ecd55f0d000f267ed5d2eea20047f2d3ee172b2ce371a4e20501825b692",
+    "description": "",
+    "generation_timestamp": "2025-12-24T15:36:27.303557+00:00"
+  },
+  "input_video": {
+    "resolution": {
+      "framerate": 30,
+      "height": 1080,
+      "width": 1920
+    },
+    "sensor_id": "SENSOR_0",
+    "source_type": "APPSRC"
+  },
+  "sensor_calibration_file": "/etc/imaging/cfg/hailo15l/imx675/kit/5mp/profiles/daylight/clip_example_daylight/calib.json",
+  "sensor_configuration": {
+    "af_i2c_addr": "0x0",
+    "af_i2c_bus": -1,
+    "drv": "HAILO_IMX675.drv",
+    "mode": 0,
+    "name": "imx675",
+    "pixel_mode": 0,
+    "sensor_only": 0
+  }
+}

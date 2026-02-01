@@ -1,0 +1,33 @@
+source_version: 1.0.0
+target_version: 1.1.1
+description: 'From v1.0.0_to_v1.1.1.yaml:
+
+  Add optional gains, saturation, and desaturationMode fields to Awbv2 node in automatic_algorithms
+
+  RETROFIT FIX: Corrects ccmSaturations field size, which must dynamically match illuorder
+  and gains field dimensions.'
+rules:
+- operation: add_field
+  path: $.automatic_algorithms.Awbv2
+  field_name: gains
+  value:
+  - 1
+  source_file: v1.0.0_to_v1.1.0.yaml
+- operation: add_field
+  path: $.automatic_algorithms.Awbv2
+  field_name: desaturationMode
+  value: 0
+  source_file: v1.0.0_to_v1.1.0.yaml
+- operation: add_field
+  path: $.automatic_algorithms.Awbv2
+  field_name: ccmSaturations
+  value:
+  - - 1.0
+  source_file: v1.0.0_to_v1.1.0.yaml
+- operation: set_dynamic_array
+  path: $.automatic_algorithms.Awbv2.ccmSaturations
+  rows_from_field: $.automatic_algorithms.Awbv2.illuorder
+  cols_from_field: $.automatic_algorithms.Awbv2.gains
+  value: 1.0
+  source_file: v1.1.0_to_v1.1.1.yaml
+consolidated: true

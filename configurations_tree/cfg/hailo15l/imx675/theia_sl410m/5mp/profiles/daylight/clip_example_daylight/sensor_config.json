@@ -1,0 +1,27 @@
+{
+  "version": "1.1.0",
+  "metadata": {
+    "architecture": "hailo15l",
+    "content_hash": "1110366378e0aeffa5ecd9e02a87e80ae14baaf8f57620f24ebff96fd12bef69",
+    "description": "",
+    "generation_timestamp": "2025-11-24T12:15:22.768775+00:00"
+  },
+  "input_video": {
+    "resolution": {
+      "framerate": 30,
+      "height": 1944,
+      "width": 2592
+    },
+    "sensor_id": "SENSOR_0"
+  },
+  "sensor_calibration_file": "/etc/imaging/cfg/hailo15l/imx675/theia_sl410m/5mp/profiles/daylight/clip_example_daylight/calib.json",
+  "sensor_configuration": {
+    "af_i2c_addr": "0x0",
+    "af_i2c_bus": -1,
+    "drv": "HAILO_IMX675.drv",
+    "mode": 0,
+    "name": "imx675",
+    "pixel_mode": 0,
+    "sensor_only": 0
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "version": "1.0.0",
+  "metadata": {
+    "architecture": "hailo15l",
+    "content_hash": "64788aa21f97e58d375599b05f533a1f3a289594d39db51fbf452786bcfc45f8",
+    "description": "",
+    "generation_timestamp": "2025-11-24T12:15:22.930774+00:00"
+  },
+  "application_settings": "/etc/imaging/cfg/hailo15l/imx675/kit/5mp/profiles/lowlight/webserver_lowlight/application_settings_detection.json",
+  "encoded_output_streams": [
+    {
+      "encoding": "/etc/imaging/cfg/hailo15l/imx675/kit/5mp/profiles/lowlight/webserver_lowlight/encoder_sink0.json",
+      "masking": "",
+      "osd": "/etc/imaging/cfg/hailo15l/imx675/kit/5mp/profiles/lowlight/webserver_lowlight/osd_sink0.json",
+      "stream_id": "sink0"
+    }
+  ],
+  "iq_settings": "/etc/imaging/cfg/hailo15l/imx675/kit/5mp/profiles/lowlight/webserver_lowlight/iq_settings.json",
+  "sensor_config": "/etc/imaging/cfg/hailo15l/imx675/kit/5mp/profiles/lowlight/webserver_lowlight/sensor_config.json",
+  "stabilizer_settings": "/etc/imaging/cfg/hailo15l/imx675/kit/5mp/profiles/lowlight/webserver_lowlight/stabilizer_settings.json"
+}

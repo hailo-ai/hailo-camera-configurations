@@ -1,0 +1,21 @@
+{
+  "version": "1.0.0",
+  "metadata": {
+    "architecture": "hailo15h",
+    "content_hash": "7ec3d6fdd35fa724879e1c969614d6c283cd82e547a8357765658a55ed91af46",
+    "description": "",
+    "generation_timestamp": "2025-11-24T12:15:22.060849+00:00"
+  },
+  "application_settings": "/etc/imaging/cfg/hailo15h/imx664/theia_sl410m/4mp/profiles/HDR/webserver_HDR/application_settings.json",
+  "encoded_output_streams": [
+    {
+      "encoding": "/etc/imaging/cfg/hailo15h/imx664/theia_sl410m/4mp/profiles/HDR/webserver_HDR/encoder_sink0.json",
+      "masking": "/etc/imaging/cfg/hailo15h/imx664/theia_sl410m/4mp/profiles/HDR/webserver_HDR/masking_sink0.json",
+      "osd": "/etc/imaging/cfg/hailo15h/imx664/theia_sl410m/4mp/profiles/HDR/webserver_HDR/osd_sink0.json",
+      "stream_id": "sink0"
+    }
+  ],
+  "iq_settings": "/etc/imaging/cfg/hailo15h/imx664/theia_sl410m/4mp/profiles/HDR/webserver_HDR/iq_settings.json",
+  "sensor_config": "/etc/imaging/cfg/hailo15h/imx664/theia_sl410m/4mp/profiles/HDR/webserver_HDR/sensor_config.json",
+  "stabilizer_settings": "/etc/imaging/cfg/hailo15h/imx664/theia_sl410m/4mp/profiles/HDR/webserver_HDR/stabilizer_settings.json"
+}

@@ -1,0 +1,27 @@
+{
+  "version": "1.1.0",
+  "metadata": {
+    "architecture": "hailo15h",
+    "content_hash": "915961767cda6e01061314b768f9a5dd5784fde9fa2d04ebaba07ffffca17c64",
+    "description": "",
+    "generation_timestamp": "2025-11-26T13:02:40.945273+00:00"
+  },
+  "input_video": {
+    "resolution": {
+      "framerate": 30,
+      "height": 2160,
+      "width": 3840
+    },
+    "sensor_id": "SENSOR_0"
+  },
+  "sensor_calibration_file": "/etc/imaging/cfg/hailo15h/imx715/kit/4k/profiles/lowlight/ai_example_lowlight/calib.json",
+  "sensor_configuration": {
+    "af_i2c_addr": "0x0",
+    "af_i2c_bus": -1,
+    "drv": "HAILO_IMX715.drv",
+    "mode": 0,
+    "name": "imx715",
+    "pixel_mode": 0,
+    "sensor_only": 0
+  }
+}

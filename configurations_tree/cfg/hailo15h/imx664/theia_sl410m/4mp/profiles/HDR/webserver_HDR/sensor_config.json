@@ -1,20 +1,27 @@
 {
-    "version": "1.0.0",
-    "input_video": {
-        "resolution": {
-            "width": 2688,
-            "height": 1520,
-            "framerate": 30
-        }
+  "version": "1.1.0",
+  "metadata": {
+    "architecture": "hailo15h",
+    "content_hash": "ce91a01efc674336f9ee0fb5db46f0f4aa25e2bd73069a40abc54ddc94198c8f",
+    "description": "",
+    "generation_timestamp": "2025-11-24T12:15:22.042492+00:00"
+  },
+  "input_video": {
+    "resolution": {
+      "framerate": 30,
+      "height": 1520,
+      "width": 2688
     },
-    "sensor_configuration": {
-        "name": "imx664",
-        "drv": "HAILO_IMX664.drv",
-        "mode": 4,
-        "pixel_mode": 0,
-        "sensor_only": 0,
-        "af_i2c_bus": -1,
-        "af_i2c_addr": "0x0"
-    },
-    "sensor_calibration_file": "/etc/imaging/cfg/hailo15h/imx664/theia_sl410m/4mp/profiles/HDR/webserver_HDR/calib.json"
+    "sensor_id": "SENSOR_0"
+  },
+  "sensor_calibration_file": "/etc/imaging/cfg/hailo15h/imx664/theia_sl410m/4mp/profiles/HDR/webserver_HDR/calib.json",
+  "sensor_configuration": {
+    "af_i2c_addr": "0x0",
+    "af_i2c_bus": -1,
+    "drv": "HAILO_IMX664.drv",
+    "mode": 4,
+    "name": "imx664",
+    "pixel_mode": 0,
+    "sensor_only": 0
+  }
 }

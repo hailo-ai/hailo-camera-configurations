@@ -1,0 +1,27 @@
+{
+  "version": "1.0.0",
+  "metadata": {
+    "architecture": "hailo15l",
+    "content_hash": "0cfb36219fbb454e0734a62028fde31762610ad0457a933f3c39ed01bc92d6e6",
+    "description": "",
+    "generation_timestamp": "2026-01-28T15:57:09.906600+00:00"
+  },
+  "application_settings": "/etc/imaging/cfg/hailo15l/imx675/kit/5mp/profiles/daylight/webserver_daylight/application_settings_clip.json",
+  "encoded_output_streams": [
+    {
+      "encoding": "/etc/imaging/cfg/hailo15l/imx675/kit/5mp/profiles/daylight/webserver_daylight/encoder_sink0.json",
+      "masking": "",
+      "osd": "/etc/imaging/cfg/hailo15l/imx675/kit/5mp/profiles/daylight/webserver_daylight/osd_clip.json",
+      "stream_id": "sink0"
+    },
+    {
+      "encoding": "/etc/imaging/cfg/hailo15l/imx675/kit/5mp/profiles/daylight/clip_example_daylight/encoder_vga.json",
+      "masking": "",
+      "osd": "/etc/imaging/cfg/hailo15l/imx675/kit/5mp/profiles/daylight/webserver_daylight/osd_clip.json",
+      "stream_id": "clip_vga"
+    }
+  ],
+  "iq_settings": "/etc/imaging/cfg/hailo15l/imx675/kit/5mp/profiles/daylight/webserver_daylight/iq_settings.json",
+  "sensor_config": "/etc/imaging/cfg/hailo15l/imx675/kit/5mp/profiles/daylight/webserver_daylight/sensor_config.json",
+  "stabilizer_settings": "/etc/imaging/cfg/hailo15l/imx675/kit/5mp/profiles/daylight/webserver_daylight/stabilizer_settings.json"
+}

@@ -1,0 +1,27 @@
+{
+  "version": "1.0.0",
+  "metadata": {
+    "architecture": "hailo15h",
+    "content_hash": "4c4cab2a08d286f432b7f32ffd8eefaf9e6d96eac215b15ba245bcea11514939",
+    "description": "",
+    "generation_timestamp": "2025-11-25T11:36:56.181244+00:00"
+  },
+  "application_settings": "/etc/imaging/cfg/hailo15h/imx715/kit/4k/profiles/lowlight/ai_example_lowlight_bayer/application_settings.json",
+  "encoded_output_streams": [
+    {
+      "encoding": "/etc/imaging/cfg/hailo15h/imx715/kit/4k/profiles/lowlight/ai_example_lowlight_bayer/encoder_sink0.json",
+      "masking": "",
+      "osd": "/etc/imaging/cfg/hailo15h/imx715/kit/4k/profiles/lowlight/ai_example_lowlight_bayer/osd_sink0.json",
+      "stream_id": "sink0"
+    },
+    {
+      "encoding": "/etc/imaging/cfg/hailo15h/imx715/kit/4k/profiles/lowlight/ai_example_lowlight_bayer/encoder_sink1.json",
+      "masking": "",
+      "osd": "/etc/imaging/cfg/hailo15h/imx715/kit/4k/profiles/lowlight/ai_example_lowlight_bayer/osd_sink1.json",
+      "stream_id": "sink1"
+    }
+  ],
+  "iq_settings": "/etc/imaging/cfg/hailo15h/imx715/kit/4k/profiles/lowlight/ai_example_lowlight_bayer/iq_settings.json",
+  "sensor_config": "/etc/imaging/cfg/hailo15h/imx715/kit/4k/profiles/lowlight/ai_example_lowlight_bayer/sensor_config.json",
+  "stabilizer_settings": "/etc/imaging/cfg/hailo15h/imx715/kit/4k/profiles/lowlight/ai_example_lowlight_bayer/stabilizer_settings.json"
+}

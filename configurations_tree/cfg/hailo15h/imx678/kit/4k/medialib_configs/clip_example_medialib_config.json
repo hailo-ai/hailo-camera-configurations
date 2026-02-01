@@ -1,0 +1,21 @@
+{
+  "version": "2.0.0",
+  "metadata": {
+    "architecture": "hailo15h",
+    "content_hash": "be32f4ff320fcf321ce59f7b9f561b7c9ce5c93810dc44baa490c8b428cf227f",
+    "description": "",
+    "generation_timestamp": "2026-01-04T16:18:48.919248+00:00"
+  },
+  "backup_folder_path": "/etc/imaging/cfg/backups/clip_example",
+  "default_profile": "Daylight",
+  "profiles": [
+    {
+      "config_file": "/etc/imaging/cfg/hailo15h/imx678/kit/4k/profiles/daylight/clip_example_daylight/clip_example_daylight_profile.json",
+      "name": "Daylight"
+    },
+    {
+      "config_file": "/etc/imaging/cfg/hailo15h/imx678/kit/4k/profiles/daylight/clip_example_daylight/clip_example_play_from_file_profile.json",
+      "name": "PlayFromFile"
+    }
+  ]
+}

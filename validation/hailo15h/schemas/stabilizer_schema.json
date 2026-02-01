@@ -1,256 +1,267 @@
 {
-    "allOf": [
-        {
-            "$schema": "http://json-schema.org/draft-07/schema#",
-            "title": "DIS Configuration",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Media Library schema for version configuration",
+    "type": "object",
+    "properties": {
+        "version": {
+            "type": "string"
+        },
+        "metadata": {
             "type": "object",
             "properties": {
-                "dis": {
+                "architecture": {
+                    "type": "string",
+                    "enum": [
+                        "hailo15h",
+                        "hailo15l"
+                    ]
+                },
+                "description": {
+                    "type": "string"
+                },
+                "content_hash": {
+                    "type": "string"
+                },
+                "generation_timestamp": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "architecture",
+                "description",
+                "content_hash",
+                "generation_timestamp"
+            ]
+        },
+        "dis": {
+            "type": "object",
+            "properties": {
+                "enabled": {
+                    "type": "boolean"
+                },
+                "minimun_coefficient_filter": {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 1
+                },
+                "decrement_coefficient_threshold": {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 1
+                },
+                "increment_coefficient_threshold": {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 1
+                },
+                "running_average_coefficient": {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 1
+                },
+                "std_multiplier": {
+                    "type": "number",
+                    "exclusiveMinimum": 0
+                },
+                "black_corners_correction_enabled": {
+                    "type": "boolean"
+                },
+                "black_corners_threshold": {
+                    "type": "number"
+                },
+                "average_luminance_threshold": {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 255
+                },
+                "camera_fov_factor": {
+                    "type": "number",
+                    "minimum": 0.1,
+                    "maximum": 1
+                },
+                "angular_dis": {
                     "type": "object",
                     "properties": {
                         "enabled": {
                             "type": "boolean"
                         },
-                        "minimun_coefficient_filter": {
-                            "type": "number",
-                            "minimum": 0,
-                            "maximum": 1
-                        },
-                        "decrement_coefficient_threshold": {
-                            "type": "number",
-                            "minimum": 0,
-                            "maximum": 1
-                        },
-                        "increment_coefficient_threshold": {
-                            "type": "number",
-                            "minimum": 0,
-                            "maximum": 1
-                        },
-                        "running_average_coefficient": {
-                            "type": "number",
-                            "minimum": 0,
-                            "maximum": 1
-                        },
-                        "std_multiplier": {
-                            "type": "number",
-                            "exclusiveMinimum": 0
-                        },
-                        "black_corners_correction_enabled": {
-                            "type": "boolean"
-                        },
-                        "black_corners_threshold": {
-                            "type": "number"
-                        },
-                        "average_luminance_threshold": {
-                            "type": "number",
-                            "minimum": 0,
-                            "maximum": 255
-                        },
-                        "camera_fov_factor": {
-                            "type": "number",
-                            "minimum": 0.1,
-                            "maximum": 1
-                        },
-                        "angular_dis": {
+                        "vsm": {
                             "type": "object",
                             "properties": {
-                                "enabled": {
-                                    "type": "boolean"
-                                },
-                                "vsm": {
-                                    "type": "object",
-                                    "properties": {
-                                        "hoffset": {
-                                            "type": "number"
-                                        },
-                                        "voffset": {
-                                            "type": "number"
-                                        },
-                                        "width": {
-                                            "type": "number"
-                                        },
-                                        "height": {
-                                            "type": "number"
-                                        },
-                                        "max_displacement": {
-                                            "type": "number"
-                                        }
-                                    },
-                                    "required": [
-                                        "hoffset",
-                                        "voffset",
-                                        "width",
-                                        "height",
-                                        "max_displacement"
-                                    ]
-                                }
-                            },
-                            "required": [
-                                "enabled",
-                                "vsm"
-                            ]
-                        },
-                        "debug": {
-                            "type": "object",
-                            "properties": {
-                                "generate_resize_grid": {
-                                    "type": "boolean"
-                                },
-                                "fix_stabilization": {
-                                    "type": "boolean"
-                                },
-                                "fix_stabilization_longitude": {
+                                "hoffset": {
                                     "type": "number"
                                 },
-                                "fix_stabilization_latitude": {
+                                "voffset": {
+                                    "type": "number"
+                                },
+                                "width": {
+                                    "type": "number"
+                                },
+                                "height": {
+                                    "type": "number"
+                                },
+                                "max_displacement": {
                                     "type": "number"
                                 }
                             },
-                            "additionalProperties": false,
                             "required": [
-                                "generate_resize_grid",
-                                "fix_stabilization",
-                                "fix_stabilization_longitude",
-                                "fix_stabilization_latitude"
+                                "hoffset",
+                                "voffset",
+                                "width",
+                                "height",
+                                "max_displacement"
                             ]
                         }
                     },
-                    "additionalProperties": false,
                     "required": [
                         "enabled",
-                        "minimun_coefficient_filter",
-                        "decrement_coefficient_threshold",
-                        "increment_coefficient_threshold",
-                        "running_average_coefficient",
-                        "std_multiplier",
-                        "black_corners_correction_enabled",
-                        "black_corners_threshold",
-                        "average_luminance_threshold",
-                        "camera_fov_factor",
-                        "angular_dis",
-                        "debug"
+                        "vsm"
                     ]
-                }
-            },
-            "required": [
-                "dis"
-            ]
-        },
-        {
-            "$schema": "http://json-schema.org/draft-07/schema#",
-            "title": "EIS Configuration",
-            "type": "object",
-            "properties": {
-                "eis": {
+                },
+                "debug": {
                     "type": "object",
                     "properties": {
-                        "enabled": {
+                        "generate_resize_grid": {
                             "type": "boolean"
                         },
-                        "stabilize": {
+                        "fix_stabilization": {
                             "type": "boolean"
                         },
-                        "eis_config_path": {
-                            "type": "string"
-                        },
-                        "window_size": {
+                        "fix_stabilization_longitude": {
                             "type": "number"
                         },
-                        "rotational_smoothing_coefficient": {
-                            "type": "number"
-                        },
-                        "iir_hpf_coefficient": {
-                            "type": "number",
-                            "minimum": 0,
-                            "maximum": 1
-                        },
-                        "camera_fov_factor": {
-                            "type": "number",
-                            "minimum": 0.1,
-                            "maximum": 1
-                        },
-                        "line_readout_time": {
-                            "type": "number"
-                        },
-                        "hdr_exposure_ratio": {
-                            "type": "number"
-                        },
-                        "min_angle_deg": {
-                            "type": "number",
-                            "minimum": 0.0,
-                            "maximum": 360.0
-                        },
-                        "max_angle_deg": {
-                            "type": "number",
-                            "minimum": 0.0,
-                            "maximum": 360.0
-                        },
-                        "shakes_type_buff_size": {
-                            "type": "number",
-                            "minimum": 1
-                        },
-                        "max_extensions_per_thr": {
-                            "type": "number"
-                        },
-                        "min_extensions_per_thr": {
+                        "fix_stabilization_latitude": {
                             "type": "number"
                         }
                     },
                     "additionalProperties": false,
                     "required": [
-                        "enabled",
-                        "eis_config_path",
-                        "window_size",
-                        "rotational_smoothing_coefficient",
-                        "iir_hpf_coefficient",
-                        "camera_fov_factor",
-                        "line_readout_time",
-                        "hdr_exposure_ratio",
-                        "min_angle_deg",
-                        "max_angle_deg"
+                        "generate_resize_grid",
+                        "fix_stabilization",
+                        "fix_stabilization_longitude",
+                        "fix_stabilization_latitude"
                     ]
                 }
             },
+            "additionalProperties": false,
             "required": [
-                "eis"
+                "enabled",
+                "minimun_coefficient_filter",
+                "decrement_coefficient_threshold",
+                "increment_coefficient_threshold",
+                "running_average_coefficient",
+                "std_multiplier",
+                "black_corners_correction_enabled",
+                "black_corners_threshold",
+                "average_luminance_threshold",
+                "camera_fov_factor",
+                "angular_dis",
+                "debug"
             ]
         },
-        {
-            "$schema": "http://json-schema.org/draft-07/schema#",
-            "title": "Gyro Configuration",
+        "eis": {
             "type": "object",
             "properties": {
-                "gyro": {
-                    "type": "object",
-                    "properties": {
-                        "enabled": {
-                            "type": "boolean"
-                        },
-                        "sensor_name": {
-                            "type": "string"
-                        },
-                        "sensor_frequency": {
-                            "type": "string"
-                        },
-                        "scale": {
-                            "type": "number",
-                            "minimum": 0,
-                            "maximum": 1
-                        }
-                    },
-                    "additionalProperties": false,
-                    "required": [
-                        "enabled",
-                        "sensor_name",
-                        "sensor_frequency",
-                        "scale"
-                    ]
+                "enabled": {
+                    "type": "boolean"
+                },
+                "stabilize": {
+                    "type": "boolean"
+                },
+                "eis_config_path": {
+                    "type": "string"
+                },
+                "window_size": {
+                    "type": "number"
+                },
+                "rotational_smoothing_coefficient": {
+                    "type": "number"
+                },
+                "iir_hpf_coefficient": {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 1
+                },
+                "camera_fov_factor": {
+                    "type": "number",
+                    "minimum": 0.1,
+                    "maximum": 1
+                },
+                "line_readout_time": {
+                    "type": "number"
+                },
+                "hdr_exposure_ratio": {
+                    "type": "number"
+                },
+                "min_angle_deg": {
+                    "type": "number",
+                    "minimum": 0.0,
+                    "maximum": 360.0
+                },
+                "max_angle_deg": {
+                    "type": "number",
+                    "minimum": 0.0,
+                    "maximum": 360.0
+                },
+                "shakes_type_buff_size": {
+                    "type": "number",
+                    "minimum": 1
+                },
+                "max_extensions_per_thr": {
+                    "type": "number"
+                },
+                "min_extensions_per_thr": {
+                    "type": "number"
                 }
             },
+            "additionalProperties": false,
             "required": [
-                "gyro"
+                "enabled",
+                "eis_config_path",
+                "window_size",
+                "rotational_smoothing_coefficient",
+                "iir_hpf_coefficient",
+                "camera_fov_factor",
+                "line_readout_time",
+                "hdr_exposure_ratio",
+                "min_angle_deg",
+                "max_angle_deg"
+            ]
+        },
+        "gyro": {
+            "type": "object",
+            "properties": {
+                "enabled": {
+                    "type": "boolean"
+                },
+                "sensor_name": {
+                    "type": "string"
+                },
+                "sensor_frequency": {
+                    "type": "string"
+                },
+                "scale": {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 1
+                }
+            },
+            "additionalProperties": false,
+            "required": [
+                "enabled",
+                "sensor_name",
+                "sensor_frequency",
+                "scale"
             ]
         }
+    },
+    "required": [
+        "version",
+        "metadata",
+        "dis",
+        "eis",
+        "gyro"
     ],
+    "additionalProperties": true,
     "$id": "stabilizer_schema"
 }

@@ -1,0 +1,28 @@
+{
+  "version": "1.1.0",
+  "metadata": {
+    "architecture": "hailo15l",
+    "content_hash": "c14532410e78444c773581b7e36c249a4423a433bc4856f4d6f0e5aec2780a3e",
+    "description": "",
+    "generation_timestamp": "2025-12-04T16:15:05.816502+00:00"
+  },
+  "input_video": {
+    "resolution": {
+      "framerate": 30,
+      "height": 2160,
+      "width": 3840
+    },
+    "sensor_id": "SENSOR_0"
+  },
+  "sensor_calibration_file": "/etc/imaging/cfg/hailo15l/imx678/theia_sl410m/4k/profiles/lowlight/single_stream_lowlight_bayer_hdr/calib.json",
+  "sensor_configuration": {
+    "af_i2c_addr": "0x0",
+    "af_i2c_bus": -1,
+    "custom_readout_timing_short": 133,
+    "drv": "HAILO_IMX678.drv",
+    "mode": 4,
+    "name": "imx678",
+    "pixel_mode": 0,
+    "sensor_only": 0
+  }
+}

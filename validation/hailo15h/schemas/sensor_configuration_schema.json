@@ -1,105 +1,136 @@
 {
-    "allOf": [
-        {
-            "$schema": "http://json-schema.org/draft-07/schema#",
-            "title": "Sensor Configuration",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Media Library schema for version configuration",
+    "type": "object",
+    "properties": {
+        "version": {
+            "type": "string"
+        },
+        "metadata": {
             "type": "object",
             "properties": {
-                "sensor_configuration": {
-                    "type": "object",
-                    "properties": {
-                        "name": {
-                            "type": "string"
-                        },
-                        "drv": {
-                            "type": "string"
-                        },
-                        "mode": {
-                            "type": "integer"
-                        },
-                        "pixel_mode": {
-                            "type": "integer"
-                        },
-                        "sensor_only": {
-                            "type": "integer"
-                        },
-                        "af_i2c_bus": {
-                            "type": "integer"
-                        },
-                        "af_i2c_addr": {
-                            "type": "string"
-                        }
-                    },
-                    "required": [
-                        "name",
-                        "drv",
-                        "mode",
-                        "pixel_mode",
-                        "sensor_only",
-                        "af_i2c_bus",
-                        "af_i2c_addr"
-                    ],
-                    "additionalProperties": false
+                "architecture": {
+                    "type": "string",
+                    "enum": [
+                        "hailo15h",
+                        "hailo15l"
+                    ]
                 },
-                "sensor_calibration_file": {
+                "description": {
+                    "type": "string"
+                },
+                "content_hash": {
+                    "type": "string"
+                },
+                "generation_timestamp": {
                     "type": "string"
                 }
             },
             "required": [
-                "sensor_configuration",
-                "sensor_calibration_file"
+                "architecture",
+                "description",
+                "content_hash",
+                "generation_timestamp"
             ]
         },
-        {
-            "$schema": "http://json-schema.org/draft-07/schema#",
-            "title": "Media Library schema for input resolution configuration",
+        "sensor_configuration": {
             "type": "object",
             "properties": {
-                "input_video": {
+                "name": {
+                    "type": "string"
+                },
+                "drv": {
+                    "type": "string"
+                },
+                "mode": {
+                    "type": "integer"
+                },
+                "pixel_mode": {
+                    "type": "integer"
+                },
+                "sensor_only": {
+                    "type": "integer"
+                },
+                "af_i2c_bus": {
+                    "type": "integer"
+                },
+                "af_i2c_addr": {
+                    "type": "string"
+                },
+                "custom_readout_timing_short": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "name",
+                "drv",
+                "mode",
+                "pixel_mode",
+                "sensor_only",
+                "af_i2c_bus",
+                "af_i2c_addr"
+            ],
+            "additionalProperties": false
+        },
+        "sensor_calibration_file": {
+            "type": "string"
+        },
+        "input_video": {
+            "type": "object",
+            "properties": {
+                "source": {
+                    "type": "string"
+                },
+                "source_type": {
+                    "type": "string",
+                    "enum": [
+                        "V4L2SRC",
+                        "APPSRC"
+                    ],
+                    "default": "V4L2SRC"
+                },
+                "sensor_id": {
+                    "type": "string",
+                    "enum": [
+                        "SENSOR_0",
+                        "SENSOR_1"
+                    ],
+                    "default": "SENSOR_0"
+                },
+                "resolution": {
                     "type": "object",
                     "properties": {
-                        "source": {
-                            "type": "string"
+                        "width": {
+                            "type": "number"
                         },
-                        "source_type": {
-                            "type": "string",
-                            "enum": [
-                                "V4L2SRC",
-                                "APPSRC"
-                            ],
-                            "default": "V4L2SRC"
+                        "height": {
+                            "type": "number"
                         },
-                        "resolution": {
-                            "type": "object",
-                            "properties": {
-                                "width": {
-                                    "type": "number"
-                                },
-                                "height": {
-                                    "type": "number"
-                                },
-                                "framerate": {
-                                    "type": "number"
-                                }
-                            },
-                            "additionalProperties": false,
-                            "required": [
-                                "width",
-                                "height",
-                                "framerate"
-                            ]
+                        "framerate": {
+                            "type": "number"
                         }
                     },
                     "additionalProperties": false,
                     "required": [
-                        "resolution"
+                        "width",
+                        "height",
+                        "framerate"
                     ]
                 }
             },
+            "additionalProperties": false,
             "required": [
-                "input_video"
+                "resolution"
             ]
         }
+    },
+    "required": [
+        "version",
+        "metadata",
+        "sensor_configuration",
+        "sensor_calibration_file",
+        "input_video"
     ],
+    "additionalProperties": true,
     "$id": "sensor_configuration_schema"
 }

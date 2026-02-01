@@ -1,0 +1,17 @@
+{
+  "version": "2.0.0",
+  "metadata": {
+    "architecture": "hailo15h",
+    "content_hash": "bb4f98fbb99418e82fea87759f258e9650ac6179caadc0f6c82855a9476df72c",
+    "description": "",
+    "generation_timestamp": "2026-01-04T16:18:48.919085+00:00"
+  },
+  "backup_folder_path": "/etc/imaging/cfg/backups/ai_example_dual_sensor_sensor_0",
+  "default_profile": "Daylight",
+  "profiles": [
+    {
+      "config_file": "/etc/imaging/cfg/hailo15h/imx678/kit/4k/profiles/daylight/ai_example_dual_sensor_sensor_0_daylight/ai_example_dual_sensor_sensor_0_daylight_profile.json",
+      "name": "Daylight"
+    }
+  ]
+}

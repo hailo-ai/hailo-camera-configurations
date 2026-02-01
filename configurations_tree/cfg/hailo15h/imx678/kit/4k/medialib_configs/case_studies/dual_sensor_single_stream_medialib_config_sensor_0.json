@@ -1,0 +1,17 @@
+{
+  "version": "2.0.0",
+  "metadata": {
+    "architecture": "hailo15h",
+    "content_hash": "0a2e46f126a6baa5c511eeb99bc53b3456ab4f71982f10667fccd566824c7184",
+    "description": "",
+    "generation_timestamp": "2026-01-04T16:18:48.920069+00:00"
+  },
+  "backup_folder_path": "/etc/imaging/cfg/backups/dual_sensor_single_stream_sensor_0",
+  "default_profile": "Daylight",
+  "profiles": [
+    {
+      "config_file": "/etc/imaging/cfg/hailo15h/imx678/kit/4k/profiles/daylight/dual_sensor_single_stream_sensor_0_daylight/dual_sensor_single_stream_sensor_0_daylight_profile.json",
+      "name": "Daylight"
+    }
+  ]
+}

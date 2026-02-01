@@ -1,15 +1,21 @@
 {
-    "version": "1.0.0",
-    "sensor_config": "/etc/imaging/cfg/hailo15h/imx678/kit/4k/profiles/daylight/webserver_daylight/sensor_config.json",
-    "application_settings": "/etc/imaging/cfg/hailo15h/imx678/kit/4k/profiles/daylight/webserver_daylight/application_settings.json",
-    "stabilizer_settings": "/etc/imaging/cfg/hailo15h/imx678/kit/4k/profiles/daylight/webserver_daylight/stabilizer_settings.json",
-    "iq_settings": "/etc/imaging/cfg/hailo15h/imx678/kit/4k/profiles/daylight/webserver_daylight/iq_settings.json",
-    "encoded_output_streams": [
-        {
-            "stream_id": "sink0",
-            "encoding": "/etc/imaging/cfg/hailo15h/imx678/kit/4k/profiles/daylight/webserver_daylight/encoder_sink0.json",
-            "osd": "/etc/imaging/cfg/hailo15h/imx678/kit/4k/profiles/daylight/webserver_daylight/osd_sink0.json",
-            "masking": ""
-        }
-    ]
+  "version": "1.0.0",
+  "metadata": {
+    "architecture": "hailo15h",
+    "content_hash": "d48e6073445db580b1b57aa36da33b45d34c11c15ac021ffeb94c3fbb040e5f8",
+    "description": "",
+    "generation_timestamp": "2025-11-24T12:15:22.018992+00:00"
+  },
+  "application_settings": "/etc/imaging/cfg/hailo15h/imx678/kit/4k/profiles/daylight/webserver_daylight/application_settings.json",
+  "encoded_output_streams": [
+    {
+      "encoding": "/etc/imaging/cfg/hailo15h/imx678/kit/4k/profiles/daylight/webserver_daylight/encoder_sink0.json",
+      "masking": "",
+      "osd": "/etc/imaging/cfg/hailo15h/imx678/kit/4k/profiles/daylight/webserver_daylight/osd_sink0.json",
+      "stream_id": "sink0"
+    }
+  ],
+  "iq_settings": "/etc/imaging/cfg/hailo15h/imx678/kit/4k/profiles/daylight/webserver_daylight/iq_settings.json",
+  "sensor_config": "/etc/imaging/cfg/hailo15h/imx678/kit/4k/profiles/daylight/webserver_daylight/sensor_config.json",
+  "stabilizer_settings": "/etc/imaging/cfg/hailo15h/imx678/kit/4k/profiles/daylight/webserver_daylight/stabilizer_settings.json"
 }

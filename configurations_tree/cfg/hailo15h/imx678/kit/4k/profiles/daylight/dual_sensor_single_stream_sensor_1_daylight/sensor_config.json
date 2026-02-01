@@ -1,0 +1,27 @@
+{
+  "version": "1.1.0",
+  "metadata": {
+    "architecture": "hailo15h",
+    "content_hash": "bfe8d8e828621695ff67530534d3e634864bacccfd5f21aaefd4e37a3f9150c9",
+    "description": "",
+    "generation_timestamp": "2025-11-24T12:15:21.858793+00:00"
+  },
+  "input_video": {
+    "resolution": {
+      "framerate": 15,
+      "height": 2160,
+      "width": 3840
+    },
+    "sensor_id": "SENSOR_1"
+  },
+  "sensor_calibration_file": "/etc/imaging/cfg/hailo15h/imx678/kit/4k/profiles/daylight/dual_sensor_single_stream_sensor_1_daylight/calib.json",
+  "sensor_configuration": {
+    "af_i2c_addr": "0x0",
+    "af_i2c_bus": -1,
+    "drv": "HAILO_IMX678.drv",
+    "mode": 0,
+    "name": "imx678",
+    "pixel_mode": 0,
+    "sensor_only": 0
+  }
+}

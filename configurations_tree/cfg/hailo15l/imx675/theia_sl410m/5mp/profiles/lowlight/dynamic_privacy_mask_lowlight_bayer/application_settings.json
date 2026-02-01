@@ -1,0 +1,107 @@
+{
+  "version": "2.0.0",
+  "metadata": {
+    "architecture": "hailo15l",
+    "content_hash": "2b9281d0d636ac8f2fa31140928e8f736e39d55353dca0141655fe86259f1e9d",
+    "description": "",
+    "generation_timestamp": "2026-01-25T15:47:25.827291+00:00"
+  },
+  "application_analytics": {
+    "semantic_segmentation": [
+      {
+        "analytics_data_id": "semantic_segmentation",
+        "height": 972,
+        "labels": [
+          {
+            "id": 1,
+            "label": "person_face"
+          },
+          {
+            "id": 0,
+            "label": "vehicle"
+          }
+        ],
+        "max_entries": 3,
+        "original_height_ratio": 3,
+        "original_width_ratio": 4,
+        "scaling_mode": "LETTERBOX_MIDDLE",
+        "width": 1296
+      }
+    ]
+  },
+  "application_input_streams": {
+    "format": "IMAGE_FORMAT_NV12",
+    "method": "INTERPOLATION_TYPE_BILINEAR",
+    "resolutions": [
+      {
+        "framerate": 30,
+        "height": 1944,
+        "pool_max_buffers": 30,
+        "scaling_mode": "STRETCH",
+        "stream_id": "sink0",
+        "width": 2592
+      },
+      {
+        "framerate": 30,
+        "height": 720,
+        "pool_max_buffers": 30,
+        "stream_id": "sink1",
+        "width": 1280
+      },
+      {
+        "framerate": 15,
+        "height": 972,
+        "pool_max_buffers": 15,
+        "stream_id": "sink2",
+        "width": 1296
+      }
+    ]
+  },
+  "digital_zoom": {
+    "enabled": false,
+    "magnification": 1.0,
+    "mode": "DIGITAL_ZOOM_MODE_ROI",
+    "roi": {
+      "height": 1800,
+      "width": 2800,
+      "x": 200,
+      "y": 200
+    }
+  },
+  "flip": {
+    "direction": "FLIP_DIRECTION_HORIZONTAL",
+    "enabled": false
+  },
+  "gmv": {
+    "frequency": 0.0,
+    "source": "isp"
+  },
+  "hailort": {
+    "device-id": "device0"
+  },
+  "motion_detection": {
+    "buffer_pool_size": 8,
+    "enabled": false,
+    "resolution": {
+      "framerate": 30,
+      "height": 480,
+      "width": 640
+    },
+    "roi": {
+      "height": 480,
+      "width": 640,
+      "x": 0,
+      "y": 0
+    },
+    "sensitivity_level": "MEDIUM",
+    "threshold": 0.5
+  },
+  "optical_zoom": {
+    "enabled": true,
+    "magnification": 1.0
+  },
+  "rotation": {
+    "angle": "ROTATION_ANGLE_180",
+    "enabled": false
+  }
+}

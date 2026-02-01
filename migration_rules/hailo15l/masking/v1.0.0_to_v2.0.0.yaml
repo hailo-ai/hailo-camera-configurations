@@ -1,0 +1,20 @@
+source_version: "1.0.0"
+target_version: "2.0.0"
+description: "Restructure dynamic_privacy_mask to support multiple analytics sources - move analytics_data_id and masked_labels into an analytics array"
+rules:
+- operation: add_field
+  path: $.masking.dynamic_privacy_mask
+  field_name: analytics
+  value: []
+  source_file: v1.0.0_to_v1.1.0.yaml
+- operation: move_field
+  source_path: $.masking.dynamic_privacy_mask.analytics_data_id
+  target_path: $.masking.dynamic_privacy_mask.analytics[0]
+  target_name: analytics_data_id
+  source_file: v1.0.0_to_v1.1.0.yaml
+- operation: move_field
+  source_path: $.masking.dynamic_privacy_mask.masked_labels
+  target_path: $.masking.dynamic_privacy_mask.analytics[0]
+  target_name: masked_labels
+  source_file: v1.0.0_to_v1.1.0.yaml
+consolidated: true

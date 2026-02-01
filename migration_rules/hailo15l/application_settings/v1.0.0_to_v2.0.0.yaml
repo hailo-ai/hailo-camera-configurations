@@ -1,0 +1,29 @@
+source_version: 1.0.0
+target_version: 2.0.0
+description: 'From v1.0.0_to_v2.0.0.yaml:
+
+  Add buffer_pool_size field to motion_detection section
+
+  Reset motion_detection ROI x/y to 0
+
+  add buffer_pool_size as require param'
+rules:
+- operation: add_field
+  path: $.motion_detection
+  field_name: buffer_pool_size
+  value: 8
+  source_file: v1.0.0_to_v1.1.0.yaml
+- operation: set_value
+  path: $.motion_detection.roi.x
+  value: 0
+  source_file: v1.1.0_to_v1.1.1.yaml
+- operation: set_value
+  path: $.motion_detection.roi.y
+  value: 0
+  source_file: v1.1.0_to_v1.1.1.yaml
+- operation: set_required_default
+  path: $.motion_detection
+  field_name: buffer_pool_size
+  default_value: 8
+  source_file: v1.1.1_to_v2.0.0.yaml
+consolidated: true

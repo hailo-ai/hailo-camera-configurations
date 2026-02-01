@@ -1,14 +1,29 @@
 {
-    "version": "1.0.0",
-    "default_profile": "Daylight",
-    "profiles": [
-        {
-            "name": "Daylight",
-            "config_file": "/etc/imaging/cfg/hailo15l/imx678/kit/4k/profiles/daylight/webserver_daylight/webserver_daylight_profile.json"
-        },
-        {
-            "name": "High_Dynamic_Range",
-            "config_file": "/etc/imaging/cfg/hailo15l/imx678/kit/4k/profiles/HDR/webserver_HDR/webserver_HDR_profile.json"
-        }
-    ]
+  "version": "2.0.0",
+  "metadata": {
+    "architecture": "hailo15l",
+    "content_hash": "979c80e0be2ca305e1f28dd8b5896856c5caaf95b97e6ec55aa081892139cc96",
+    "description": "",
+    "generation_timestamp": "2026-01-04T16:18:50.531366+00:00"
+  },
+  "backup_folder_path": "/etc/imaging/cfg/backups/webserver",
+  "default_profile": "Daylight_Basic",
+  "profiles": [
+    {
+      "config_file": "/etc/imaging/cfg/hailo15l/imx678/kit/4k/profiles/daylight/webserver_daylight/webserver_daylight_profile.json",
+      "name": "Daylight_Basic"
+    },
+    {
+      "config_file": "/etc/imaging/cfg/hailo15l/imx678/kit/4k/profiles/HDR/webserver_HDR/webserver_HDR_profile.json",
+      "name": "High_Dynamic_Range_Basic"
+    },
+    {
+      "config_file": "/etc/imaging/cfg/hailo15l/imx678/kit/4k/profiles/daylight/webserver_daylight/webserver_daylight_detection_profile.json",
+      "name": "Daylight_Detection"
+    },
+    {
+      "config_file": "/etc/imaging/cfg/hailo15l/imx678/kit/4k/profiles/HDR/webserver_HDR/webserver_HDR_detection_profile.json",
+      "name": "High_Dynamic_Range_Detection"
+    }
+  ]
 }

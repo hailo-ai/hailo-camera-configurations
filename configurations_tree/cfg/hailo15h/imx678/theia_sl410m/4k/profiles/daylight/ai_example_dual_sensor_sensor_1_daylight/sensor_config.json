@@ -1,0 +1,27 @@
+{
+  "version": "1.1.0",
+  "metadata": {
+    "architecture": "hailo15h",
+    "content_hash": "406f67a9fc2ac43a4a8ee0f6ee968eafd06d6f5e14ade5472702c7cdfe4046d6",
+    "description": "",
+    "generation_timestamp": "2025-12-29T13:54:26.070717+00:00"
+  },
+  "input_video": {
+    "resolution": {
+      "framerate": 15,
+      "height": 2160,
+      "width": 3840
+    },
+    "sensor_id": "SENSOR_1"
+  },
+  "sensor_calibration_file": "/etc/imaging/cfg/hailo15h/imx678/theia_sl410m/4k/profiles/daylight/ai_example_dual_sensor_sensor_1_daylight/calib.json",
+  "sensor_configuration": {
+    "af_i2c_addr": "0x0",
+    "af_i2c_bus": -1,
+    "drv": "HAILO_IMX678.drv",
+    "mode": 0,
+    "name": "imx678",
+    "pixel_mode": 0,
+    "sensor_only": 0
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "version": "1.1.0",
+  "metadata": {
+    "architecture": "hailo15l",
+    "content_hash": "85b37b22892f05cb1dc4033f50e00b961eb71f83409121879b5f86e7e724f0fd",
+    "description": "",
+    "generation_timestamp": "2026-01-18T17:52:47.409733+00:00"
+  },
+  "input_video": {
+    "resolution": {
+      "framerate": 30,
+      "height": 2160,
+      "width": 3840
+    },
+    "sensor_id": "SENSOR_0"
+  },
+  "sensor_calibration_file": "/etc/imaging/cfg/hailo15l/imx678/kit/4k/profiles/HDR/dynamic_privacy_mask_HDR/calib.json",
+  "sensor_configuration": {
+    "af_i2c_addr": "0x0",
+    "af_i2c_bus": -1,
+    "custom_readout_timing_short": 133,
+    "drv": "HAILO_IMX678.drv",
+    "mode": 4,
+    "name": "imx678",
+    "pixel_mode": 0,
+    "sensor_only": 0
+  }
+}

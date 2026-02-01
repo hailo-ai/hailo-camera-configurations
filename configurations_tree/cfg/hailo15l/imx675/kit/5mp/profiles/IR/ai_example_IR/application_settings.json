@@ -1,53 +1,62 @@
 {
   "version": "2.0.0",
+  "metadata": {
+    "architecture": "hailo15l",
+    "content_hash": "f7a06934e3b16065f1f7fcf632842ab2ba7481c2a3c221b52d453028c50e5cc8",
+    "description": "",
+    "generation_timestamp": "2026-01-15T13:36:25.089104+00:00"
+  },
   "application_input_streams": {
-    "method": "INTERPOLATION_TYPE_BILINEAR",
     "format": "IMAGE_FORMAT_NV12",
+    "method": "INTERPOLATION_TYPE_BILINEAR",
     "resolutions": [
       {
-        "width": 2592,
+        "framerate": 30,
         "height": 1944,
-        "framerate": 30,
+        "pool_max_buffers": 30,
         "scaling_mode": "STRETCH",
-        "pool_max_buffers": 40,
-        "stream_id": "sink0"
+        "stream_id": "sink0",
+        "width": 2592
       },
       {
-        "width": 1280,
+        "framerate": 30,
         "height": 720,
-        "framerate": 30,
-        "scaling_mode": "STRETCH",
         "pool_max_buffers": 14,
-        "stream_id": "sink1"
+        "scaling_mode": "STRETCH",
+        "stream_id": "sink1",
+        "width": 1280
       },
       {
-        "width": 1920,
-        "height": 1080,
         "framerate": 15,
-        "scaling_mode": "STRETCH",
+        "height": 1080,
         "pool_max_buffers": 15,
-        "stream_id": "sink2"
+        "scaling_mode": "STRETCH",
+        "stream_id": "sink2",
+        "width": 1920
       }
     ]
   },
-  "gmv": {
-    "source": "isp",
-    "frequency": 0.0
-  },
-  "optical_zoom": {
-    "enabled": true,
-    "magnification": 1.0
-  },
   "digital_zoom": {
     "enabled": false,
-    "mode": "DIGITAL_ZOOM_MODE_MAGNIFICATION",
     "magnification": 1.0,
+    "mode": "DIGITAL_ZOOM_MODE_MAGNIFICATION",
     "roi": {
-      "x": 200,
-      "y": 200,
+      "height": 1300,
       "width": 2300,
-      "height": 1300
+      "x": 200,
+      "y": 200
     }
+  },
+  "flip": {
+    "direction": "FLIP_DIRECTION_HORIZONTAL",
+    "enabled": false
+  },
+  "gmv": {
+    "frequency": 0.0,
+    "source": "isp"
+  },
+  "hailort": {
+    "device-id": "device0"
   },
   "motion_detection": {
     "buffer_pool_size": 8,
@@ -66,15 +75,12 @@
     "sensitivity_level": "MEDIUM",
     "threshold": 0.5
   },
+  "optical_zoom": {
+    "enabled": true,
+    "magnification": 1.0
+  },
   "rotation": {
-    "enabled": false,
-    "angle": "ROTATION_ANGLE_180"
-  },
-  "flip": {
-    "enabled": false,
-    "direction": "FLIP_DIRECTION_HORIZONTAL"
-  },
-  "hailort": {
-    "device-id": "device0"
+    "angle": "ROTATION_ANGLE_180",
+    "enabled": false
   }
 }

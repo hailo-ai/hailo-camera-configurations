@@ -1,22 +1,29 @@
 {
-    "version": "1.0.0",
-    "default_profile": "Daylight",
-    "profiles": [
-        {
-            "name": "Daylight",
-            "config_file": "/etc/imaging/cfg/hailo15h/imx678/theia_sl410m/4k/profiles/daylight/single_stream_daylight/single_stream_daylight_profile.json"
-        },
-        {
-            "name": "Lowlight_Bayer",
-            "config_file": "/etc/imaging/cfg/hailo15h/imx678/theia_sl410m/4k/profiles/lowlight/single_stream_lowlight_bayer/single_stream_lowlight_bayer_profile.json"
-        },
-        {
-            "name": "High_Dynamic_Range",
-            "config_file": "/etc/imaging/cfg/hailo15h/imx678/theia_sl410m/4k/profiles/HDR/single_stream_HDR/single_stream_HDR_profile.json"
-        },
-        {
-            "name": "Lowlight",
-            "config_file": "/etc/imaging/cfg/hailo15h/imx678/theia_sl410m/4k/profiles/lowlight/single_stream_lowlight/single_stream_lowlight_profile.json"
-        }
-    ]
+  "version": "2.0.0",
+  "metadata": {
+    "architecture": "hailo15h",
+    "content_hash": "2886b4bc02c5ea64738410c3b2a81720319758e1851085c1f1739f2b91af4eb7",
+    "description": "",
+    "generation_timestamp": "2026-01-04T16:18:48.464500+00:00"
+  },
+  "backup_folder_path": "/etc/imaging/cfg/backups/single_stream",
+  "default_profile": "Daylight",
+  "profiles": [
+    {
+      "config_file": "/etc/imaging/cfg/hailo15h/imx678/theia_sl410m/4k/profiles/daylight/single_stream_daylight/single_stream_daylight_profile.json",
+      "name": "Daylight"
+    },
+    {
+      "config_file": "/etc/imaging/cfg/hailo15h/imx678/theia_sl410m/4k/profiles/lowlight/single_stream_lowlight_bayer/single_stream_lowlight_bayer_profile.json",
+      "name": "Lowlight_Bayer"
+    },
+    {
+      "config_file": "/etc/imaging/cfg/hailo15h/imx678/theia_sl410m/4k/profiles/HDR/single_stream_HDR/single_stream_HDR_profile.json",
+      "name": "High_Dynamic_Range"
+    },
+    {
+      "config_file": "/etc/imaging/cfg/hailo15h/imx678/theia_sl410m/4k/profiles/lowlight/single_stream_lowlight/single_stream_lowlight_profile.json",
+      "name": "Lowlight"
+    }
+  ]
 }

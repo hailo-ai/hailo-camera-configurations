@@ -1,15 +1,21 @@
 {
-    "version": "2.0.0",
-    "sensor_config": "/etc/imaging/cfg/hailo15l/imx675/kit/5mp/profiles/lowlight/single_stream_lowlight_bayer/sensor_config.json",
-    "application_settings": "/etc/imaging/cfg/hailo15l/imx675/kit/5mp/profiles/lowlight/single_stream_lowlight_bayer/application_settings.json",
-    "stabilizer_settings": "/etc/imaging/cfg/hailo15l/imx675/kit/5mp/profiles/lowlight/single_stream_lowlight_bayer/stabilizer_settings.json",
-    "iq_settings": "/etc/imaging/cfg/hailo15l/imx675/kit/5mp/profiles/lowlight/single_stream_lowlight_bayer/iq_settings.json",
-    "encoded_output_streams": [
-        {
-            "stream_id": "sink0",
-            "encoding": "/etc/imaging/cfg/hailo15l/imx675/kit/5mp/profiles/lowlight/single_stream_lowlight_bayer/encoder_sink0.json",
-            "osd": "/etc/imaging/cfg/hailo15l/imx675/kit/5mp/profiles/lowlight/single_stream_lowlight_bayer/osd_sink0.json",
-            "masking": "/etc/imaging/cfg/hailo15l/imx675/kit/5mp/profiles/lowlight/single_stream_lowlight_bayer/masking_sink0.json"
-        }
-    ]
+  "version": "1.0.0",
+  "metadata": {
+    "architecture": "hailo15l",
+    "content_hash": "23e3b5ba2b626f2f502511f03bad2b475886aadc1637768e65bf061be842ddeb",
+    "description": "",
+    "generation_timestamp": "2025-11-24T12:15:22.952958+00:00"
+  },
+  "application_settings": "/etc/imaging/cfg/hailo15l/imx675/kit/5mp/profiles/lowlight/single_stream_lowlight_bayer/application_settings.json",
+  "encoded_output_streams": [
+    {
+      "encoding": "/etc/imaging/cfg/hailo15l/imx675/kit/5mp/profiles/lowlight/single_stream_lowlight_bayer/encoder_sink0.json",
+      "masking": "/etc/imaging/cfg/hailo15l/imx675/kit/5mp/profiles/lowlight/single_stream_lowlight_bayer/masking_sink0.json",
+      "osd": "/etc/imaging/cfg/hailo15l/imx675/kit/5mp/profiles/lowlight/single_stream_lowlight_bayer/osd_sink0.json",
+      "stream_id": "sink0"
+    }
+  ],
+  "iq_settings": "/etc/imaging/cfg/hailo15l/imx675/kit/5mp/profiles/lowlight/single_stream_lowlight_bayer/iq_settings.json",
+  "sensor_config": "/etc/imaging/cfg/hailo15l/imx675/kit/5mp/profiles/lowlight/single_stream_lowlight_bayer/sensor_config.json",
+  "stabilizer_settings": "/etc/imaging/cfg/hailo15l/imx675/kit/5mp/profiles/lowlight/single_stream_lowlight_bayer/stabilizer_settings.json"
 }

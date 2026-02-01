@@ -1,36 +1,45 @@
 {
   "version": "2.0.0",
+  "metadata": {
+    "architecture": "hailo15l",
+    "content_hash": "cfd6807d81171746b777154b3a8e282df50f4c67e3481247a2875db30a071942",
+    "description": "",
+    "generation_timestamp": "2025-11-30T16:23:32.593317+00:00"
+  },
   "application_input_streams": {
-    "method": "INTERPOLATION_TYPE_BILINEAR",
     "format": "IMAGE_FORMAT_NV12",
+    "method": "INTERPOLATION_TYPE_BILINEAR",
     "resolutions": [
       {
-        "width": 2592,
-        "height": 1944,
         "framerate": 30,
-        "pool_max_buffers": 20,
-        "stream_id": "sink0"
+        "height": 1944,
+        "pool_max_buffers": 12,
+        "stream_id": "sink0",
+        "width": 2592
       }
     ]
   },
-  "gmv": {
-    "source": "isp",
-    "frequency": 0.0
-  },
-  "optical_zoom": {
-    "enabled": true,
-    "magnification": 1.0
-  },
   "digital_zoom": {
     "enabled": false,
-    "mode": "DIGITAL_ZOOM_MODE_ROI",
     "magnification": 1.0,
+    "mode": "DIGITAL_ZOOM_MODE_ROI",
     "roi": {
-      "x": 200,
-      "y": 200,
+      "height": 1800,
       "width": 2800,
-      "height": 1800
+      "x": 200,
+      "y": 200
     }
+  },
+  "flip": {
+    "direction": "FLIP_DIRECTION_HORIZONTAL",
+    "enabled": false
+  },
+  "gmv": {
+    "frequency": 0.0,
+    "source": "isp"
+  },
+  "hailort": {
+    "device-id": "device0"
   },
   "motion_detection": {
     "buffer_pool_size": 8,
@@ -49,15 +58,12 @@
     "sensitivity_level": "MEDIUM",
     "threshold": 0.5
   },
+  "optical_zoom": {
+    "enabled": true,
+    "magnification": 1.0
+  },
   "rotation": {
-    "enabled": false,
-    "angle": "ROTATION_ANGLE_180"
-  },
-  "flip": {
-    "enabled": false,
-    "direction": "FLIP_DIRECTION_HORIZONTAL"
-  },
-  "hailort": {
-    "device-id": "device0"
+    "angle": "ROTATION_ANGLE_180",
+    "enabled": false
   }
 }

@@ -1,110 +1,116 @@
 {
-    "version": "2.0.0",
-    "encoding": {
-        "input_stream": {
-            "width": 1280,
-            "height": 720,
-            "framerate": 30,
-            "format": "NV12"
+  "version": "2.0.0",
+  "metadata": {
+    "architecture": "hailo15l",
+    "content_hash": "347ed8047b457ac9a1239c89863d2996c393d7ad974ba2949446fae188eb224c",
+    "description": "",
+    "generation_timestamp": "2025-12-30T09:32:39.255468+00:00"
+  },
+  "encoding": {
+    "hailo_encoder": {
+      "coding_control": {
+        "deblocking_filter": {
+          "beta_offset": 5,
+          "deblock_override": false,
+          "tc_offset": -2,
+          "type": "DEBLOCKING_FILTER_ENABLED"
         },
-        "hailo_encoder": {
-            "config": {
-                "output_stream": {
-                    "codec": "CODEC_TYPE_H264"
-                }
-            },
-            "gop_config": {
-                "gop_size": 2,
-                "b_frame_qp_delta": 0
-            },
-            "coding_control": {
-                "sei_messages": true,
-                "deblocking_filter": {
-                    "type": "DEBLOCKING_FILTER_ENABLED",
-                    "tc_offset": -2,
-                    "beta_offset": 5,
-                    "deblock_override": false
-                },
-                "intra_area": {
-                    "enable": false,
-                    "top": 0,
-                    "left": 0,
-                    "bottom": 0,
-                    "right": 0
-                },
-                "ipcm_area1": {
-                    "enable": false,
-                    "top": 0,
-                    "left": 0,
-                    "bottom": 0,
-                    "right": 0
-                },
-                "ipcm_area2": {
-                    "enable": false,
-                    "top": 0,
-                    "left": 0,
-                    "bottom": 0,
-                    "right": 0
-                },
-                "roi_area1": {
-                    "enable": false,
-                    "top": 0,
-                    "left": 0,
-                    "bottom": 0,
-                    "right": 0,
-                    "qp_delta": 0
-                },
-                "roi_area2": {
-                    "enable": false,
-                    "top": 0,
-                    "left": 0,
-                    "bottom": 0,
-                    "right": 0,
-                    "qp_delta": 0
-                }
-            },
-            "rate_control": {
-                "rc_mode": "VBR",
-                "picture_rc": true,
-                "picture_skip": false,
-                "padding": false,
-                "intra_pic_rate": 60,
-                "quantization": {
-                    "qp_hdr": -1
-                },
-                "bitrate": {
-                    "target_bitrate": 9000000
-                },
-                "zoom_bitrate_adjuster": {
-                    "mode": "DISABLED"
-                },
-                "qp_smooth_settings": {
-                    "qp_delta": 128,
-                    "qp_delta_limit": 1536,
-                    "qp_delta_step": 128,
-                    "qp_delta_limit_step": 384,
-                    "q_step_divisor": 2,
-                    "alpha": 0
-                },
-                "gop_anomaly_bitrate_adjuster": {
-                    "enable": false
-                }
-            },
-            "monitors_control": {
-                "bitrate_monitor": {
-                    "enable": true,
-                    "period": 1,
-                    "result_output_path": "bitrate.txt",
-                    "output_result_to_file": false
-                },
-                "cycle_monitor": {
-                    "enable": true,
-                    "start_delay": 0,
-                    "deviation_threshold": 5,
-                    "result_output_path": "cycle.txt",
-                    "output_result_to_file": false
-                }
-            }
+        "intra_area": {
+          "bottom": 0,
+          "enable": false,
+          "left": 0,
+          "right": 0,
+          "top": 0
+        },
+        "ipcm_area1": {
+          "bottom": 0,
+          "enable": false,
+          "left": 0,
+          "right": 0,
+          "top": 0
+        },
+        "ipcm_area2": {
+          "bottom": 0,
+          "enable": false,
+          "left": 0,
+          "right": 0,
+          "top": 0
+        },
+        "roi_area1": {
+          "bottom": 0,
+          "enable": false,
+          "left": 0,
+          "qp_delta": 0,
+          "right": 0,
+          "top": 0
+        },
+        "roi_area2": {
+          "bottom": 0,
+          "enable": false,
+          "left": 0,
+          "qp_delta": 0,
+          "right": 0,
+          "top": 0
+        },
+        "sei_messages": true
+      },
+      "config": {
+        "output_stream": {
+          "codec": "CODEC_TYPE_H264"
         }
+      },
+      "gop_config": {
+        "b_frame_qp_delta": 0,
+        "gop_size": 2
+      },
+      "monitors_control": {
+        "bitrate_monitor": {
+          "enable": true,
+          "output_result_to_file": false,
+          "period": 1,
+          "result_output_path": "bitrate.txt"
+        },
+        "cycle_monitor": {
+          "deviation_threshold": 5,
+          "enable": true,
+          "output_result_to_file": false,
+          "result_output_path": "cycle.txt",
+          "start_delay": 0
+        }
+      },
+      "rate_control": {
+        "bitrate": {
+          "target_bitrate": 9000000
+        },
+        "gop_anomaly_bitrate_adjuster": {
+          "enable": false
+        },
+        "intra_pic_rate": 60,
+        "padding": false,
+        "picture_rc": true,
+        "picture_skip": false,
+        "qp_smooth_settings": {
+          "alpha": 0,
+          "q_step_divisor": 2,
+          "qp_delta": 128,
+          "qp_delta_limit": 1536,
+          "qp_delta_limit_step": 384,
+          "qp_delta_step": 128
+        },
+        "quantization": {
+          "qp_hdr": -1
+        },
+        "rc_mode": "CVBR",
+        "zoom_bitrate_adjuster": {
+          "mode": "DISABLED"
+        }
+      }
+    },
+    "input_stream": {
+      "format": "NV12",
+      "framerate": 30,
+      "height": 720,
+      "width": 1280
     }
+  }
 }

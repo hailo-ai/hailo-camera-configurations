@@ -1,15 +1,27 @@
 {
-    "version": "2.0.0",
-    "sensor_config": "/etc/imaging/cfg/hailo15l/imx675/kit/5mp/profiles/daylight/dynamic_privacy_mask_daylight/sensor_config.json",
-    "application_settings": "/etc/imaging/cfg/hailo15l/imx675/kit/5mp/profiles/daylight/dynamic_privacy_mask_daylight/application_settings.json",
-    "stabilizer_settings": "/etc/imaging/cfg/hailo15l/imx675/kit/5mp/profiles/daylight/dynamic_privacy_mask_daylight/stabilizer_settings.json",
-    "iq_settings": "/etc/imaging/cfg/hailo15l/imx675/kit/5mp/profiles/daylight/dynamic_privacy_mask_daylight/iq_settings.json",
-    "encoded_output_streams": [
-        {
-            "stream_id": "sink0",
-            "encoding": "/etc/imaging/cfg/hailo15l/imx675/kit/5mp/profiles/daylight/dynamic_privacy_mask_daylight/encoder_sink0.json",
-            "osd": "/etc/imaging/cfg/hailo15l/imx675/kit/5mp/profiles/daylight/dynamic_privacy_mask_daylight/osd_sink0.json",
-            "masking": "/etc/imaging/cfg/hailo15l/imx675/kit/5mp/profiles/daylight/dynamic_privacy_mask_daylight/masking_sink0.json"
-        }
-    ]
+  "version": "1.0.0",
+  "metadata": {
+    "architecture": "hailo15l",
+    "content_hash": "0c1e60664a7712995c99583ccb3aa107b9d4163330df9b85129854c2fa59190a",
+    "description": "",
+    "generation_timestamp": "2026-01-15T16:09:34.292466+00:00"
+  },
+  "application_settings": "/etc/imaging/cfg/hailo15l/imx675/kit/5mp/profiles/daylight/dynamic_privacy_mask_daylight/application_settings.json",
+  "encoded_output_streams": [
+    {
+      "encoding": "/etc/imaging/cfg/hailo15l/imx675/kit/5mp/profiles/daylight/dynamic_privacy_mask_daylight/encoder_sink0.json",
+      "masking": "/etc/imaging/cfg/hailo15l/imx675/kit/5mp/profiles/daylight/dynamic_privacy_mask_daylight/masking_sink0.json",
+      "osd": "/etc/imaging/cfg/hailo15l/imx675/kit/5mp/profiles/daylight/dynamic_privacy_mask_daylight/osd_sink0.json",
+      "stream_id": "sink0"
+    },
+    {
+      "encoding": "/etc/imaging/cfg/hailo15l/imx675/kit/5mp/profiles/daylight/dynamic_privacy_mask_daylight/encoder_sink1.json",
+      "masking": "",
+      "osd": "/etc/imaging/cfg/hailo15l/imx675/kit/5mp/profiles/daylight/dynamic_privacy_mask_daylight/osd_sink1.json",
+      "stream_id": "sink1"
+    }
+  ],
+  "iq_settings": "/etc/imaging/cfg/hailo15l/imx675/kit/5mp/profiles/daylight/dynamic_privacy_mask_daylight/iq_settings.json",
+  "sensor_config": "/etc/imaging/cfg/hailo15l/imx675/kit/5mp/profiles/daylight/dynamic_privacy_mask_daylight/sensor_config.json",
+  "stabilizer_settings": "/etc/imaging/cfg/hailo15l/imx675/kit/5mp/profiles/daylight/dynamic_privacy_mask_daylight/stabilizer_settings.json"
 }

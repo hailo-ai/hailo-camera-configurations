@@ -1,7 +1,38 @@
 {
-    "$schema": "http://json-schema.org/draft-04/schema#",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Media Library schema for version configuration",
     "type": "object",
     "properties": {
+        "version": {
+            "type": "string"
+        },
+        "metadata": {
+            "type": "object",
+            "properties": {
+                "architecture": {
+                    "type": "string",
+                    "enum": [
+                        "hailo15h",
+                        "hailo15l"
+                    ]
+                },
+                "description": {
+                    "type": "string"
+                },
+                "content_hash": {
+                    "type": "string"
+                },
+                "generation_timestamp": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "architecture",
+                "description",
+                "content_hash",
+                "generation_timestamp"
+            ]
+        },
         "application_settings": {
             "type": "string"
         },
@@ -41,18 +72,17 @@
         },
         "stabilizer_settings": {
             "type": "string"
-        },
-        "version": {
-            "type": "string"
         }
     },
     "required": [
+        "version",
+        "metadata",
         "application_settings",
         "encoded_output_streams",
         "iq_settings",
         "sensor_config",
-        "stabilizer_settings",
-        "version"
+        "stabilizer_settings"
     ],
+    "additionalProperties": true,
     "$id": "profile_schema"
 }

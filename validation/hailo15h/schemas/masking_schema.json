@@ -1,50 +1,38 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "title": "Privacy Mask Configuration",
+    "title": "Media Library schema for version configuration",
     "type": "object",
-    "definitions": {
-        "vertex": {
-            "$id": "vertex",
-            "type": "object",
-            "properties": {
-                "x": {
-                    "type": "integer",
-                    "minimum": 0
-                },
-                "y": {
-                    "type": "integer",
-                    "minimum": 0
-                }
-            },
-            "required": [
-                "x",
-                "y"
-            ],
-            "additionalProperties": false
+    "properties": {
+        "version": {
+            "type": "string"
         },
-        "polygon": {
-            "$id": "polygon",
+        "metadata": {
             "type": "object",
             "properties": {
-                "name": {
+                "architecture": {
+                    "type": "string",
+                    "enum": [
+                        "hailo15h",
+                        "hailo15l"
+                    ]
+                },
+                "description": {
                     "type": "string"
                 },
-                "polygon_points": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "masking_schema#/definitions/vertex"
-                    },
-                    "maxItems": 8
+                "content_hash": {
+                    "type": "string"
+                },
+                "generation_timestamp": {
+                    "type": "string"
                 }
             },
             "required": [
-                "name",
-                "polygon_points"
-            ],
-            "additionalProperties": false
-        }
-    },
-    "properties": {
+                "architecture",
+                "description",
+                "content_hash",
+                "generation_timestamp"
+            ]
+        },
         "privacy_mask": {
             "type": "object",
             "properties": {
@@ -96,13 +84,26 @@
                         "enabled": {
                             "type": "boolean"
                         },
-                        "analytics_data_id": {
-                            "type": "string"
-                        },
-                        "masked_labels": {
+                        "analytics": {
                             "type": "array",
                             "items": {
-                                "type": "string"
+                                "type": "object",
+                                "properties": {
+                                    "analytics_data_id": {
+                                        "type": "string"
+                                    },
+                                    "masked_labels": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "string"
+                                        }
+                                    }
+                                },
+                                "required": [
+                                    "analytics_data_id",
+                                    "masked_labels"
+                                ],
+                                "additionalProperties": false
                             }
                         },
                         "dilation_size": {
@@ -113,8 +114,7 @@
                     },
                     "required": [
                         "enabled",
-                        "analytics_data_id",
-                        "masked_labels",
+                        "analytics",
                         "dilation_size"
                     ],
                     "additionalProperties": false
@@ -127,6 +127,53 @@
             ]
         },
         "additionalProperties": false
+    },
+    "required": [
+        "version",
+        "metadata"
+    ],
+    "additionalProperties": true,
+    "definitions": {
+        "vertex": {
+            "$id": "vertex",
+            "type": "object",
+            "properties": {
+                "x": {
+                    "type": "integer",
+                    "minimum": 0
+                },
+                "y": {
+                    "type": "integer",
+                    "minimum": 0
+                }
+            },
+            "required": [
+                "x",
+                "y"
+            ],
+            "additionalProperties": false
+        },
+        "polygon": {
+            "$id": "polygon",
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "polygon_points": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "masking_schema#/definitions/vertex"
+                    },
+                    "maxItems": 8
+                }
+            },
+            "required": [
+                "name",
+                "polygon_points"
+            ],
+            "additionalProperties": false
+        }
     },
     "$id": "masking_schema"
 }

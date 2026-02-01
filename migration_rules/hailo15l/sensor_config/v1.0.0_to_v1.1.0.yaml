@@ -1,0 +1,12 @@
+source_version: 1.0.0
+target_version: 1.1.0
+description: 'From v1.0.0_to_v1.1.0.yaml:
+
+  Add optional sensor_id field to input_video'
+rules:
+- operation: add_field
+  path: $.input_video
+  field_name: sensor_id
+  value: SENSOR_0
+  source_file: v1.0.0_to_v1.1.0.yaml
+consolidated: true

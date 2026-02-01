@@ -1,10 +1,17 @@
 {
-    "version": "1.0.0",
-    "default_profile": "Daylight",
-    "profiles": [
-        {
-            "name": "Daylight",
-            "config_file": "/etc/imaging/cfg/hailo15l/imx678/kit/4k/profiles/daylight/detection_daylight/detection_daylight_profile.json"
-        }
-    ]
+  "version": "2.0.0",
+  "metadata": {
+    "architecture": "hailo15l",
+    "content_hash": "0adc92cf6067220279320db74beddbe3f103fd324b8358b14f174806f90f92ed",
+    "description": "",
+    "generation_timestamp": "2026-01-04T16:18:50.531983+00:00"
+  },
+  "backup_folder_path": "/etc/imaging/cfg/backups/detection",
+  "default_profile": "Daylight",
+  "profiles": [
+    {
+      "config_file": "/etc/imaging/cfg/hailo15l/imx678/kit/4k/profiles/daylight/detection_daylight/detection_daylight_profile.json",
+      "name": "Daylight"
+    }
+  ]
 }

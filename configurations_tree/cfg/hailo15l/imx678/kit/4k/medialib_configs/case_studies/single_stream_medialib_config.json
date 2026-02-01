@@ -1,10 +1,17 @@
 {
-    "version": "1.0.0",
-    "default_profile": "Daylight",
-    "profiles": [
-        {
-            "name": "Daylight",
-            "config_file": "/etc/imaging/cfg/hailo15l/imx678/kit/4k/profiles/daylight/single_stream_daylight/single_stream_daylight_profile.json"
-        }
-    ]
+  "version": "2.0.0",
+  "metadata": {
+    "architecture": "hailo15l",
+    "content_hash": "4deeb696c6e97af95e256e133b54494985f058e14fabcda0b903e7c86360a4fd",
+    "description": "",
+    "generation_timestamp": "2026-01-04T16:18:50.531772+00:00"
+  },
+  "backup_folder_path": "/etc/imaging/cfg/backups/single_stream",
+  "default_profile": "Daylight",
+  "profiles": [
+    {
+      "config_file": "/etc/imaging/cfg/hailo15l/imx678/kit/4k/profiles/daylight/single_stream_daylight/single_stream_daylight_profile.json",
+      "name": "Daylight"
+    }
+  ]
 }

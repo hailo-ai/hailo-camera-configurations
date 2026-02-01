@@ -1,0 +1,27 @@
+{
+  "version": "1.1.0",
+  "metadata": {
+    "architecture": "hailo15h",
+    "content_hash": "8ee283ecdea99d7eca1189cd33ec9e51ae0ecaf90f36b2d80a7177b3e3932ec6",
+    "description": "",
+    "generation_timestamp": "2026-01-18T17:19:55.744526+00:00"
+  },
+  "input_video": {
+    "resolution": {
+      "framerate": 30,
+      "height": 1520,
+      "width": 2688
+    },
+    "sensor_id": "SENSOR_0"
+  },
+  "sensor_calibration_file": "/etc/imaging/cfg/hailo15h/imx664/theia_sl410m/4mp/profiles/daylight/dynamic_privacy_mask_daylight/calib.json",
+  "sensor_configuration": {
+    "af_i2c_addr": "0x0",
+    "af_i2c_bus": -1,
+    "drv": "HAILO_IMX664.drv",
+    "mode": 0,
+    "name": "imx664",
+    "pixel_mode": 0,
+    "sensor_only": 0
+  }
+}

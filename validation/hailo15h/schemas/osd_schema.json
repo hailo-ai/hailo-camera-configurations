@@ -1,84 +1,38 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "osd_schema",
-    "title": "Media Library schema for on screen display configuration",
+    "title": "Media Library schema for version configuration",
     "type": "object",
-    "$defs": {
-        "color": {
-            "type": "array",
-            "items": {
-                "type": "integer",
-                "minimum": 0,
-                "maximum": 255
-            }
-        },
-        "angle": {
-            "type": "integer",
-            "minimum": 0,
-            "maximum": 359
-        },
-        "rotation_policy": {
-            "type": "string",
-            "enum": [
-                "CENTER",
-                "TOP_LEFT"
-            ]
-        },
-        "coordinate": {
-            "type": "number",
-            "minimum": 0,
-            "maximum": 1
-        },
-        "z-index": {
-            "type": "integer"
-        },
-        "horizontal_alignment": {
-            "oneOf": [
-                {
-                    "type": "string",
-                    "enum": [
-                        "RIGHT",
-                        "LEFT",
-                        "CENTER"
-                    ]
-                },
-                {
-                    "type": "number"
-                }
-            ]
-        },
-        "vertical_alignment": {
-            "oneOf": [
-                {
-                    "type": "string",
-                    "enum": [
-                        "TOP",
-                        "BOTTOM",
-                        "CENTER"
-                    ]
-                },
-                {
-                    "type": "number"
-                }
-            ]
-        },
-        "font_weight": {
-            "type": "string",
-            "enum": [
-                "NORMAL",
-                "BOLD"
-            ]
-        },
-        "outline_size": {
-            "type": "integer",
-            "minimum": 0
-        },
-        "line_thickness": {
-            "type": "integer",
-            "minimum": 1
-        }
-    },
     "properties": {
+        "version": {
+            "type": "string"
+        },
+        "metadata": {
+            "type": "object",
+            "properties": {
+                "architecture": {
+                    "type": "string",
+                    "enum": [
+                        "hailo15h",
+                        "hailo15l"
+                    ]
+                },
+                "description": {
+                    "type": "string"
+                },
+                "content_hash": {
+                    "type": "string"
+                },
+                "generation_timestamp": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "architecture",
+                "description",
+                "content_hash",
+                "generation_timestamp"
+            ]
+        },
         "osd": {
             "type": "object",
             "properties": {
@@ -302,5 +256,85 @@
             "additionalProperties": false
         }
     },
-    "additionalProperties": true
+    "required": [
+        "version",
+        "metadata"
+    ],
+    "additionalProperties": true,
+    "$id": "osd_schema",
+    "$defs": {
+        "color": {
+            "type": "array",
+            "items": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 255
+            }
+        },
+        "angle": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 359
+        },
+        "rotation_policy": {
+            "type": "string",
+            "enum": [
+                "CENTER",
+                "TOP_LEFT"
+            ]
+        },
+        "coordinate": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+        },
+        "z-index": {
+            "type": "integer"
+        },
+        "horizontal_alignment": {
+            "oneOf": [
+                {
+                    "type": "string",
+                    "enum": [
+                        "RIGHT",
+                        "LEFT",
+                        "CENTER"
+                    ]
+                },
+                {
+                    "type": "number"
+                }
+            ]
+        },
+        "vertical_alignment": {
+            "oneOf": [
+                {
+                    "type": "string",
+                    "enum": [
+                        "TOP",
+                        "BOTTOM",
+                        "CENTER"
+                    ]
+                },
+                {
+                    "type": "number"
+                }
+            ]
+        },
+        "font_weight": {
+            "type": "string",
+            "enum": [
+                "NORMAL",
+                "BOLD"
+            ]
+        },
+        "outline_size": {
+            "type": "integer",
+            "minimum": 0
+        },
+        "line_thickness": {
+            "type": "integer",
+            "minimum": 1
+        }
+    }
 }

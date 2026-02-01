@@ -1,0 +1,4 @@
+# Build options
+option('build_tests', type: 'boolean', value: true, description: 'Build unit tests')
+option('build_bindings', type: 'boolean', value: true, description: 'Build Python bindings')
+option('build_static', type: 'boolean', value: false, description: 'Build static library')

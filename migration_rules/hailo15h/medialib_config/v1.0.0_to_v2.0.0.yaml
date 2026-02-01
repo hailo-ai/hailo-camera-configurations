@@ -1,0 +1,12 @@
+source_version: 1.0.0
+target_version: 2.0.0
+description: 'From v1.0.0_to_v2.0.0.yaml:
+
+  Add backup folder path'
+rules:
+- operation: set_required_default
+  path: $
+  field_name: backup_folder_path
+  default_value: ''
+  source_file: v1.0.0_to_v2.0.0.yaml
+consolidated: true

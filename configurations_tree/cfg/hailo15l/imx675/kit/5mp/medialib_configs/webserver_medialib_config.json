@@ -1,18 +1,53 @@
 {
-    "version": "1.0.0",
-    "default_profile": "Daylight",
-    "profiles": [
-        {
-            "name": "Daylight",
-            "config_file": "/etc/imaging/cfg/hailo15l/imx675/kit/5mp/profiles/daylight/webserver_daylight/webserver_daylight_profile.json"
-        },
-        {
-            "name": "High_Dynamic_Range",
-            "config_file": "/etc/imaging/cfg/hailo15l/imx675/kit/5mp/profiles/HDR/webserver_HDR/webserver_HDR_profile.json"
-        },
-        {
-            "name": "Lowlight",
-            "config_file": "/etc/imaging/cfg/hailo15l/imx675/kit/5mp/profiles/lowlight/webserver_lowlight/webserver_lowlight_profile.json"
-        }
-    ]
+  "version": "2.0.0",
+  "metadata": {
+    "architecture": "hailo15l",
+    "content_hash": "ffcf84167ef1aa099fdf9ea07512f68513232483dd213c3223441dceb9ba36b5",
+    "description": "",
+    "generation_timestamp": "2026-01-28T15:57:10.255592+00:00"
+  },
+  "backup_folder_path": "/etc/imaging/cfg/backups/webserver",
+  "default_profile": "Daylight_Basic",
+  "profiles": [
+    {
+      "config_file": "/etc/imaging/cfg/hailo15l/imx675/kit/5mp/profiles/daylight/webserver_daylight/webserver_daylight_profile.json",
+      "name": "Daylight_Basic"
+    },
+    {
+      "config_file": "/etc/imaging/cfg/hailo15l/imx675/kit/5mp/profiles/HDR/webserver_HDR/webserver_HDR_profile.json",
+      "name": "High_Dynamic_Range_Basic"
+    },
+    {
+      "config_file": "/etc/imaging/cfg/hailo15l/imx675/kit/5mp/profiles/lowlight/webserver_lowlight/webserver_lowlight_profile.json",
+      "name": "Lowlight_Basic"
+    },
+    {
+      "config_file": "/etc/imaging/cfg/hailo15l/imx675/kit/5mp/profiles/daylight/webserver_daylight/webserver_daylight_detection_profile.json",
+      "name": "Daylight_Detection"
+    },
+    {
+      "config_file": "/etc/imaging/cfg/hailo15l/imx675/kit/5mp/profiles/HDR/webserver_HDR/webserver_HDR_detection_profile.json",
+      "name": "High_Dynamic_Range_Detection"
+    },
+    {
+      "config_file": "/etc/imaging/cfg/hailo15l/imx675/kit/5mp/profiles/lowlight/webserver_lowlight/webserver_lowlight_detection_profile.json",
+      "name": "Lowlight_Detection"
+    },
+    {
+      "config_file": "/etc/imaging/cfg/hailo15l/imx675/kit/5mp/profiles/daylight/webserver_daylight/webserver_daylight_clip_profile.json",
+      "name": "Daylight_Clip"
+    },
+    {
+      "config_file": "/etc/imaging/cfg/hailo15l/imx675/kit/5mp/profiles/daylight/ai_example_daylight/ai_example_daylight_profile.json",
+      "name": "Daylight_FaceLandmarks"
+    },
+    {
+      "config_file": "/etc/imaging/cfg/hailo15l/imx675/kit/5mp/profiles/HDR/ai_example_HDR/ai_example_HDR_profile.json",
+      "name": "High_Dynamic_Range_FaceLandmarks"
+    },
+    {
+      "config_file": "/etc/imaging/cfg/hailo15l/imx675/kit/5mp/profiles/lowlight/lowlight_r0225c8/lowlight_r0225c8_profile.json",
+      "name": "Lowlight_FaceLandmarks"
+    }
+  ]
 }

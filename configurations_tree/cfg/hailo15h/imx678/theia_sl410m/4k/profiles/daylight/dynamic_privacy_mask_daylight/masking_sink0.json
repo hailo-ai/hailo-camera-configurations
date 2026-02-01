@@ -1,13 +1,24 @@
 {
-    "masking": {
-        "mask_type": "PIXELIZATION",
-        "pixelization_size": 60,
-        "color_value": [0, 0, 0],
-        "dynamic_privacy_mask": {
-            "enabled": true,
-            "analytics_data_id": "yolo_segmentation",
-            "masked_labels": ["person"],
-            "dilation_size": 11
+  "version": "2.0.0",
+  "metadata": {
+    "architecture": "hailo15h",
+    "content_hash": "34c13b397494b28bf4f2b9a17f6392b08fc37ec33e4237eeaf948c2b004384cd",
+    "description": "",
+    "generation_timestamp": "2026-01-22T16:12:52.182978+00:00"
+  },
+  "masking": {
+    "color_value": [0,0,0],
+    "dynamic_privacy_mask": {
+      "analytics": [
+        {
+          "analytics_data_id": "semantic_segmentation",
+          "masked_labels": ["person_face","vehicle"]
         }
-    }
+      ],
+      "dilation_size": 0,
+      "enabled": true
+    },
+    "mask_type": "PIXELIZATION",
+    "pixelization_size": 16
+  }
 }

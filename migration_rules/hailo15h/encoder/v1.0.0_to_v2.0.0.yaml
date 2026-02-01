@@ -1,0 +1,23 @@
+source_version: 1.0.0
+target_version: 2.0.0
+description: 'From v1.0.0_to_v2.0.0.yaml:
+
+  CQP and HRD RC modes removal migration'
+rules:
+- operation: map_enum_values
+  path: $.encoding.hailo_encoder.rate_control.rc_mode
+  mapping:
+    CQP:
+      value: VBR
+      actions:
+      - operation: set_value
+        path: $.encoding.hailo_encoder.rate_control.picture_rc
+        value: 0
+    HRD:
+      value: CBR
+      actions:
+      - operation: set_value
+        path: $.encoding.hailo_encoder.rate_control.hrd
+        value: true
+  source_file: v1.0.0_to_v2.0.0.yaml
+consolidated: true

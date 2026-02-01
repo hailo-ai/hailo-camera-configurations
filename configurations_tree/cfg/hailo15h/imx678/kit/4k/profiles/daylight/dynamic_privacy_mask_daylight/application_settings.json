@@ -1,43 +1,82 @@
 {
-  "version": "1.0.0",
-  "application_input_streams": {
-    "method": "INTERPOLATION_TYPE_BILINEAR",
-    "format": "IMAGE_FORMAT_NV12",
-    "resolutions": [
+  "version": "2.0.0",
+  "metadata": {
+    "architecture": "hailo15h",
+    "content_hash": "a1c7ad39cfa6b29faba5208b51962e4dd1286f4656d5a5d0a18159e2a866708b",
+    "description": "",
+    "generation_timestamp": "2026-01-26T14:08:09.808673+00:00"
+  },
+  "application_analytics": {
+    "semantic_segmentation": [
       {
-        "width": 3840,
-        "height": 2160,
-        "framerate": 30,
-        "pool_max_buffers": 20,
-        "stream_id": "sink0"
-      },
-      {
-        "width": 640,
-        "height": 480,
-        "framerate": 15,
-        "pool_max_buffers": 20,
-        "stream_id": "sink1"
+        "analytics_data_id": "semantic_segmentation",
+        "height": 1080,
+        "labels": [
+          {
+            "id": 1,
+            "label": "person_face"
+          },
+          {
+            "id": 0,
+            "label": "vehicle"
+          }
+        ],
+        "max_entries": 10,
+        "original_height_ratio": 9,
+        "original_width_ratio": 16,
+        "scaling_mode": "LETTERBOX_MIDDLE",
+        "width": 1920
       }
     ]
   },
-  "gmv": {
-    "source": "isp",
-    "frequency": 0.0
-  },
-  "optical_zoom": {
-    "enabled": true,
-    "magnification": 1.0
+  "application_input_streams": {
+    "format": "IMAGE_FORMAT_NV12",
+    "method": "INTERPOLATION_TYPE_BILINEAR",
+    "resolutions": [
+      {
+        "framerate": 30,
+        "height": 2160,
+        "pool_max_buffers": 30,
+        "stream_id": "sink0",
+        "width": 3840
+      },
+      {
+        "framerate": 30,
+        "height": 720,
+        "pool_max_buffers": 30,
+        "stream_id": "sink1",
+        "width": 1280
+      },
+      {
+        "framerate": 15,
+        "height": 1080,
+        "pool_max_buffers": 15,
+        "stream_id": "sink2",
+        "width": 1920
+      }
+    ]
   },
   "digital_zoom": {
     "enabled": false,
-    "mode": "DIGITAL_ZOOM_MODE_ROI",
     "magnification": 1.0,
+    "mode": "DIGITAL_ZOOM_MODE_ROI",
     "roi": {
-      "x": 200,
-      "y": 200,
+      "height": 1800,
       "width": 2800,
-      "height": 1800
+      "x": 200,
+      "y": 200
     }
+  },
+  "flip": {
+    "direction": "FLIP_DIRECTION_HORIZONTAL",
+    "enabled": false
+  },
+  "gmv": {
+    "frequency": 0.0,
+    "source": "isp"
+  },
+  "hailort": {
+    "device-id": "device0"
   },
   "motion_detection": {
     "buffer_pool_size": 8,
@@ -56,34 +95,12 @@
     "sensitivity_level": "MEDIUM",
     "threshold": 0.5
   },
+  "optical_zoom": {
+    "enabled": true,
+    "magnification": 1.0
+  },
   "rotation": {
-    "enabled": false,
-    "angle": "ROTATION_ANGLE_180"
-  },
-  "flip": {
-    "enabled": false,
-    "direction": "FLIP_DIRECTION_HORIZONTAL"
-  },
-  "hailort": {
-    "device-id": "device0"
-  },
-  "application_analytics": {
-    "instance_segmentation": [
-      {
-        "analytics_data_id": "yolo_segmentation",
-        "scaling_mode": "STRETCH",
-        "width": 640,
-        "height": 480,
-        "original_width_ratio": 4,
-        "original_height_ratio": 3,
-        "max_entries": 5,
-        "labels": [
-          {
-            "label": "person",
-            "id": 0
-          }
-        ]
-      }
-    ]
+    "angle": "ROTATION_ANGLE_180",
+    "enabled": false
   }
 }

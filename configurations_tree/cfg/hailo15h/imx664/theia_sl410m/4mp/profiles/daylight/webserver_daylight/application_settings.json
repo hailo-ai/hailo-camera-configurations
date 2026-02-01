@@ -1,44 +1,45 @@
 {
-  "version": "1.0.0",
+  "version": "2.0.0",
+  "metadata": {
+    "architecture": "hailo15h",
+    "content_hash": "1311813c9ffeee9bdb79f1942d184ba7177ead84ae5c8fc943eac2fe85adcf4e",
+    "description": "",
+    "generation_timestamp": "2025-11-24T12:15:22.097097+00:00"
+  },
   "application_input_streams": {
-    "method": "INTERPOLATION_TYPE_BILINEAR",
     "format": "IMAGE_FORMAT_NV12",
+    "method": "INTERPOLATION_TYPE_BILINEAR",
     "resolutions": [
       {
-        "width": 2688,
+        "framerate": 30,
         "height": 1520,
-        "framerate": 30,
         "pool_max_buffers": 20,
-        "stream_id": "sink0"
-      },
-      {
-        "width": 640,
-        "height": 640,
-        "framerate": 30,
-        "pool_max_buffers": 20,
-        "stream_id": "sink1"
+        "stream_id": "sink0",
+        "width": 2688
       }
     ]
   },
-  "gmv": {
-    "source": "isp",
-    "frequency": 0.0
-  },
-  "optical_zoom": {
-    "enabled": false,
-    "magnification": 1.0,
-    "max_dewarping_magnification": 3.0
-  },
   "digital_zoom": {
     "enabled": false,
-    "mode": "DIGITAL_ZOOM_MODE_MAGNIFICATION",
     "magnification": 1.0,
+    "mode": "DIGITAL_ZOOM_MODE_MAGNIFICATION",
     "roi": {
-      "x": 200,
-      "y": 200,
+      "height": 1200,
       "width": 2300,
-      "height": 1200
+      "x": 200,
+      "y": 200
     }
+  },
+  "flip": {
+    "direction": "FLIP_DIRECTION_NONE",
+    "enabled": false
+  },
+  "gmv": {
+    "frequency": 0.0,
+    "source": "isp"
+  },
+  "hailort": {
+    "device-id": "device0"
   },
   "motion_detection": {
     "buffer_pool_size": 8,
@@ -57,15 +58,13 @@
     "sensitivity_level": "MEDIUM",
     "threshold": 0.5
   },
+  "optical_zoom": {
+    "enabled": false,
+    "magnification": 1.0,
+    "max_dewarping_magnification": 3.0
+  },
   "rotation": {
-    "enabled": false,
-    "angle": "ROTATION_ANGLE_0"
-  },
-  "flip": {
-    "enabled": false,
-    "direction": "FLIP_DIRECTION_NONE"
-  },
-  "hailort": {
-    "device-id": "device0"
+    "angle": "ROTATION_ANGLE_0",
+    "enabled": false
   }
 }

@@ -1,15 +1,21 @@
 {
-    "version": "1.0.0",
-    "sensor_config": "/etc/imaging/cfg/hailo15h/imx678/kit/4k/profiles/daylight/detection_daylight/sensor_config.json",
-    "application_settings": "/etc/imaging/cfg/hailo15h/imx678/kit/4k/profiles/daylight/detection_daylight/application_settings.json",
-    "stabilizer_settings": "/etc/imaging/cfg/hailo15h/imx678/kit/4k/profiles/daylight/detection_daylight/stabilizer_settings.json",
-    "iq_settings": "/etc/imaging/cfg/hailo15h/imx678/kit/4k/profiles/daylight/detection_daylight/iq_settings.json",
-    "encoded_output_streams": [
-        {
-            "stream_id": "sink0",
-            "encoding": "/etc/imaging/cfg/hailo15h/imx678/kit/4k/profiles/daylight/detection_daylight/encoder_sink0.json",
-            "osd": "/etc/imaging/cfg/hailo15h/imx678/kit/4k/profiles/daylight/detection_daylight/osd_sink0.json",
-            "masking": "/etc/imaging/cfg/hailo15h/imx678/kit/4k/profiles/daylight/detection_daylight/masking_sink0.json"
-        }
-    ]
+  "version": "1.0.0",
+  "metadata": {
+    "architecture": "hailo15h",
+    "content_hash": "9210b7b51717c2ccd98fa9b70097068b405df77e06b09fc39d4195df9fcf6fb6",
+    "description": "",
+    "generation_timestamp": "2025-11-24T12:15:21.858635+00:00"
+  },
+  "application_settings": "/etc/imaging/cfg/hailo15h/imx678/kit/4k/profiles/daylight/detection_daylight/application_settings.json",
+  "encoded_output_streams": [
+    {
+      "encoding": "/etc/imaging/cfg/hailo15h/imx678/kit/4k/profiles/daylight/detection_daylight/encoder_sink0.json",
+      "masking": "/etc/imaging/cfg/hailo15h/imx678/kit/4k/profiles/daylight/detection_daylight/masking_sink0.json",
+      "osd": "/etc/imaging/cfg/hailo15h/imx678/kit/4k/profiles/daylight/detection_daylight/osd_sink0.json",
+      "stream_id": "sink0"
+    }
+  ],
+  "iq_settings": "/etc/imaging/cfg/hailo15h/imx678/kit/4k/profiles/daylight/detection_daylight/iq_settings.json",
+  "sensor_config": "/etc/imaging/cfg/hailo15h/imx678/kit/4k/profiles/daylight/detection_daylight/sensor_config.json",
+  "stabilizer_settings": "/etc/imaging/cfg/hailo15h/imx678/kit/4k/profiles/daylight/detection_daylight/stabilizer_settings.json"
 }
