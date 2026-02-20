@@ -1,0 +1,25 @@
+{
+  "version": "2.0.0",
+  "metadata": {
+    "architecture": "hailo15l",
+    "content_hash": "d73572bb664f51797bd0762b252b37b32fc64c3729ae9a936945518bb7edb82c",
+    "description": "",
+    "generation_timestamp": "2026-02-03T08:55:21.752462+00:00"
+  },
+  "backup_folder_path": "/etc/imaging/cfg/backups/frontend_api_example_jpeg",
+  "default_profile": "Daylight_JPEG",
+  "profiles": [
+    {
+      "config_file": "/etc/imaging/cfg/hailo15l/imx675/kit/5mp/profiles/daylight/frontend_example_jpeg_daylight/frontend_api_example_jpeg_daylight_profile.json",
+      "name": "Daylight_JPEG"
+    },
+    {
+      "config_file": "/etc/imaging/cfg/hailo15l/imx675/kit/5mp/profiles/HDR/frontend_example_jpeg_HDR/frontend_api_example_jpeg_HDR_profile.json",
+      "name": "High_Dynamic_Range_JPEG"
+    },
+    {
+      "config_file": "/etc/imaging/cfg/hailo15l/imx675/kit/5mp/profiles/lowlight/frontend_example_jpeg_lowlight/frontend_api_example_jpeg_profile.json",
+      "name": "Lowlight_JPEG"
+    }
+  ]
+}

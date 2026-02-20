@@ -1,0 +1,37 @@
+{
+  "version": "2.0.0",
+  "metadata": {
+    "architecture": "hailo15l",
+    "content_hash": "c1b814a0fdcb495ca5936f377a4594256c7cf3eba9b2b02d43529fee00d34773",
+    "description": "",
+    "generation_timestamp": "2026-02-06T07:50:33.583929+00:00"
+  },
+  "backup_folder_path": "/etc/imaging/cfg/backups/frontend_api_example",
+  "default_profile": "Daylight_Basic",
+  "profiles": [
+    {
+      "config_file": "/etc/imaging/cfg/hailo15l/imx675/theia_sl410m/5mp/profiles/daylight/frontend_example_daylight/frontend_api_example_daylight_profile.json",
+      "name": "Daylight_Basic"
+    },
+    {
+      "config_file": "/etc/imaging/cfg/hailo15l/imx675/theia_sl410m/5mp/profiles/HDR/frontend_example_HDR/frontend_api_example_HDR_profile.json",
+      "name": "High_Dynamic_Range_Basic"
+    },
+    {
+      "config_file": "/etc/imaging/cfg/hailo15l/imx675/theia_sl410m/5mp/profiles/lowlight/frontend_example_lowlight/frontend_api_example_profile.json",
+      "name": "Lowlight_Basic"
+    },
+    {
+      "config_file": "/etc/imaging/cfg/hailo15h/imx678/kit/5mp/profiles/daylight/frontend_example_jpeg_daylight/frontend_api_example_jpeg_daylight_profile.json",
+      "name": "Daylight_JPEG"
+    },
+    {
+      "config_file": "/etc/imaging/cfg/hailo15h/imx678/kit/5mp/profiles/HDR/frontend_example_jpeg_HDR/frontend_api_example_jpeg_HDR_profile.json",
+      "name": "High_Dynamic_Range_JPEG"
+    },
+    {
+      "config_file": "/etc/imaging/cfg/hailo15h/imx678/kit/5mp/profiles/lowlight/frontend_example_jpeg_lowlight/frontend_api_example_jpeg_profile.json",
+      "name": "Lowlight_JPEG"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "version": "1.1.0",
+  "metadata": {
+    "architecture": "hailo15h",
+    "content_hash": "ada38a3762c0f45f45114173cdd2d759795816f8f9647081508a86c7d70205c1",
+    "description": "",
+    "generation_timestamp": "2026-02-03T06:07:46.139734+00:00"
+  },
+  "input_video": {
+    "resolution": {
+      "framerate": 30,
+      "height": 2160,
+      "width": 3840
+    }
+  },
+  "sensor_calibration_file": "/etc/imaging/cfg/hailo15h/imx715/kit/4k/profiles/daylight/frontend_example_jpeg_daylight/calib.json",
+  "sensor_configuration": {
+    "af_i2c_addr": "0x0",
+    "af_i2c_bus": -1,
+    "drv": "HAILO_IMX715.drv",
+    "mode": 0,
+    "name": "imx715",
+    "pixel_mode": 0,
+    "sensor_only": 0
+  }
+}

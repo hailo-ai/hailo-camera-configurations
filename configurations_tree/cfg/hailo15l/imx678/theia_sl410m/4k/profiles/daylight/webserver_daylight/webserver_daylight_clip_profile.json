@@ -1,0 +1,27 @@
+{
+  "version": "1.0.0",
+  "metadata": {
+    "architecture": "hailo15l",
+    "content_hash": "8237d181201cd65972abc9500a2ced9adaad35e8841e0682036bd95590ddcc04",
+    "description": "",
+    "generation_timestamp": "2026-02-12T11:17:25.407742+00:00"
+  },
+  "application_settings": "/etc/imaging/cfg/hailo15l/imx678/theia_sl410m/4k/profiles/daylight/webserver_daylight/application_settings_clip.json",
+  "encoded_output_streams": [
+    {
+      "encoding": "/etc/imaging/cfg/hailo15l/imx678/theia_sl410m/4k/profiles/daylight/webserver_daylight/encoder_sink0.json",
+      "masking": "",
+      "osd": "/etc/imaging/cfg/hailo15l/imx678/theia_sl410m/4k/profiles/daylight/webserver_daylight/osd_clip.json",
+      "stream_id": "sink0"
+    },
+    {
+      "encoding": "/etc/imaging/cfg/hailo15l/imx678/theia_sl410m/4k/profiles/daylight/webserver_daylight/encoder_vga.json",
+      "masking": "",
+      "osd": "/etc/imaging/cfg/hailo15l/imx678/theia_sl410m/4k/profiles/daylight/webserver_daylight/osd_clip.json",
+      "stream_id": "clip_vga"
+    }
+  ],
+  "iq_settings": "/etc/imaging/cfg/hailo15l/imx678/theia_sl410m/4k/profiles/daylight/webserver_daylight/iq_settings.json",
+  "sensor_config": "/etc/imaging/cfg/hailo15l/imx678/theia_sl410m/4k/profiles/daylight/webserver_daylight/sensor_config.json",
+  "stabilizer_settings": "/etc/imaging/cfg/hailo15l/imx678/theia_sl410m/4k/profiles/daylight/webserver_daylight/stabilizer_settings.json"
+}

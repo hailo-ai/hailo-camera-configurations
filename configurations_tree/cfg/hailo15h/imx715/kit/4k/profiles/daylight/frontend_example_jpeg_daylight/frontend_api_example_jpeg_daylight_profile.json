@@ -1,0 +1,27 @@
+{
+  "version": "1.1.0",
+  "metadata": {
+    "architecture": "hailo15h",
+    "content_hash": "12915ebe8249bbdfc741f2f9b5328c830d464d49856775cb8c8c7cdcc074f211",
+    "description": "",
+    "generation_timestamp": "2026-02-03T06:07:46.149341+00:00"
+  },
+  "application_settings": "/etc/imaging/cfg/hailo15h/imx715/kit/4k/profiles/daylight/frontend_example_jpeg_daylight/application_settings.json",
+  "encoded_output_streams": [
+    {
+      "encoding": "/etc/imaging/cfg/hailo15h/imx715/kit/4k/profiles/daylight/frontend_example_jpeg_daylight/encoder_sink0.json",
+      "masking": "/etc/imaging/cfg/hailo15h/imx715/kit/4k/profiles/daylight/frontend_example_jpeg_daylight/masking_sink0.json",
+      "osd": "/etc/imaging/cfg/hailo15h/imx715/kit/4k/profiles/daylight/frontend_example_jpeg_daylight/osd_sink0.json",
+      "stream_id": "sink0"
+    },
+    {
+      "encoding": "/etc/imaging/cfg/hailo15h/imx715/kit/4k/profiles/daylight/frontend_example_jpeg_daylight/encoder_sink1.json",
+      "masking": "/etc/imaging/cfg/hailo15h/imx715/kit/4k/profiles/daylight/frontend_example_jpeg_daylight/masking_sink1.json",
+      "osd": "/etc/imaging/cfg/hailo15h/imx715/kit/4k/profiles/daylight/frontend_example_jpeg_daylight/osd_sink1.json",
+      "stream_id": "sink1"
+    }
+  ],
+  "iq_settings": "/etc/imaging/cfg/hailo15h/imx715/kit/4k/profiles/daylight/frontend_example_jpeg_daylight/iq_settings.json",
+  "sensor_config": "/etc/imaging/cfg/hailo15h/imx715/kit/4k/profiles/daylight/frontend_example_jpeg_daylight/sensor_config.json",
+  "stabilizer_settings": "/etc/imaging/cfg/hailo15h/imx715/kit/4k/profiles/daylight/frontend_example_jpeg_daylight/stabilizer_settings.json"
+}

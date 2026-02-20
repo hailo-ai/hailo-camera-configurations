@@ -1,0 +1,14 @@
+{
+  "version": "2.0.0",
+  "metadata": {
+    "architecture": "hailo15h",
+    "content_hash": "7d4b464b6c3d9ca16bb890d81210ebe05150b1416cf7428e837bc4832ac637de",
+    "description": "",
+    "generation_timestamp": "2026-02-11T15:34:43.022262+00:00"
+  },
+  "masking": {
+    "color_value": [0,0,0],
+    "mask_type": "COLOR",
+    "pixelization_size": 60
+  }
+}

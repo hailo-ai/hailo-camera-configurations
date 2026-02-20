@@ -2,9 +2,9 @@
   "version": "2.0.0",
   "metadata": {
     "architecture": "hailo15l",
-    "content_hash": "2f7636995f52fedc1937149adc9ec8af3869c34dba83b815f9a1d372e0e99ee2",
+    "content_hash": "9222c492d2fbc068d10b1ec19b924ffc0a929e1cedcd06338d9a95f2c74ea7c4",
     "description": "",
-    "generation_timestamp": "2026-01-06T18:16:18.927629+00:00"
+    "generation_timestamp": "2026-02-12T13:02:56.191293+00:00"
   },
   "backup_folder_path": "/etc/imaging/cfg/backups/webserver",
   "default_profile": "Daylight_Basic",
@@ -34,12 +34,12 @@
       "name": "High_Dynamic_Range_Detection"
     },
     {
-      "config_file": "/etc/imaging/cfg/hailo15l/imx678/theia_sl410m/4k/profiles/lowlight/webserver_lowlight_bayer/webserver_lowlight_bayer_detection_profile.json",
-      "name": "Lowlight_Bayer_Detection"
-    },
-    {
       "config_file": "/etc/imaging/cfg/hailo15l/imx678/theia_sl410m/4k/profiles/lowlight/webserver_lowlight_bayer_hdr/webserver_lowlight_bayer_hdr_detection_profile.json",
       "name": "Denoise_Hdr_Detection"
+    },
+    {
+      "config_file": "/etc/imaging/cfg/hailo15l/imx678/theia_sl410m/4k/profiles/daylight/webserver_daylight/webserver_daylight_clip_profile.json",
+      "name": "Daylight_Clip"
     },
     {
       "config_file": "/etc/imaging/cfg/hailo15l/imx678/theia_sl410m/4k/profiles/daylight/ai_example_daylight/ai_example_daylight_profile.json",
@@ -48,10 +48,6 @@
     {
       "config_file": "/etc/imaging/cfg/hailo15l/imx678/theia_sl410m/4k/profiles/HDR/ai_example_HDR/ai_example_HDR_profile.json",
       "name": "High_Dynamic_Range_FaceLandmarks"
-    },
-    {
-      "config_file": "/etc/imaging/cfg/hailo15l/imx678/theia_sl410m/4k/profiles/lowlight/lowlight_bayer/lowlight_bayer_profile.json",
-      "name": "Lowlight_Bayer_FaceLandmarks"
     },
     {
       "config_file": "/etc/imaging/cfg/hailo15l/imx678/theia_sl410m/4k/profiles/daylight/dynamic_privacy_mask_daylight/dynamic_privacy_mask_daylight_profile.json",

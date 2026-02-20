@@ -1,0 +1,27 @@
+{
+  "version": "1.1.0",
+  "metadata": {
+    "architecture": "hailo15l",
+    "content_hash": "9ac0ccf14da97ce175b2aefa23f6d79ddb5f1d77862c3c5be2cd055c66c74ec5",
+    "description": "",
+    "generation_timestamp": "2026-02-03T10:28:08.597418+00:00"
+  },
+  "application_settings": "/etc/imaging/cfg/hailo15l/imx675/kit/5mp/profiles/HDR/frontend_example_jpeg_HDR/application_settings.json",
+  "encoded_output_streams": [
+    {
+      "encoding": "/etc/imaging/cfg/hailo15l/imx675/kit/5mp/profiles/HDR/frontend_example_jpeg_HDR/encoder_sink0.json",
+      "masking": "/etc/imaging/cfg/hailo15l/imx675/kit/5mp/profiles/HDR/frontend_example_jpeg_HDR/masking_sink0.json",
+      "osd": "/etc/imaging/cfg/hailo15l/imx675/kit/5mp/profiles/HDR/frontend_example_jpeg_HDR/osd_sink0.json",
+      "stream_id": "sink0"
+    },
+    {
+      "encoding": "/etc/imaging/cfg/hailo15l/imx675/kit/5mp/profiles/HDR/frontend_example_jpeg_HDR/encoder_sink1.json",
+      "masking": "/etc/imaging/cfg/hailo15l/imx675/kit/5mp/profiles/HDR/frontend_example_jpeg_HDR/masking_sink1.json",
+      "osd": "/etc/imaging/cfg/hailo15l/imx675/kit/5mp/profiles/HDR/frontend_example_jpeg_HDR/osd_sink1.json",
+      "stream_id": "sink1"
+    }
+  ],
+  "iq_settings": "/etc/imaging/cfg/hailo15l/imx675/kit/5mp/profiles/HDR/frontend_example_jpeg_HDR/iq_settings.json",
+  "sensor_config": "/etc/imaging/cfg/hailo15l/imx675/kit/5mp/profiles/HDR/frontend_example_jpeg_HDR/sensor_config.json",
+  "stabilizer_settings": "/etc/imaging/cfg/hailo15l/imx675/kit/5mp/profiles/HDR/frontend_example_jpeg_HDR/stabilizer_settings.json"
+}

@@ -2,9 +2,9 @@
   "version": "2.0.0",
   "metadata": {
     "architecture": "hailo15h",
-    "content_hash": "a1c7ad39cfa6b29faba5208b51962e4dd1286f4656d5a5d0a18159e2a866708b",
+    "content_hash": "d75732380b8a48c3cb1ed8ea7048b4083ec4e31b333638ea9315971aaa9880e9",
     "description": "",
-    "generation_timestamp": "2026-01-26T14:08:11.012185+00:00"
+    "generation_timestamp": "2026-02-08T16:18:38.956611+00:00"
   },
   "application_analytics": {
     "semantic_segmentation": [
@@ -48,9 +48,9 @@
         "width": 1280
       },
       {
-        "framerate": 15,
+        "framerate": 30,
         "height": 1080,
-        "pool_max_buffers": 15,
+        "pool_max_buffers": 30,
         "stream_id": "sink2",
         "width": 1920
       }

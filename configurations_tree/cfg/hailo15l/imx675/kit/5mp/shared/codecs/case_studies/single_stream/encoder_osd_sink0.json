@@ -2,9 +2,9 @@
   "version": "1.0.0",
   "metadata": {
     "architecture": "hailo15l",
-    "content_hash": "2458c25fdac62843661fd8045dd0ecde9c344bf872e8111885b20eae5690515c",
+    "content_hash": "9646e338acc0eac9689907218c70049840d17f9b508af4478d735ccb2a204be8",
     "description": "",
-    "generation_timestamp": "2025-11-24T12:15:23.091040+00:00"
+    "generation_timestamp": "2026-02-16T10:01:01.415864+00:00"
   },
   "encoding": {
     "hailo_encoder": {
@@ -52,7 +52,10 @@
           "right": 0,
           "top": 0
         },
-        "sei_messages": true
+        "sei_messages": {
+          "encoder_timing_sei": true,
+          "user_metadata_sei": true
+        }
       },
       "config": {
         "output_stream": {
