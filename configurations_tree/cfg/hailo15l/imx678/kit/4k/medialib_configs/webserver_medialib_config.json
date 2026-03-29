@@ -2,9 +2,9 @@
   "version": "2.0.0",
   "metadata": {
     "architecture": "hailo15l",
-    "content_hash": "979c80e0be2ca305e1f28dd8b5896856c5caaf95b97e6ec55aa081892139cc96",
+    "content_hash": "7dfec63c0f012ba4532bc02c5a81af19859e96d0410d904bcbb59afe6a9b198a",
     "description": "",
-    "generation_timestamp": "2026-01-04T16:18:50.531366+00:00"
+    "generation_timestamp": "2026-01-27T15:01:01.427481+00:00"
   },
   "backup_folder_path": "/etc/imaging/cfg/backups/webserver",
   "default_profile": "Daylight_Basic",
@@ -24,6 +24,14 @@
     {
       "config_file": "/etc/imaging/cfg/hailo15l/imx678/kit/4k/profiles/HDR/webserver_HDR/webserver_HDR_detection_profile.json",
       "name": "High_Dynamic_Range_Detection"
+    },
+    {
+      "config_file": "/etc/imaging/cfg/hailo15l/imx678/kit/4k/profiles/daylight/dynamic_privacy_mask_daylight/dynamic_privacy_mask_daylight_profile.json",
+      "name": "Daylight_DynamicPrivacyMask"
+    },
+    {
+      "config_file": "/etc/imaging/cfg/hailo15l/imx678/kit/4k/profiles/HDR/dynamic_privacy_mask_HDR/dynamic_privacy_mask_HDR_profile.json",
+      "name": "High_Dynamic_Range_DynamicPrivacyMask"
     }
   ]
 }

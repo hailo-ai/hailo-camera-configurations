@@ -116,9 +116,6 @@
                 },
                 "max_dewarping_magnification": {
                     "type": "number"
-                },
-                "max_zoom_level": {
-                    "type": "number"
                 }
             },
             "additionalProperties": false,
@@ -453,6 +450,10 @@
                             "max_entries": {
                                 "type": "integer"
                             },
+                            "mask_size": {
+                                "type": "integer",
+                                "minimum": 1
+                            },
                             "labels": {
                                 "type": "array",
                                 "items": {
@@ -480,7 +481,8 @@
                             "original_width_ratio",
                             "original_height_ratio",
                             "labels",
-                            "max_entries"
+                            "max_entries",
+                            "mask_size"
                         ],
                         "additionalProperties": false
                     }

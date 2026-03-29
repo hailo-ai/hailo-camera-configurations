@@ -1,10 +1,10 @@
 {
-  "version": "2.0.0",
+  "version": "3.0.0",
   "metadata": {
     "architecture": "hailo15l",
-    "content_hash": "2493fac169687c3520d9118afed8c410b2220edd774e094b249f1637545f93bb",
+    "content_hash": "475e9c61a471685df64a63962035c484aaa81fa02bfcdc742942ebc8a6e06f02",
     "description": "",
-    "generation_timestamp": "2026-01-22T11:39:43.608512+00:00"
+    "generation_timestamp": "2026-02-24T15:43:40.037153+00:00"
   },
   "masking": {
     "color_value": [0,0,0],
@@ -13,12 +13,19 @@
         {
           "analytics_data_id": "semantic_segmentation",
           "masked_labels": ["person_face","vehicle"]
+        },
+        {
+          "analytics_data_id": "dpm_overflow_detection",
+          "masked_labels": ["person","face","vehicle"]
         }
       ],
+      "delta_ms": 34,
       "dilation_size": 7,
-      "enabled": true
+      "enabled": true,
+      "query_type": "Exact",
+      "timeout_ms": 10000
     },
     "mask_type": "PIXELIZATION",
-    "pixelization_size": 16
+    "pixelization_size": 32
   }
 }

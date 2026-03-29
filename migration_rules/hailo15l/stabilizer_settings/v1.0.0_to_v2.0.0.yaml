@@ -1,0 +1,11 @@
+source_version: 1.0.0
+target_version: 2.0.0
+description: "From v1.0.0_to_v2.0.0.yaml:
+
+  remove max_angle_deg field from EIS section"
+rules:
+  - operation: remove_field
+    path: $.eis.max_angle_deg
+    field_name: max_angle_deg
+    source_file: v1.0.0_to_v2.0.0.yaml
+consolidated: true

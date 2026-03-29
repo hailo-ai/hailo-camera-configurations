@@ -2,9 +2,9 @@
   "version": "2.0.0",
   "metadata": {
     "architecture": "hailo15l",
-    "content_hash": "e9448803536a16b6ed550af228e2f96910d6cc0760624b11d2c75beeb2f67bc0",
+    "content_hash": "908b66efa5aab8385e83debf506adbaf5145b085568db2e0cf1137ec66668442",
     "description": "",
-    "generation_timestamp": "2026-01-04T16:18:50.255648+00:00"
+    "generation_timestamp": "2026-02-01T14:46:27.789449+00:00"
   },
   "backup_folder_path": "/etc/imaging/cfg/backups/single_stream",
   "default_profile": "Daylight",
@@ -12,6 +12,10 @@
     {
       "config_file": "/etc/imaging/cfg/hailo15l/imx678/theia_sl410m/4k/profiles/daylight/single_stream_daylight/single_stream_daylight_profile.json",
       "name": "Daylight"
+    },
+    {
+      "config_file": "/etc/imaging/cfg/hailo15l/imx678/theia_sl410m/4k/profiles/HDR/single_stream_HDR/single_stream_HDR_profile.json",
+      "name": "High_Dynamic_Range"
     },
     {
       "config_file": "/etc/imaging/cfg/hailo15l/imx678/theia_sl410m/4k/profiles/lowlight/single_stream_lowlight_bayer/single_stream_lowlight_bayer_profile.json",

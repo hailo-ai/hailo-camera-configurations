@@ -1,10 +1,10 @@
 {
-  "version": "1.1.0",
+  "version": "1.0.0",
   "metadata": {
     "architecture": "hailo15h",
-    "content_hash": "e8c815b170428213201c63a469e7eca9086d6046cfeae02773c57b2cd7e6f31e",
+    "content_hash": "9db4732204af403b1d0e49956d65ed05cdf29231faa937fe882e7c365d4b5801",
     "description": "",
-    "generation_timestamp": "2026-02-06T08:21:25.449761+00:00"
+    "generation_timestamp": "2026-03-19T09:53:25.373382+00:00"
   },
   "application_settings": "/etc/imaging/cfg/hailo15h/imx715/kit/4k/profiles/daylight/frontend_example_daylight/application_settings.json",
   "encoded_output_streams": [

@@ -2,9 +2,9 @@
   "version": "1.1.0",
   "metadata": {
     "architecture": "hailo15l",
-    "content_hash": "6f218258f36590160ccba77824e9ca70ebb2f3a2a690064bda8122a41778e2c3",
+    "content_hash": "e9a040e169ea897a3f6f8677868100bda2a363f853332323467828b8b0585472",
     "description": "",
-    "generation_timestamp": "2025-11-24T12:15:22.306157+00:00"
+    "generation_timestamp": "2026-03-17T18:32:03.865242+00:00"
   },
   "input_video": {
     "resolution": {
@@ -14,7 +14,7 @@
     },
     "sensor_id": "SENSOR_0"
   },
-  "sensor_calibration_file": "/etc/imaging/cfg/hailo15l/imx678/theia_sl410m/4k/profiles/HDR/ai_example_HDR/calib.json",
+  "sensor_calibration_file": "/etc/imaging/cfg/hailo15l/imx678/theia_sl410m/4k/profiles/HDR/dynamic_privacy_mask_HDR/calib.json",
   "sensor_configuration": {
     "af_i2c_addr": "0x0",
     "af_i2c_bus": -1,

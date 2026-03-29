@@ -4,7 +4,7 @@
     "architecture": "hailo15l",
     "content_hash": "edc28dbd1231f7e90d866ce87c7d8fd6a5372eb2e8b79f8aaa923d65d41090e4",
     "description": "",
-    "generation_timestamp": "2026-01-28T15:57:10.531143+00:00"
+    "generation_timestamp": "2026-01-28T16:02:48.200790+00:00"
   },
   "application_settings": "/etc/imaging/cfg/hailo15l/imx675/theia_sl410m/5mp/profiles/daylight/webserver_daylight/application_settings_clip.json",
   "encoded_output_streams": [

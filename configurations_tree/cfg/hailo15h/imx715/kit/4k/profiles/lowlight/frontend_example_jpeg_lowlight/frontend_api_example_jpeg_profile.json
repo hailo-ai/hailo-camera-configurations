@@ -1,10 +1,10 @@
 {
-  "version": "1.1.0",
+  "version": "1.0.0",
   "metadata": {
     "architecture": "hailo15h",
-    "content_hash": "bada2b2e903508d04ae68cdb79381de5f26f0c89a64001bf3c4a6cf03f88588b",
+    "content_hash": "6923def4b10ab97efdb60e4802b924a9f058ec553585281e8474a0828c8c8715",
     "description": "",
-    "generation_timestamp": "2026-02-03T10:28:10.060168+00:00"
+    "generation_timestamp": "2026-03-19T09:53:25.179771+00:00"
   },
   "application_settings": "/etc/imaging/cfg/hailo15h/imx715/kit/4k/profiles/lowlight/frontend_example_jpeg_lowlight/application_settings.json",
   "encoded_output_streams": [

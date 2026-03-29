@@ -1,0 +1,33 @@
+{
+  "version": "2.0.0",
+  "metadata": {
+    "architecture": "hailo15l",
+    "content_hash": "f5df0b9030edacb6fdd75b76f38edd0e8700b8e8f6859d274c3b9431c9a24744",
+    "description": "",
+    "generation_timestamp": "2026-03-08T10:21:50.519331+00:00"
+  },
+  "backup_folder_path": "/etc/imaging/cfg/backups/gst_example",
+  "default_profile": "Daylight",
+  "profiles": [
+    {
+      "config_file": "/etc/imaging/cfg/hailo15l/imx675/theia_sl410m/5mp/profiles/daylight/gst_example_daylight/gst_example_daylight_profile.json",
+      "name": "Daylight"
+    },
+    {
+      "config_file": "/etc/imaging/cfg/hailo15l/imx675/theia_sl410m/5mp/profiles/HDR/gst_example_HDR/gst_example_HDR_profile.json",
+      "name": "High_Dynamic_Range"
+    },
+    {
+      "config_file": "/etc/imaging/cfg/hailo15l/imx675/theia_sl410m/5mp/profiles/lowlight/lowlight_r0225c8/lowlight_r0225c8_profile.json",
+      "name": "Lowlight"
+    },
+    {
+      "config_file": "/etc/imaging/cfg/hailo15l/imx675/theia_sl410m/5mp/profiles/lowlight/lowlight_bayer_r0225c8/lowlight_bayer_r0225c8_profile.json",
+      "name": "Lowlight_Bayer"
+    },
+    {
+      "config_file": "/etc/imaging/cfg/hailo15l/imx675/theia_sl410m/5mp/profiles/IR/gst_example_IR/gst_example_IR_profile.json",
+      "name": "Infrared"
+    }
+  ]
+}

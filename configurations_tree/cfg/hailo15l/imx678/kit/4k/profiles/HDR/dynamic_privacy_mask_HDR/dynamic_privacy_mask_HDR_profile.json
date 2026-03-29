@@ -2,9 +2,9 @@
   "version": "1.0.0",
   "metadata": {
     "architecture": "hailo15l",
-    "content_hash": "edc9f1ae57a9d68135dac62e743b975535fac0ba56c77dbb76fb743a2d6765c6",
+    "content_hash": "06bf044a91200d921c19a3bf940cd1d2cba876897b5deb7cdb4ba9a166cba66f",
     "description": "",
-    "generation_timestamp": "2026-01-15T14:49:08.088626+00:00"
+    "generation_timestamp": "2026-02-08T13:26:37.533940+00:00"
   },
   "application_settings": "/etc/imaging/cfg/hailo15l/imx678/kit/4k/profiles/HDR/dynamic_privacy_mask_HDR/application_settings.json",
   "encoded_output_streams": [
@@ -18,7 +18,7 @@
       "encoding": "/etc/imaging/cfg/hailo15l/imx678/kit/4k/profiles/HDR/dynamic_privacy_mask_HDR/encoder_sink1.json",
       "masking": "",
       "osd": "/etc/imaging/cfg/hailo15l/imx678/kit/4k/profiles/HDR/dynamic_privacy_mask_HDR/osd_sink1.json",
-      "stream_id": "sink1"
+      "stream_id": "dpm_sink1"
     }
   ],
   "iq_settings": "/etc/imaging/cfg/hailo15l/imx678/kit/4k/profiles/HDR/dynamic_privacy_mask_HDR/iq_settings.json",

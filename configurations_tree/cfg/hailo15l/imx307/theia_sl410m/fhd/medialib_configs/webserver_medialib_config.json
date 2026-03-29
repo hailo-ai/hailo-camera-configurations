@@ -1,0 +1,17 @@
+{
+  "version": "2.0.0",
+  "metadata": {
+    "architecture": "hailo15l",
+    "content_hash": "a8577f6b7cabecc508d3e7dc3f8fa7a4a9f4a23ebc95cdb6d548b5d09df9df44",
+    "description": "",
+    "generation_timestamp": "2026-01-28T17:06:36.325512+00:00"
+  },
+  "backup_folder_path": "/etc/imaging/cfg/backups/webserver",
+  "default_profile": "Daylight_Basic",
+  "profiles": [
+    {
+      "config_file": "/etc/imaging/cfg/hailo15l/imx307/theia_sl410m/fhd/profiles/daylight/webserver_daylight/webserver_daylight_profile.json",
+      "name": "Daylight_Basic"
+    }
+  ]
+}

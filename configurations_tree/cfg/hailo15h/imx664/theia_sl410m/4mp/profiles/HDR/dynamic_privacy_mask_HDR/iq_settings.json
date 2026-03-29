@@ -1,10 +1,10 @@
 {
-  "version": "1.1.1",
+  "version": "1.2.0",
   "metadata": {
     "architecture": "hailo15h",
-    "content_hash": "cf86cc6232229f10202955d1042ef4b85a9cbd18a738d6dc9c600e28e9968c71",
+    "content_hash": "1b4af6341d32d9b3a014d5ba4be2deb0ce88b3bf6578a9c23e54b9f9a4cb1da8",
     "description": "",
-    "generation_timestamp": "2026-01-04T19:16:34.221659+00:00"
+    "generation_timestamp": "2026-03-19T15:23:07.404469+00:00"
   },
   "automatic_algorithms": {
     "A2dnrv5": {
@@ -369,6 +369,7 @@
         "hdr_gain": [1,2,4,8,16,128,512],
         "hdr_repress": [1.0,0.4,0.35,0.3,0.3,0.1,0.1]
       },
+      "lsRatio": 16.0,
       "maxIspDgain": 132,
       "maxSensorAgain": 32,
       "maxSensorDgain": 1,
@@ -378,7 +379,7 @@
       "motionThreshold": 1.0,
       "priority": [
         [
-          [3.8e-05,0.0011],
+          [3.8e-05,0.001],
           [1,3900],
           [1,1],
           ["shutter","gain","iris"]
@@ -386,7 +387,7 @@
       ],
       "priorityHdr": [
         [
-          [0.000608,0.0176],
+          [0.000608,0.0165],
           [1,3900],
           [1,1],
           ["shutter","gain","iris"]
@@ -410,13 +411,13 @@
     "loopback-count": 1,
     "method": "HIGH_QUALITY",
     "network": {
-      "feedback_uv_channel": "model/input_layer2",
-      "feedback_y_channel": "model/input_layer3",
+      "feedback_uv_channel": "post_isp_denoise_664_h15h/input_layer2",
+      "feedback_y_channel": "post_isp_denoise_664_h15h/input_layer3",
       "network_path": "/usr/lib/medialib/denoise_config/vd_m_imx664.hef",
-      "output_uv_channel": "model/conv14",
-      "output_y_channel": "model/conv17",
-      "uv_channel": "model/input_layer4",
-      "y_channel": "model/input_layer1"
+      "output_uv_channel": "post_isp_denoise_664_h15h/conv14",
+      "output_y_channel": "post_isp_denoise_664_h15h/conv17",
+      "uv_channel": "post_isp_denoise_664_h15h/input_layer4",
+      "y_channel": "post_isp_denoise_664_h15h/input_layer1"
     },
     "sensor": "imx664"
   },

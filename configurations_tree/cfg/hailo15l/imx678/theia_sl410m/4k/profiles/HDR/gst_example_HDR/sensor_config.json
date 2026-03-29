@@ -1,0 +1,28 @@
+{
+  "version": "1.1.0",
+  "metadata": {
+    "architecture": "hailo15l",
+    "content_hash": "8346a790b06ea4c7f3c7f74a7b4e40a5be1aeca3ae40ca556ff803835cb99f74",
+    "description": "",
+    "generation_timestamp": "2026-03-08T10:21:49.484294+00:00"
+  },
+  "input_video": {
+    "resolution": {
+      "framerate": 30,
+      "height": 2160,
+      "width": 3840
+    },
+    "sensor_id": "SENSOR_0"
+  },
+  "sensor_calibration_file": "/etc/imaging/cfg/hailo15l/imx678/theia_sl410m/4k/profiles/HDR/gst_example_HDR/calib.json",
+  "sensor_configuration": {
+    "af_i2c_addr": "0x0",
+    "af_i2c_bus": -1,
+    "custom_readout_timing_short": 133,
+    "drv": "HAILO_IMX678.drv",
+    "mode": 4,
+    "name": "imx678",
+    "pixel_mode": 0,
+    "sensor_only": 0
+  }
+}

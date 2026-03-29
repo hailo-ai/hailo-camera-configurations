@@ -1,0 +1,27 @@
+{
+  "version": "1.0.0",
+  "metadata": {
+    "architecture": "hailo15h",
+    "content_hash": "4386a167ba6938a243e8e27c31d847dde427130bd25f05314a5a9b90521d4bc4",
+    "description": "",
+    "generation_timestamp": "2026-03-08T10:21:48.708775+00:00"
+  },
+  "application_settings": "/etc/imaging/cfg/hailo15h/imx715/theia_sl410m/4k/profiles/lowlight/gst_example_lowlight/application_settings.json",
+  "encoded_output_streams": [
+    {
+      "encoding": "/etc/imaging/cfg/hailo15h/imx715/theia_sl410m/4k/profiles/lowlight/gst_example_lowlight/encoder_sink0.json",
+      "masking": "/etc/imaging/cfg/hailo15h/imx715/theia_sl410m/4k/profiles/lowlight/gst_example_lowlight/masking_sink0.json",
+      "osd": "/etc/imaging/cfg/hailo15h/imx715/theia_sl410m/4k/profiles/lowlight/gst_example_lowlight/osd_sink0.json",
+      "stream_id": "sink0"
+    },
+    {
+      "encoding": "/etc/imaging/cfg/hailo15h/imx715/theia_sl410m/4k/profiles/lowlight/gst_example_lowlight/encoder_sink1.json",
+      "masking": "/etc/imaging/cfg/hailo15h/imx715/theia_sl410m/4k/profiles/lowlight/gst_example_lowlight/masking_sink1.json",
+      "osd": "/etc/imaging/cfg/hailo15h/imx715/theia_sl410m/4k/profiles/lowlight/gst_example_lowlight/osd_sink1.json",
+      "stream_id": "sink1"
+    }
+  ],
+  "iq_settings": "/etc/imaging/cfg/hailo15h/imx715/theia_sl410m/4k/profiles/lowlight/gst_example_lowlight/iq_settings.json",
+  "sensor_config": "/etc/imaging/cfg/hailo15h/imx715/theia_sl410m/4k/profiles/lowlight/gst_example_lowlight/sensor_config.json",
+  "stabilizer_settings": "/etc/imaging/cfg/hailo15h/imx715/theia_sl410m/4k/profiles/lowlight/gst_example_lowlight/stabilizer_settings.json"
+}

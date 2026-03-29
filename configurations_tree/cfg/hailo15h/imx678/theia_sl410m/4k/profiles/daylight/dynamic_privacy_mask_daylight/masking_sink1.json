@@ -1,0 +1,31 @@
+{
+  "version": "3.0.0",
+  "metadata": {
+    "architecture": "hailo15h",
+    "content_hash": "78494f745184a09b2db707add96aa6bcd2ccf72756a6c756e8c962ebca671627",
+    "description": "",
+    "generation_timestamp": "2026-02-26T09:54:14.257212+00:00"
+  },
+  "masking": {
+    "color_value": [0,0,0],
+    "dynamic_privacy_mask": {
+      "analytics": [
+        {
+          "analytics_data_id": "semantic_segmentation",
+          "masked_labels": ["person_face","vehicle"]
+        },
+        {
+          "analytics_data_id": "dpm_overflow_detection",
+          "masked_labels": ["person","face","vehicle"]
+        }
+      ],
+      "delta_ms": 34,
+      "dilation_size": 1,
+      "enabled": false,
+      "query_type": "Exact",
+      "timeout_ms": 10000
+    },
+    "mask_type": "PIXELIZATION",
+    "pixelization_size": 32
+  }
+}

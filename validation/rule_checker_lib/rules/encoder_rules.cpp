@@ -318,4 +318,168 @@ namespace rule_checker
         return EvalResultBuilder::success(); }, id());
     }
 
+    std::string SmartEncoderEnablementRule::id() const
+    {
+        return "smart_encoder_enablement";
+    }
+
+    std::string SmartEncoderEnablementRule::message() const
+    {
+        return "smart_encoder can only be enabled when codec is CODEC_TYPE_H264 (AVC) and rate_control.rc_mode is CVBR.";
+    }
+
+    EvalResult SmartEncoderEnablementRule::evaluate(const nlohmann::json &data) const
+    {
+        return eval_lambda_on_all_encoders(data, [this](const nlohmann::json &encoder_data, const std::string &encoder_path) -> EvalResult
+                                           {
+        const std::string smart_encoder_enabled_path = "/encoding/hailo_encoder/smart_encoder/enabled";
+        const std::string rc_mode_path = "/encoding/hailo_encoder/rate_control/rc_mode";
+        const std::string codec_path = "/encoding/hailo_encoder/config/output_stream/codec";
+
+        const nlohmann::json::json_pointer smart_encoder_ptr(smart_encoder_enabled_path);
+        if (!encoder_data.contains(smart_encoder_ptr)) {
+            return EvalResultBuilder::success();
+        }
+
+        bool smart_encoder_enabled;
+        EvalResult result = get_json_value(encoder_data, smart_encoder_enabled_path, smart_encoder_enabled, id());
+        if (!result.passed) {
+            EvalResultBuilder::promote_errors_to_info(result);
+            return result;
+        }
+
+        if (!smart_encoder_enabled) {
+            return EvalResultBuilder::success();
+        }
+
+        EvalResult collected = EvalResultBuilder::success();
+
+        // Check codec is AVC (H.264)
+        std::string codec;
+        result = get_json_value(encoder_data, codec_path, codec, id());
+        if (!result.passed) {
+            EvalResultBuilder::promote_errors_to_info(result);
+            return result;
+        }
+
+        if (codec != "CODEC_TYPE_H264") {
+            EvalResultBuilder::merge(collected,
+                EvalResultBuilder::error(id(), encoder_path + smart_encoder_enabled_path,
+                                     message() + " (smart_encoder.enabled: true, codec: " + codec + ")"));
+        }
+
+        // Check rate control mode is CVBR
+        std::string rc_mode;
+        result = get_json_value(encoder_data, rc_mode_path, rc_mode, id());
+        if (!result.passed) {
+            EvalResultBuilder::promote_errors_to_info(result);
+            return result;
+        }
+
+        if (rc_mode != "CVBR") {
+            EvalResultBuilder::merge(collected,
+                EvalResultBuilder::error(id(), encoder_path + smart_encoder_enabled_path,
+                                     message() + " (smart_encoder.enabled: true, rc_mode: " + rc_mode + ")"));
+        }
+
+        return collected; }, id());
+    }
+
+    std::string SmartEncoderRoiBoundsRule::id() const
+    {
+        return "smart_encoder_roi_bounds";
+    }
+
+    std::string SmartEncoderRoiBoundsRule::message() const
+    {
+        return "smart_encoder ROI coordinates must be within [0, 1] and cumulative bounds (x+width, y+height) must not exceed 1.";
+    }
+
+    EvalResult SmartEncoderRoiBoundsRule::evaluate(const nlohmann::json &data) const
+    {
+        return eval_lambda_on_all_encoders(data, [this](const nlohmann::json &encoder_data, const std::string &encoder_path) -> EvalResult
+                                           {
+        const std::string smart_encoder_rois_path = "/encoding/hailo_encoder/smart_encoder/rois";
+
+        const nlohmann::json::json_pointer rois_ptr(smart_encoder_rois_path);
+        if (!encoder_data.contains(rois_ptr)) {
+            return EvalResultBuilder::success();
+        }
+
+        try {
+            const auto &rois = encoder_data.at(rois_ptr);
+            if (!rois.is_array()) {
+                return EvalResultBuilder::success();
+            }
+
+            EvalResult collected = EvalResultBuilder::success();
+
+            for (size_t i = 0; i < rois.size(); ++i) {
+                const auto &roi = rois.at(i);
+                const std::string roi_path = smart_encoder_rois_path + "/" + std::to_string(i);
+
+                if (!roi.is_object()) {
+                    EvalResultBuilder::merge(collected,
+                        EvalResultBuilder::error(id(), encoder_path + roi_path,
+                                                 "ROI at index " + std::to_string(i) + " is not an object."));
+                    continue;
+                }
+
+                auto get_field = [&](const std::string &field, double &out) -> bool {
+                    if (roi.contains(field) && roi[field].is_number()) {
+                        out = roi[field].get<double>();
+                        return true;
+                    }
+                    EvalResultBuilder::merge(collected,
+                        EvalResultBuilder::error(id(), encoder_path + roi_path + "/" + field,
+                                                 "ROI at index " + std::to_string(i) + " is missing required numeric field '" + field + "'."));
+                    return false;
+                };
+
+                double x, y, width, height;
+                bool valid = true;
+                valid &= get_field("x", x);
+                valid &= get_field("y", y);
+                valid &= get_field("width", width);
+                valid &= get_field("height", height);
+
+                if (!valid) {
+                    continue;
+                }
+
+                // Check that individual components are within [0, 1]
+                if (x < 0.0 || x > 1.0 || y < 0.0 || y > 1.0 ||
+                    width < 0.0 || width > 1.0 || height < 0.0 || height > 1.0) {
+                    EvalResultBuilder::merge(collected,
+                        EvalResultBuilder::error(id(), encoder_path + roi_path,
+                                             message() + " (x: " + std::to_string(x) +
+                                             ", y: " + std::to_string(y) +
+                                             ", width: " + std::to_string(width) +
+                                             ", height: " + std::to_string(height) +
+                                             "; x+width: " + std::to_string(x + width) +
+                                             ", y+height: " + std::to_string(y + height) + ")"));
+                    continue;
+                }
+
+                // Check that cumulative bounds don't exceed 1
+                if ((x + width) > 1.0 || (y + height) > 1.0) {
+                    EvalResultBuilder::merge(collected,
+                        EvalResultBuilder::error(id(), encoder_path + roi_path,
+                                             message() + " (x: " + std::to_string(x) +
+                                             ", y: " + std::to_string(y) +
+                                             ", width: " + std::to_string(width) +
+                                             ", height: " + std::to_string(height) +
+                                             "; x+width: " + std::to_string(x + width) +
+                                             ", y+height: " + std::to_string(y + height) + ")"));
+                }
+            }
+
+            return collected;
+        }
+        catch (const nlohmann::json::exception &e) {
+            return EvalResultBuilder::error(id(), encoder_path + smart_encoder_rois_path,
+                                     "Failed to parse smart_encoder ROIs. Details: " + std::string(e.what()));
+        } }, id());
+    }
+
 } // namespace rule_checker

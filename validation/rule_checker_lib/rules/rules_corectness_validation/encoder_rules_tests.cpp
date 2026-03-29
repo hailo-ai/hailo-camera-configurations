@@ -141,3 +141,221 @@ TEST_F(RateControlPqHdrConstraintRuleTest, QpHdrConstraintTests) {
     EXPECT_TRUE(result.passed) << "Rule should pass for VBR mode with valid qp_hdr. errors: " << result.to_string();
 }
 
+// SmartEncoderEnablementRule Tests
+class SmartEncoderEnablementRuleTest : public ::testing::Test {
+protected:
+    SmartEncoderEnablementRule rule;
+
+    void enable_smart_encoder(nlohmann::json &profile) {
+        auto &enc = profile["encoded_output_streams"][0]["encoding"]["encoding"]["hailo_encoder"];
+        enc["smart_encoder"]["enabled"] = true;
+        enc["smart_encoder"]["background_qp_delta"] = 5;
+        enc["smart_encoder"]["rois"] = nlohmann::json::array();
+    }
+};
+
+TEST_F(SmartEncoderEnablementRuleTest, PassesWithNoSmartEncoder) {
+    if (rule.priority() == RulePriority::SKIP) {
+        GTEST_SKIP() << "SmartEncoderEnablementRule is set to SKIP priority, skipping tests.";
+    }
+    nlohmann::json test_profile = get_flattend_profile_json();
+    auto result = rule.evaluate(test_profile);
+    EXPECT_TRUE(result.passed) << "Rule should pass with valid example profile (no smart_encoder). errors: " << result.to_string();
+    EXPECT_EQ(result.error_violations.size(), 0) << "There should be no error violations";
+}
+
+TEST_F(SmartEncoderEnablementRuleTest, PassesWithH264AndCvbr) {
+    nlohmann::json test_profile = get_flattend_profile_json();
+    enable_smart_encoder(test_profile);
+    auto &enc = test_profile["encoded_output_streams"][0]["encoding"]["encoding"]["hailo_encoder"];
+    enc["config"]["output_stream"]["codec"] = "CODEC_TYPE_H264";
+    enc["rate_control"]["rc_mode"] = "CVBR";
+    auto result = rule.evaluate(test_profile);
+    EXPECT_TRUE(result.passed) << "Rule should pass when codec is H264 and rc_mode is CVBR. errors: " << result.to_string();
+    EXPECT_EQ(result.error_violations.size(), 0) << "There should be no error violations";
+}
+
+TEST_F(SmartEncoderEnablementRuleTest, FailsWithHevcCodec) {
+    nlohmann::json test_profile = get_flattend_profile_json();
+    enable_smart_encoder(test_profile);
+    auto &enc = test_profile["encoded_output_streams"][0]["encoding"]["encoding"]["hailo_encoder"];
+    enc["config"]["output_stream"]["codec"] = "CODEC_TYPE_HEVC";
+    enc["rate_control"]["rc_mode"] = "CVBR";
+    auto result = rule.evaluate(test_profile);
+    EXPECT_FALSE(result.passed) << "Rule should fail when codec is HEVC";
+    EXPECT_EQ(result.error_violations.size(), 1) << "There should be one error violation";
+}
+
+TEST_F(SmartEncoderEnablementRuleTest, FailsWithVbrRcMode) {
+    nlohmann::json test_profile = get_flattend_profile_json();
+    enable_smart_encoder(test_profile);
+    auto &enc = test_profile["encoded_output_streams"][0]["encoding"]["encoding"]["hailo_encoder"];
+    enc["config"]["output_stream"]["codec"] = "CODEC_TYPE_H264";
+    enc["rate_control"]["rc_mode"] = "VBR";
+    auto result = rule.evaluate(test_profile);
+    EXPECT_FALSE(result.passed) << "Rule should fail when rc_mode is VBR";
+    EXPECT_EQ(result.error_violations.size(), 1) << "There should be one error violation";
+}
+
+TEST_F(SmartEncoderEnablementRuleTest, FailsWithCbrRcMode) {
+    nlohmann::json test_profile = get_flattend_profile_json();
+    enable_smart_encoder(test_profile);
+    auto &enc = test_profile["encoded_output_streams"][0]["encoding"]["encoding"]["hailo_encoder"];
+    enc["config"]["output_stream"]["codec"] = "CODEC_TYPE_H264";
+    enc["rate_control"]["rc_mode"] = "CBR";
+    auto result = rule.evaluate(test_profile);
+    EXPECT_FALSE(result.passed) << "Rule should fail when rc_mode is CBR";
+    EXPECT_EQ(result.error_violations.size(), 1) << "There should be one error violation";
+}
+
+TEST_F(SmartEncoderEnablementRuleTest, PassesWhenDisabled) {
+    nlohmann::json test_profile = get_flattend_profile_json();
+    auto &enc = test_profile["encoded_output_streams"][0]["encoding"]["encoding"]["hailo_encoder"];
+    enc["smart_encoder"]["enabled"] = false;
+    enc["smart_encoder"]["background_qp_delta"] = 5;
+    enc["smart_encoder"]["rois"] = nlohmann::json::array();
+    enc["rate_control"]["rc_mode"] = "VBR";
+    auto result = rule.evaluate(test_profile);
+    EXPECT_TRUE(result.passed) << "Rule should pass when smart_encoder.enabled is false regardless of codec/rc_mode. errors: " << result.to_string();
+    EXPECT_EQ(result.error_violations.size(), 0) << "There should be no error violations";
+}
+
+// SmartEncoderRoiBoundsRule Tests
+class SmartEncoderRoiBoundsRuleTest : public ::testing::Test {
+protected:
+    SmartEncoderRoiBoundsRule rule;
+
+    nlohmann::json make_profile_with_rois(const nlohmann::json &rois) {
+        nlohmann::json profile = get_flattend_profile_json();
+        auto &enc = profile["encoded_output_streams"][0]["encoding"]["encoding"]["hailo_encoder"];
+        enc["smart_encoder"]["enabled"] = true;
+        enc["smart_encoder"]["background_qp_delta"] = 5;
+        enc["smart_encoder"]["rois"] = rois;
+        return profile;
+    }
+
+    nlohmann::json make_roi(double x, double y, double w, double h) {
+        return {{"x", x}, {"y", y}, {"width", w}, {"height", h}};
+    }
+};
+
+TEST_F(SmartEncoderRoiBoundsRuleTest, PassesWithNoSmartEncoder) {
+    if (rule.priority() == RulePriority::SKIP) {
+        GTEST_SKIP() << "SmartEncoderRoiBoundsRule is set to SKIP priority, skipping tests.";
+    }
+    nlohmann::json test_profile = get_flattend_profile_json();
+    auto result = rule.evaluate(test_profile);
+    EXPECT_TRUE(result.passed) << "Rule should pass with valid example profile. errors: " << result.to_string();
+    EXPECT_EQ(result.error_violations.size(), 0);
+}
+
+TEST_F(SmartEncoderRoiBoundsRuleTest, PassesWithSingleValidRoi) {
+    if (rule.priority() == RulePriority::SKIP) {
+        GTEST_SKIP() << "SmartEncoderRoiBoundsRule is set to SKIP priority, skipping tests.";
+    }
+    auto profile = make_profile_with_rois(nlohmann::json::array({make_roi(0.1, 0.1, 0.3, 0.3)}));
+    auto result = rule.evaluate(profile);
+    EXPECT_TRUE(result.passed) << "Rule should pass with valid ROI coordinates. errors: " << result.to_string();
+    EXPECT_EQ(result.error_violations.size(), 0);
+}
+
+TEST_F(SmartEncoderRoiBoundsRuleTest, PassesAtUpperBoundary) {
+    if (rule.priority() == RulePriority::SKIP) {
+        GTEST_SKIP() << "SmartEncoderRoiBoundsRule is set to SKIP priority, skipping tests.";
+    }
+    auto profile = make_profile_with_rois(nlohmann::json::array({make_roi(0.2, 0.2, 0.8, 0.8)}));
+    auto result = rule.evaluate(profile);
+    EXPECT_TRUE(result.passed) << "Rule should pass when x+width and y+height equal 1.0. errors: " << result.to_string();
+    EXPECT_EQ(result.error_violations.size(), 0);
+}
+
+TEST_F(SmartEncoderRoiBoundsRuleTest, PassesAtLowerBoundary) {
+    if (rule.priority() == RulePriority::SKIP) {
+        GTEST_SKIP() << "SmartEncoderRoiBoundsRule is set to SKIP priority, skipping tests.";
+    }
+    auto profile = make_profile_with_rois(nlohmann::json::array({make_roi(0.0, 0.0, 0.5, 0.5)}));
+    auto result = rule.evaluate(profile);
+    EXPECT_TRUE(result.passed) << "Rule should pass when x and y are 0.0. errors: " << result.to_string();
+    EXPECT_EQ(result.error_violations.size(), 0);
+}
+
+TEST_F(SmartEncoderRoiBoundsRuleTest, FailsWithNegativeX) {
+    if (rule.priority() == RulePriority::SKIP) {
+        GTEST_SKIP() << "SmartEncoderRoiBoundsRule is set to SKIP priority, skipping tests.";
+    }
+    auto profile = make_profile_with_rois(nlohmann::json::array({make_roi(-0.1, 0.1, 0.3, 0.3)}));
+    auto result = rule.evaluate(profile);
+    EXPECT_FALSE(result.passed) << "Rule should fail when x is negative";
+    EXPECT_EQ(result.error_violations.size(), 1);
+}
+
+TEST_F(SmartEncoderRoiBoundsRuleTest, FailsWithYAboveOne) {
+    if (rule.priority() == RulePriority::SKIP) {
+        GTEST_SKIP() << "SmartEncoderRoiBoundsRule is set to SKIP priority, skipping tests.";
+    }
+    auto profile = make_profile_with_rois(nlohmann::json::array({make_roi(0.1, 1.1, 0.3, 0.3)}));
+    auto result = rule.evaluate(profile);
+    EXPECT_FALSE(result.passed) << "Rule should fail when y is above 1.0";
+    EXPECT_EQ(result.error_violations.size(), 1);
+}
+
+TEST_F(SmartEncoderRoiBoundsRuleTest, FailsWithWidthAboveOne) {
+    if (rule.priority() == RulePriority::SKIP) {
+        GTEST_SKIP() << "SmartEncoderRoiBoundsRule is set to SKIP priority, skipping tests.";
+    }
+    auto profile = make_profile_with_rois(nlohmann::json::array({make_roi(0.1, 0.1, 1.1, 0.3)}));
+    auto result = rule.evaluate(profile);
+    EXPECT_FALSE(result.passed) << "Rule should fail when width is above 1.0";
+    EXPECT_EQ(result.error_violations.size(), 1);
+}
+
+TEST_F(SmartEncoderRoiBoundsRuleTest, FailsWithNegativeHeight) {
+    if (rule.priority() == RulePriority::SKIP) {
+        GTEST_SKIP() << "SmartEncoderRoiBoundsRule is set to SKIP priority, skipping tests.";
+    }
+    auto profile = make_profile_with_rois(nlohmann::json::array({make_roi(0.1, 0.1, 0.3, -0.1)}));
+    auto result = rule.evaluate(profile);
+    EXPECT_FALSE(result.passed) << "Rule should fail when height is negative";
+    EXPECT_EQ(result.error_violations.size(), 1);
+}
+
+TEST_F(SmartEncoderRoiBoundsRuleTest, FailsWhenXPlusWidthExceedsOne) {
+    if (rule.priority() == RulePriority::SKIP) {
+        GTEST_SKIP() << "SmartEncoderRoiBoundsRule is set to SKIP priority, skipping tests.";
+    }
+    auto profile = make_profile_with_rois(nlohmann::json::array({make_roi(0.6, 0.1, 0.5, 0.3)}));
+    auto result = rule.evaluate(profile);
+    EXPECT_FALSE(result.passed) << "Rule should fail when x + width exceeds 1.0";
+    EXPECT_EQ(result.error_violations.size(), 1);
+}
+
+TEST_F(SmartEncoderRoiBoundsRuleTest, FailsWhenYPlusHeightExceedsOne) {
+    if (rule.priority() == RulePriority::SKIP) {
+        GTEST_SKIP() << "SmartEncoderRoiBoundsRule is set to SKIP priority, skipping tests.";
+    }
+    auto profile = make_profile_with_rois(nlohmann::json::array({make_roi(0.1, 0.6, 0.3, 0.5)}));
+    auto result = rule.evaluate(profile);
+    EXPECT_FALSE(result.passed) << "Rule should fail when y + height exceeds 1.0";
+    EXPECT_EQ(result.error_violations.size(), 1);
+}
+
+TEST_F(SmartEncoderRoiBoundsRuleTest, PassesWithMultipleValidRois) {
+    if (rule.priority() == RulePriority::SKIP) {
+        GTEST_SKIP() << "SmartEncoderRoiBoundsRule is set to SKIP priority, skipping tests.";
+    }
+    auto profile = make_profile_with_rois(nlohmann::json::array({make_roi(0.1, 0.1, 0.2, 0.2), make_roi(0.6, 0.6, 0.2, 0.2)}));
+    auto result = rule.evaluate(profile);
+    EXPECT_TRUE(result.passed) << "Rule should pass with multiple valid ROIs. errors: " << result.to_string();
+    EXPECT_EQ(result.error_violations.size(), 0);
+}
+
+TEST_F(SmartEncoderRoiBoundsRuleTest, FailsWithOneInvalidOfMultipleRois) {
+    if (rule.priority() == RulePriority::SKIP) {
+        GTEST_SKIP() << "SmartEncoderRoiBoundsRule is set to SKIP priority, skipping tests.";
+    }
+    auto profile = make_profile_with_rois(nlohmann::json::array({make_roi(0.1, 0.1, 0.2, 0.2), make_roi(1.1, 0.6, 0.2, 0.2)}));
+    auto result = rule.evaluate(profile);
+    EXPECT_FALSE(result.passed) << "Rule should fail when one of multiple ROIs is invalid";
+    EXPECT_EQ(result.error_violations.size(), 1);
+}
+

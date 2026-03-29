@@ -1,0 +1,27 @@
+{
+  "version": "1.1.0",
+  "metadata": {
+    "architecture": "hailo15l",
+    "content_hash": "56ad731f32841f7d5326d1912a9e39bb2a6bc77ccf5ad853d97f057dc6674c53",
+    "description": "",
+    "generation_timestamp": "2026-02-16T09:40:06.341701+00:00"
+  },
+  "input_video": {
+    "resolution": {
+      "framerate": 30,
+      "height": 1080,
+      "width": 1920
+    },
+    "sensor_id": "SENSOR_0"
+  },
+  "sensor_calibration_file": "/etc/imaging/cfg/hailo15l/imx662/kit/fhd/profiles/daylight/single_stream_daylight/calib.json",
+  "sensor_configuration": {
+    "af_i2c_addr": "0x0",
+    "af_i2c_bus": -1,
+    "drv": "HAILO_IMX662.drv",
+    "mode": 0,
+    "name": "imx662",
+    "pixel_mode": 0,
+    "sensor_only": 0
+  }
+}

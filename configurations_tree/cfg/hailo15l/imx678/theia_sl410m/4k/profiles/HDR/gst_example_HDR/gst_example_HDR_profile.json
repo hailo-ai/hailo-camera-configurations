@@ -1,0 +1,27 @@
+{
+  "version": "1.0.0",
+  "metadata": {
+    "architecture": "hailo15l",
+    "content_hash": "ac5d35921d04a9cee65fca90613fada05101693997582ad5db3b982084f16673",
+    "description": "",
+    "generation_timestamp": "2026-03-08T10:21:49.484910+00:00"
+  },
+  "application_settings": "/etc/imaging/cfg/hailo15l/imx678/theia_sl410m/4k/profiles/HDR/gst_example_HDR/application_settings.json",
+  "encoded_output_streams": [
+    {
+      "encoding": "/etc/imaging/cfg/hailo15l/imx678/theia_sl410m/4k/profiles/HDR/gst_example_HDR/encoder_sink0.json",
+      "masking": "/etc/imaging/cfg/hailo15l/imx678/theia_sl410m/4k/profiles/HDR/gst_example_HDR/masking_sink0.json",
+      "osd": "/etc/imaging/cfg/hailo15l/imx678/theia_sl410m/4k/profiles/HDR/gst_example_HDR/osd_sink0.json",
+      "stream_id": "sink0"
+    },
+    {
+      "encoding": "/etc/imaging/cfg/hailo15l/imx678/theia_sl410m/4k/profiles/HDR/gst_example_HDR/encoder_sink1.json",
+      "masking": "/etc/imaging/cfg/hailo15l/imx678/theia_sl410m/4k/profiles/HDR/gst_example_HDR/masking_sink1.json",
+      "osd": "/etc/imaging/cfg/hailo15l/imx678/theia_sl410m/4k/profiles/HDR/gst_example_HDR/osd_sink1.json",
+      "stream_id": "sink1"
+    }
+  ],
+  "iq_settings": "/etc/imaging/cfg/hailo15l/imx678/theia_sl410m/4k/profiles/HDR/gst_example_HDR/iq_settings.json",
+  "sensor_config": "/etc/imaging/cfg/hailo15l/imx678/theia_sl410m/4k/profiles/HDR/gst_example_HDR/sensor_config.json",
+  "stabilizer_settings": "/etc/imaging/cfg/hailo15l/imx678/theia_sl410m/4k/profiles/HDR/gst_example_HDR/stabilizer_settings.json"
+}

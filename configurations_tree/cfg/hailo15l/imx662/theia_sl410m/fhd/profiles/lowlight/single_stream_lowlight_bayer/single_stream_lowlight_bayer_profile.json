@@ -1,0 +1,21 @@
+{
+  "version": "1.0.0",
+  "metadata": {
+    "architecture": "hailo15l",
+    "content_hash": "6d94de682980ae9b4e7b8d3cee9085e2ecc33f59df762418f0ba7885a2a9fe23",
+    "description": "",
+    "generation_timestamp": "2026-02-18T14:10:32.320799+00:00"
+  },
+  "application_settings": "/etc/imaging/cfg/hailo15l/imx662/theia_sl410m/fhd/profiles/lowlight/single_stream_lowlight_bayer/application_settings.json",
+  "encoded_output_streams": [
+    {
+      "encoding": "/etc/imaging/cfg/hailo15l/imx662/theia_sl410m/fhd/profiles/lowlight/single_stream_lowlight_bayer/encoder_sink0.json",
+      "masking": "/etc/imaging/cfg/hailo15l/imx662/theia_sl410m/fhd/profiles/lowlight/single_stream_lowlight_bayer/masking_sink0.json",
+      "osd": "/etc/imaging/cfg/hailo15l/imx662/theia_sl410m/fhd/profiles/lowlight/single_stream_lowlight_bayer/osd_sink0.json",
+      "stream_id": "sink0"
+    }
+  ],
+  "iq_settings": "/etc/imaging/cfg/hailo15l/imx662/theia_sl410m/fhd/profiles/lowlight/single_stream_lowlight_bayer/iq_settings.json",
+  "sensor_config": "/etc/imaging/cfg/hailo15l/imx662/theia_sl410m/fhd/profiles/lowlight/single_stream_lowlight_bayer/sensor_config.json",
+  "stabilizer_settings": "/etc/imaging/cfg/hailo15l/imx662/theia_sl410m/fhd/profiles/lowlight/single_stream_lowlight_bayer/stabilizer_settings.json"
+}

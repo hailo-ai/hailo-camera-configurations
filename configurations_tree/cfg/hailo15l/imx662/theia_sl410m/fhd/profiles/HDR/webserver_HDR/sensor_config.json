@@ -1,0 +1,27 @@
+{
+  "version": "1.1.0",
+  "metadata": {
+    "architecture": "hailo15l",
+    "content_hash": "64d08740e378472bc85630793e5a07d7e9ccdcc94b9c5cca99be4ab9ae41b5ec",
+    "description": "",
+    "generation_timestamp": "2026-02-24T09:32:22.632395+00:00"
+  },
+  "input_video": {
+    "resolution": {
+      "framerate": 30,
+      "height": 1080,
+      "width": 1920
+    },
+    "sensor_id": "SENSOR_0"
+  },
+  "sensor_calibration_file": "/etc/imaging/cfg/hailo15l/imx662/theia_sl410m/fhd/profiles/HDR/webserver_HDR/calib.json",
+  "sensor_configuration": {
+    "af_i2c_addr": "0x0",
+    "af_i2c_bus": -1,
+    "drv": "HAILO_IMX662.drv",
+    "mode": 1,
+    "name": "imx662",
+    "pixel_mode": 0,
+    "sensor_only": 0
+  }
+}

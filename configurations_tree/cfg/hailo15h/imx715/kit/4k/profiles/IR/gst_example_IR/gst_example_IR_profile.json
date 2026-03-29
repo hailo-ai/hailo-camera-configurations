@@ -1,0 +1,27 @@
+{
+  "version": "1.0.0",
+  "metadata": {
+    "architecture": "hailo15h",
+    "content_hash": "dc9f83d3e2696aa21f4800a9390db023e6df027810aff656deb272a7db2bd1bc",
+    "description": "",
+    "generation_timestamp": "2026-03-08T10:21:49.235230+00:00"
+  },
+  "application_settings": "/etc/imaging/cfg/hailo15h/imx715/kit/4k/profiles/IR/gst_example_IR/application_settings.json",
+  "encoded_output_streams": [
+    {
+      "encoding": "/etc/imaging/cfg/hailo15h/imx715/kit/4k/profiles/IR/gst_example_IR/encoder_sink0.json",
+      "masking": "",
+      "osd": "/etc/imaging/cfg/hailo15h/imx715/kit/4k/profiles/IR/gst_example_IR/osd_sink0.json",
+      "stream_id": "sink0"
+    },
+    {
+      "encoding": "/etc/imaging/cfg/hailo15h/imx715/kit/4k/profiles/IR/gst_example_IR/encoder_sink1.json",
+      "masking": "",
+      "osd": "/etc/imaging/cfg/hailo15h/imx715/kit/4k/profiles/IR/gst_example_IR/osd_sink1.json",
+      "stream_id": "sink1"
+    }
+  ],
+  "iq_settings": "/etc/imaging/cfg/hailo15h/imx715/kit/4k/profiles/IR/gst_example_IR/iq_settings.json",
+  "sensor_config": "/etc/imaging/cfg/hailo15h/imx715/kit/4k/profiles/IR/gst_example_IR/sensor_config.json",
+  "stabilizer_settings": "/etc/imaging/cfg/hailo15h/imx715/kit/4k/profiles/IR/gst_example_IR/stabilizer_settings.json"
+}

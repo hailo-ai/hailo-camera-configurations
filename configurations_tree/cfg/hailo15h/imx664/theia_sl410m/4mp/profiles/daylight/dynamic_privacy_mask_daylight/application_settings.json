@@ -1,12 +1,37 @@
 {
-  "version": "2.0.0",
+  "version": "3.0.0",
   "metadata": {
     "architecture": "hailo15h",
-    "content_hash": "b5591113fbc3f37a2c07ad950304fa97cf6015516905c56940828e648666f45f",
+    "content_hash": "3eb1c59af3203c8c4b2bcece6aea2dcd1023c72d44146ec37a147ed4326baa7e",
     "description": "",
-    "generation_timestamp": "2026-02-08T16:18:36.565331+00:00"
+    "generation_timestamp": "2026-02-24T14:32:57.339668+00:00"
   },
   "application_analytics": {
+    "detection": [
+      {
+        "analytics_data_id": "dpm_overflow_detection",
+        "height": 760,
+        "labels": [
+          {
+            "id": 1,
+            "label": "person"
+          },
+          {
+            "id": 2,
+            "label": "face"
+          },
+          {
+            "id": 0,
+            "label": "vehicle"
+          }
+        ],
+        "max_entries": 5,
+        "original_height_ratio": 95,
+        "original_width_ratio": 168,
+        "scaling_mode": "LETTERBOX_MIDDLE",
+        "width": 1344
+      }
+    ],
     "semantic_segmentation": [
       {
         "analytics_data_id": "semantic_segmentation",
@@ -21,7 +46,8 @@
             "label": "vehicle"
           }
         ],
-        "max_entries": 10,
+        "mask_size": 128,
+        "max_entries": 5,
         "original_height_ratio": 95,
         "original_width_ratio": 168,
         "scaling_mode": "LETTERBOX_MIDDLE",
@@ -44,14 +70,14 @@
         "framerate": 30,
         "height": 720,
         "pool_max_buffers": 30,
-        "stream_id": "sink1",
+        "stream_id": "dpm_sink1",
         "width": 1280
       },
       {
         "framerate": 30,
         "height": 760,
         "pool_max_buffers": 30,
-        "stream_id": "sink2",
+        "stream_id": "dpm_sink2",
         "width": 1344
       }
     ]

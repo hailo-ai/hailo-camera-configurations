@@ -55,6 +55,10 @@
                 "loopback-count": {
                     "type": "number"
                 },
+                "pool-max-buffers": {
+                    "type": "integer",
+                    "minimum": 1
+                },
                 "network": {
                     "type": "object",
                     "properties": {
@@ -791,6 +795,11 @@
                                 "hdr_gain",
                                 "hdr_repress"
                             ]
+                        },
+                        "lsRatio": {
+                            "type": "number",
+                            "minimum": 1.0,
+                            "description": "Long-to-short exposure ratio for HDR. Default is 16."
                         }
                     },
                     "required": [
@@ -851,7 +860,7 @@
                         },
                         "step": {
                             "type": "integer",
-                            "description": "Focus steop"
+                            "description": "Focus step"
                         }
                     },
                     "required": [
@@ -965,7 +974,7 @@
                             "items": {
                                 "type": "integer",
                                 "minimum": 0,
-                                "maximum": 100000
+                                "maximum": 1000000
                             },
                             "description": "Inverted motion factor"
                         },
@@ -1917,7 +1926,7 @@
                             "items": {
                                 "type": "integer",
                                 "minimum": 0,
-                                "maximum": 65535
+                                "maximum": 128
                             },
                             "description": "Edge enhancement source strength"
                         },
@@ -1947,7 +1956,7 @@
                             "items": {
                                 "type": "integer",
                                 "minimum": 0,
-                                "maximum": 65535
+                                "maximum": 1
                             },
                             "description": "Enable ca curve per gain"
                         },
@@ -1995,7 +2004,7 @@
                             "items": {
                                 "type": "integer",
                                 "minimum": 0,
-                                "maximum": 65535
+                                "maximum": 1
                             },
                             "description": "Enable contrast curve per gain"
                         }
@@ -2506,7 +2515,8 @@
                             "description": "Saturation matrix where rows = number of entries in illuorder, columns = number of entries in gains"
                         },
                         "illuorder": {
-                            "type": "string"
+                            "type": "string",
+                            "description": "A string representing illumination profiles names and order"
                         }
                     },
                     "required": [

@@ -1,0 +1,21 @@
+{
+  "version": "2.0.0",
+  "metadata": {
+    "architecture": "hailo15l",
+    "content_hash": "a4b50cb985cedbdceb3c38f2221d9b6a887707c28684661985708f82767d425a",
+    "description": "",
+    "generation_timestamp": "2026-03-15T18:54:19.620672+00:00"
+  },
+  "backup_folder_path": "/etc/imaging/cfg/backups/detection",
+  "default_profile": "Daylight",
+  "profiles": [
+    {
+      "config_file": "/etc/imaging/cfg/hailo15l/imx662/theia_sl410m/fhd/profiles/daylight/detection_daylight/detection_daylight_profile.json",
+      "name": "Daylight"
+    },
+    {
+      "config_file": "/etc/imaging/cfg/hailo15l/imx662/theia_sl410m/fhd/profiles/HDR/detection_HDR/detection_HDR_profile.json",
+      "name": "High_Dynamic_Range"
+    }
+  ]
+}

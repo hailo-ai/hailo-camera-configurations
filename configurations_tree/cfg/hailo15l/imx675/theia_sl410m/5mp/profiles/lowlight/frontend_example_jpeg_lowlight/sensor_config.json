@@ -2,15 +2,15 @@
   "version": "1.1.0",
   "metadata": {
     "architecture": "hailo15l",
-    "content_hash": "34c462c5dd381a8e3da7407181eb9d05ce142b588eac84a170f9f0065783ef65",
+    "content_hash": "6920ed5d596b1c3e08c9319091df38131bcf736dc90b2d373461ab1f5cb05ea8",
     "description": "",
-    "generation_timestamp": "2026-02-03T08:55:21.468353+00:00"
+    "generation_timestamp": "2026-03-23T02:30:43.052500+00:00"
   },
   "input_video": {
     "resolution": {
       "framerate": 30,
-      "height": 2160,
-      "width": 3840
+      "height": 1944,
+      "width": 2592
     }
   },
   "sensor_calibration_file": "/etc/imaging/cfg/hailo15l/imx675/theia_sl410m/5mp/profiles/lowlight/frontend_example_jpeg_lowlight/calib.json",

@@ -1,14 +1,14 @@
 {
-  "version": "2.0.0",
+  "version": "3.0.0",
   "metadata": {
     "architecture": "hailo15h",
-    "content_hash": "7d4b464b6c3d9ca16bb890d81210ebe05150b1416cf7428e837bc4832ac637de",
+    "content_hash": "f995d3dcfb30a0e22283333b511b8a0f4329bc1e5a7bf8d147a4084d6454126a",
     "description": "",
-    "generation_timestamp": "2026-02-11T15:34:42.643540+00:00"
+    "generation_timestamp": "2026-02-26T09:57:27.430610+00:00"
   },
   "masking": {
     "color_value": [0,0,0],
-    "mask_type": "COLOR",
+    "mask_type": "PIXELIZATION",
     "pixelization_size": 60
   }
 }

@@ -1,10 +1,10 @@
 {
-  "version": "1.1.1",
+  "version": "1.2.0",
   "metadata": {
     "architecture": "hailo15h",
-    "content_hash": "51511cf72654e5b9d473f7f360847795b2650637c1fbef5b940737c5e4c6cf9e",
+    "content_hash": "a54610fbae893fa6efb06df2f1d11dafde5a533fb19abee2e802ab694306536d",
     "description": "",
-    "generation_timestamp": "2026-01-06T16:29:45.954585+00:00"
+    "generation_timestamp": "2026-03-10T07:29:01.750968+00:00"
   },
   "automatic_algorithms": {
     "A2dnrv5": {
@@ -302,6 +302,7 @@
         "hdr_gain": [1,2,4,8,16,32,64],
         "hdr_repress": [1.0,0.5,0.3,0.3,0.3,0.2,0.1]
       },
+      "lsRatio": 16,
       "maxIspDgain": 128,
       "maxSensorAgain": 30,
       "maxSensorDgain": 1,
@@ -343,13 +344,13 @@
     "loopback-count": 1,
     "method": "HIGH_QUALITY",
     "network": {
-      "feedback_uv_channel": "model/input_layer2",
-      "feedback_y_channel": "model/input_layer3",
-      "network_path": "/usr/lib/medialib/denoise_config/vd_m_imx678.hef",
-      "output_uv_channel": "model/conv14",
-      "output_y_channel": "model/conv17",
-      "uv_channel": "model/input_layer4",
-      "y_channel": "model/input_layer1"
+      "feedback_uv_channel": "post_isp_denoise_678_h15h/input_layer2",
+      "feedback_y_channel": "post_isp_denoise_678_h15h/input_layer3",
+      "network_path": "/usr/lib/medialib/denoise_config/vd_m_imx678_r0225c8.hef",
+      "output_uv_channel": "post_isp_denoise_678_h15h/conv14",
+      "output_y_channel": "post_isp_denoise_678_h15h/conv17",
+      "uv_channel": "post_isp_denoise_678_h15h/input_layer4",
+      "y_channel": "post_isp_denoise_678_h15h/input_layer1"
     },
     "sensor": "imx678"
   },

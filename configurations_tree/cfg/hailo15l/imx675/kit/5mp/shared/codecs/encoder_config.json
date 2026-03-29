@@ -1,10 +1,10 @@
 {
-  "version": "1.0.0",
+  "version": "4.0.0",
   "metadata": {
     "architecture": "hailo15l",
-    "content_hash": "bfbde6f8e77b56f7bcf9f75c525af68e09eb26681deda2323ae108cb01ef298d",
+    "content_hash": "931c22cef22f3eb3d32d23427ce2b8934a24b1f854edffc70c468f1bad5a29de",
     "description": "",
-    "generation_timestamp": "2026-02-16T10:01:01.414474+00:00"
+    "generation_timestamp": "2026-03-04T08:51:55.240869+00:00"
   },
   "encoding": {
     "hailo_encoder": {
@@ -33,22 +33,6 @@
           "bottom": 0,
           "enable": false,
           "left": 0,
-          "right": 0,
-          "top": 0
-        },
-        "roi_area1": {
-          "bottom": 0,
-          "enable": false,
-          "left": 0,
-          "qp_delta": 0,
-          "right": 0,
-          "top": 0
-        },
-        "roi_area2": {
-          "bottom": 0,
-          "enable": false,
-          "left": 0,
-          "qp_delta": 0,
           "right": 0,
           "top": 0
         },
@@ -107,6 +91,11 @@
         "zoom_bitrate_adjuster": {
           "mode": "DISABLED"
         }
+      },
+      "smart_encoder": {
+        "background_qp_delta": 10,
+        "enabled": false,
+        "rois": []
       }
     },
     "input_stream": {

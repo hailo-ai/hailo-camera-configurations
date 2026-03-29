@@ -1,10 +1,10 @@
 {
-  "version": "1.1.0",
+  "version": "1.0.0",
   "metadata": {
     "architecture": "hailo15l",
-    "content_hash": "0b1b261af6c4c1bf366cd819075ab3f0d0aa4e7d2da7ffb774d4a663291e3eb5",
+    "content_hash": "35c5f09afe1121c3960cbb8fec234057d21aa363533f191fb3f7eb9f529df9e7",
     "description": "",
-    "generation_timestamp": "2026-02-03T10:28:08.097195+00:00"
+    "generation_timestamp": "2026-03-19T09:53:28.310379+00:00"
   },
   "application_settings": "/etc/imaging/cfg/hailo15l/imx678/theia_sl410m/4k/profiles/lowlight/frontend_example_jpeg_lowlight/application_settings.json",
   "encoded_output_streams": [

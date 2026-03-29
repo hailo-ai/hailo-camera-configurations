@@ -1,10 +1,10 @@
 {
-  "version": "1.1.0",
+  "version": "1.0.0",
   "metadata": {
     "architecture": "hailo15l",
-    "content_hash": "9ac0ccf14da97ce175b2aefa23f6d79ddb5f1d77862c3c5be2cd055c66c74ec5",
+    "content_hash": "f16e19b422404d026e88ebaef913ba6ef1f52d3eb4aee811c5539820e9f3e7a5",
     "description": "",
-    "generation_timestamp": "2026-02-03T10:28:08.597418+00:00"
+    "generation_timestamp": "2026-03-19T09:53:27.125468+00:00"
   },
   "application_settings": "/etc/imaging/cfg/hailo15l/imx675/kit/5mp/profiles/HDR/frontend_example_jpeg_HDR/application_settings.json",
   "encoded_output_streams": [

@@ -1,10 +1,10 @@
 {
-  "version": "1.0.0",
+  "version": "4.0.0",
   "metadata": {
     "architecture": "hailo15h",
-    "content_hash": "fd80270fa987a3e32b6597b2595d848e0aa832a8da845c51bd64ecda85e0d01c",
+    "content_hash": "9f57891887909e4618fa2f043d0a8a9552d981ed52e474775b7e75884c7b1ab4",
     "description": "",
-    "generation_timestamp": "2026-02-16T10:01:04.246321+00:00"
+    "generation_timestamp": "2026-03-04T08:51:56.057306+00:00"
   },
   "encoding": {
     "hailo_encoder": {
@@ -33,22 +33,6 @@
           "bottom": 0,
           "enable": false,
           "left": 0,
-          "right": 0,
-          "top": 0
-        },
-        "roi_area1": {
-          "bottom": 0,
-          "enable": false,
-          "left": 0,
-          "qp_delta": 0,
-          "right": 0,
-          "top": 0
-        },
-        "roi_area2": {
-          "bottom": 0,
-          "enable": false,
-          "left": 0,
-          "qp_delta": 0,
           "right": 0,
           "top": 0
         },
@@ -107,6 +91,11 @@
         "zoom_bitrate_adjuster": {
           "mode": "DISABLED"
         }
+      },
+      "smart_encoder": {
+        "background_qp_delta": 10,
+        "enabled": false,
+        "rois": []
       }
     },
     "input_stream": {
@@ -172,7 +161,7 @@
   },
   "privacy_mask": {
     "color_value": [0,0,0],
-    "mask_type": "COLOR",
+    "mask_type": "PIXELIZATION",
     "pixelization_size": 60
   }
 }

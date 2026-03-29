@@ -26,5 +26,7 @@ namespace rule_checker {
         rule_engine.add_rule(std::make_unique<ProfileLevelConstraintRule>());
         rule_engine.add_rule(std::make_unique<PictureRcConstraintRule>());
         rule_engine.add_rule(std::make_unique<TargetBitrateWhenPictureRcRule>());
+        rule_engine.add_rule(std::make_unique<SmartEncoderEnablementRule>());
+        rule_engine.add_rule(std::make_unique<SmartEncoderRoiBoundsRule>());
     }
 }

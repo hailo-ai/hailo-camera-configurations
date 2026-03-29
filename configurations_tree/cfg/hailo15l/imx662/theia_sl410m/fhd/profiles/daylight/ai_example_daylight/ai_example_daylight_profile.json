@@ -1,0 +1,27 @@
+{
+  "version": "1.0.0",
+  "metadata": {
+    "architecture": "hailo15l",
+    "content_hash": "61d1385c74455004733617235813836ab50fcd4833cf029d3968c409ac4b7e46",
+    "description": "",
+    "generation_timestamp": "2026-03-10T13:53:01.976271+00:00"
+  },
+  "application_settings": "/etc/imaging/cfg/hailo15l/imx662/theia_sl410m/fhd/profiles/daylight/ai_example_daylight/application_settings.json",
+  "encoded_output_streams": [
+    {
+      "encoding": "/etc/imaging/cfg/hailo15l/imx662/theia_sl410m/fhd/profiles/daylight/ai_example_daylight/encoder_sink0.json",
+      "masking": "/etc/imaging/cfg/hailo15l/imx662/theia_sl410m/fhd/profiles/daylight/ai_example_daylight/masking_sink0.json",
+      "osd": "/etc/imaging/cfg/hailo15l/imx662/theia_sl410m/fhd/profiles/daylight/ai_example_daylight/osd_sink0.json",
+      "stream_id": "sink0"
+    },
+    {
+      "encoding": "/etc/imaging/cfg/hailo15l/imx662/theia_sl410m/fhd/profiles/daylight/ai_example_daylight/encoder_sink1.json",
+      "masking": "/etc/imaging/cfg/hailo15l/imx662/theia_sl410m/fhd/profiles/daylight/ai_example_daylight/masking_sink1.json",
+      "osd": "/etc/imaging/cfg/hailo15l/imx662/theia_sl410m/fhd/profiles/daylight/ai_example_daylight/osd_sink1.json",
+      "stream_id": "sink1"
+    }
+  ],
+  "iq_settings": "/etc/imaging/cfg/hailo15l/imx662/theia_sl410m/fhd/profiles/daylight/ai_example_daylight/iq_settings.json",
+  "sensor_config": "/etc/imaging/cfg/hailo15l/imx662/theia_sl410m/fhd/profiles/daylight/ai_example_daylight/sensor_config.json",
+  "stabilizer_settings": "/etc/imaging/cfg/hailo15l/imx662/theia_sl410m/fhd/profiles/daylight/ai_example_daylight/stabilizer_settings.json"
+}

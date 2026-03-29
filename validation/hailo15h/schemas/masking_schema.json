@@ -33,7 +33,7 @@
                 "generation_timestamp"
             ]
         },
-        "privacy_mask": {
+        "masking": {
             "type": "object",
             "properties": {
                 "mask_type": {
@@ -110,12 +110,31 @@
                             "type": "integer",
                             "minimum": 0,
                             "maximum": 15
+                        },
+                        "timeout_ms": {
+                            "type": "integer",
+                            "minimum": 1
+                        },
+                        "delta_ms": {
+                            "type": "integer",
+                            "minimum": 1
+                        },
+                        "query_type": {
+                            "type": "string",
+                            "enum": [
+                                "Closest",
+                                "Exact",
+                                "WithinDelta"
+                            ]
                         }
                     },
                     "required": [
                         "enabled",
                         "analytics",
-                        "dilation_size"
+                        "dilation_size",
+                        "timeout_ms",
+                        "delta_ms",
+                        "query_type"
                     ],
                     "additionalProperties": false
                 }

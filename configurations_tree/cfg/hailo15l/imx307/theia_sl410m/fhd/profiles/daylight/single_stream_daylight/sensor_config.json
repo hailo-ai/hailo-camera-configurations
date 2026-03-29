@@ -1,0 +1,27 @@
+{
+  "version": "1.1.0",
+  "metadata": {
+    "architecture": "hailo15l",
+    "content_hash": "6ae6f05f20ea0ccdf037e244e41a55f4bb507e94812ea1a3ce39c39b07a63578",
+    "description": "",
+    "generation_timestamp": "2026-01-28T17:06:36.345194+00:00"
+  },
+  "input_video": {
+    "resolution": {
+      "framerate": 30,
+      "height": 1080,
+      "width": 1920
+    },
+    "sensor_id": "SENSOR_0"
+  },
+  "sensor_calibration_file": "/etc/imaging/cfg/hailo15l/imx307/theia_sl410m/fhd/profiles/daylight/single_stream_daylight/calib.json",
+  "sensor_configuration": {
+    "af_i2c_addr": "0x0",
+    "af_i2c_bus": -1,
+    "drv": "HAILO_IMX307.drv",
+    "mode": 0,
+    "name": "imx307",
+    "pixel_mode": 0,
+    "sensor_only": 0
+  }
+}

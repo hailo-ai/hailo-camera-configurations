@@ -1,0 +1,27 @@
+{
+  "version": "1.1.0",
+  "metadata": {
+    "architecture": "hailo15l",
+    "content_hash": "57bfef5ca5094d2a62dfabcddf7fd6340fc595be2e7315ebf7c9f095e44ded9b",
+    "description": "",
+    "generation_timestamp": "2026-03-04T12:18:28.317400+00:00"
+  },
+  "input_video": {
+    "resolution": {
+      "framerate": 30,
+      "height": 1080,
+      "width": 1920
+    },
+    "sensor_id": "SENSOR_0"
+  },
+  "sensor_calibration_file": "/etc/imaging/cfg/hailo15l/imx662/kit/fhd/profiles/lowlight/single_stream_lowlight_bayer/calib.json",
+  "sensor_configuration": {
+    "af_i2c_addr": "0x0",
+    "af_i2c_bus": -1,
+    "drv": "HAILO_IMX662.drv",
+    "mode": 0,
+    "name": "imx662",
+    "pixel_mode": 0,
+    "sensor_only": 0
+  }
+}

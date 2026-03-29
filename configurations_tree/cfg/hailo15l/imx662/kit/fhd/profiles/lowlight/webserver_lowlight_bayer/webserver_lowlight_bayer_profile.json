@@ -1,0 +1,21 @@
+{
+  "version": "1.0.0",
+  "metadata": {
+    "architecture": "hailo15l",
+    "content_hash": "e3a0bfdd1e902c522c470957aa8453117f72e10b88c9eead92026b4e05d27a88",
+    "description": "",
+    "generation_timestamp": "2026-03-04T12:18:28.332743+00:00"
+  },
+  "application_settings": "/etc/imaging/cfg/hailo15l/imx662/kit/fhd/profiles/lowlight/webserver_lowlight_bayer/application_settings.json",
+  "encoded_output_streams": [
+    {
+      "encoding": "/etc/imaging/cfg/hailo15l/imx662/kit/fhd/profiles/lowlight/webserver_lowlight_bayer/encoder_sink0.json",
+      "masking": "/etc/imaging/cfg/hailo15l/imx662/kit/fhd/profiles/lowlight/webserver_lowlight_bayer/masking_sink0.json",
+      "osd": "/etc/imaging/cfg/hailo15l/imx662/kit/fhd/profiles/lowlight/webserver_lowlight_bayer/osd_sink0.json",
+      "stream_id": "sink0"
+    }
+  ],
+  "iq_settings": "/etc/imaging/cfg/hailo15l/imx662/kit/fhd/profiles/lowlight/webserver_lowlight_bayer/iq_settings.json",
+  "sensor_config": "/etc/imaging/cfg/hailo15l/imx662/kit/fhd/profiles/lowlight/webserver_lowlight_bayer/sensor_config.json",
+  "stabilizer_settings": "/etc/imaging/cfg/hailo15l/imx662/kit/fhd/profiles/lowlight/webserver_lowlight_bayer/stabilizer_settings.json"
+}

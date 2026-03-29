@@ -1,10 +1,10 @@
 {
-  "version": "1.1.0",
+  "version": "1.0.0",
   "metadata": {
     "architecture": "hailo15l",
-    "content_hash": "ef56b9fcff84c9d2673b31db4c924e39e6af59981bbc7c661b39f837956d10c2",
+    "content_hash": "a41af480bd4bd53d0994adfed7ea551f6bd2865b7ac3e53cac015e81d339ec32",
     "description": "",
-    "generation_timestamp": "2026-02-03T10:28:08.012784+00:00"
+    "generation_timestamp": "2026-03-19T09:53:28.586312+00:00"
   },
   "application_settings": "/etc/imaging/cfg/hailo15l/imx678/theia_sl410m/4k/profiles/daylight/frontend_example_jpeg_daylight/application_settings.json",
   "encoded_output_streams": [

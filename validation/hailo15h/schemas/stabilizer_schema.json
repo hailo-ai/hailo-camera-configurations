@@ -207,11 +207,8 @@
                     "type": "number",
                     "minimum": 1
                 },
-                "max_extensions_per_thr": {
-                    "type": "number"
-                },
-                "min_extensions_per_thr": {
-                    "type": "number"
+                "force_clamp_correction_angles": {
+                    "type": "boolean"
                 }
             },
             "additionalProperties": false,
@@ -224,8 +221,7 @@
                 "camera_fov_factor",
                 "line_readout_time",
                 "hdr_exposure_ratio",
-                "min_angle_deg",
-                "max_angle_deg"
+                "min_angle_deg"
             ]
         },
         "gyro": {

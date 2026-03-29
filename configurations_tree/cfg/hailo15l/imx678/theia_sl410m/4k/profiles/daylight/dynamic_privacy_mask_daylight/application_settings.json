@@ -1,12 +1,37 @@
 {
-  "version": "2.0.0",
+  "version": "3.0.0",
   "metadata": {
     "architecture": "hailo15l",
-    "content_hash": "aba9f314fb5b2c5d2ba21a678fe48f76c3928a4a056d0c8a039df9e056514b4f",
+    "content_hash": "409faca870c535658449ae8b586fa04504365ab4a2e80037be0d36b74269c8e4",
     "description": "",
-    "generation_timestamp": "2026-02-15T13:48:56.548353+00:00"
+    "generation_timestamp": "2026-03-16T08:17:35.167138+00:00"
   },
   "application_analytics": {
+    "detection": [
+      {
+        "analytics_data_id": "dpm_overflow_detection",
+        "height": 1080,
+        "labels": [
+          {
+            "id": 1,
+            "label": "person"
+          },
+          {
+            "id": 2,
+            "label": "face"
+          },
+          {
+            "id": 0,
+            "label": "vehicle"
+          }
+        ],
+        "max_entries": 5,
+        "original_height_ratio": 9,
+        "original_width_ratio": 16,
+        "scaling_mode": "LETTERBOX_MIDDLE",
+        "width": 1920
+      }
+    ],
     "semantic_segmentation": [
       {
         "analytics_data_id": "semantic_segmentation",
@@ -21,7 +46,8 @@
             "label": "vehicle"
           }
         ],
-        "max_entries": 3,
+        "mask_size": 256,
+        "max_entries": 5,
         "original_height_ratio": 9,
         "original_width_ratio": 16,
         "scaling_mode": "LETTERBOX_MIDDLE",
@@ -36,22 +62,22 @@
       {
         "framerate": 30,
         "height": 2160,
-        "pool_max_buffers": 30,
+        "pool_max_buffers": 12,
         "stream_id": "sink0",
         "width": 3840
       },
       {
         "framerate": 30,
         "height": 720,
-        "pool_max_buffers": 30,
-        "stream_id": "sink1",
+        "pool_max_buffers": 12,
+        "stream_id": "dpm_sink1",
         "width": 1280
       },
       {
         "framerate": 30,
         "height": 1080,
         "pool_max_buffers": 30,
-        "stream_id": "sink2",
+        "stream_id": "dpm_sink2",
         "width": 1920
       }
     ]

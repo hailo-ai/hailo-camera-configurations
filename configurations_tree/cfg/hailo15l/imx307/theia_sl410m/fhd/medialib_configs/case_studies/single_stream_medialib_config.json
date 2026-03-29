@@ -1,0 +1,17 @@
+{
+  "version": "2.0.0",
+  "metadata": {
+    "architecture": "hailo15l",
+    "content_hash": "6cd455fd45a0f9be1058281257ec9a022eec7218e83c5ced4e004372438d24ea",
+    "description": "",
+    "generation_timestamp": "2026-01-28T17:06:36.325739+00:00"
+  },
+  "backup_folder_path": "/etc/imaging/cfg/backups/single_stream",
+  "default_profile": "Daylight",
+  "profiles": [
+    {
+      "config_file": "/etc/imaging/cfg/hailo15l/imx307/theia_sl410m/fhd/profiles/daylight/single_stream_daylight/single_stream_daylight_profile.json",
+      "name": "Daylight"
+    }
+  ]
+}

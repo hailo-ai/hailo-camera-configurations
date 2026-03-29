@@ -1,0 +1,37 @@
+source_version: 2.0.0
+target_version: 4.0.0
+description: 'From v2.0.0_to_v4.0.0.yaml:
+
+  Migrate sei_messages from boolean to object structure with encoder_timing_sei and
+  user_metadata_sei fields
+
+  Remove legacy roi_area1/roi_area2 from coding_control and add smart_encoder with
+  defaults'
+rules:
+- operation: map_enum_values
+  path: $.encoding.hailo_encoder.coding_control.sei_messages
+  mapping:
+    true:
+      value:
+        encoder_timing_sei: true
+        user_metadata_sei: true
+    false:
+      value:
+        encoder_timing_sei: false
+        user_metadata_sei: true
+  source_file: v2.0.0_to_v3.0.0.yaml
+- operation: remove_field
+  path: $.encoding.hailo_encoder.coding_control.roi_area1
+  source_file: v3.0.0_to_v4.0.0.yaml
+- operation: remove_field
+  path: $.encoding.hailo_encoder.coding_control.roi_area2
+  source_file: v3.0.0_to_v4.0.0.yaml
+- operation: set_required_default
+  path: $.encoding.hailo_encoder
+  field_name: smart_encoder
+  default_value:
+    enabled: false
+    background_qp_delta: 10
+    rois: []
+  source_file: v3.0.0_to_v4.0.0.yaml
+consolidated: true

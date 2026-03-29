@@ -2,9 +2,9 @@
   "version": "1.0.0",
   "metadata": {
     "architecture": "hailo15l",
-    "content_hash": "301ebe4a2746b9276f3109fefa54034ffb6f56d78043cc8eeaaacf269493b442",
+    "content_hash": "b8822ad2130c5163d88b0dddd0a8d6db3d7e5e08114b910984bc9ff61158de32",
     "description": "",
-    "generation_timestamp": "2026-01-15T14:49:11.104377+00:00"
+    "generation_timestamp": "2026-02-08T13:26:39.187563+00:00"
   },
   "application_settings": "/etc/imaging/cfg/hailo15l/imx675/theia_sl410m/5mp/profiles/HDR/dynamic_privacy_mask_HDR/application_settings.json",
   "encoded_output_streams": [
@@ -18,7 +18,7 @@
       "encoding": "/etc/imaging/cfg/hailo15l/imx675/theia_sl410m/5mp/profiles/HDR/dynamic_privacy_mask_HDR/encoder_sink1.json",
       "masking": "",
       "osd": "/etc/imaging/cfg/hailo15l/imx675/theia_sl410m/5mp/profiles/HDR/dynamic_privacy_mask_HDR/osd_sink1.json",
-      "stream_id": "sink1"
+      "stream_id": "dpm_sink1"
     }
   ],
   "iq_settings": "/etc/imaging/cfg/hailo15l/imx675/theia_sl410m/5mp/profiles/HDR/dynamic_privacy_mask_HDR/iq_settings.json",

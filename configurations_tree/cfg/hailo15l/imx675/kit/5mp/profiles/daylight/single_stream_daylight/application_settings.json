@@ -1,10 +1,10 @@
 {
-  "version": "2.0.0",
+  "version": "3.0.0",
   "metadata": {
     "architecture": "hailo15l",
-    "content_hash": "d40640d6e77c106e59ccab8e4de8e1951aca3d2d2011e75529d7dbc9361702d7",
+    "content_hash": "7e91333880eb2999a365207efd542c00a39f5fc75b3e416c66adbf03c8028d35",
     "description": "",
-    "generation_timestamp": "2025-11-24T12:15:23.028461+00:00"
+    "generation_timestamp": "2026-03-16T08:17:36.176920+00:00"
   },
   "application_input_streams": {
     "format": "IMAGE_FORMAT_NV12",
@@ -13,7 +13,7 @@
       {
         "framerate": 30,
         "height": 1944,
-        "pool_max_buffers": 20,
+        "pool_max_buffers": 12,
         "stream_id": "sink0",
         "width": 2592
       }
@@ -42,8 +42,8 @@
     "device-id": "device0"
   },
   "motion_detection": {
-    "buffer_pool_size": 8,
-    "enabled": false,
+    "buffer_pool_size": 20,
+    "enabled": true,
     "resolution": {
       "framerate": 30,
       "height": 480,

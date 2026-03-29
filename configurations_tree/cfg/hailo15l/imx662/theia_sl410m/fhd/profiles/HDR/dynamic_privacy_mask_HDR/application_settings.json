@@ -1,0 +1,135 @@
+{
+  "version": "3.0.0",
+  "metadata": {
+    "architecture": "hailo15l",
+    "content_hash": "89bcd36b463898f0449ffa62acae9514eb387196fdb7f3a0439711e68609adce",
+    "description": "",
+    "generation_timestamp": "2026-03-10T13:53:01.907388+00:00"
+  },
+  "application_analytics": {
+    "detection": [
+      {
+        "analytics_data_id": "dpm_overflow_detection",
+        "height": 972,
+        "labels": [
+          {
+            "id": 1,
+            "label": "person"
+          },
+          {
+            "id": 2,
+            "label": "face"
+          },
+          {
+            "id": 0,
+            "label": "vehicle"
+          }
+        ],
+        "max_entries": 5,
+        "original_height_ratio": 3,
+        "original_width_ratio": 4,
+        "scaling_mode": "LETTERBOX_MIDDLE",
+        "width": 1296
+      }
+    ],
+    "semantic_segmentation": [
+      {
+        "analytics_data_id": "semantic_segmentation",
+        "height": 972,
+        "labels": [
+          {
+            "id": 1,
+            "label": "person_face"
+          },
+          {
+            "id": 0,
+            "label": "vehicle"
+          }
+        ],
+        "mask_size": 128,
+        "max_entries": 3,
+        "original_height_ratio": 3,
+        "original_width_ratio": 4,
+        "scaling_mode": "LETTERBOX_MIDDLE",
+        "width": 1296
+      }
+    ]
+  },
+  "application_input_streams": {
+    "format": "IMAGE_FORMAT_NV12",
+    "method": "INTERPOLATION_TYPE_BILINEAR",
+    "resolutions": [
+      {
+        "framerate": 30,
+        "height": 1080,
+        "pool_max_buffers": 22,
+        "scaling_mode": "STRETCH",
+        "stream_id": "sink0",
+        "width": 1920
+      },
+      {
+        "framerate": 30,
+        "height": 720,
+        "pool_max_buffers": 22,
+        "scaling_mode": "STRETCH",
+        "stream_id": "dpm_sink1",
+        "width": 1280
+      },
+      {
+        "framerate": 30,
+        "height": 972,
+        "pool_max_buffers": 30,
+        "scaling_mode": "STRETCH",
+        "stream_id": "dpm_sink2",
+        "width": 1296
+      }
+    ]
+  },
+  "digital_zoom": {
+    "enabled": false,
+    "magnification": 1.0,
+    "mode": "DIGITAL_ZOOM_MODE_ROI",
+    "roi": {
+      "height": 1800,
+      "width": 2800,
+      "x": 200,
+      "y": 200
+    }
+  },
+  "flip": {
+    "direction": "FLIP_DIRECTION_HORIZONTAL",
+    "enabled": false
+  },
+  "gmv": {
+    "frequency": 0.0,
+    "source": "isp"
+  },
+  "hailort": {
+    "device-id": "device0"
+  },
+  "motion_detection": {
+    "buffer_pool_size": 8,
+    "enabled": false,
+    "resolution": {
+      "framerate": 30,
+      "height": 480,
+      "width": 640
+    },
+    "roi": {
+      "height": 480,
+      "width": 640,
+      "x": 0,
+      "y": 0
+    },
+    "sensitivity_level": "MEDIUM",
+    "threshold": 0.5
+  },
+  "optical_zoom": {
+    "enabled": true,
+    "magnification": 1.0
+  },
+  "rotation": {
+    "angle": "ROTATION_ANGLE_0",
+    "enabled": false
+  }
+}

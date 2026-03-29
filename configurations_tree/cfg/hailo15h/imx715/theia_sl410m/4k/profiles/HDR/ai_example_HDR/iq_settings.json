@@ -1,10 +1,10 @@
 {
-  "version": "1.1.1",
+  "version": "1.2.0",
   "metadata": {
     "architecture": "hailo15h",
-    "content_hash": "cdc94c1524dbb86b178f8ec9d4490369955b953c0034b207cde4d8c0e5c577da",
+    "content_hash": "75d72134617e59100a734b0063f7e10689f9cdce377f9b80ac257b0d418d08c3",
     "description": "",
-    "generation_timestamp": "2026-01-04T19:16:35.779259+00:00"
+    "generation_timestamp": "2026-03-03T15:24:36.606244+00:00"
   },
   "automatic_algorithms": {
     "A2dnrv5": {
@@ -302,6 +302,7 @@
         "hdr_gain": [1,2,4,8,16,32,64],
         "hdr_repress": [1.0,0.5,0.3,0.3,0.3,0.2,0.1]
       },
+      "lsRatio": 16.0,
       "maxIspDgain": 128,
       "maxSensorAgain": 30,
       "maxSensorDgain": 1,

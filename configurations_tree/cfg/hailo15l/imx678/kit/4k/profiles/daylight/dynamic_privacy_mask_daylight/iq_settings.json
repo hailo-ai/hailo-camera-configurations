@@ -1,10 +1,10 @@
 {
-  "version": "1.1.1",
+  "version": "1.2.0",
   "metadata": {
     "architecture": "hailo15l",
-    "content_hash": "615edbc9dcbabf2328f26be5cee13ea83c96f959ae4bea3e1b3fb3317f20eb41",
+    "content_hash": "4aef8721638e635f922271eb627deb5dfb865b65ca105ec990607167c75ead31",
     "description": "",
-    "generation_timestamp": "2025-12-10T17:31:06.874469+00:00"
+    "generation_timestamp": "2026-03-10T07:29:08.433054+00:00"
   },
   "automatic_algorithms": {
     "A2dnrv5": {
@@ -372,6 +372,7 @@
         "hdr_gain": [1,2,4,8,16,32,64],
         "hdr_repress": [1.0,0.5,0.3,0.3,0.3,0.1,0.1]
       },
+      "lsRatio": 16,
       "maxIspDgain": 132,
       "maxSensorAgain": 32,
       "maxSensorDgain": 1,
@@ -415,7 +416,7 @@
     "network": {
       "feedback_uv_channel": "model/input_layer2",
       "feedback_y_channel": "model/input_layer3",
-      "network_path": "/usr/lib/medialib/denoise_config/vd_m_imx678.hef",
+      "network_path": "/usr/lib/medialib/denoise_config/vd_m_imx678_r0225c8.hef",
       "output_uv_channel": "model/conv14",
       "output_y_channel": "model/conv17",
       "uv_channel": "model/input_layer4",

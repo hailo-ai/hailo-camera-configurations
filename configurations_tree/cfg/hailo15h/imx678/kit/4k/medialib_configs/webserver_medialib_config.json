@@ -2,9 +2,9 @@
   "version": "2.0.0",
   "metadata": {
     "architecture": "hailo15h",
-    "content_hash": "ac92f546ab605cc701e06ca6fabacfd81995a6c3f394f2161926876cdead6bd5",
+    "content_hash": "2ef50960bef64ffc9cb0ef4b9aa448f3f2d9f460c52ee7ba6624c770dff95740",
     "description": "",
-    "generation_timestamp": "2026-01-28T15:57:11.772356+00:00"
+    "generation_timestamp": "2026-03-23T17:40:42.270205+00:00"
   },
   "backup_folder_path": "/etc/imaging/cfg/backups/webserver",
   "default_profile": "Daylight_Basic",
@@ -54,8 +54,12 @@
       "name": "Lowlight_Bayer_FaceLandmarks"
     },
     {
-      "config_file": "/etc/imaging/cfg/hailo15h/imx678/kit/4k/medialib_configs/case_studies/dynamic_privacy_mask_medialib_config.json",
+      "config_file": "/etc/imaging/cfg/hailo15h/imx678/kit/4k/profiles/daylight/dynamic_privacy_mask_daylight/dynamic_privacy_mask_daylight_profile.json",
       "name": "Daylight_DynamicPrivacyMask"
+    },
+    {
+      "config_file": "/etc/imaging/cfg/hailo15h/imx678/kit/4k/profiles/HDR/dynamic_privacy_mask_HDR/dynamic_privacy_mask_HDR_profile.json",
+      "name": "High_Dynamic_Range_DynamicPrivacyMask"
     }
   ]
 }

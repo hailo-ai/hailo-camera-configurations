@@ -1,10 +1,10 @@
 {
-  "version": "1.1.1",
+  "version": "1.2.0",
   "metadata": {
     "architecture": "hailo15l",
-    "content_hash": "44fa7a4c9c4590d172ada30d170690d4288be5f4300be5201985ea2ffcca2350",
+    "content_hash": "cb74d9f6b5454072e387ef0797a741da4cbf4b5126aadaca93e5239c9c2c4560",
     "description": "",
-    "generation_timestamp": "2026-02-08T19:25:10.307115+00:00"
+    "generation_timestamp": "2026-03-22T16:25:54.775860+00:00"
   },
   "automatic_algorithms": {
     "A2dnrv5": {
@@ -36,6 +36,7 @@
         [27,0,0,27],
         [40,0,0,40]
       ],
+      "disable": false,
       "enable": true,
       "forcecreate": true,
       "gains": [1,32,64,128,256,512,1024]
@@ -306,6 +307,7 @@
         "hdr_gain": [1,2,4,8,16,32,64],
         "hdr_repress": [1.0,0.5,0.3,0.3,0.3,0.2,0.1]
       },
+      "lsRatio": 16.0,
       "maxIspDgain": 128,
       "maxSensorAgain": 30,
       "maxSensorDgain": 1,
@@ -348,15 +350,15 @@
     "loopback-count": 1,
     "method": "HIGH_QUALITY",
     "network": {
-      "bayer_channel": "hdm_v071/input_layer1",
-      "input_fusion_feedback": "hdm_v071/input_layer2",
-      "input_gamma_feedback": "hdm_v071/input_layer3",
+      "bayer_channel": "pre_isp_hdm_678_h15l/input_layer1",
+      "input_fusion_feedback": "pre_isp_hdm_678_h15l/input_layer2",
+      "input_gamma_feedback": "pre_isp_hdm_678_h15l/input_layer3",
       "network_path": "/usr/lib/medialib/denoise_config/hdm_v_071.hef",
-      "output_bayer_channel": "hdm_v071/depth_to_space3",
-      "output_fusion_feedback": "hdm_v071/ew_add1",
-      "output_gamma_feedback": "hdm_v071/conv7",
-      "skip0_fusion_channel": "hdm_v071/input_layer4",
-      "skip1_fusion_channel": "hdm_v071/input_layer5"
+      "output_bayer_channel": "pre_isp_hdm_678_h15l/depth_to_space2",
+      "output_fusion_feedback": "pre_isp_hdm_678_h15l/ew_add1",
+      "output_gamma_feedback": "pre_isp_hdm_678_h15l/conv7",
+      "skip0_fusion_channel": "pre_isp_hdm_678_h15l/input_layer4",
+      "skip1_fusion_channel": "pre_isp_hdm_678_h15l/input_layer5"
     },
     "sensor": "imx678"
   },

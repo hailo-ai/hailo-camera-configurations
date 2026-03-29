@@ -1,15 +1,15 @@
 {
-  "version": "2.0.0",
+  "version": "3.0.0",
   "metadata": {
     "architecture": "hailo15l",
-    "content_hash": "00274fe7a72f73a21dd502430e66f703cbfa752fe3927832bbfff4f925876a39",
+    "content_hash": "c0e2daa0839138e4f36397d14bc71f2e39474ca4b480a92aaf0f98a02db1738b",
     "description": "",
-    "generation_timestamp": "2026-02-15T14:58:20.300220+00:00"
+    "generation_timestamp": "2026-03-18T13:25:48.690761+00:00"
   },
   "application_analytics": {
     "semantic_segmentation": [
       {
-        "analytics_data_id": "semantic_segmentation",
+        "analytics_data_id": "dpm_overflow_detection",
         "height": 1080,
         "labels": [
           {
@@ -21,6 +21,7 @@
             "label": "vehicle"
           }
         ],
+        "mask_size": 128,
         "max_entries": 3,
         "original_height_ratio": 9,
         "original_width_ratio": 16,

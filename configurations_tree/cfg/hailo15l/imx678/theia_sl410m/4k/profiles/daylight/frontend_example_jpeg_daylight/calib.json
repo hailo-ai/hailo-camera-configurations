@@ -1,10 +1,10 @@
 {
-    "version": "1.1.0",
+    "version": "1.0.0",
     "metadata": {
         "architecture": "hailo15l",
-        "content_hash": "2945c9358c80f311ac2bd9ee27028099d672bf4c5fdf69968f4a9508599ecc19",
+        "content_hash": "562b85392c6073bdeac7e5554f1daea2aea47d204c2c7cda8825e321df248386",
         "description": "",
-        "generation_timestamp": "2025-11-24T12:11:03.849660+00:00"
+        "generation_timestamp": "2026-03-19T10:28:45.678707+00:00"
     },
     "matfile": {
         "header": {

@@ -1,0 +1,17 @@
+{
+  "version": "2.0.0",
+  "metadata": {
+    "architecture": "hailo15h",
+    "content_hash": "dd8632db1e19e7c825fe1bda9aed19cc7835dbd52a6edebe3af27b9733ff095d",
+    "description": "",
+    "generation_timestamp": "2026-03-18T13:31:38.877990+00:00"
+  },
+  "backup_folder_path": "/etc/imaging/cfg/backups/face_landmarks_dual_sensor_sensor_1",
+  "default_profile": "Daylight",
+  "profiles": [
+    {
+      "config_file": "/etc/imaging/cfg/hailo15h/imx678/kit/4k/profiles/daylight/face_landmarks_dual_sensor_sensor_1_daylight/face_landmarks_dual_sensor_sensor_1_daylight_profile.json",
+      "name": "Daylight"
+    }
+  ]
+}

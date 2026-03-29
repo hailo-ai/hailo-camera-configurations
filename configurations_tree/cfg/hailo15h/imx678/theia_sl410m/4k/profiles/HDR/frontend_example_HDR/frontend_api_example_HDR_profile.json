@@ -1,10 +1,10 @@
 {
-  "version": "1.1.0",
+  "version": "1.0.0",
   "metadata": {
     "architecture": "hailo15h",
-    "content_hash": "a3191b5c2a15f7bcc1c76588f1e4cc5c73fab5d43267cdaecb57a795a9c8cb4e",
+    "content_hash": "eb5d453ed394a7fb41637145e7c2e6a1ec85b82db71de3a90942fe15103c76a8",
     "description": "",
-    "generation_timestamp": "2026-02-06T07:50:33.902774+00:00"
+    "generation_timestamp": "2026-03-19T09:53:26.579841+00:00"
   },
   "application_settings": "/etc/imaging/cfg/hailo15h/imx678/theia_sl410m/4k/profiles/HDR/frontend_example_HDR/application_settings.json",
   "encoded_output_streams": [

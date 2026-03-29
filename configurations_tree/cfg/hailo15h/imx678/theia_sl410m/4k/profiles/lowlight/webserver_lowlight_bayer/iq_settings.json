@@ -1,10 +1,10 @@
 {
-  "version": "1.1.1",
+  "version": "1.2.0",
   "metadata": {
     "architecture": "hailo15h",
-    "content_hash": "671f3ae23dfcb610eff460047fd466df043b56821e494c4592d1df9e322778a8",
+    "content_hash": "b6e3a2ee4dca97deadce1b23d708a9247d941d550bcad5d3d1dce14986ee4130",
     "description": "",
-    "generation_timestamp": "2026-01-20T18:50:14.030253+00:00"
+    "generation_timestamp": "2026-03-09T21:05:59.875665+00:00"
   },
   "automatic_algorithms": {
     "A2dnrv5": {
@@ -301,6 +301,7 @@
         "hdr_gain": [1,2,4,8,16,32,64],
         "hdr_repress": [1.0,0.5,0.3,0.3,0.3,0.1,0.1]
       },
+      "lsRatio": 16.0,
       "maxIspDgain": 132,
       "maxSensorAgain": 32,
       "maxSensorDgain": 1,
@@ -343,10 +344,10 @@
     "loopback-count": 1,
     "method": "HIGH_QUALITY",
     "network": {
-      "bayer_channel": "model/input_layer1",
-      "feedback_bayer_channel": "model/input_layer2",
+      "bayer_channel": "pre_isp_denoise_678_h15h/input_layer1",
+      "feedback_bayer_channel": "pre_isp_denoise_678_h15h/input_layer2",
       "network_path": "/usr/lib/medialib/denoise_config/pre_isp_denoise_packed.hef",
-      "output_bayer_channel": "model/depth_to_space3"
+      "output_bayer_channel": "pre_isp_denoise_678_h15h/depth_to_space3"
     },
     "sensor": "imx678"
   },

@@ -2,9 +2,9 @@
   "version": "1.1.0",
   "metadata": {
     "architecture": "hailo15l",
-    "content_hash": "2acc99cbae7dcb8d865cced081663ebf96f1b4be842df5c3155a51e9e6f1098d",
+    "content_hash": "cbed5f6a9d83244cf5b8a49a3082fb796ff8115e8b88cf180939171cb0710acb",
     "description": "",
-    "generation_timestamp": "2026-02-03T08:55:21.346562+00:00"
+    "generation_timestamp": "2026-03-16T02:41:40.004918+00:00"
   },
   "input_video": {
     "resolution": {
@@ -17,7 +17,7 @@
   "sensor_configuration": {
     "af_i2c_addr": "0x0",
     "af_i2c_bus": -1,
-    "drv": "HAILO_IMX678.drv",
+    "drv": "HAILO_IMX675.drv",
     "mode": 0,
     "name": "imx675",
     "pixel_mode": 0,

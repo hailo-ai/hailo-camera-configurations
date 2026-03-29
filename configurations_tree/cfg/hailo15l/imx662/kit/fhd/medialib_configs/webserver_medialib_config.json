@@ -1,0 +1,21 @@
+{
+  "version": "2.0.0",
+  "metadata": {
+    "architecture": "hailo15l",
+    "content_hash": "db00fc7246f6834f681b94b1d0bb832ccb35e3fd32ffd4b96c6f6304560975c4",
+    "description": "",
+    "generation_timestamp": "2026-03-25T16:51:37.728269+00:00"
+  },
+  "backup_folder_path": "/etc/imaging/cfg/backups/webserver",
+  "default_profile": "Daylight_Basic",
+  "profiles": [
+    {
+      "config_file": "/etc/imaging/cfg/hailo15l/imx662/kit/fhd/profiles/daylight/webserver_daylight/webserver_daylight_profile.json",
+      "name": "Daylight_Basic"
+    },
+    {
+      "config_file": "/etc/imaging/cfg/hailo15l/imx662/kit/fhd/profiles/HDR/webserver_HDR/webserver_HDR_profile.json",
+      "name": "High_Dynamic_Range_Basic"
+    }
+  ]
+}

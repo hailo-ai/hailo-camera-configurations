@@ -107,36 +107,36 @@
             ],
             "additionalProperties": false
         },
-        "roi_area": {
-            "$id": "roi_area",
+        "normalized_roi_t": {
+            "$id": "normalized_roi_t",
             "type": "object",
             "properties": {
-                "enable": {
-                    "type": "boolean"
+                "x": {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 1
                 },
-                "top": {
-                    "type": "integer"
+                "y": {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 1
                 },
-                "left": {
-                    "type": "integer"
+                "width": {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 1
                 },
-                "bottom": {
-                    "type": "integer"
-                },
-                "right": {
-                    "type": "integer"
-                },
-                "qp_delta": {
-                    "type": "integer"
+                "height": {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 1
                 }
             },
             "required": [
-                "enable",
-                "top",
-                "left",
-                "bottom",
-                "right",
-                "qp_delta"
+                "x",
+                "y",
+                "width",
+                "height"
             ],
             "additionalProperties": false
         },
@@ -318,12 +318,6 @@
                         },
                         "ipcm_area2": {
                             "$ref": "encoder_schema#/definitions/roi"
-                        },
-                        "roi_area1": {
-                            "$ref": "encoder_schema#/definitions/roi_area"
-                        },
-                        "roi_area2": {
-                            "$ref": "encoder_schema#/definitions/roi_area"
                         }
                     },
                     "required": [
@@ -331,9 +325,7 @@
                         "deblocking_filter",
                         "intra_area",
                         "ipcm_area1",
-                        "ipcm_area2",
-                        "roi_area1",
-                        "roi_area2"
+                        "ipcm_area2"
                     ],
                     "additionalProperties": false
                 },
@@ -582,13 +574,40 @@
                         "cycle_monitor"
                     ],
                     "additionalProperties": false
+                },
+                "smart_encoder": {
+                    "type": "object",
+                    "properties": {
+                        "enabled": {
+                            "type": "boolean"
+                        },
+                        "background_qp_delta": {
+                            "type": "integer",
+                            "minimum": 1,
+                            "maximum": 15
+                        },
+                        "rois": {
+                            "type": "array",
+                            "maxItems": 10,
+                            "items": {
+                                "$ref": "encoder_schema#/definitions/normalized_roi_t"
+                            }
+                        }
+                    },
+                    "required": [
+                        "enabled",
+                        "background_qp_delta",
+                        "rois"
+                    ],
+                    "additionalProperties": false
                 }
             },
             "required": [
                 "config",
                 "gop_config",
                 "coding_control",
-                "rate_control"
+                "rate_control",
+                "smart_encoder"
             ],
             "additionalProperties": false
         },

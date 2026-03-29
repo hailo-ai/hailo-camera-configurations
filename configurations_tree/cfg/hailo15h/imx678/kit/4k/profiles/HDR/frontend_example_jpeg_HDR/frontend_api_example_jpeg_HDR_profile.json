@@ -1,10 +1,10 @@
 {
-  "version": "1.1.0",
+  "version": "1.0.0",
   "metadata": {
     "architecture": "hailo15h",
-    "content_hash": "f68c3d75db3757a64fe454ed23cb479608e7ad326a8372fb9c78d9aaeed26d25",
+    "content_hash": "873da3421c4c621386231053f88d50dd971a97f7a1d5521f4a6f42443f7ebd5e",
     "description": "",
-    "generation_timestamp": "2026-02-03T06:07:45.341935+00:00"
+    "generation_timestamp": "2026-03-19T09:53:26.107354+00:00"
   },
   "application_settings": "/etc/imaging/cfg/hailo15h/imx678/kit/4k/profiles/HDR/frontend_example_jpeg_HDR/application_settings.json",
   "encoded_output_streams": [

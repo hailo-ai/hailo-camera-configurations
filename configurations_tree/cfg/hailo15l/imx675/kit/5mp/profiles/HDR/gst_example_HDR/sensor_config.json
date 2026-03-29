@@ -1,0 +1,27 @@
+{
+  "version": "1.1.0",
+  "metadata": {
+    "architecture": "hailo15l",
+    "content_hash": "626ac5b2beaabd6901e4af4a9720d73efd3b0b0d6455636a6b2470ed8c4aa448",
+    "description": "",
+    "generation_timestamp": "2026-03-08T10:21:50.607281+00:00"
+  },
+  "input_video": {
+    "resolution": {
+      "framerate": 30,
+      "height": 1944,
+      "width": 2592
+    },
+    "sensor_id": "SENSOR_0"
+  },
+  "sensor_calibration_file": "/etc/imaging/cfg/hailo15l/imx675/kit/5mp/profiles/HDR/gst_example_HDR/calib.json",
+  "sensor_configuration": {
+    "af_i2c_addr": "0x0",
+    "af_i2c_bus": -1,
+    "drv": "HAILO_IMX675.drv",
+    "mode": 4,
+    "name": "imx675",
+    "pixel_mode": 0,
+    "sensor_only": 0
+  }
+}

@@ -2,9 +2,9 @@
   "version": "1.1.0",
   "metadata": {
     "architecture": "hailo15h",
-    "content_hash": "cbe7ba5d9aa7a84d2da52c4dacc2ee17475d8e5fe685f5fc8002cca7bcabfb53",
+    "content_hash": "15dc4ec8de98647045f12ac8138d928813a574aeb3bfba0941729124795e2128",
     "description": "",
-    "generation_timestamp": "2025-11-24T12:15:22.157225+00:00"
+    "generation_timestamp": "2026-03-08T19:05:08.912051+00:00"
   },
   "input_video": {
     "resolution": {
@@ -14,7 +14,7 @@
     },
     "sensor_id": "SENSOR_0"
   },
-  "sensor_calibration_file": "/etc/imaging/cfg/hailo15h/imx715/theia_sl410m/4k/profiles/daylight/ai_example_daylight/calib.json",
+  "sensor_calibration_file": "/etc/imaging/cfg/hailo15h/imx715/theia_sl410m/4k/profiles/daylight/single_stream_daylight/calib.json",
   "sensor_configuration": {
     "af_i2c_addr": "0x0",
     "af_i2c_bus": -1,

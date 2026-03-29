@@ -1,0 +1,21 @@
+{
+  "version": "1.0.0",
+  "metadata": {
+    "architecture": "hailo15l",
+    "content_hash": "9157e5c5c40ee659e3ddb00a2b42984119ad1836b6f28940a06e4834ee5e450c",
+    "description": "",
+    "generation_timestamp": "2026-02-24T09:32:22.710326+00:00"
+  },
+  "application_settings": "/etc/imaging/cfg/hailo15l/imx662/kit/fhd/profiles/HDR/webserver_HDR/application_settings.json",
+  "encoded_output_streams": [
+    {
+      "encoding": "/etc/imaging/cfg/hailo15l/imx662/kit/fhd/profiles/HDR/webserver_HDR/encoder_sink0.json",
+      "masking": "",
+      "osd": "/etc/imaging/cfg/hailo15l/imx662/kit/fhd/profiles/HDR/webserver_HDR/osd_sink0.json",
+      "stream_id": "sink0"
+    }
+  ],
+  "iq_settings": "/etc/imaging/cfg/hailo15l/imx662/kit/fhd/profiles/HDR/webserver_HDR/iq_settings.json",
+  "sensor_config": "/etc/imaging/cfg/hailo15l/imx662/kit/fhd/profiles/HDR/webserver_HDR/sensor_config.json",
+  "stabilizer_settings": "/etc/imaging/cfg/hailo15l/imx662/kit/fhd/profiles/HDR/webserver_HDR/stabilizer_settings.json"
+}

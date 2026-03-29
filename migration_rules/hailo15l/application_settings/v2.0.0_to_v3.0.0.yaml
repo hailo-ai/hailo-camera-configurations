@@ -1,0 +1,12 @@
+source_version: 2.0.0
+target_version: 3.0.0
+description: 'From v2.0.0_to_v3.0.0.yaml:
+
+  Add mask_size field to semantic_segmentation entries in application_analytics'
+rules:
+- operation: set_required_default
+  path: $.application_analytics.semantic_segmentation[*]
+  field_name: mask_size
+  default_value: 128
+  source_file: v2.0.0_to_v3.0.0.yaml
+consolidated: true

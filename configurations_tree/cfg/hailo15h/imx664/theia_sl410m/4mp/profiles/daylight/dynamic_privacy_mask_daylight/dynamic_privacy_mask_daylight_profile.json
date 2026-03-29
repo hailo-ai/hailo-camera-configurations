@@ -2,9 +2,9 @@
   "version": "1.0.0",
   "metadata": {
     "architecture": "hailo15h",
-    "content_hash": "0932829260e3ccc49c22e778bb7e8aacf33a6da651bfec9824001f78142024e4",
+    "content_hash": "6c199650f625658f24d7957c62f9b32ef0aa82ed56a6c7988604157e2e772047",
     "description": "",
-    "generation_timestamp": "2026-01-15T14:49:00.588871+00:00"
+    "generation_timestamp": "2026-02-08T13:26:34.107257+00:00"
   },
   "application_settings": "/etc/imaging/cfg/hailo15h/imx664/theia_sl410m/4mp/profiles/daylight/dynamic_privacy_mask_daylight/application_settings.json",
   "encoded_output_streams": [
@@ -18,7 +18,7 @@
       "encoding": "/etc/imaging/cfg/hailo15h/imx664/theia_sl410m/4mp/profiles/daylight/dynamic_privacy_mask_daylight/encoder_sink1.json",
       "masking": "",
       "osd": "/etc/imaging/cfg/hailo15h/imx664/theia_sl410m/4mp/profiles/daylight/dynamic_privacy_mask_daylight/osd_sink1.json",
-      "stream_id": "sink1"
+      "stream_id": "dpm_sink1"
     }
   ],
   "iq_settings": "/etc/imaging/cfg/hailo15h/imx664/theia_sl410m/4mp/profiles/daylight/dynamic_privacy_mask_daylight/iq_settings.json",

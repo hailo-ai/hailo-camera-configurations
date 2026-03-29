@@ -1,10 +1,10 @@
 {
-  "version": "1.1.1",
+  "version": "1.2.0",
   "metadata": {
     "architecture": "hailo15h",
-    "content_hash": "017fd33a780ec9ce705b19ccdb7e9f0336389940c2220c05c90a6607e662121b",
+    "content_hash": "55a1892f4ce72487accdb4eb137815597bda1e496bddaec34fe05f5abd17d3ed",
     "description": "",
-    "generation_timestamp": "2026-02-11T15:34:41.843060+00:00"
+    "generation_timestamp": "2026-03-19T09:53:25.814618+00:00"
   },
   "automatic_algorithms": {
     "A2dnrv5": {
@@ -33,6 +33,7 @@
         [205,205,205,205],
         [205,205,205,205]
       ],
+      "disable": false,
       "enable": true,
       "forcecreate": true,
       "gains": [1,64,128,200]
@@ -65,12 +66,12 @@
       "forcecreate": true,
       "gains": [1,25,50,512,1024],
       "histogram_equalization": false,
-      "histogram_equalization_alpha": [0.0,0.0,0.1,0.3,2.0],
+      "histogram_equalization_alpha": [0.0,0.0,0.1,0.3,0.999],
       "histogram_equalization_clip_threshold": [0.5,0.5,0.5,0.5,0.5],
       "manual_brightness": [0,0,0,0,0],
       "manual_contrast": [1.0,1.0,1.0,1.0,1.0],
       "saturation": [1,1,1,1,1],
-      "sharpness_amount": [0,2,2,1.5,1.5],
+      "sharpness_amount": [0.001,2,2,1.5,1.5],
       "sharpness_level": [0,3,3,3,3],
       "sharpness_threshold": [0,5,10,20,30]
     },
@@ -361,6 +362,7 @@
         "hdr_gain": [1,2,4,8,16,32,64],
         "hdr_repress": [1.0,0.5,0.3,0.3,0.3,0.1,0.1]
       },
+      "lsRatio": 16.0,
       "maxIspDgain": 132,
       "maxSensorAgain": 32,
       "maxSensorDgain": 1,
@@ -402,13 +404,13 @@
     "loopback-count": 1,
     "method": "HIGH_QUALITY",
     "network": {
-      "feedback_uv_channel": "model/input_layer2",
-      "feedback_y_channel": "model/input_layer3",
-      "network_path": "/usr/lib/medialib/denoise_config/vd_m_imx678.hef",
-      "output_uv_channel": "model/conv14",
-      "output_y_channel": "model/conv17",
-      "uv_channel": "model/input_layer4",
-      "y_channel": "model/input_layer1"
+      "feedback_uv_channel": "post_isp_denoise_715_h15h/input_layer2",
+      "feedback_y_channel": "post_isp_denoise_715_h15h/input_layer3",
+      "network_path": "/usr/lib/medialib/denoise_config/vd_m_715.hef",
+      "output_uv_channel": "post_isp_denoise_715_h15h/conv14",
+      "output_y_channel": "post_isp_denoise_715_h15h/conv17",
+      "uv_channel": "post_isp_denoise_715_h15h/input_layer4",
+      "y_channel": "post_isp_denoise_715_h15h/input_layer1"
     },
     "sensor": "imx678"
   },
@@ -416,7 +418,7 @@
     "camera_type": "CAMERA_TYPE_PINHOLE",
     "color_interpolation": "INTERPOLATION_TYPE_BILINEAR",
     "enabled": true,
-    "sensor_calib_path": "/etc/imaging/cfg/hailo15h/imx678/kit/4k/shared/calibration/cam_intrinsics.txt"
+    "sensor_calib_path": "/etc/imaging/cfg/hailo15h/imx715/theia_sl410m/4k/shared/calibration/cam_intrinsics.txt"
   },
   "grayscale": false,
   "hdr": {

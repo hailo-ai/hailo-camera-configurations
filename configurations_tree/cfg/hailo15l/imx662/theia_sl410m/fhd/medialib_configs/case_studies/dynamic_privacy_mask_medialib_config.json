@@ -1,0 +1,21 @@
+{
+  "version": "2.0.0",
+  "metadata": {
+    "architecture": "hailo15l",
+    "content_hash": "e518457b5fdf1a07bc875e3f59f7a13e154ae4512b126e448926c65b76ab12ae",
+    "description": "",
+    "generation_timestamp": "2026-03-21T09:20:08.523344+00:00"
+  },
+  "backup_folder_path": "",
+  "default_profile": "Daylight",
+  "profiles": [
+    {
+      "config_file": "/etc/imaging/cfg/hailo15l/imx662/theia_sl410m/fhd/profiles/daylight/dynamic_privacy_mask_daylight/dynamic_privacy_mask_daylight_profile.json",
+      "name": "Daylight"
+    },
+    {
+      "config_file": "/etc/imaging/cfg/hailo15l/imx662/theia_sl410m/fhd/profiles/HDR/dynamic_privacy_mask_HDR/dynamic_privacy_mask_HDR_profile.json",
+      "name": "High_Dynamic_Range"
+    }
+  ]
+}

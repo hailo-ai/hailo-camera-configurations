@@ -4,7 +4,7 @@
     "architecture": "hailo15h",
     "content_hash": "b3e6776100b3c99342928fcac063df8908feb79f1503c6190e9ffd01938bc7d7",
     "description": "",
-    "generation_timestamp": "2026-01-28T15:57:11.265298+00:00"
+    "generation_timestamp": "2026-01-28T16:02:49.043510+00:00"
   },
   "application_settings": "/etc/imaging/cfg/hailo15h/imx678/kit/4k/profiles/daylight/webserver_daylight/application_settings_clip.json",
   "encoded_output_streams": [

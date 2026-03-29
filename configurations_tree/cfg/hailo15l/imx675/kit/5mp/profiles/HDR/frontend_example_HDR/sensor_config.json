@@ -2,15 +2,15 @@
   "version": "1.1.0",
   "metadata": {
     "architecture": "hailo15l",
-    "content_hash": "ce79cb4b8e7f5c185ab1724e0fa23c1134f873c5522063ed89d042c706003d25",
+    "content_hash": "4a0a5055abbc1770fd875d3240228a3873a7539e8b83c0257ff52a1d709553da",
     "description": "",
-    "generation_timestamp": "2026-02-06T08:04:13.750021+00:00"
+    "generation_timestamp": "2026-03-23T02:30:43.109361+00:00"
   },
   "input_video": {
     "resolution": {
       "framerate": 30,
-      "height": 2160,
-      "width": 3840
+      "height": 1944,
+      "width": 2592
     },
     "sensor_id": "SENSOR_0"
   },

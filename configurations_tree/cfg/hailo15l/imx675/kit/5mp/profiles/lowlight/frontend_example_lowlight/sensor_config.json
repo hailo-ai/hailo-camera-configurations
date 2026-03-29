@@ -2,15 +2,15 @@
   "version": "1.1.0",
   "metadata": {
     "architecture": "hailo15l",
-    "content_hash": "636b46b7b78ae5217258045ad323e79a51a876565864b92cade108e4d16f1d4b",
+    "content_hash": "a5ed5963031a881b040351f91449ceda6057e4738b03edc5e865fcb8c0766177",
     "description": "",
-    "generation_timestamp": "2026-02-06T08:04:13.935135+00:00"
+    "generation_timestamp": "2026-03-23T02:30:43.221154+00:00"
   },
   "input_video": {
     "resolution": {
       "framerate": 30,
-      "height": 2160,
-      "width": 3840
+      "height": 1944,
+      "width": 2592
     }
   },
   "sensor_calibration_file": "/etc/imaging/cfg/hailo15l/imx675/kit/5mp/profiles/lowlight/frontend_example_lowlight/calib.json",

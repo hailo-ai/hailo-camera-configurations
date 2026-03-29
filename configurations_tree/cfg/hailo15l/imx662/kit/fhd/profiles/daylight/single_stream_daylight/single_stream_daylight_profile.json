@@ -1,0 +1,21 @@
+{
+  "version": "1.0.0",
+  "metadata": {
+    "architecture": "hailo15l",
+    "content_hash": "65302ad4e331299e8fae49822a77467808eb489a2b34966c809b78e16e847aeb",
+    "description": "",
+    "generation_timestamp": "2026-02-16T09:40:06.341424+00:00"
+  },
+  "application_settings": "/etc/imaging/cfg/hailo15l/imx662/kit/fhd/profiles/daylight/single_stream_daylight/application_settings.json",
+  "encoded_output_streams": [
+    {
+      "encoding": "/etc/imaging/cfg/hailo15l/imx662/kit/fhd/profiles/daylight/single_stream_daylight/encoder_sink0.json",
+      "masking": "/etc/imaging/cfg/hailo15l/imx662/kit/fhd/profiles/daylight/single_stream_daylight/masking_sink0.json",
+      "osd": "/etc/imaging/cfg/hailo15l/imx662/kit/fhd/profiles/daylight/single_stream_daylight/osd_sink0.json",
+      "stream_id": "sink0"
+    }
+  ],
+  "iq_settings": "/etc/imaging/cfg/hailo15l/imx662/kit/fhd/profiles/daylight/single_stream_daylight/iq_settings.json",
+  "sensor_config": "/etc/imaging/cfg/hailo15l/imx662/kit/fhd/profiles/daylight/single_stream_daylight/sensor_config.json",
+  "stabilizer_settings": "/etc/imaging/cfg/hailo15l/imx662/kit/fhd/profiles/daylight/single_stream_daylight/stabilizer_settings.json"
+}

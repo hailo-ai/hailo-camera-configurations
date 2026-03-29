@@ -106,7 +106,7 @@ Moves a field to a new location.
   target_name: "initial"
 ```
 
-vset_value
+### set_value
 Sets a static value for a field.
 
 #### Parameters:
@@ -130,6 +130,22 @@ Applies an expression to modify a field's value.
 - operation: transform_value
   path: "$.exposure.gain"
   expression: "value / 10.0"
+```
+
+### map_values
+Applies an mapping to modify a field's value.
+
+#### Parameters:
+*   **path:** JSONPath to the field.
+*   **mapping:** A list of old-value : new-value pairs
+#### Example:
+```yaml
+- operation: map_values
+  path: "$.sensor.exposure_limit"
+  mapping:
+    40: 30
+    60: 45
+    "/old/path/file.json": "/new/path/optimized.json"
 ```
 
 ### to_array

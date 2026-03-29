@@ -1,0 +1,23 @@
+source_version: 2.0.0
+target_version: 3.0.0
+description: 'From v2.0.0_to_v3.0.0.yaml:
+
+  Add delta_ms, query_type, timeout_ms fields to dynamic_privacy_mask for temporal
+  query support'
+rules:
+- operation: set_required_default
+  path: $.masking.dynamic_privacy_mask
+  field_name: delta_ms
+  default_value: 34
+  source_file: v2.0.0_to_v3.0.0.yaml
+- operation: set_required_default
+  path: $.masking.dynamic_privacy_mask
+  field_name: query_type
+  default_value: Exact
+  source_file: v2.0.0_to_v3.0.0.yaml
+- operation: set_required_default
+  path: $.masking.dynamic_privacy_mask
+  field_name: timeout_ms
+  default_value: 10000
+  source_file: v2.0.0_to_v3.0.0.yaml
+consolidated: true

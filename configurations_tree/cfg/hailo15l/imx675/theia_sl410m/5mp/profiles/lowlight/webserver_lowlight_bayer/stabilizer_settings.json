@@ -1,10 +1,10 @@
 {
-  "version": "1.0.0",
+  "version": "2.0.0",
   "metadata": {
     "architecture": "hailo15l",
-    "content_hash": "0083c93de0ab73302a36531d6cebc41586232f470e4f166e7865630d7c911cf9",
+    "content_hash": "483ab81b1813d51ca84bda6b75b9899a001a90cd394fbbddf51d66b0370e1bf3",
     "description": "",
-    "generation_timestamp": "2025-11-24T12:15:22.733649+00:00"
+    "generation_timestamp": "2026-02-12T13:25:40.393208+00:00"
   },
   "dis": {
     "angular_dis": {
@@ -41,7 +41,6 @@
     "hdr_exposure_ratio": 0.2,
     "iir_hpf_coefficient": 0.997,
     "line_readout_time": 15151,
-    "max_angle_deg": 6.0,
     "min_angle_deg": 0.05,
     "rotational_smoothing_coefficient": 0.0,
     "stabilize": true,

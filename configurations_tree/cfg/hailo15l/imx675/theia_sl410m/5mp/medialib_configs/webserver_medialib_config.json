@@ -2,9 +2,9 @@
   "version": "2.0.0",
   "metadata": {
     "architecture": "hailo15l",
-    "content_hash": "aaa69be458ec34250b3f413e94d04a23a2b8afaced45c3b99ebf2d5ff3371e70",
+    "content_hash": "cbe85d6be8c26cfeef32e75590513f037f219307af18008798ee57f7aa69a8d3",
     "description": "",
-    "generation_timestamp": "2026-01-28T15:57:10.866351+00:00"
+    "generation_timestamp": "2026-01-29T09:38:20.352350+00:00"
   },
   "backup_folder_path": "/etc/imaging/cfg/backups/webserver",
   "default_profile": "Daylight_Basic",
@@ -60,6 +60,18 @@
     {
       "config_file": "/etc/imaging/cfg/hailo15l/imx675/theia_sl410m/5mp/profiles/lowlight/lowlight_bayer_r0225c8/lowlight_bayer_r0225c8_profile.json",
       "name": "Lowlight_Bayer_FaceLandmarks"
+    },
+    {
+      "config_file": "/etc/imaging/cfg/hailo15l/imx675/theia_sl410m/5mp/profiles/daylight/dynamic_privacy_mask_daylight/dynamic_privacy_mask_daylight_profile.json",
+      "name": "Daylight_DynamicPrivacyMask"
+    },
+    {
+      "config_file": "/etc/imaging/cfg/hailo15l/imx675/theia_sl410m/5mp/profiles/HDR/dynamic_privacy_mask_HDR/dynamic_privacy_mask_HDR_profile.json",
+      "name": "High_Dynamic_Range_DynamicPrivacyMask"
+    },
+    {
+      "config_file": "/etc/imaging/cfg/hailo15l/imx675/theia_sl410m/5mp/profiles/lowlight/dynamic_privacy_mask_lowlight_bayer/dynamic_privacy_mask_lowlight_bayer_profile.json",
+      "name": "Lowlight_Bayer_DynamicPrivacyMask"
     }
   ]
 }

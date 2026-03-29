@@ -1,0 +1,21 @@
+{
+  "version": "1.0.0",
+  "metadata": {
+    "architecture": "hailo15l",
+    "content_hash": "f8717275857a2bbdcfadec7b092754882fcf90ad34fd7957f6de1b74c4cd3479",
+    "description": "",
+    "generation_timestamp": "2026-01-28T17:06:36.344950+00:00"
+  },
+  "application_settings": "/etc/imaging/cfg/hailo15l/imx307/theia_sl410m/fhd/profiles/daylight/single_stream_daylight/application_settings.json",
+  "encoded_output_streams": [
+    {
+      "encoding": "/etc/imaging/cfg/hailo15l/imx307/theia_sl410m/fhd/profiles/daylight/single_stream_daylight/encoder_sink0.json",
+      "masking": "/etc/imaging/cfg/hailo15l/imx307/theia_sl410m/fhd/profiles/daylight/single_stream_daylight/masking_sink0.json",
+      "osd": "/etc/imaging/cfg/hailo15l/imx307/theia_sl410m/fhd/profiles/daylight/single_stream_daylight/osd_sink0.json",
+      "stream_id": "sink0"
+    }
+  ],
+  "iq_settings": "/etc/imaging/cfg/hailo15l/imx307/theia_sl410m/fhd/profiles/daylight/single_stream_daylight/iq_settings.json",
+  "sensor_config": "/etc/imaging/cfg/hailo15l/imx307/theia_sl410m/fhd/profiles/daylight/single_stream_daylight/sensor_config.json",
+  "stabilizer_settings": "/etc/imaging/cfg/hailo15l/imx307/theia_sl410m/fhd/profiles/daylight/single_stream_daylight/stabilizer_settings.json"
+}
