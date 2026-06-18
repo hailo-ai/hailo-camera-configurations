@@ -1,0 +1,27 @@
+{
+  "version": "1.0.0",
+  "metadata": {
+    "architecture": "hailo15l",
+    "content_hash": "40a2cf11306c5b72561d0871c18596984c77cddde1ef171dc1cd9e2d93edd45c",
+    "description": "",
+    "generation_timestamp": "2026-05-10T19:57:51.739083+00:00"
+  },
+  "application_settings": "/etc/imaging/cfg/hailo15l/imx662/theia_sl410m/fhd/profiles/daylight/clip_example_daylight/application_settings.json",
+  "encoded_output_streams": [
+    {
+      "encoding": "/etc/imaging/cfg/hailo15l/imx662/theia_sl410m/fhd/profiles/daylight/clip_example_daylight/encoder_highres.json",
+      "masking": "/etc/imaging/cfg/hailo15l/imx662/theia_sl410m/fhd/profiles/daylight/clip_example_daylight/masking_highres.json",
+      "osd": "/etc/imaging/cfg/hailo15l/imx662/theia_sl410m/fhd/profiles/daylight/clip_example_daylight/osd_highres.json",
+      "stream_id": "HighRes"
+    },
+    {
+      "encoding": "/etc/imaging/cfg/hailo15l/imx662/theia_sl410m/fhd/profiles/daylight/clip_example_daylight/encoder_vga.json",
+      "masking": "/etc/imaging/cfg/hailo15l/imx662/theia_sl410m/fhd/profiles/daylight/clip_example_daylight/masking_vga.json",
+      "osd": "/etc/imaging/cfg/hailo15l/imx662/theia_sl410m/fhd/profiles/daylight/clip_example_daylight/osd_vga.json",
+      "stream_id": "VGA"
+    }
+  ],
+  "iq_settings": "/etc/imaging/cfg/hailo15l/imx662/theia_sl410m/fhd/profiles/daylight/clip_example_daylight/iq_settings.json",
+  "sensor_config": "/etc/imaging/cfg/hailo15l/imx662/theia_sl410m/fhd/profiles/daylight/clip_example_daylight/sensor_config.json",
+  "stabilizer_settings": "/etc/imaging/cfg/hailo15l/imx662/theia_sl410m/fhd/profiles/daylight/clip_example_daylight/stabilizer_settings.json"
+}

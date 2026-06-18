@@ -1,0 +1,10 @@
+source_version: 4.0.0
+target_version: 5.0.0
+description: Add required analytics_labels array (default []) to smart_encoder.
+rules:
+- operation: set_required_default
+  path: $.encoding.hailo_encoder.smart_encoder
+  field_name: analytics_labels
+  default_value: []
+  source_file: v4.0.0_to_v5.0.0.yaml
+consolidated: true

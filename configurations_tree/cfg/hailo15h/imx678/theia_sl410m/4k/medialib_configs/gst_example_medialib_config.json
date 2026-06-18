@@ -2,9 +2,9 @@
   "version": "2.0.0",
   "metadata": {
     "architecture": "hailo15h",
-    "content_hash": "79403f89fcadfdf4592d6588fe45a2dcdf41ee2b639affcc46b37babf6a756d9",
+    "content_hash": "a5445b0792a198ec883854d12aaef70f795f092e81f50bd7d3a152bcea90adc6",
     "description": "",
-    "generation_timestamp": "2026-03-08T10:21:48.021052+00:00"
+    "generation_timestamp": "2026-05-18T18:52:36.840376+00:00"
   },
   "backup_folder_path": "/etc/imaging/cfg/backups/gst_example",
   "default_profile": "Daylight",
@@ -19,15 +19,19 @@
     },
     {
       "config_file": "/etc/imaging/cfg/hailo15h/imx678/theia_sl410m/4k/profiles/lowlight/lowlight_r0225c8/lowlight_r0225c8_profile.json",
-      "name": "Lowlight"
+      "name": "AI_ISP_Gen1"
     },
     {
       "config_file": "/etc/imaging/cfg/hailo15h/imx678/theia_sl410m/4k/profiles/lowlight/lowlight_bayer_r0225c8/lowlight_bayer_r0225c8_profile.json",
-      "name": "Lowlight_Bayer"
+      "name": "AI_ISP_Gen2"
     },
     {
       "config_file": "/etc/imaging/cfg/hailo15h/imx678/theia_sl410m/4k/profiles/IR/gst_example_IR/gst_example_IR_profile.json",
       "name": "Infrared"
+    },
+    {
+      "config_file": "/etc/imaging/cfg/hailo15h/imx678/theia_sl410m/4k/profiles/lowlight/ai_isp_gen3_r0225c8/ai_isp_gen3_r0225c8_profile.json",
+      "name": "AI_ISP_Gen3"
     }
   ]
 }

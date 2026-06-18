@@ -1,0 +1,63 @@
+source_version: 1.2.0
+target_version: 1.4.0
+description: 'From v1.2.0_to_v1.4.0.yaml:
+
+  MSW-15096: Add per-exposure BLS support for HDR mode. Copy bls values to bls_long
+  and bls_short, then rename bls to bls_short. Non-HDR profiles are reverted to bls-only
+  after migration.
+
+  2DNR sigma range restriction: reduce A2dnrv5 sigma maximum from 100.0 to 32.0. Values
+  above ~30 remove low-frequency signal content rather than denoising, as confirmed
+  by tuning team testing at high gain.
+
+  AE: fix gain delay for HDR mode. The pipeline has a constant 2-frame delay for gain/IT
+  changes regardless of magnitude. Set HDRAdaptiveAE delay to [2, 2, 19] so gain changes
+  get the same 2-frame protection as integration time. Previously gain delay was 0,
+  causing AE oscillation in HDR with anti-flicker.
+
+  AE: extend pipeline-protection delay to SDR mode. AdaptiveAe.delay was [0, 0, 0],
+  leaving every adjustment path (IT-only, gain-only, combined) unprotected against
+  the constant 2-frame pipeline delay. Set AdaptiveAe.delay to [2, 2, 19] so SDR matches
+  the protection HDRAdaptiveAE already has. Previously caused AE oscillation and slow
+  convergence on cold start when the sensor power-on state was far from the SDR setpoint.
+
+  MSW-15670: Add fast_denoise_switch flag under iq_settings.denoise. Defaults to false.
+  Only meaningful in SDR/Daylight profiles using HDM (injection) denoise on hailo15l/imx678;
+  absent or false elsewhere is a no-op. See https://hailotech.atlassian.net/wiki/spaces/TAP/pages/3140124675
+  for the design.'
+rules:
+- operation: copy_field
+  source_path: $.automatic_algorithms.ABls.bls
+  target_path: $.automatic_algorithms.ABls
+  target_name: bls_long
+  source_file: v1.2.0_to_v1.3.0.yaml
+- operation: rename_field
+  path: $.automatic_algorithms.ABls
+  old_name: bls
+  new_name: bls_short
+  source_file: v1.2.0_to_v1.3.0.yaml
+- operation: clip_array_values
+  path: $.automatic_algorithms.A2dnrv5.sigma
+  min: 0.01
+  max: 32.0
+  source_file: v1.3.0_to_v1.3.1.yaml
+- operation: set_value
+  path: $.automatic_algorithms.HDRAdaptiveAE.delay
+  value:
+  - 2
+  - 2
+  - 19
+  source_file: v1.3.1_to_v1.3.2.yaml
+- operation: set_value
+  path: $.automatic_algorithms.AdaptiveAe.delay
+  value:
+  - 2
+  - 2
+  - 19
+  source_file: v1.3.2_to_v1.3.3.yaml
+- operation: add_field
+  path: $.denoise
+  field_name: fast_denoise_switch
+  value: false
+  source_file: v1.3.3_to_v1.4.0.yaml
+consolidated: true

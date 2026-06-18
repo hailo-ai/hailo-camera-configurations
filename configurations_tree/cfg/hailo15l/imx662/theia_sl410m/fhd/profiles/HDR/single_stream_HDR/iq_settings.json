@@ -1,10 +1,10 @@
 {
-  "version": "1.2.0",
+  "version": "1.4.0",
   "metadata": {
     "architecture": "hailo15l",
-    "content_hash": "bbd6d7a6345ccf8c66de464ce76ca7e7235f5fa4223600ca3eeade895e2bc677",
+    "content_hash": "81842e463ce2d01dbe34911253e7748cb1a3ff6a9ca6acb1eb987e29fd08181f",
     "description": "",
-    "generation_timestamp": "2026-03-15T19:55:30.810077+00:00"
+    "generation_timestamp": "2026-05-13T06:13:27.470552+00:00"
   },
   "automatic_algorithms": {
     "A2dnrv5": {
@@ -27,7 +27,15 @@
       "strength": [127,127,127,127,127,127]
     },
     "ABls": {
-      "bls": [
+      "bls_long": [
+        [200,200,200,200],
+        [200,200,200,200],
+        [200,200,200,200],
+        [200,200,200,200],
+        [200,200,200,200],
+        [200,200,200,200]
+      ],
+      "bls_short": [
         [200,200,200,200],
         [200,200,200,200],
         [200,200,200,200],
@@ -152,7 +160,7 @@
       "strength": [128,128,128,128,128,128]
     },
     "AdaptiveAe": {
-      "delay": [0,0,0],
+      "delay": [2,2,19],
       "enable": false,
       "flickerPeriod": 0,
       "hcg": false,
@@ -289,7 +297,7 @@
     "HDRAdaptiveAE": {
       "brightImagePercentage": 40,
       "darkImagePercentage": 5,
-      "delay": [0,0,0],
+      "delay": [2,2,19],
       "disable": false,
       "enable": true,
       "flickerPeriod": 0,
@@ -336,17 +344,21 @@
     }
   },
   "denoise": {
+    "bayer": true,
     "enabled": false,
+    "fast_denoise_switch": false,
     "loopback-count": 1,
     "method": "HIGH_QUALITY",
     "network": {
-      "feedback_uv_channel": "post_isp_denoise_664_h15h/input_layer2",
-      "feedback_y_channel": "post_isp_denoise_664_h15h/input_layer3",
-      "network_path": "/usr/lib/medialib/denoise_config/vd_m_imx664.hef",
-      "output_uv_channel": "post_isp_denoise_664_h15h/conv14",
-      "output_y_channel": "post_isp_denoise_664_h15h/conv17",
-      "uv_channel": "post_isp_denoise_664_h15h/input_layer4",
-      "y_channel": "post_isp_denoise_664_h15h/input_layer1"
+      "bayer_channel": "pre_isp_hdm_662_h15l/input_layer1",
+      "input_fusion_feedback": "pre_isp_hdm_662_h15l/input_layer2",
+      "input_gamma_feedback": "pre_isp_hdm_662_h15l/input_layer3",
+      "network_path": "/usr/lib/medialib/denoise_config/pre_isp_hdm_662_h15l.hef",
+      "output_bayer_channel": "pre_isp_hdm_662_h15l/depth_to_space2",
+      "output_fusion_feedback": "pre_isp_hdm_662_h15l/ew_add1",
+      "output_gamma_feedback": "pre_isp_hdm_662_h15l/conv5",
+      "skip0_fusion_channel": "pre_isp_hdm_662_h15l/input_layer4",
+      "skip1_fusion_channel": "pre_isp_hdm_662_h15l/input_layer5"
     },
     "sensor": "imx662"
   },

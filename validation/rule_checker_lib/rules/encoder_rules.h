@@ -60,4 +60,18 @@ class SmartEncoderRoiBoundsRule : public IRule {
         std::string message() const override;
         EvalResult evaluate(const nlohmann::json &data) const override;
     };
+
+class H264BaselineNoBFramesRule : public IRule {
+    public:
+        std::string id() const override;
+        std::string message() const override;
+        EvalResult evaluate(const nlohmann::json &data) const override;
+    };
+class ExclusiveEncoderTypeRule : public IRule {
+    public:
+        std::string id() const override;
+        std::string message() const override;
+        EvalResult evaluate(const nlohmann::json &data) const override;
+    };
+
 } // namespace rule_checker

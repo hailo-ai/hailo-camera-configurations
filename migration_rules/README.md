@@ -106,6 +106,23 @@ Moves a field to a new location.
   target_name: "initial"
 ```
 
+### copy_field
+Copies a field's value to a new location, preserving the original. This is similar to `move_field` but does not remove the source. The value is deep-copied so modifying the copy does not affect the original.
+
+#### Parameters:
+*   **source_path:** JSONPath to the field to copy.
+*   **target_path:** JSONPath to the parent object where the copy will be inserted.
+*   **target_name:** Optional new name for the copied field. If omitted, the source field name is used.
+
+#### Example:
+```yaml
+# Copy bls to bls_short (e.g., before moving bls to bls_long)
+- operation: copy_field
+  source_path: "$.automatic_algorithms.ABls.bls"
+  target_path: "$.automatic_algorithms.ABls"
+  target_name: "bls_short"
+```
+
 ### set_value
 Sets a static value for a field.
 

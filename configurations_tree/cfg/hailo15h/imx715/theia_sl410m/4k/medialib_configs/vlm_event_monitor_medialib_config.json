@@ -1,0 +1,17 @@
+{
+  "version": "2.0.0",
+  "metadata": {
+    "architecture": "hailo15h",
+    "content_hash": "a695ebc7ac0781177b49036ca4b252122c14bfe9e2bd2662f2cd6e82eae6d307",
+    "description": "",
+    "generation_timestamp": "2026-05-12T08:44:35.964516+00:00"
+  },
+  "backup_folder_path": "/etc/imaging/cfg/backups/vlm_example",
+  "default_profile": "Daylight",
+  "profiles": [
+    {
+      "config_file": "/etc/imaging/cfg/hailo15h/imx715/theia_sl410m/4k/profiles/daylight/vlm_example_daylight/vlm_example_daylight_profile.json",
+      "name": "Daylight"
+    }
+  ]
+}

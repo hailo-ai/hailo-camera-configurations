@@ -1,10 +1,10 @@
 {
-  "version": "1.2.0",
+  "version": "1.4.0",
   "metadata": {
     "architecture": "hailo15l",
-    "content_hash": "b07e91d5d0b3ee57fcd3cbead79b1caec665769ef6a0e7b0820b7654f815c2c1",
+    "content_hash": "b31924d127fbfa7ea6729f66f860aac2fce41df8c1533f33d0434c14a43a83e4",
     "description": "",
-    "generation_timestamp": "2026-03-22T16:25:54.910230+00:00"
+    "generation_timestamp": "2026-05-07T09:23:38.094364+00:00"
   },
   "automatic_algorithms": {
     "A2dnrv5": {
@@ -149,7 +149,7 @@
       "strength": [128,128,128,128,128,128]
     },
     "AdaptiveAe": {
-      "delay": [0,0,0],
+      "delay": [2,2,19],
       "enable": false,
       "flickerPeriod": 0,
       "hcg": false,
@@ -286,7 +286,7 @@
     "HDRAdaptiveAE": {
       "brightImagePercentage": 40.0,
       "darkImagePercentage": 5.0,
-      "delay": [0,0,0],
+      "delay": [2,2,19],
       "disable": false,
       "enable": true,
       "flickerPeriod": 0,
@@ -335,13 +335,14 @@
   "denoise": {
     "bayer": true,
     "enabled": true,
+    "fast_denoise_switch": false,
     "loopback-count": 1,
     "method": "HIGH_QUALITY",
     "network": {
       "bayer_channel": "hdr_pre_isp_hdm_678_h15l/input_layer1",
       "input_fusion_feedback": "hdr_pre_isp_hdm_678_h15l/input_layer2",
       "input_gamma_feedback": "hdr_pre_isp_hdm_678_h15l/input_layer3",
-      "network_path": "/usr/lib/medialib/denoise_config/hdr_hdm_v_071.hef",
+      "network_path": "/usr/lib/medialib/denoise_config/hdr_pre_isp_hdm_678_h15l.hef",
       "output_bayer_channel": "hdr_pre_isp_hdm_678_h15l/concat_out",
       "output_fusion_feedback": "hdr_pre_isp_hdm_678_h15l/ew_add1",
       "output_gamma_feedback": "hdr_pre_isp_hdm_678_h15l/conv7",

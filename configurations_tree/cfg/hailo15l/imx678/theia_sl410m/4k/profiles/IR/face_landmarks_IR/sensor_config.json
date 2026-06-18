@@ -1,0 +1,27 @@
+{
+  "version": "1.1.0",
+  "metadata": {
+    "architecture": "hailo15l",
+    "content_hash": "5f3e8d61fc758c9d3428e2aa7f46074c8e90a3b03235b019924d645387205c81",
+    "description": "",
+    "generation_timestamp": "2026-04-15T07:50:17.047075+00:00"
+  },
+  "input_video": {
+    "resolution": {
+      "framerate": 30,
+      "height": 2160,
+      "width": 3840
+    },
+    "sensor_id": "SENSOR_0"
+  },
+  "sensor_calibration_file": "/etc/imaging/cfg/hailo15l/imx678/theia_sl410m/4k/profiles/IR/face_landmarks_IR/calib.json",
+  "sensor_configuration": {
+    "af_i2c_addr": "0x0",
+    "af_i2c_bus": -1,
+    "drv": "HAILO_IMX678.drv",
+    "mode": 0,
+    "name": "imx678",
+    "pixel_mode": 0,
+    "sensor_only": 0
+  }
+}

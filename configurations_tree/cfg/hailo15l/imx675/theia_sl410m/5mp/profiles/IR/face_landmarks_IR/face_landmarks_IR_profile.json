@@ -1,0 +1,27 @@
+{
+  "version": "1.0.0",
+  "metadata": {
+    "architecture": "hailo15l",
+    "content_hash": "dd192991c54a489035f6736fe8625209f637a2c37f035885c498d6397f9c7f8b",
+    "description": "",
+    "generation_timestamp": "2026-04-15T07:50:16.045384+00:00"
+  },
+  "application_settings": "/etc/imaging/cfg/hailo15l/imx675/theia_sl410m/5mp/profiles/IR/face_landmarks_IR/application_settings.json",
+  "encoded_output_streams": [
+    {
+      "encoding": "/etc/imaging/cfg/hailo15l/imx675/theia_sl410m/5mp/profiles/IR/face_landmarks_IR/encoder_sink0.json",
+      "masking": "/etc/imaging/cfg/hailo15l/imx675/theia_sl410m/5mp/profiles/IR/face_landmarks_IR/masking_sink0.json",
+      "osd": "/etc/imaging/cfg/hailo15l/imx675/theia_sl410m/5mp/profiles/IR/face_landmarks_IR/osd_sink0.json",
+      "stream_id": "sink0"
+    },
+    {
+      "encoding": "/etc/imaging/cfg/hailo15l/imx675/theia_sl410m/5mp/profiles/IR/face_landmarks_IR/encoder_sink1.json",
+      "masking": "/etc/imaging/cfg/hailo15l/imx675/theia_sl410m/5mp/profiles/IR/face_landmarks_IR/masking_sink1.json",
+      "osd": "/etc/imaging/cfg/hailo15l/imx675/theia_sl410m/5mp/profiles/IR/face_landmarks_IR/osd_sink1.json",
+      "stream_id": "sink1"
+    }
+  ],
+  "iq_settings": "/etc/imaging/cfg/hailo15l/imx675/theia_sl410m/5mp/profiles/IR/face_landmarks_IR/iq_settings.json",
+  "sensor_config": "/etc/imaging/cfg/hailo15l/imx675/theia_sl410m/5mp/profiles/IR/face_landmarks_IR/sensor_config.json",
+  "stabilizer_settings": "/etc/imaging/cfg/hailo15l/imx675/theia_sl410m/5mp/profiles/IR/face_landmarks_IR/stabilizer_settings.json"
+}

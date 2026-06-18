@@ -482,4 +482,90 @@ namespace rule_checker
         } }, id());
     }
 
+    std::string H264BaselineNoBFramesRule::id() const
+    {
+        return "h264_baseline_no_bframes";
+    }
+
+    std::string H264BaselineNoBFramesRule::message() const
+    {
+        return "H.264 Baseline profile does not support B-frames. Set gop_size to 1 or use a higher profile (Main/High).";
+    }
+
+    EvalResult H264BaselineNoBFramesRule::evaluate(const nlohmann::json &data) const
+    {
+        return eval_lambda_on_all_encoders(data, [this](const nlohmann::json &encoder_data, const std::string &encoder_path) -> EvalResult
+                                           {
+        const std::string profile_path = "/encoding/hailo_encoder/config/output_stream/profile";
+        const std::string gop_size_path = "/encoding/hailo_encoder/gop_config/gop_size";
+
+        // If profile is not set, nothing to check
+        const nlohmann::json::json_pointer profile_ptr(profile_path);
+        if (!encoder_data.contains(profile_ptr)) {
+            return EvalResultBuilder::success();
+        }
+
+        std::string profile;
+        EvalResult result = get_json_value(encoder_data, profile_path, profile, id());
+        if (!result.passed) {
+            EvalResultBuilder::promote_errors_to_info(result);
+            return result;
+        }
+
+        // Only applies to H.264 Baseline profile
+        if (profile != "VCENC_H264_BASE_PROFILE") {
+            return EvalResultBuilder::success();
+        }
+
+        int gop_size;
+        result = get_json_value(encoder_data, gop_size_path, gop_size, id());
+        if (!result.passed) {
+            EvalResultBuilder::promote_errors_to_info(result);
+            return result;
+        }
+
+        if (gop_size > 1) {
+            return EvalResultBuilder::error(id(), encoder_path + gop_size_path,
+                                     message() + " (profile: " + profile +
+                                     ", gop_size: " + std::to_string(gop_size) + ")");
+        }
+
+        return EvalResultBuilder::success(); }, id());
+    }
+
+    std::string ExclusiveEncoderTypeRule::id() const
+    {
+        return "exclusive_encoder_type";
+    }
+
+    std::string ExclusiveEncoderTypeRule::message() const
+    {
+        return "Each encoding stream must contain exactly one of 'hailo_encoder' or 'jpeg_encoder'.";
+    }
+
+    EvalResult ExclusiveEncoderTypeRule::evaluate(const nlohmann::json &data) const
+    {
+        return eval_lambda_on_all_encoders(data, [this](const nlohmann::json &encoder_data, const std::string &encoder_path) -> EvalResult
+                                           {
+        const nlohmann::json::json_pointer hailo_ptr("/encoding/hailo_encoder");
+        const nlohmann::json::json_pointer jpeg_ptr("/encoding/jpeg_encoder");
+
+        bool has_hailo = encoder_data.contains(hailo_ptr);
+        bool has_jpeg = encoder_data.contains(jpeg_ptr);
+
+        if (has_hailo && has_jpeg)
+        {
+            return EvalResultBuilder::error(id(), encoder_path,
+                                     message() + " Found both 'hailo_encoder' and 'jpeg_encoder'.");
+        }
+
+        if (!has_hailo && !has_jpeg)
+        {
+            return EvalResultBuilder::error(id(), encoder_path,
+                                     message() + " Found neither 'hailo_encoder' nor 'jpeg_encoder'.");
+        }
+
+        return EvalResultBuilder::success(); }, id());
+    }
+
 } // namespace rule_checker

@@ -1,0 +1,17 @@
+{
+  "version": "2.0.0",
+  "metadata": {
+    "architecture": "hailo15l",
+    "content_hash": "a01d2f286e1a388356a2e17f2ce20cd56a9dcf75f8db60edc88440b8b8b122ac",
+    "description": "",
+    "generation_timestamp": "2026-04-30T09:04:53.966626+00:00"
+  },
+  "backup_folder_path": "/etc/imaging/cfg/backups/face_landmarks_dual_sensor_sensor_0",
+  "default_profile": "Daylight",
+  "profiles": [
+    {
+      "config_file": "/etc/imaging/cfg/hailo15l/imx662/theia_sl410m/fhd/profiles/daylight/face_landmarks_dual_sensor_sensor_0_daylight/face_landmarks_dual_sensor_sensor_0_daylight_profile.json",
+      "name": "Daylight"
+    }
+  ]
+}

@@ -1,10 +1,10 @@
 {
-  "version": "3.0.0",
+  "version": "4.0.0",
   "metadata": {
     "architecture": "hailo15l",
-    "content_hash": "3dd421800b8bebe4c8612e7d213b653e6056dd8126e7395063aefe7841f88828",
+    "content_hash": "a0f7ab10e8008a12a35fe1446bcec93d56b774e56968a62a1c8f385551774479",
     "description": "",
-    "generation_timestamp": "2026-03-16T08:17:35.688524+00:00"
+    "generation_timestamp": "2026-05-31T10:35:20.434243+00:00"
   },
   "application_analytics": {
     "detection": [
@@ -46,7 +46,6 @@
             "label": "vehicle"
           }
         ],
-        "mask_size": 128,
         "max_entries": 3,
         "original_height_ratio": 3,
         "original_width_ratio": 4,

@@ -1,0 +1,27 @@
+{
+  "version": "1.0.0",
+  "metadata": {
+    "architecture": "hailo15l",
+    "content_hash": "5e692eb024c22ff9c2eab810e052a197858fcbbf5934c449d82c95a99c8a5e48",
+    "description": "",
+    "generation_timestamp": "2026-04-15T07:50:17.176716+00:00"
+  },
+  "application_settings": "/etc/imaging/cfg/hailo15l/imx678/theia_sl410m/4k/profiles/daylight/face_landmarks_daylight/application_settings.json",
+  "encoded_output_streams": [
+    {
+      "encoding": "/etc/imaging/cfg/hailo15l/imx678/theia_sl410m/4k/profiles/daylight/face_landmarks_daylight/encoder_sink0.json",
+      "masking": "/etc/imaging/cfg/hailo15l/imx678/theia_sl410m/4k/profiles/daylight/face_landmarks_daylight/masking_sink0.json",
+      "osd": "/etc/imaging/cfg/hailo15l/imx678/theia_sl410m/4k/profiles/daylight/face_landmarks_daylight/osd_sink0.json",
+      "stream_id": "sink0"
+    },
+    {
+      "encoding": "/etc/imaging/cfg/hailo15l/imx678/theia_sl410m/4k/profiles/daylight/face_landmarks_daylight/encoder_sink1.json",
+      "masking": "/etc/imaging/cfg/hailo15l/imx678/theia_sl410m/4k/profiles/daylight/face_landmarks_daylight/masking_sink1.json",
+      "osd": "/etc/imaging/cfg/hailo15l/imx678/theia_sl410m/4k/profiles/daylight/face_landmarks_daylight/osd_sink1.json",
+      "stream_id": "sink1"
+    }
+  ],
+  "iq_settings": "/etc/imaging/cfg/hailo15l/imx678/theia_sl410m/4k/profiles/daylight/face_landmarks_daylight/iq_settings.json",
+  "sensor_config": "/etc/imaging/cfg/hailo15l/imx678/theia_sl410m/4k/profiles/daylight/face_landmarks_daylight/sensor_config.json",
+  "stabilizer_settings": "/etc/imaging/cfg/hailo15l/imx678/theia_sl410m/4k/profiles/daylight/face_landmarks_daylight/stabilizer_settings.json"
+}

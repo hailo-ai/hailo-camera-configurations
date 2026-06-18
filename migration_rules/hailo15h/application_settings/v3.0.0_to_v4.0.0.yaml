@@ -1,0 +1,17 @@
+source_version: 3.0.0
+target_version: 4.0.0
+description: 'From v3.0.0_to_v4.0.0.yaml:
+
+  Strip the dead mask_size field from application_analytics.semantic_segmentation
+  entries. PR #373 regenerated application_settings_schema.json after the
+  media-library struct dropped mask_size (commit 43e7a3c4f upstream), but kept the
+  schema version at 3.0.0 and did not add a migration rule. Meanwhile, the existing
+  v2.0.0_to_v3.0.0.yaml still injects mask_size=128 via set_required_default, so
+  any v2.0.0 config migrated forward ends up with a mask_size that the new v3.0.0
+  schema rejects under additionalProperties: false. This rule removes the dead
+  field on the way to v4.0.0; semantic_segmentation itself is left untouched.'
+rules:
+- operation: remove_field
+  path: $.application_analytics.semantic_segmentation[*].mask_size
+  source_file: v3.0.0_to_v4.0.0.yaml
+consolidated: true

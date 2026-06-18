@@ -1,6 +1,7 @@
 #include "rules/encoder_rules.h"
 #include "rules/profile_rules.h"
 #include "rules/iq_rules.h"
+#include "rules/denoise_rules.h"
 #include "rule_checker.h"
 
 namespace rule_checker {
@@ -19,6 +20,8 @@ namespace rule_checker {
         rule_engine.add_rule(std::make_unique<HdrAdaptiveAePriorityRangesContinuousRule>());
         rule_engine.add_rule(std::make_unique<DmscRangeCheckRule>());
         rule_engine.add_rule(std::make_unique<AlgorithmsArraySizeMatchRule>());
+        // Denoise Rules
+        rule_engine.add_rule(std::make_unique<FastDenoiseSwitchHdrExclusionRule>());
         // Encoder Rules
         rule_engine.add_rule(std::make_unique<MonitorFramesIntraPicRateMultiplicationRule>());
         rule_engine.add_rule(std::make_unique<GopLengthIntraPicRateMultiplicationRule>());
@@ -28,5 +31,7 @@ namespace rule_checker {
         rule_engine.add_rule(std::make_unique<TargetBitrateWhenPictureRcRule>());
         rule_engine.add_rule(std::make_unique<SmartEncoderEnablementRule>());
         rule_engine.add_rule(std::make_unique<SmartEncoderRoiBoundsRule>());
+        rule_engine.add_rule(std::make_unique<H264BaselineNoBFramesRule>());
+        rule_engine.add_rule(std::make_unique<ExclusiveEncoderTypeRule>());
     }
 }

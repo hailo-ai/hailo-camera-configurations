@@ -1,0 +1,21 @@
+{
+  "version": "2.0.0",
+  "metadata": {
+    "architecture": "hailo15l",
+    "content_hash": "c6ae02f3e746dd93d8faad56fa99e3b3024323c745231a16884724de7000e981",
+    "description": "",
+    "generation_timestamp": "2026-04-15T07:50:15.561802+00:00"
+  },
+  "backup_folder_path": "/etc/imaging/cfg/backups/face_landmarks",
+  "default_profile": "Daylight",
+  "profiles": [
+    {
+      "config_file": "/etc/imaging/cfg/hailo15l/imx662/theia_sl410m/fhd/profiles/daylight/face_landmarks_daylight/face_landmarks_daylight_profile.json",
+      "name": "Daylight"
+    },
+    {
+      "config_file": "/etc/imaging/cfg/hailo15l/imx662/theia_sl410m/fhd/profiles/HDR/face_landmarks_HDR/face_landmarks_HDR_profile.json",
+      "name": "High_Dynamic_Range"
+    }
+  ]
+}

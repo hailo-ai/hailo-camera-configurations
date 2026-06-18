@@ -1,0 +1,27 @@
+{
+  "version": "1.1.0",
+  "metadata": {
+    "architecture": "hailo15h",
+    "content_hash": "9f087c7a0580df986083193e190b797f8077868dbd645a9323080272f3e6b02b",
+    "description": "",
+    "generation_timestamp": "2026-04-15T07:50:14.963508+00:00"
+  },
+  "input_video": {
+    "resolution": {
+      "framerate": 30,
+      "height": 2160,
+      "width": 3840
+    },
+    "sensor_id": "SENSOR_0"
+  },
+  "sensor_calibration_file": "/etc/imaging/cfg/hailo15h/imx715/theia_sl410m/4k/profiles/lowlight/face_landmarks_lowlight_bayer/calib.json",
+  "sensor_configuration": {
+    "af_i2c_addr": "0x0",
+    "af_i2c_bus": -1,
+    "drv": "HAILO_IMX715.drv",
+    "mode": 0,
+    "name": "imx715",
+    "pixel_mode": 0,
+    "sensor_only": 0
+  }
+}

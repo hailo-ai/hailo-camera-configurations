@@ -1,0 +1,21 @@
+{
+  "version": "1.0.0",
+  "metadata": {
+    "architecture": "hailo15h",
+    "content_hash": "1b5a38a9d151f507dde32ada9c9098710651343d599057b67e2408aa70ada0f5",
+    "description": "",
+    "generation_timestamp": "2026-05-22T13:20:31.212637+00:00"
+  },
+  "application_settings": "/etc/imaging/cfg/hailo15h/imx678/theia_sl410m/4k/profiles/lowlight/webserver_ai_isp_gen3/application_settings_detection.json",
+  "encoded_output_streams": [
+    {
+      "encoding": "/etc/imaging/cfg/hailo15h/imx678/theia_sl410m/4k/profiles/lowlight/webserver_ai_isp_gen3/encoder_sink0.json",
+      "masking": "/etc/imaging/cfg/hailo15h/imx678/theia_sl410m/4k/profiles/lowlight/webserver_ai_isp_gen3/masking_sink0.json",
+      "osd": "/etc/imaging/cfg/hailo15h/imx678/theia_sl410m/4k/profiles/lowlight/webserver_ai_isp_gen3/osd_sink0.json",
+      "stream_id": "sink0"
+    }
+  ],
+  "iq_settings": "/etc/imaging/cfg/hailo15h/imx678/theia_sl410m/4k/profiles/lowlight/webserver_ai_isp_gen3/iq_settings.json",
+  "sensor_config": "/etc/imaging/cfg/hailo15h/imx678/theia_sl410m/4k/profiles/lowlight/webserver_ai_isp_gen3/sensor_config.json",
+  "stabilizer_settings": "/etc/imaging/cfg/hailo15h/imx678/theia_sl410m/4k/profiles/lowlight/webserver_ai_isp_gen3/stabilizer_settings.json"
+}

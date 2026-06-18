@@ -2,9 +2,9 @@
   "version": "2.0.0",
   "metadata": {
     "architecture": "hailo15l",
-    "content_hash": "908b66efa5aab8385e83debf506adbaf5145b085568db2e0cf1137ec66668442",
+    "content_hash": "c77f7fe759b4876841649b18e43ebcaf78f12d4b23748fcfb8a2f61d5d38454b",
     "description": "",
-    "generation_timestamp": "2026-02-01T14:46:27.789449+00:00"
+    "generation_timestamp": "2026-05-17T12:05:52.912071+00:00"
   },
   "backup_folder_path": "/etc/imaging/cfg/backups/single_stream",
   "default_profile": "Daylight",
@@ -19,11 +19,11 @@
     },
     {
       "config_file": "/etc/imaging/cfg/hailo15l/imx678/theia_sl410m/4k/profiles/lowlight/single_stream_lowlight_bayer/single_stream_lowlight_bayer_profile.json",
-      "name": "Lowlight_Bayer"
+      "name": "AI_ISP_Gen3"
     },
     {
       "config_file": "/etc/imaging/cfg/hailo15l/imx678/theia_sl410m/4k/profiles/lowlight/single_stream_lowlight_bayer_hdr/single_stream_lowlight_bayer_hdr_profile.json",
-      "name": "Denoise_Hdr"
+      "name": "AI_ISP_Gen3_1"
     }
   ]
 }

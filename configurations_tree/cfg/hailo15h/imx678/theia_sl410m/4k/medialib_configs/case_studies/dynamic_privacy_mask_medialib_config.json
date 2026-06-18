@@ -2,9 +2,9 @@
   "version": "2.0.0",
   "metadata": {
     "architecture": "hailo15h",
-    "content_hash": "ce71f8fbfea1b1fea8d7f2d7e6466aa9d715b8285fc349e8a1a66d7ed0b611c6",
+    "content_hash": "95f35998fb0db5c49a09c29f1b5e01676e84f21d6414107251d91cc4fb710957",
     "description": "",
-    "generation_timestamp": "2026-01-25T17:32:14.818243+00:00"
+    "generation_timestamp": "2026-05-18T06:03:51.091724+00:00"
   },
   "backup_folder_path": "",
   "default_profile": "Daylight",
@@ -19,7 +19,11 @@
     },
     {
       "config_file": "/etc/imaging/cfg/hailo15h/imx678/theia_sl410m/4k/profiles/lowlight/dynamic_privacy_mask_lowlight_bayer/dynamic_privacy_mask_lowlight_bayer_profile.json",
-      "name": "Lowlight_Bayer"
+      "name": "AI_ISP_Gen2"
+    },
+    {
+      "config_file": "/etc/imaging/cfg/hailo15h/imx678/theia_sl410m/4k/profiles/lowlight/dynamic_privacy_mask_ai_isp_gen3/dynamic_privacy_mask_ai_isp_gen3_profile.json",
+      "name": "AI_ISP_Gen3"
     }
   ]
 }

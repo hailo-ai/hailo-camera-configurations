@@ -2,9 +2,9 @@
   "version": "2.0.0",
   "metadata": {
     "architecture": "hailo15l",
-    "content_hash": "d06281b06ed53371c4aeaeec957418a0d51c340b5ed62184952cec86f866ca89",
+    "content_hash": "042f6555285085fefa2a7ccafd75b03d726b1e83aaceb6b4de2fa84f5a30dac1",
     "description": "",
-    "generation_timestamp": "2026-03-17T16:01:38.332253+00:00"
+    "generation_timestamp": "2026-05-25T12:20:57.620496+00:00"
   },
   "backup_folder_path": "",
   "default_profile": "Daylight",
@@ -16,10 +16,6 @@
     {
       "config_file": "/etc/imaging/cfg/hailo15l/imx678/theia_sl410m/4k/profiles/HDR/dynamic_privacy_mask_HDR/dynamic_privacy_mask_HDR_profile.json",
       "name": "High_Dynamic_Range"
-    },
-    {
-      "config_file": "/etc/imaging/cfg/hailo15l/imx678/theia_sl410m/4k/profiles/lowlight/dynamic_privacy_mask_lowlight_bayer/dynamic_privacy_mask_lowlight_bayer_profile.json",
-      "name": "Lowlight_Bayer"
     }
   ]
 }

@@ -1,10 +1,10 @@
 {
-  "version": "1.2.0",
+  "version": "1.4.0",
   "metadata": {
     "architecture": "hailo15l",
-    "content_hash": "054705205bc7b1917ba1303f3ce9d6f6da40c9b1f2a4d530e7400290e66f1767",
+    "content_hash": "c098918cb2f43c42c68a15575a13938305bd282085103507c5d8c37641cdb510",
     "description": "",
-    "generation_timestamp": "2026-03-09T21:14:28.943143+00:00"
+    "generation_timestamp": "2026-05-07T09:23:38.636195+00:00"
   },
   "automatic_algorithms": {
     "A2dnrv5": {
@@ -31,6 +31,7 @@
         [200,200,200,200],
         [200,200,200,200]
       ],
+      "disable": false,
       "enable": true,
       "forcecreate": true,
       "gains": [1,32]
@@ -150,7 +151,7 @@
       "strength": [127,127,127,127,127,127,127]
     },
     "AdaptiveAe": {
-      "delay": [0,0,0],
+      "delay": [2,2,19],
       "enable": true,
       "flickerPeriod": 0,
       "hcg": false,
@@ -361,7 +362,7 @@
     "HDRAdaptiveAE": {
       "brightImagePercentage": 40,
       "darkImagePercentage": 5,
-      "delay": [0,0,0],
+      "delay": [2,2,19],
       "disable": true,
       "enable": false,
       "flickerPeriod": 0,
@@ -409,12 +410,13 @@
   },
   "denoise": {
     "enabled": false,
+    "fast_denoise_switch": false,
     "loopback-count": 1,
     "method": "HIGH_QUALITY",
     "network": {
       "feedback_uv_channel": "post_isp_denoise_675_h15l/input_layer2",
       "feedback_y_channel": "post_isp_denoise_675_h15l/input_layer3",
-      "network_path": "/usr/lib/medialib/denoise_config/vd_s_imx675_15.hef",
+      "network_path": "/usr/lib/medialib/denoise_config/post_isp_denoise_675_h15l.hef",
       "output_uv_channel": "post_isp_denoise_675_h15l/conv14",
       "output_y_channel": "post_isp_denoise_675_h15l/conv17",
       "uv_channel": "post_isp_denoise_675_h15l/input_layer4",

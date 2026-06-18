@@ -1,10 +1,10 @@
 {
-  "version": "3.0.0",
+  "version": "4.0.0",
   "metadata": {
     "architecture": "hailo15h",
-    "content_hash": "848815620d1f24c455ecace5c0f36017b588c19fd21285a2fb85e43885395bf2",
+    "content_hash": "79b58e88e6a8211f17eb6f286d61f66ad7591e4eedf4d2417279652f08226a3c",
     "description": "",
-    "generation_timestamp": "2026-02-24T14:32:58.029403+00:00"
+    "generation_timestamp": "2026-05-31T10:35:23.312107+00:00"
   },
   "application_input_streams": {
     "format": "IMAGE_FORMAT_NV12",

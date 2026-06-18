@@ -1,0 +1,27 @@
+{
+  "version": "1.0.0",
+  "metadata": {
+    "architecture": "hailo15h",
+    "content_hash": "e286dd4a6a3729121362f25b7ec6959f6334147820130e41f5d0053f3ea7d7b6",
+    "description": "",
+    "generation_timestamp": "2026-04-15T07:50:14.950364+00:00"
+  },
+  "application_settings": "/etc/imaging/cfg/hailo15h/imx715/theia_sl410m/4k/profiles/lowlight/face_landmarks_lowlight_bayer/application_settings.json",
+  "encoded_output_streams": [
+    {
+      "encoding": "/etc/imaging/cfg/hailo15h/imx715/theia_sl410m/4k/profiles/lowlight/face_landmarks_lowlight_bayer/encoder_sink0.json",
+      "masking": "/etc/imaging/cfg/hailo15h/imx715/theia_sl410m/4k/profiles/lowlight/face_landmarks_lowlight_bayer/masking_sink0.json",
+      "osd": "/etc/imaging/cfg/hailo15h/imx715/theia_sl410m/4k/profiles/lowlight/face_landmarks_lowlight_bayer/osd_sink0.json",
+      "stream_id": "sink0"
+    },
+    {
+      "encoding": "/etc/imaging/cfg/hailo15h/imx715/theia_sl410m/4k/profiles/lowlight/face_landmarks_lowlight_bayer/encoder_sink1.json",
+      "masking": "/etc/imaging/cfg/hailo15h/imx715/theia_sl410m/4k/profiles/lowlight/face_landmarks_lowlight_bayer/masking_sink1.json",
+      "osd": "/etc/imaging/cfg/hailo15h/imx715/theia_sl410m/4k/profiles/lowlight/face_landmarks_lowlight_bayer/osd_sink1.json",
+      "stream_id": "sink1"
+    }
+  ],
+  "iq_settings": "/etc/imaging/cfg/hailo15h/imx715/theia_sl410m/4k/profiles/lowlight/face_landmarks_lowlight_bayer/iq_settings.json",
+  "sensor_config": "/etc/imaging/cfg/hailo15h/imx715/theia_sl410m/4k/profiles/lowlight/face_landmarks_lowlight_bayer/sensor_config.json",
+  "stabilizer_settings": "/etc/imaging/cfg/hailo15h/imx715/theia_sl410m/4k/profiles/lowlight/face_landmarks_lowlight_bayer/stabilizer_settings.json"
+}

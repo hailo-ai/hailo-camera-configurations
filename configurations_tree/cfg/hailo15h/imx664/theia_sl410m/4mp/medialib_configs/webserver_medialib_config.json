@@ -2,9 +2,9 @@
   "version": "2.0.0",
   "metadata": {
     "architecture": "hailo15h",
-    "content_hash": "af5772b1bd15ff8a13f6c790c93ceee71174476323511ec20e1adf1cc25f8b27",
+    "content_hash": "e31148d2e39d1d34d6100de87e5b6046038873d4e5dbc02abc115f04b22be340",
     "description": "",
-    "generation_timestamp": "2026-03-23T17:35:12.728240+00:00"
+    "generation_timestamp": "2026-05-17T12:05:51.458226+00:00"
   },
   "backup_folder_path": "/etc/imaging/cfg/backups/webserver",
   "default_profile": "Daylight_Basic",
@@ -19,7 +19,7 @@
     },
     {
       "config_file": "/etc/imaging/cfg/hailo15h/imx664/theia_sl410m/4mp/profiles/lowlight/webserver_lowlight/webserver_lowlight_basic_profile.json",
-      "name": "Lowlight_Basic"
+      "name": "AI_ISP_Gen1_Basic"
     },
     {
       "config_file": "/etc/imaging/cfg/hailo15h/imx664/theia_sl410m/4mp/profiles/daylight/webserver_daylight/webserver_daylight_detection_profile.json",
@@ -31,7 +31,7 @@
     },
     {
       "config_file": "/etc/imaging/cfg/hailo15h/imx664/theia_sl410m/4mp/profiles/lowlight/webserver_lowlight/webserver_lowlight_detection_profile.json",
-      "name": "Lowlight_Detection"
+      "name": "AI_ISP_Gen1_Detection"
     },
     {
       "config_file": "/etc/imaging/cfg/hailo15h/imx664/theia_sl410m/4mp/profiles/daylight/dynamic_privacy_mask_daylight/dynamic_privacy_mask_daylight_profile.json",
@@ -40,6 +40,18 @@
     {
       "config_file": "/etc/imaging/cfg/hailo15h/imx664/theia_sl410m/4mp/profiles/HDR/dynamic_privacy_mask_HDR/dynamic_privacy_mask_HDR_profile.json",
       "name": "High_Dynamic_Range_DynamicPrivacyMask"
+    },
+    {
+      "config_file": "/etc/imaging/cfg/hailo15h/imx664/theia_sl410m/4mp/profiles/daylight/webserver_daylight/webserver_daylight_license_plate_profile.json",
+      "name": "Daylight_LicensePlate"
+    },
+    {
+      "config_file": "/etc/imaging/cfg/hailo15h/imx664/theia_sl410m/4mp/profiles/HDR/webserver_HDR/webserver_HDR_license_plate_profile.json",
+      "name": "High_Dynamic_Range_LicensePlate"
+    },
+    {
+      "config_file": "/etc/imaging/cfg/hailo15h/imx664/theia_sl410m/4mp/profiles/lowlight/webserver_lowlight/webserver_lowlight_license_plate_profile.json",
+      "name": "AI_ISP_Gen1_LicensePlate"
     }
   ]
 }

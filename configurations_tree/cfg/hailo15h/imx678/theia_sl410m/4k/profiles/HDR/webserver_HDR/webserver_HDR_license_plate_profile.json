@@ -1,0 +1,21 @@
+{
+  "version": "1.0.0",
+  "metadata": {
+    "architecture": "hailo15h",
+    "content_hash": "95860aae1bdc2d58085c4061ff577ec33f7a1f3858200fe688b0c351b413419a",
+    "description": "License plate recognition profile (HDR)",
+    "generation_timestamp": "2026-05-06T14:17:09.741065+00:00"
+  },
+  "application_settings": "/etc/imaging/cfg/hailo15h/imx678/theia_sl410m/4k/profiles/HDR/webserver_HDR/application_settings_detection.json",
+  "encoded_output_streams": [
+    {
+      "encoding": "/etc/imaging/cfg/hailo15h/imx678/theia_sl410m/4k/profiles/HDR/webserver_HDR/encoder_sink0.json",
+      "masking": "/etc/imaging/cfg/hailo15h/imx678/theia_sl410m/4k/profiles/HDR/webserver_HDR/masking_sink0.json",
+      "osd": "/etc/imaging/cfg/hailo15h/imx678/theia_sl410m/4k/profiles/HDR/webserver_HDR/osd_sink0.json",
+      "stream_id": "sink0"
+    }
+  ],
+  "iq_settings": "/etc/imaging/cfg/hailo15h/imx678/theia_sl410m/4k/profiles/HDR/webserver_HDR/iq_settings.json",
+  "sensor_config": "/etc/imaging/cfg/hailo15h/imx678/theia_sl410m/4k/profiles/HDR/webserver_HDR/sensor_config.json",
+  "stabilizer_settings": "/etc/imaging/cfg/hailo15h/imx678/theia_sl410m/4k/profiles/HDR/webserver_HDR/stabilizer_settings.json"
+}

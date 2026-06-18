@@ -1,0 +1,33 @@
+{
+  "version": "2.0.0",
+  "metadata": {
+    "architecture": "hailo15l",
+    "content_hash": "24e8a2520bd0fd397d641070c87c72e19db7fbecaa1910bf0c438974d9dc8b9b",
+    "description": "",
+    "generation_timestamp": "2026-06-01T13:10:06.041892+00:00"
+  },
+  "backup_folder_path": "/etc/imaging/cfg/backups/face_landmarks",
+  "default_profile": "Daylight",
+  "profiles": [
+    {
+      "config_file": "/etc/imaging/cfg/hailo15l/imx675/theia_sl410m/5mp/profiles/daylight/face_landmarks_daylight/face_landmarks_daylight_profile.json",
+      "name": "Daylight"
+    },
+    {
+      "config_file": "/etc/imaging/cfg/hailo15l/imx675/theia_sl410m/5mp/profiles/HDR/face_landmarks_HDR/face_landmarks_HDR_profile.json",
+      "name": "High_Dynamic_Range"
+    },
+    {
+      "config_file": "/etc/imaging/cfg/hailo15l/imx675/theia_sl410m/5mp/profiles/lowlight/lowlight_r0225c8/lowlight_r0225c8_profile.json",
+      "name": "AI_ISP_Gen1"
+    },
+    {
+      "config_file": "/etc/imaging/cfg/hailo15l/imx675/theia_sl410m/5mp/profiles/lowlight/face_landmarks_lowlight_bayer/face_landmarks_lowlight_bayer_profile.json",
+      "name": "AI_ISP_Gen2"
+    },
+    {
+      "config_file": "/etc/imaging/cfg/hailo15l/imx675/theia_sl410m/5mp/profiles/IR/face_landmarks_IR/face_landmarks_IR_profile.json",
+      "name": "Infrared"
+    }
+  ]
+}

@@ -11,7 +11,7 @@ inline nlohmann::json get_flattend_profile_json() {
         throw std::runtime_error("Environment variable PROFILE_PATH is not set");
     }
     std::string base_path(env_config_base_path);
-    std::string relative_profile_path = "cfg/hailo15h/imx678/theia_sl410m/4k/profiles/daylight/webserver_daylight/webserver_daylight_profile.json";
+    std::string relative_profile_path = "cfg/hailo15h/imx678/theia_sl410m/4k/profiles/daylight/webserver_daylight/webserver_daylight_basic_profile.json";
     RuleChecker checker;
     EvalResult result = checker.load_profile(base_path + relative_profile_path, base_path);
     if (!result.passed) {

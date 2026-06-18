@@ -46,6 +46,7 @@ rules = [
   'rules/profile_rules.cpp',
   'rules/encoder_rules.cpp',
   'rules/iq_rules.cpp',
+  'rules/denoise_rules.cpp',
   'rules/rules.cpp',
 ]
 

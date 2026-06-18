@@ -1,0 +1,21 @@
+{
+  "version": "1.0.0",
+  "metadata": {
+    "architecture": "hailo15l",
+    "content_hash": "134ebb9e6542c6aee6e1352e5426c1c642d15f1808e79cdbfc426b652df12516",
+    "description": "",
+    "generation_timestamp": "2026-05-25T11:38:26.540182+00:00"
+  },
+  "application_settings": "/etc/imaging/cfg/hailo15l/imx675/theia_sl410m/5mp/profiles/daylight/detection_daylight/application_settings.json",
+  "encoded_output_streams": [
+    {
+      "encoding": "/etc/imaging/cfg/hailo15l/imx675/theia_sl410m/5mp/profiles/daylight/detection_daylight/encoder_sink0.json",
+      "masking": "/etc/imaging/cfg/hailo15l/imx675/theia_sl410m/5mp/profiles/daylight/detection_daylight/masking_sink0.json",
+      "osd": "/etc/imaging/cfg/hailo15l/imx675/theia_sl410m/5mp/profiles/daylight/detection_daylight/osd_sink0.json",
+      "stream_id": "sink0"
+    }
+  ],
+  "iq_settings": "/etc/imaging/cfg/hailo15l/imx675/theia_sl410m/5mp/profiles/daylight/detection_daylight/iq_settings.json",
+  "sensor_config": "/etc/imaging/cfg/hailo15l/imx675/theia_sl410m/5mp/profiles/daylight/detection_daylight/sensor_config.json",
+  "stabilizer_settings": "/etc/imaging/cfg/hailo15l/imx675/theia_sl410m/5mp/profiles/daylight/detection_daylight/stabilizer_settings.json"
+}

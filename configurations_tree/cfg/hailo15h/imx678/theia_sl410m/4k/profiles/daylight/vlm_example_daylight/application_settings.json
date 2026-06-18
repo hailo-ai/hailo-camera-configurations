@@ -1,0 +1,84 @@
+{
+  "version": "4.0.0",
+  "metadata": {
+    "architecture": "hailo15h",
+    "content_hash": "bf4085b258b3a14c017a485784aa7d227560e8821d4afc58483297185475e7e2",
+    "description": "",
+    "generation_timestamp": "2026-05-31T10:35:23.849904+00:00"
+  },
+  "application_input_streams": {
+    "format": "IMAGE_FORMAT_NV12",
+    "method": "INTERPOLATION_TYPE_BILINEAR",
+    "resolutions": [
+      {
+        "framerate": 30,
+        "height": 2160,
+        "pool_max_buffers": 30,
+        "stream_id": "HighRes",
+        "width": 3840
+      },
+      {
+        "framerate": 1,
+        "height": 336,
+        "pool_max_buffers": 10,
+        "scaling_mode": "LETTERBOX_MIDDLE",
+        "stream_id": "VlmInput",
+        "width": 336
+      },
+      {
+        "framerate": 1,
+        "height": 480,
+        "pool_max_buffers": 10,
+        "stream_id": "VGA",
+        "width": 640
+      }
+    ]
+  },
+  "digital_zoom": {
+    "enabled": false,
+    "magnification": 1.0,
+    "mode": "DIGITAL_ZOOM_MODE_ROI",
+    "roi": {
+      "height": 1800,
+      "width": 2800,
+      "x": 200,
+      "y": 200
+    }
+  },
+  "flip": {
+    "direction": "FLIP_DIRECTION_HORIZONTAL",
+    "enabled": false
+  },
+  "gmv": {
+    "frequency": 0.0,
+    "source": "isp"
+  },
+  "hailort": {
+    "device-id": "device0"
+  },
+  "motion_detection": {
+    "buffer_pool_size": 8,
+    "enabled": false,
+    "resolution": {
+      "framerate": 30,
+      "height": 480,
+      "width": 640
+    },
+    "roi": {
+      "height": 480,
+      "width": 640,
+      "x": 0,
+      "y": 0
+    },
+    "sensitivity_level": "MEDIUM",
+    "threshold": 0.5
+  },
+  "optical_zoom": {
+    "enabled": true,
+    "magnification": 1.0
+  },
+  "rotation": {
+    "angle": "ROTATION_ANGLE_180",
+    "enabled": false
+  }
+}

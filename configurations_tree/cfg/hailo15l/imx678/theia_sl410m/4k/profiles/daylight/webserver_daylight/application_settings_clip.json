@@ -1,10 +1,10 @@
 {
-  "version": "3.0.0",
+  "version": "4.0.0",
   "metadata": {
     "architecture": "hailo15l",
-    "content_hash": "f0baf514ebfda4942b87a2c8fee957245e3802f0b4f60e7d333a9ac958a925b3",
+    "content_hash": "9715a5267483ae72a041d9f89dd9e873189320a701194edf8469f39af5fb9fc5",
     "description": "",
-    "generation_timestamp": "2026-02-24T14:33:13.632000+00:00"
+    "generation_timestamp": "2026-06-01T02:59:53.847787+00:00"
   },
   "application_input_streams": {
     "format": "IMAGE_FORMAT_NV12",
@@ -13,7 +13,7 @@
       {
         "framerate": 30,
         "height": 2160,
-        "pool_max_buffers": 30,
+        "pool_max_buffers": 36,
         "stream_id": "sink0",
         "width": 3840
       },
@@ -27,7 +27,7 @@
       {
         "framerate": 30,
         "height": 480,
-        "pool_max_buffers": 20,
+        "pool_max_buffers": 30,
         "stream_id": "clip_vga",
         "width": 640
       }
@@ -45,7 +45,7 @@
     }
   },
   "flip": {
-    "direction": "FLIP_DIRECTION_NONE",
+    "direction": "FLIP_DIRECTION_HORIZONTAL",
     "enabled": false
   },
   "gmv": {
@@ -73,12 +73,11 @@
     "threshold": 0.5
   },
   "optical_zoom": {
-    "enabled": false,
-    "magnification": 1.0,
-    "max_dewarping_magnification": 3.0
+    "enabled": true,
+    "magnification": 1.0
   },
   "rotation": {
-    "angle": "ROTATION_ANGLE_0",
+    "angle": "ROTATION_ANGLE_180",
     "enabled": false
   }
 }

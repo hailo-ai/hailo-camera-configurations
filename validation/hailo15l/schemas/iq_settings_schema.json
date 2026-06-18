@@ -46,6 +46,9 @@
                 "bayer": {
                     "type": "boolean"
                 },
+                "fast_denoise_switch": {
+                    "type": "boolean"
+                },
                 "sensor": {
                     "type": "string"
                 },
@@ -350,7 +353,15 @@
                         },
                         "hcg": {
                             "type": "boolean",
-                            "description": "Dual Conversion Gain: set true for HCG (High Conversion Gain)  mode, false for LCG (Low Conversion Gain)  mode"
+                            "description": "Dual Conversion Gain: set true for HCG (High Conversion Gain) mode, false for LCG (Low Conversion Gain) mode"
+                        },
+                        "hcg_sef1": {
+                            "type": "boolean",
+                            "description": "HCG mode for Short Exposure Frame 1 in HDR mode. Defaults to hcg value when omitted."
+                        },
+                        "hcg_sef2": {
+                            "type": "boolean",
+                            "description": "HCG mode for Short Exposure Frame 2 in HDR mode. Defaults to hcg value when omitted."
                         },
                         "flickerPeriod": {
                             "type": "integer",
@@ -658,7 +669,15 @@
                         },
                         "hcg": {
                             "type": "boolean",
-                            "description": "Dual Conversion Gain: set true for HCG (High Conversion Gain)  mode, false for LCG (Low Conversion Gain)  mode"
+                            "description": "Dual Conversion Gain: set true for HCG (High Conversion Gain) mode, false for LCG (Low Conversion Gain) mode"
+                        },
+                        "hcg_sef1": {
+                            "type": "boolean",
+                            "description": "HCG mode for Short Exposure Frame 1 in HDR mode. Defaults to hcg value when omitted."
+                        },
+                        "hcg_sef2": {
+                            "type": "boolean",
+                            "description": "HCG mode for Short Exposure Frame 2 in HDR mode. Defaults to hcg value when omitted."
                         },
                         "flickerPeriod": {
                             "type": "integer",
@@ -930,7 +949,7 @@
                             "items": {
                                 "type": "number",
                                 "minimum": 0.01,
-                                "maximum": 100.0
+                                "maximum": 32.0
                             },
                             "description": "Denoise sigma (STD) "
                         }
@@ -1238,12 +1257,48 @@
                                 }
                             },
                             "description": "Black level subtraction per channel"
+                        },
+                        "bls_long": {
+                            "type": "array",
+                            "items": {
+                                "type": "array",
+                                "items": {
+                                    "type": "integer",
+                                    "minimum": 0,
+                                    "maximum": 4095
+                                }
+                            },
+                            "description": "Black level subtraction per channel for long exposure in HDR mode"
+                        },
+                        "bls_short": {
+                            "type": "array",
+                            "items": {
+                                "type": "array",
+                                "items": {
+                                    "type": "integer",
+                                    "minimum": 0,
+                                    "maximum": 4095
+                                }
+                            },
+                            "description": "Black level subtraction per channel for short exposure in HDR mode"
                         }
                     },
                     "required": [
-                        "bls",
                         "enable",
                         "gains"
+                    ],
+                    "oneOf": [
+                        {
+                            "required": [
+                                "bls"
+                            ]
+                        },
+                        {
+                            "required": [
+                                "bls_long",
+                                "bls_short"
+                            ]
+                        }
                     ],
                     "additionalProperties": false
                 },

@@ -1,0 +1,17 @@
+{
+  "version": "2.0.0",
+  "metadata": {
+    "architecture": "hailo15l",
+    "content_hash": "ece74ad1feb7a3e22a187aa5f396de4e0ab67d55993cd02910799d66cc4e7548",
+    "description": "",
+    "generation_timestamp": "2026-05-03T11:13:25.307831+00:00"
+  },
+  "backup_folder_path": "/etc/imaging/cfg/backups/dual_sensor_single_stream_sensor_1",
+  "default_profile": "Daylight",
+  "profiles": [
+    {
+      "config_file": "/etc/imaging/cfg/hailo15l/imx662/theia_sl410m/fhd/profiles/daylight/dual_sensor_single_stream_sensor_1_daylight/dual_sensor_single_stream_sensor_1_daylight_profile.json",
+      "name": "Daylight"
+    }
+  ]
+}

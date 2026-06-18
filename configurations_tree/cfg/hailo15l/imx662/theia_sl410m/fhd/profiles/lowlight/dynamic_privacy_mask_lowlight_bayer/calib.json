@@ -2,9 +2,9 @@
   "version": "1.0.0",
   "metadata": {
     "architecture": "hailo15l",
-    "content_hash": "9d71be2bb5e7d61810d871ca419a2bbd2e49acd0241a9f77a20e227bc24bfc16",
+    "content_hash": "2730f0333ab9435920688a4b22fc534b1faa646341e0c3c38717c4a427175654",
     "description": "",
-    "generation_timestamp": "2026-02-24T19:24:54.012246+00:00"
+    "generation_timestamp": "2026-05-10T07:32:45.660967+00:00"
   },
   "matfile": {
     "header": {
@@ -105,7 +105,7 @@
             "name": "1920x1080_FPS_05"
           }
         ],
-        "SetPoint": 25.0,
+        "SetPoint": 30.0,
         "aFpsMaxGain": 8.0
       },
       "AF": {
@@ -461,7 +461,7 @@
           "register": [
             {
               "name": "ISP_DPCC_MODE",
-              "value": "0x0004"
+              "value": "0x0005"
             },
             {
               "name": "ISP_DPCC_OUT_MODE",
@@ -469,7 +469,7 @@
             },
             {
               "name": "ISP_DPCC_SET_USE",
-              "value": "0x0007"
+              "value": "0x000F"
             },
             {
               "name": "ISP_DPCC_METHODS_SET1",
@@ -493,15 +493,15 @@
             },
             {
               "name": "ISP_DPCC_PG_FAC_1",
-              "value": "0x0403"
+              "value": "0x0606"
             },
             {
               "name": "ISP_DPCC_RND_THRESH_1",
-              "value": "0x0A0A"
+              "value": "0x0808"
             },
             {
               "name": "ISP_DPCC_RG_FAC_1",
-              "value": "0x2020"
+              "value": "0x1010"
             },
             {
               "name": "ISP_DPCC_LINE_THRESH_2",
@@ -509,11 +509,11 @@
             },
             {
               "name": "ISP_DPCC_LINE_MAD_FAC_2",
-              "value": "0x1810"
+              "value": "0x0808"
             },
             {
               "name": "ISP_DPCC_PG_FAC_2",
-              "value": "0x0403"
+              "value": "0x0606"
             },
             {
               "name": "ISP_DPCC_RND_THRESH_2",
@@ -525,7 +525,7 @@
             },
             {
               "name": "ISP_DPCC_LINE_THRESH_3",
-              "value": "0x2020"
+              "value": "0x0808"
             },
             {
               "name": "ISP_DPCC_LINE_MAD_FAC_3",
@@ -533,7 +533,7 @@
             },
             {
               "name": "ISP_DPCC_PG_FAC_3",
-              "value": "0x0403"
+              "value": "0x0606"
             },
             {
               "name": "ISP_DPCC_RND_THRESH_3",
@@ -545,7 +545,7 @@
             },
             {
               "name": "ISP_DPCC_RO_LIMITS",
-              "value": "0x0A0A"
+              "value": "0x0FFF"
             },
             {
               "name": "ISP_DPCC_RND_OFFS",

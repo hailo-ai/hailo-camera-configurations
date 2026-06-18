@@ -1,0 +1,22 @@
+{
+  "version": "5.0.0",
+  "metadata": {
+    "architecture": "hailo15l",
+    "content_hash": "489f28b923dbfa8767340712ac053b11df10f29f8ca791029d1421ffe4c54f3d",
+    "description": "",
+    "generation_timestamp": "2026-04-28T17:44:54.997084+00:00"
+  },
+  "encoding": {
+    "input_stream": {
+      "format": "NV12",
+      "framerate": 30,
+      "height": 480,
+      "max_pool_size": 40,
+      "width": 640
+    },
+    "jpeg_encoder": {
+      "n_threads": 1,
+      "quality": 85
+    }
+  }
+}

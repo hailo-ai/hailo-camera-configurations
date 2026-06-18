@@ -2,9 +2,9 @@
   "version": "2.0.0",
   "metadata": {
     "architecture": "hailo15l",
-    "content_hash": "f073ceb8f05ab070333d1d7b2b6b2ca6b23e782077307805e36abfe40687ebc1",
+    "content_hash": "9c224f9e0a857093b2df3e3a399d97fa8aefbf4a7464323c053c26cda83758f8",
     "description": "",
-    "generation_timestamp": "2026-02-06T08:21:23.384577+00:00"
+    "generation_timestamp": "2026-05-17T12:05:52.911762+00:00"
   },
   "backup_folder_path": "/etc/imaging/cfg/backups/frontend_api_example",
   "default_profile": "Daylight_Basic",
@@ -19,7 +19,7 @@
     },
     {
       "config_file": "/etc/imaging/cfg/hailo15l/imx678/theia_sl410m/4k/profiles/lowlight/frontend_example_lowlight/frontend_api_example_profile.json",
-      "name": "Lowlight_Basic"
+      "name": "AI_ISP_Gen1_Basic"
     }
   ]
 }

@@ -2,9 +2,9 @@
   "version": "2.0.0",
   "metadata": {
     "architecture": "hailo15l",
-    "content_hash": "cbe85d6be8c26cfeef32e75590513f037f219307af18008798ee57f7aa69a8d3",
+    "content_hash": "c052f2a0dc8c17df044692c933e85d0715d8cdc41a7749e146307c801c4fa989",
     "description": "",
-    "generation_timestamp": "2026-01-29T09:38:20.352350+00:00"
+    "generation_timestamp": "2026-06-03T11:12:04.087292+00:00"
   },
   "backup_folder_path": "/etc/imaging/cfg/backups/webserver",
   "default_profile": "Daylight_Basic",
@@ -19,11 +19,11 @@
     },
     {
       "config_file": "/etc/imaging/cfg/hailo15l/imx675/theia_sl410m/5mp/profiles/lowlight/webserver_lowlight/webserver_lowlight_profile.json",
-      "name": "Lowlight_Basic"
+      "name": "AI_ISP_Gen1_Basic"
     },
     {
-      "config_file": "/etc/imaging/cfg/hailo15l/imx675/theia_sl410m/5mp/profiles/lowlight/webserver_lowlight_bayer/webserver_lowlight_bayer_profile.json",
-      "name": "Lowlight_Bayer_Basic"
+      "config_file": "/etc/imaging/cfg/hailo15l/imx675/theia_sl410m/5mp/profiles/lowlight/webserver_ai_isp_gen3/webserver_ai_isp_gen3_profile.json",
+      "name": "AI_ISP_Gen3_Basic"
     },
     {
       "config_file": "/etc/imaging/cfg/hailo15l/imx675/theia_sl410m/5mp/profiles/daylight/webserver_daylight/webserver_daylight_detection_profile.json",
@@ -35,31 +35,31 @@
     },
     {
       "config_file": "/etc/imaging/cfg/hailo15l/imx675/theia_sl410m/5mp/profiles/lowlight/webserver_lowlight/webserver_lowlight_detection_profile.json",
-      "name": "Lowlight_Detection"
+      "name": "AI_ISP_Gen1_Detection"
     },
     {
       "config_file": "/etc/imaging/cfg/hailo15l/imx675/theia_sl410m/5mp/profiles/lowlight/webserver_lowlight_bayer/webserver_lowlight_bayer_detection_profile.json",
-      "name": "Lowlight_Bayer_Detection"
+      "name": "AI_ISP_Gen2_Detection"
     },
     {
       "config_file": "/etc/imaging/cfg/hailo15l/imx675/theia_sl410m/5mp/profiles/daylight/webserver_daylight/webserver_daylight_clip_profile.json",
       "name": "Daylight_Clip"
     },
     {
-      "config_file": "/etc/imaging/cfg/hailo15l/imx675/theia_sl410m/5mp/profiles/daylight/ai_example_daylight/ai_example_daylight_profile.json",
+      "config_file": "/etc/imaging/cfg/hailo15l/imx675/theia_sl410m/5mp/profiles/daylight/face_landmarks_daylight/face_landmarks_daylight_profile.json",
       "name": "Daylight_FaceLandmarks"
     },
     {
-      "config_file": "/etc/imaging/cfg/hailo15l/imx675/theia_sl410m/5mp/profiles/HDR/ai_example_HDR/ai_example_HDR_profile.json",
+      "config_file": "/etc/imaging/cfg/hailo15l/imx675/theia_sl410m/5mp/profiles/HDR/face_landmarks_HDR/face_landmarks_HDR_profile.json",
       "name": "High_Dynamic_Range_FaceLandmarks"
     },
     {
       "config_file": "/etc/imaging/cfg/hailo15l/imx675/theia_sl410m/5mp/profiles/lowlight/lowlight_r0225c8/lowlight_r0225c8_profile.json",
-      "name": "Lowlight_FaceLandmarks"
+      "name": "AI_ISP_Gen1_FaceLandmarks"
     },
     {
-      "config_file": "/etc/imaging/cfg/hailo15l/imx675/theia_sl410m/5mp/profiles/lowlight/lowlight_bayer_r0225c8/lowlight_bayer_r0225c8_profile.json",
-      "name": "Lowlight_Bayer_FaceLandmarks"
+      "config_file": "/etc/imaging/cfg/hailo15l/imx675/theia_sl410m/5mp/profiles/lowlight/face_landmarks_lowlight_bayer/face_landmarks_lowlight_bayer_profile.json",
+      "name": "AI_ISP_Gen2_FaceLandmarks"
     },
     {
       "config_file": "/etc/imaging/cfg/hailo15l/imx675/theia_sl410m/5mp/profiles/daylight/dynamic_privacy_mask_daylight/dynamic_privacy_mask_daylight_profile.json",
@@ -71,7 +71,23 @@
     },
     {
       "config_file": "/etc/imaging/cfg/hailo15l/imx675/theia_sl410m/5mp/profiles/lowlight/dynamic_privacy_mask_lowlight_bayer/dynamic_privacy_mask_lowlight_bayer_profile.json",
-      "name": "Lowlight_Bayer_DynamicPrivacyMask"
+      "name": "AI_ISP_Gen2_DynamicPrivacyMask"
+    },
+    {
+      "config_file": "/etc/imaging/cfg/hailo15l/imx675/theia_sl410m/5mp/profiles/daylight/webserver_daylight/webserver_daylight_license_plate_profile.json",
+      "name": "Daylight_LicensePlate"
+    },
+    {
+      "config_file": "/etc/imaging/cfg/hailo15l/imx675/theia_sl410m/5mp/profiles/HDR/webserver_HDR/webserver_HDR_license_plate_profile.json",
+      "name": "High_Dynamic_Range_LicensePlate"
+    },
+    {
+      "config_file": "/etc/imaging/cfg/hailo15l/imx675/theia_sl410m/5mp/profiles/lowlight/webserver_lowlight/webserver_lowlight_license_plate_profile.json",
+      "name": "AI_ISP_Gen1_LicensePlate"
+    },
+    {
+      "config_file": "/etc/imaging/cfg/hailo15l/imx675/theia_sl410m/5mp/profiles/lowlight/webserver_lowlight_bayer/webserver_lowlight_bayer_license_plate_profile.json",
+      "name": "AI_ISP_Gen2_LicensePlate"
     }
   ]
 }

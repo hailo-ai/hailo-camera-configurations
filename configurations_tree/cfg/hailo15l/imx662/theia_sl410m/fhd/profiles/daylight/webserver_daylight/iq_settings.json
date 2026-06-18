@@ -1,10 +1,10 @@
 {
-  "version": "1.2.0",
+  "version": "1.4.0",
   "metadata": {
     "architecture": "hailo15l",
-    "content_hash": "3fec1079178aec5302348372ea378383561862bf034b8ef54053e694a3fa1b2d",
+    "content_hash": "ad4b5184dbf450581a4553159f1612235f5b401dce07c16c7c6be2e6cfcdd4bc",
     "description": "",
-    "generation_timestamp": "2026-03-09T17:56:35.651170+00:00"
+    "generation_timestamp": "2026-05-13T06:13:27.213238+00:00"
   },
   "automatic_algorithms": {
     "A2dnrv5": {
@@ -146,7 +146,7 @@
       "strength": [128,128,128,128,128]
     },
     "AdaptiveAe": {
-      "delay": [0,0,0],
+      "delay": [2,2,19],
       "enable": true,
       "flickerPeriod": 0,
       "hcg": false,
@@ -281,7 +281,7 @@
     "HDRAdaptiveAE": {
       "brightImagePercentage": 40,
       "darkImagePercentage": 5,
-      "delay": [0,0,0],
+      "delay": [2,2,19],
       "disable": true,
       "enable": false,
       "flickerPeriod": 0,
@@ -328,17 +328,21 @@
     }
   },
   "denoise": {
+    "bayer": true,
     "enabled": false,
+    "fast_denoise_switch": false,
     "loopback-count": 1,
     "method": "HIGH_QUALITY",
     "network": {
-      "feedback_uv_channel": "model/input_layer2",
-      "feedback_y_channel": "model/input_layer3",
-      "network_path": "/usr/lib/medialib/denoise_config/vd_m_imx664.hef",
-      "output_uv_channel": "model/conv14",
-      "output_y_channel": "model/conv17",
-      "uv_channel": "model/input_layer4",
-      "y_channel": "model/input_layer1"
+      "bayer_channel": "pre_isp_hdm_662_h15l/input_layer1",
+      "input_fusion_feedback": "pre_isp_hdm_662_h15l/input_layer2",
+      "input_gamma_feedback": "pre_isp_hdm_662_h15l/input_layer3",
+      "network_path": "/usr/lib/medialib/denoise_config/pre_isp_hdm_662_h15l.hef",
+      "output_bayer_channel": "pre_isp_hdm_662_h15l/depth_to_space2",
+      "output_fusion_feedback": "pre_isp_hdm_662_h15l/ew_add1",
+      "output_gamma_feedback": "pre_isp_hdm_662_h15l/conv5",
+      "skip0_fusion_channel": "pre_isp_hdm_662_h15l/input_layer4",
+      "skip1_fusion_channel": "pre_isp_hdm_662_h15l/input_layer5"
     },
     "sensor": "imx662"
   },

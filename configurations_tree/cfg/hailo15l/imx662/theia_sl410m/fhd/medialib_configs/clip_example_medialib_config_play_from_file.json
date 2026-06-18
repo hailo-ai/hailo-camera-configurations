@@ -1,0 +1,17 @@
+{
+  "version": "2.0.0",
+  "metadata": {
+    "architecture": "hailo15l",
+    "content_hash": "1467f069604bda56844ed6a59c2e24483016fef45a6080235281a3f80502d683",
+    "description": "",
+    "generation_timestamp": "2026-05-10T19:57:51.859563+00:00"
+  },
+  "backup_folder_path": "/etc/imaging/cfg/backups/clip_example_play_from_file",
+  "default_profile": "PlayFromFile",
+  "profiles": [
+    {
+      "config_file": "/etc/imaging/cfg/hailo15l/imx662/theia_sl410m/fhd/profiles/daylight/clip_example_daylight/clip_example_play_from_file_profile.json",
+      "name": "PlayFromFile"
+    }
+  ]
+}

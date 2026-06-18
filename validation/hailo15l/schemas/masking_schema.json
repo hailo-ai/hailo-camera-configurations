@@ -84,6 +84,11 @@
                         "enabled": {
                             "type": "boolean"
                         },
+                        "dilation_size": {
+                            "type": "integer",
+                            "minimum": 0,
+                            "maximum": 15
+                        },
                         "analytics": {
                             "type": "array",
                             "items": {
@@ -100,16 +105,10 @@
                                     }
                                 },
                                 "required": [
-                                    "analytics_data_id",
                                     "masked_labels"
                                 ],
                                 "additionalProperties": false
                             }
-                        },
-                        "dilation_size": {
-                            "type": "integer",
-                            "minimum": 0,
-                            "maximum": 15
                         },
                         "timeout_ms": {
                             "type": "integer",
@@ -126,15 +125,91 @@
                                 "Exact",
                                 "WithinDelta"
                             ]
+                        },
+                        "masked_labels": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        },
+                        "label_to_class_id": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "label": {
+                                        "type": "string"
+                                    },
+                                    "id": {
+                                        "type": "integer",
+                                        "minimum": 0
+                                    }
+                                },
+                                "required": [
+                                    "label",
+                                    "id"
+                                ],
+                                "additionalProperties": false
+                            }
                         }
                     },
                     "required": [
                         "enabled",
-                        "analytics",
-                        "dilation_size",
-                        "timeout_ms",
-                        "delta_ms",
-                        "query_type"
+                        "dilation_size"
+                    ],
+                    "oneOf": [
+                        {
+                            "required": [
+                                "analytics",
+                                "timeout_ms",
+                                "delta_ms",
+                                "query_type"
+                            ],
+                            "not": {
+                                "anyOf": [
+                                    {
+                                        "required": [
+                                            "masked_labels"
+                                        ]
+                                    },
+                                    {
+                                        "required": [
+                                            "label_to_class_id"
+                                        ]
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "required": [
+                                "masked_labels",
+                                "label_to_class_id"
+                            ],
+                            "not": {
+                                "anyOf": [
+                                    {
+                                        "required": [
+                                            "analytics"
+                                        ]
+                                    },
+                                    {
+                                        "required": [
+                                            "timeout_ms"
+                                        ]
+                                    },
+                                    {
+                                        "required": [
+                                            "delta_ms"
+                                        ]
+                                    },
+                                    {
+                                        "required": [
+                                            "query_type"
+                                        ]
+                                    }
+                                ]
+                            }
+                        }
                     ],
                     "additionalProperties": false
                 }

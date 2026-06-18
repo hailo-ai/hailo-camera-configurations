@@ -1,10 +1,10 @@
 {
-  "version": "1.2.0",
+  "version": "1.4.0",
   "metadata": {
     "architecture": "hailo15l",
-    "content_hash": "ce2060cd735f1922427d1edc927a51df79aed36576ac311aba40e4fd1d9d027d",
+    "content_hash": "681bf734a1924db1f7a9eaa2ebeec2c71d08ac256da4dbae4ae2c9768ad0346d",
     "description": "",
-    "generation_timestamp": "2026-03-09T12:09:38.109881+00:00"
+    "generation_timestamp": "2026-05-07T09:23:38.875945+00:00"
   },
   "automatic_algorithms": {
     "A2dnrv5": {
@@ -27,7 +27,18 @@
       "strength": [127,127,127,127,127,127,127,127]
     },
     "ABls": {
-      "bls": [
+      "bls_long": [
+        [201,201,201,201],
+        [199,199,199,199],
+        [202,202,202,202],
+        [206,206,206,206],
+        [208,208,208,208],
+        [208,208,208,208],
+        [210,210,210,210],
+        [210,210,210,210],
+        [210,210,210,210]
+      ],
+      "bls_short": [
         [201,201,201,201],
         [199,199,199,199],
         [202,202,202,202],
@@ -159,7 +170,7 @@
       "strength": [128,128,128,128,128,128,128,128]
     },
     "AdaptiveAe": {
-      "delay": [0,0,0],
+      "delay": [2,2,19],
       "enable": false,
       "flickerPeriod": 0,
       "hcg": false,
@@ -300,7 +311,7 @@
     "HDRAdaptiveAE": {
       "brightImagePercentage": 40,
       "darkImagePercentage": 5,
-      "delay": [0,0,0],
+      "delay": [2,2,19],
       "disable": false,
       "enable": true,
       "flickerPeriod": 0,
@@ -309,7 +320,7 @@
         "hdr_gain": [1,2,4,8,16,32,64],
         "hdr_repress": [1.0,0.4,0.35,0.3,0.3,0.1,0.1]
       },
-      "lsRatio": 16,
+      "lsRatio": 16.0,
       "maxIspDgain": 132,
       "maxSensorAgain": 30,
       "maxSensorDgain": 1,
@@ -348,12 +359,13 @@
   },
   "denoise": {
     "enabled": false,
+    "fast_denoise_switch": false,
     "loopback-count": 1,
     "method": "HIGH_QUALITY",
     "network": {
       "feedback_uv_channel": "model/input_layer2",
       "feedback_y_channel": "model/input_layer3",
-      "network_path": "/usr/lib/medialib/denoise_config/vd_s_imx675_15.hef",
+      "network_path": "/usr/lib/medialib/denoise_config/post_isp_denoise_675_h15l.hef",
       "output_uv_channel": "model/conv14",
       "output_y_channel": "model/conv17",
       "uv_channel": "model/input_layer4",

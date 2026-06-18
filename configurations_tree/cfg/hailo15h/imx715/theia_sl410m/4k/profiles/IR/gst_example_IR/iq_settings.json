@@ -1,10 +1,10 @@
 {
-  "version": "1.2.0",
+  "version": "1.4.0",
   "metadata": {
     "architecture": "hailo15h",
-    "content_hash": "f1a4d771ede4c6fba480f5a586acbf22be51b5af2f654efb391927c5dba9f4aa",
+    "content_hash": "478a2e6703a440bc4744b6e31d082400aef4f7cfc66b79730d0ac4a40d1e347f",
     "description": "",
-    "generation_timestamp": "2026-03-09T07:32:18.726221+00:00"
+    "generation_timestamp": "2026-05-07T09:23:40.110901+00:00"
   },
   "automatic_algorithms": {
     "A2dnrv5": {
@@ -157,7 +157,7 @@
       "strength": [127,127,127,127,127,127,127,127,127,127,127,127,127,127]
     },
     "AdaptiveAe": {
-      "delay": [0,0,0],
+      "delay": [2,2,19],
       "enable": true,
       "flickerPeriod": 0,
       "hcg": false,
@@ -310,7 +310,7 @@
     "HDRAdaptiveAE": {
       "brightImagePercentage": 40,
       "darkImagePercentage": 5,
-      "delay": [0,0,0],
+      "delay": [2,2,19],
       "disable": false,
       "enable": false,
       "flickerPeriod": 0,
@@ -319,7 +319,7 @@
         "hdr_gain": [1,2,4,8,16,32,64],
         "hdr_repress": [1.0,0.5,0.3,0.3,0.3,0.1,0.1]
       },
-      "lsRatio": 16,
+      "lsRatio": 16.0,
       "maxIspDgain": 132,
       "maxSensorAgain": 32,
       "maxSensorDgain": 1,
@@ -355,12 +355,13 @@
   },
   "denoise": {
     "enabled": false,
+    "fast_denoise_switch": false,
     "loopback-count": 1,
     "method": "HIGH_QUALITY",
     "network": {
       "feedback_uv_channel": "model/input_layer2",
       "feedback_y_channel": "model/input_layer3",
-      "network_path": "/usr/lib/medialib/denoise_config/vd_m_imx715.hef",
+      "network_path": "/usr/lib/medialib/denoise_config/post_isp_denoise_715_h15h.hef",
       "output_uv_channel": "model/conv14",
       "output_y_channel": "model/conv17",
       "uv_channel": "model/input_layer4",

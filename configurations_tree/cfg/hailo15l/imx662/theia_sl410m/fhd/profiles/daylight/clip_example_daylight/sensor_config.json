@@ -1,0 +1,27 @@
+{
+  "version": "1.1.0",
+  "metadata": {
+    "architecture": "hailo15l",
+    "content_hash": "332c30c6544a5b1d1a278adc955adc2b298a7b5490e5bc29c111e0f9dda64f77",
+    "description": "",
+    "generation_timestamp": "2026-05-10T19:57:51.740311+00:00"
+  },
+  "input_video": {
+    "resolution": {
+      "framerate": 30,
+      "height": 1080,
+      "width": 1920
+    },
+    "sensor_id": "SENSOR_0"
+  },
+  "sensor_calibration_file": "/etc/imaging/cfg/hailo15l/imx662/theia_sl410m/fhd/profiles/daylight/clip_example_daylight/calib.json",
+  "sensor_configuration": {
+    "af_i2c_addr": "0x0",
+    "af_i2c_bus": -1,
+    "drv": "HAILO_IMX662.drv",
+    "mode": 0,
+    "name": "imx662",
+    "pixel_mode": 0,
+    "sensor_only": 0
+  }
+}

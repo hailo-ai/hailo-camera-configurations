@@ -2,9 +2,9 @@
   "version": "1.0.0",
   "metadata": {
     "architecture": "hailo15l",
-    "content_hash": "8237d181201cd65972abc9500a2ced9adaad35e8841e0682036bd95590ddcc04",
+    "content_hash": "d238c376a041df990c52b5f3c45ac28839dfdf669e9375d405c91164fde8dbb3",
     "description": "",
-    "generation_timestamp": "2026-02-10T17:15:50.187234+00:00"
+    "generation_timestamp": "2026-05-20T10:45:06.868243+00:00"
   },
   "application_settings": "/etc/imaging/cfg/hailo15l/imx678/theia_sl410m/4k/profiles/daylight/webserver_daylight/application_settings_clip.json",
   "encoded_output_streams": [
@@ -15,7 +15,7 @@
       "stream_id": "sink0"
     },
     {
-      "encoding": "/etc/imaging/cfg/hailo15l/imx678/theia_sl410m/4k/profiles/daylight/webserver_daylight/encoder_vga.json",
+      "encoding": "/etc/imaging/cfg/hailo15l/imx678/theia_sl410m/4k/profiles/daylight/clip_example_daylight/encoder_vga.json",
       "masking": "",
       "osd": "/etc/imaging/cfg/hailo15l/imx678/theia_sl410m/4k/profiles/daylight/webserver_daylight/osd_clip.json",
       "stream_id": "clip_vga"

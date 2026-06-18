@@ -1,10 +1,10 @@
 {
-  "version": "1.2.0",
+  "version": "1.4.0",
   "metadata": {
     "architecture": "hailo15h",
-    "content_hash": "c65a18413c00904a2f41f1bcbdb92cb4f2bb12df0e9c73484eb65910ad8450a2",
+    "content_hash": "32ad9985251a58540ee0f586f3d4a233647b30ee16c469d037ce4e597859b29b",
     "description": "",
-    "generation_timestamp": "2026-03-10T07:29:01.414450+00:00"
+    "generation_timestamp": "2026-05-07T09:23:39.296965+00:00"
   },
   "automatic_algorithms": {
     "A2dnrv5": {
@@ -33,6 +33,7 @@
         [205,205,205,205],
         [205,205,205,205]
       ],
+      "disable": false,
       "enable": true,
       "forcecreate": true,
       "gains": [1,64,128,200]
@@ -152,7 +153,7 @@
       "strength": [127,127,127,127,127,127,127]
     },
     "AdaptiveAe": {
-      "delay": [0,0,0],
+      "delay": [2,2,19],
       "enable": true,
       "flickerPeriod": 0,
       "hcg": false,
@@ -363,7 +364,7 @@
     "HDRAdaptiveAE": {
       "brightImagePercentage": 40,
       "darkImagePercentage": 5,
-      "delay": [0,0,0],
+      "delay": [2,2,19],
       "disable": false,
       "enable": false,
       "flickerPeriod": 0,
@@ -372,7 +373,7 @@
         "hdr_gain": [1,2,4,8,16,32,64],
         "hdr_repress": [1.0,0.5,0.3,0.3,0.3,0.1,0.1]
       },
-      "lsRatio": 16,
+      "lsRatio": 16.0,
       "maxIspDgain": 132,
       "maxSensorAgain": 32,
       "maxSensorDgain": 1,
@@ -411,12 +412,13 @@
   },
   "denoise": {
     "enabled": false,
+    "fast_denoise_switch": false,
     "loopback-count": 1,
     "method": "HIGH_QUALITY",
     "network": {
       "feedback_uv_channel": "post_isp_denoise_678_h15h/input_layer2",
       "feedback_y_channel": "post_isp_denoise_678_h15h/input_layer3",
-      "network_path": "/usr/lib/medialib/denoise_config/vd_m_imx678_r0225c8.hef",
+      "network_path": "/usr/lib/medialib/denoise_config/post_isp_denoise_678_h15h.hef",
       "output_uv_channel": "post_isp_denoise_678_h15h/conv14",
       "output_y_channel": "post_isp_denoise_678_h15h/conv17",
       "uv_channel": "post_isp_denoise_678_h15h/input_layer4",

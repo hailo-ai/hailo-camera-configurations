@@ -1,10 +1,10 @@
 {
-  "version": "3.0.0",
+  "version": "4.0.0",
   "metadata": {
     "architecture": "hailo15l",
-    "content_hash": "094e1f73bff22fac64fdac683ee586c7b8664efb202f627eedabadbd20f0f8b0",
+    "content_hash": "ed573569a32e93667303d0c3e587a218ebd832fe909085715f74fc79471335f6",
     "description": "",
-    "generation_timestamp": "2026-03-16T08:17:35.019310+00:00"
+    "generation_timestamp": "2026-05-31T10:35:21.758111+00:00"
   },
   "application_input_streams": {
     "format": "IMAGE_FORMAT_NV12",
@@ -25,7 +25,7 @@
         "width": 1280
       },
       {
-        "framerate": 15,
+        "framerate": 30,
         "height": 1080,
         "pool_max_buffers": 15,
         "stream_id": "sink2",

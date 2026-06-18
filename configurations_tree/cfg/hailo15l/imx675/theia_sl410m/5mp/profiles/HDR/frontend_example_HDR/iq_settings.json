@@ -1,10 +1,10 @@
 {
-  "version": "1.2.0",
+  "version": "1.4.0",
   "metadata": {
     "architecture": "hailo15l",
-    "content_hash": "29309a795783e7b10de489d3d73781ebecab289f33a87709b8b649d8d64cd4dc",
+    "content_hash": "aafa123afab3d5fd88c92160bd588520ae3a43e83a8674ac603b13b659261146",
     "description": "",
-    "generation_timestamp": "2026-03-09T21:25:20.245515+00:00"
+    "generation_timestamp": "2026-05-07T09:23:38.947836+00:00"
   },
   "automatic_algorithms": {
     "A2dnrv5": {
@@ -27,7 +27,18 @@
       "strength": [127,127,127,127,127,127,127,127]
     },
     "ABls": {
-      "bls": [
+      "bls_long": [
+        [201,201,201,201],
+        [199,199,199,199],
+        [202,202,202,202],
+        [206,206,206,206],
+        [208,208,208,208],
+        [208,208,208,208],
+        [210,210,210,210],
+        [210,210,210,210],
+        [210,210,210,210]
+      ],
+      "bls_short": [
         [201,201,201,201],
         [199,199,199,199],
         [202,202,202,202],
@@ -159,7 +170,7 @@
       "strength": [128,128,128,128,128,128,128,128]
     },
     "AdaptiveAe": {
-      "delay": [0,0,0],
+      "delay": [2,2,19],
       "enable": false,
       "flickerPeriod": 0,
       "hcg": false,
@@ -300,7 +311,7 @@
     "HDRAdaptiveAE": {
       "brightImagePercentage": 40,
       "darkImagePercentage": 5,
-      "delay": [0,0,0],
+      "delay": [2,2,19],
       "disable": false,
       "enable": true,
       "flickerPeriod": 0,
@@ -348,12 +359,13 @@
   },
   "denoise": {
     "enabled": false,
+    "fast_denoise_switch": false,
     "loopback-count": 1,
     "method": "HIGH_QUALITY",
     "network": {
       "feedback_uv_channel": "post_isp_denoise_675_h15l/input_layer2",
       "feedback_y_channel": "post_isp_denoise_675_h15l/input_layer3",
-      "network_path": "/usr/lib/medialib/denoise_config/vd_s_imx675_15.hef",
+      "network_path": "/usr/lib/medialib/denoise_config/post_isp_denoise_675_h15l.hef",
       "output_uv_channel": "post_isp_denoise_675_h15l/conv14",
       "output_y_channel": "post_isp_denoise_675_h15l/conv17",
       "uv_channel": "post_isp_denoise_675_h15l/input_layer4",

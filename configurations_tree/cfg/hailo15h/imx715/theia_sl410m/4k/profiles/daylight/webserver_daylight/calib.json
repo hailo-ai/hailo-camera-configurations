@@ -2,9 +2,9 @@
   "version": "1.0.0",
   "metadata": {
     "architecture": "hailo15h",
-    "content_hash": "bcd996b608bd33638d06574dde4d86da49c037e418522176b795eef0d5c6d099",
+    "content_hash": "2fc66549ba6dc03427c7e60316169794aafc5c8404833dc450585803fcaa6789",
     "description": "",
-    "generation_timestamp": "2025-12-23T17:01:19.030055+00:00"
+    "generation_timestamp": "2026-05-11T12:19:24.747748+00:00"
   },
   "matfile": {
     "header": {
@@ -126,7 +126,7 @@
               "ExpPriorFilterSizeMin": 1.0,
               "ExpPriorMiddle": 0.5
             },
-            "K_Factor": 4.5676,
+            "K_Factor": 6.0,
             "PCAMatrix": [-0.765539,0.136879,0.62866,0.28393,-0.804941,0.52101],
             "RegionSize": 1.0,
             "RegionSizeDec": 0.05,

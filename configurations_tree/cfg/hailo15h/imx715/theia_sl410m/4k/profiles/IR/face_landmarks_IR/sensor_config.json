@@ -1,0 +1,27 @@
+{
+  "version": "1.1.0",
+  "metadata": {
+    "architecture": "hailo15h",
+    "content_hash": "6dd608ea914776ccf5fe48baa1470403aec113232ee62f1e406eb7809ef41093",
+    "description": "",
+    "generation_timestamp": "2026-04-15T07:50:14.603869+00:00"
+  },
+  "input_video": {
+    "resolution": {
+      "framerate": 30,
+      "height": 2160,
+      "width": 3840
+    },
+    "sensor_id": "SENSOR_0"
+  },
+  "sensor_calibration_file": "/etc/imaging/cfg/hailo15h/imx715/theia_sl410m/4k/profiles/IR/face_landmarks_IR/calib.json",
+  "sensor_configuration": {
+    "af_i2c_addr": "0x0",
+    "af_i2c_bus": -1,
+    "drv": "HAILO_IMX715.drv",
+    "mode": 0,
+    "name": "imx715",
+    "pixel_mode": 0,
+    "sensor_only": 0
+  }
+}

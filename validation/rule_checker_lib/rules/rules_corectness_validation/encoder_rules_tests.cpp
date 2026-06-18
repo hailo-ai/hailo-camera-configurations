@@ -359,3 +359,110 @@ TEST_F(SmartEncoderRoiBoundsRuleTest, FailsWithOneInvalidOfMultipleRois) {
     EXPECT_EQ(result.error_violations.size(), 1);
 }
 
+// H264BaselineNoBFramesRule Tests
+class H264BaselineNoBFramesRuleTest : public ::testing::Test {
+protected:
+    H264BaselineNoBFramesRule rule;
+};
+
+TEST_F(H264BaselineNoBFramesRuleTest, PassesWithValidExampleProfile) {
+    if (rule.priority() == RulePriority::SKIP) {
+        GTEST_SKIP() << "H264BaselineNoBFramesRule is set to SKIP priority, skipping tests.";
+    }
+    nlohmann::json test_profile = get_flattend_profile_json();
+    auto result = rule.evaluate(test_profile);
+    EXPECT_TRUE(result.passed) << "Rule should pass with valid example profile. errors: " << result.to_string();
+}
+
+TEST_F(H264BaselineNoBFramesRuleTest, PassesWithNoProfileSet) {
+    nlohmann::json test_profile = get_flattend_profile_json();
+    // Ensure profile is not set (default state)
+    auto &enc = test_profile["encoded_output_streams"][0]["encoding"]["encoding"]["hailo_encoder"];
+    enc["config"]["output_stream"].erase("profile");
+    enc["gop_config"]["gop_size"] = 4;
+    auto result = rule.evaluate(test_profile);
+    EXPECT_TRUE(result.passed) << "Rule should pass when profile is not set. errors: " << result.to_string();
+    EXPECT_EQ(result.error_violations.size(), 0);
+}
+
+TEST_F(H264BaselineNoBFramesRuleTest, PassesWithBaselineAndGopSize1) {
+    nlohmann::json test_profile = get_flattend_profile_json();
+    auto &enc = test_profile["encoded_output_streams"][0]["encoding"]["encoding"]["hailo_encoder"];
+    enc["config"]["output_stream"]["profile"] = "VCENC_H264_BASE_PROFILE";
+    enc["gop_config"]["gop_size"] = 1;
+    auto result = rule.evaluate(test_profile);
+    EXPECT_TRUE(result.passed) << "Rule should pass with Baseline profile and gop_size=1. errors: " << result.to_string();
+    EXPECT_EQ(result.error_violations.size(), 0);
+}
+
+TEST_F(H264BaselineNoBFramesRuleTest, FailsWithBaselineAndGopSizeGreaterThan1) {
+    nlohmann::json test_profile = get_flattend_profile_json();
+    auto &enc = test_profile["encoded_output_streams"][0]["encoding"]["encoding"]["hailo_encoder"];
+    enc["config"]["output_stream"]["profile"] = "VCENC_H264_BASE_PROFILE";
+    enc["gop_config"]["gop_size"] = 2;
+    auto result = rule.evaluate(test_profile);
+    EXPECT_FALSE(result.passed) << "Rule should fail with Baseline profile and gop_size=2";
+    EXPECT_EQ(result.error_violations.size(), 1);
+}
+
+TEST_F(H264BaselineNoBFramesRuleTest, PassesWithMainProfileAndGopSizeGreaterThan1) {
+    nlohmann::json test_profile = get_flattend_profile_json();
+    auto &enc = test_profile["encoded_output_streams"][0]["encoding"]["encoding"]["hailo_encoder"];
+    enc["config"]["output_stream"]["profile"] = "VCENC_H264_MAIN_PROFILE";
+    enc["gop_config"]["gop_size"] = 4;
+    auto result = rule.evaluate(test_profile);
+    EXPECT_TRUE(result.passed) << "Rule should pass with Main profile and gop_size>1. errors: " << result.to_string();
+    EXPECT_EQ(result.error_violations.size(), 0);
+}
+
+TEST_F(H264BaselineNoBFramesRuleTest, PassesWithHighProfileAndGopSizeGreaterThan1) {
+    nlohmann::json test_profile = get_flattend_profile_json();
+    auto &enc = test_profile["encoded_output_streams"][0]["encoding"]["encoding"]["hailo_encoder"];
+    enc["config"]["output_stream"]["profile"] = "VCENC_H264_HIGH_PROFILE";
+    enc["gop_config"]["gop_size"] = 4;
+    auto result = rule.evaluate(test_profile);
+    EXPECT_TRUE(result.passed) << "Rule should pass with High profile and gop_size>1. errors: " << result.to_string();
+    EXPECT_EQ(result.error_violations.size(), 0);
+}
+
+// ExclusiveEncoderTypeRule Tests
+class ExclusiveEncoderTypeRuleTest : public ::testing::Test {
+protected:
+    ExclusiveEncoderTypeRule rule;
+};
+
+TEST_F(ExclusiveEncoderTypeRuleTest, PassesWithHailoEncoderOnly) {
+    nlohmann::json test_profile = get_flattend_profile_json();
+    auto result = rule.evaluate(test_profile);
+    EXPECT_TRUE(result.passed) << "Rule should pass with hailo_encoder only. errors: " << result.to_string();
+    EXPECT_EQ(result.error_violations.size(), 0);
+}
+
+TEST_F(ExclusiveEncoderTypeRuleTest, FailsWithBothEncoders) {
+    nlohmann::json test_profile = get_flattend_profile_json();
+    auto &encoding = test_profile["encoded_output_streams"][0]["encoding"]["encoding"];
+    encoding["jpeg_encoder"] = {{"n_threads", 1}, {"quality", 85}};
+    auto result = rule.evaluate(test_profile);
+    EXPECT_FALSE(result.passed) << "Rule should fail when both hailo_encoder and jpeg_encoder are present";
+    EXPECT_EQ(result.error_violations.size(), 1);
+}
+
+TEST_F(ExclusiveEncoderTypeRuleTest, FailsWithNoEncoder) {
+    nlohmann::json test_profile = get_flattend_profile_json();
+    auto &encoding = test_profile["encoded_output_streams"][0]["encoding"]["encoding"];
+    encoding.erase("hailo_encoder");
+    auto result = rule.evaluate(test_profile);
+    EXPECT_FALSE(result.passed) << "Rule should fail when neither hailo_encoder nor jpeg_encoder is present";
+    EXPECT_EQ(result.error_violations.size(), 1);
+}
+
+TEST_F(ExclusiveEncoderTypeRuleTest, PassesWithJpegEncoderOnly) {
+    nlohmann::json test_profile = get_flattend_profile_json();
+    auto &encoding = test_profile["encoded_output_streams"][0]["encoding"]["encoding"];
+    encoding.erase("hailo_encoder");
+    encoding["jpeg_encoder"] = {{"n_threads", 1}, {"quality", 85}};
+    auto result = rule.evaluate(test_profile);
+    EXPECT_TRUE(result.passed) << "Rule should pass with jpeg_encoder only. errors: " << result.to_string();
+    EXPECT_EQ(result.error_violations.size(), 0);
+}
+

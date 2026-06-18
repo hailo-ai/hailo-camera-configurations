@@ -1,10 +1,10 @@
 {
-  "version": "1.2.0",
+  "version": "1.4.0",
   "metadata": {
     "architecture": "hailo15h",
-    "content_hash": "848b87904b543761ca767a8987bb23f42bf2ad064e9b3efa0c70def4c280b0cc",
+    "content_hash": "8da19ee60001cc6152aeb151d21f137c8a11eb4d8215d4ebd38ff2bfa99329fb",
     "description": "",
-    "generation_timestamp": "2026-03-19T09:53:26.629459+00:00"
+    "generation_timestamp": "2026-05-07T09:23:39.583348+00:00"
   },
   "automatic_algorithms": {
     "A2dnrv5": {
@@ -27,7 +27,11 @@
       "strength": [127,127,127,127,127,127]
     },
     "ABls": {
-      "bls": [
+      "bls_long": [
+        [13,13,13,13],
+        [13,13,13,13]
+      ],
+      "bls_short": [
         [13,13,13,13],
         [13,13,13,13]
       ],
@@ -148,7 +152,7 @@
       "strength": [128,128,128,128,128,128]
     },
     "AdaptiveAe": {
-      "delay": [0,0,0],
+      "delay": [2,2,19],
       "enable": false,
       "flickerPeriod": 0,
       "hcg": false,
@@ -285,7 +289,7 @@
     "HDRAdaptiveAE": {
       "brightImagePercentage": 40,
       "darkImagePercentage": 5,
-      "delay": [0,0,0],
+      "delay": [2,2,19],
       "disable": false,
       "enable": true,
       "flickerPeriod": 0,
@@ -333,12 +337,13 @@
   },
   "denoise": {
     "enabled": false,
+    "fast_denoise_switch": false,
     "loopback-count": 1,
     "method": "HIGH_QUALITY",
     "network": {
       "feedback_uv_channel": "post_isp_denoise_678_h15h/input_layer2",
       "feedback_y_channel": "post_isp_denoise_678_h15h/input_layer3",
-      "network_path": "/usr/lib/medialib/denoise_config/vd_m_imx678_r0225c8.hef",
+      "network_path": "/usr/lib/medialib/denoise_config/post_isp_denoise_678_h15h.hef",
       "output_uv_channel": "post_isp_denoise_678_h15h/conv14",
       "output_y_channel": "post_isp_denoise_678_h15h/conv17",
       "uv_channel": "post_isp_denoise_678_h15h/input_layer4",
@@ -350,7 +355,7 @@
     "camera_type": "CAMERA_TYPE_PINHOLE",
     "color_interpolation": "INTERPOLATION_TYPE_BILINEAR",
     "enabled": true,
-    "sensor_calib_path": "/etc/imaging/cfg/hailo15h/imx678/kit/4k/shared/calibration/cam_intrinsics.txt"
+    "sensor_calib_path": "/etc/imaging/cfg/hailo15h/imx678/theia_sl410m/4k/shared/calibration/cam_intrinsics.txt"
   },
   "grayscale": false,
   "hdr": {

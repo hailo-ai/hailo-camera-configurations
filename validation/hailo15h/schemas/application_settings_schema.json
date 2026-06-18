@@ -283,6 +283,9 @@
             "properties": {
                 "device-id": {
                     "type": "string"
+                },
+                "use-hailort-service": {
+                    "type": "boolean"
                 }
             },
             "additionalProperties": false,
@@ -345,77 +348,52 @@
                         },
                         "required": [
                             "analytics_data_id",
-                            "scaling_mode",
-                            "width",
-                            "height",
-                            "original_width_ratio",
-                            "original_height_ratio",
-                            "labels",
-                            "max_entries"
+                            "labels"
                         ],
-                        "additionalProperties": false
-                    }
-                },
-                "instance_segmentation": {
-                    "type": "array",
-                    "items": {
-                        "type": "object",
-                        "properties": {
-                            "analytics_data_id": {
-                                "type": "string"
-                            },
-                            "scaling_mode": {
-                                "type": "string",
-                                "enum": [
-                                    "STRETCH",
-                                    "LETTERBOX_MIDDLE",
-                                    "LETTERBOX_UP_LEFT"
-                                ]
-                            },
-                            "width": {
-                                "type": "integer"
-                            },
-                            "height": {
-                                "type": "integer"
-                            },
-                            "original_width_ratio": {
-                                "type": "integer"
-                            },
-                            "original_height_ratio": {
-                                "type": "integer"
-                            },
-                            "max_entries": {
-                                "type": "integer"
-                            },
-                            "labels": {
-                                "type": "array",
-                                "items": {
-                                    "type": "object",
-                                    "properties": {
-                                        "label": {
-                                            "type": "string"
-                                        },
-                                        "id": {
-                                            "type": "integer"
-                                        }
-                                    },
-                                    "required": [
-                                        "label",
-                                        "id"
-                                    ]
-                                }
-                            }
+                        "dependencies": {
+                            "scaling_mode": [
+                                "width",
+                                "height",
+                                "original_width_ratio",
+                                "original_height_ratio",
+                                "max_entries"
+                            ],
+                            "width": [
+                                "scaling_mode",
+                                "height",
+                                "original_width_ratio",
+                                "original_height_ratio",
+                                "max_entries"
+                            ],
+                            "height": [
+                                "scaling_mode",
+                                "width",
+                                "original_width_ratio",
+                                "original_height_ratio",
+                                "max_entries"
+                            ],
+                            "original_width_ratio": [
+                                "scaling_mode",
+                                "width",
+                                "height",
+                                "original_height_ratio",
+                                "max_entries"
+                            ],
+                            "original_height_ratio": [
+                                "scaling_mode",
+                                "width",
+                                "height",
+                                "original_width_ratio",
+                                "max_entries"
+                            ],
+                            "max_entries": [
+                                "scaling_mode",
+                                "width",
+                                "height",
+                                "original_width_ratio",
+                                "original_height_ratio"
+                            ]
                         },
-                        "required": [
-                            "analytics_data_id",
-                            "scaling_mode",
-                            "width",
-                            "height",
-                            "original_width_ratio",
-                            "original_height_ratio",
-                            "labels",
-                            "max_entries"
-                        ],
                         "additionalProperties": false
                     }
                 },
@@ -450,10 +428,6 @@
                             "max_entries": {
                                 "type": "integer"
                             },
-                            "mask_size": {
-                                "type": "integer",
-                                "minimum": 1
-                            },
                             "labels": {
                                 "type": "array",
                                 "items": {
@@ -475,15 +449,52 @@
                         },
                         "required": [
                             "analytics_data_id",
-                            "scaling_mode",
-                            "width",
-                            "height",
-                            "original_width_ratio",
-                            "original_height_ratio",
-                            "labels",
-                            "max_entries",
-                            "mask_size"
+                            "labels"
                         ],
+                        "dependencies": {
+                            "scaling_mode": [
+                                "width",
+                                "height",
+                                "original_width_ratio",
+                                "original_height_ratio",
+                                "max_entries"
+                            ],
+                            "width": [
+                                "scaling_mode",
+                                "height",
+                                "original_width_ratio",
+                                "original_height_ratio",
+                                "max_entries"
+                            ],
+                            "height": [
+                                "scaling_mode",
+                                "width",
+                                "original_width_ratio",
+                                "original_height_ratio",
+                                "max_entries"
+                            ],
+                            "original_width_ratio": [
+                                "scaling_mode",
+                                "width",
+                                "height",
+                                "original_height_ratio",
+                                "max_entries"
+                            ],
+                            "original_height_ratio": [
+                                "scaling_mode",
+                                "width",
+                                "height",
+                                "original_width_ratio",
+                                "max_entries"
+                            ],
+                            "max_entries": [
+                                "scaling_mode",
+                                "width",
+                                "height",
+                                "original_width_ratio",
+                                "original_height_ratio"
+                            ]
+                        },
                         "additionalProperties": false
                     }
                 }

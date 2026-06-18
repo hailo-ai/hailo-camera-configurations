@@ -1,0 +1,21 @@
+{
+  "version": "1.0.0",
+  "metadata": {
+    "architecture": "hailo15l",
+    "content_hash": "385347bf8051c0717b9baeb6696b00b8105db398885ea40fd75d2ffc346e6315",
+    "description": "License plate recognition profile (lowlight Bayer)",
+    "generation_timestamp": "2026-05-06T14:17:10.178662+00:00"
+  },
+  "application_settings": "/etc/imaging/cfg/hailo15l/imx675/theia_sl410m/5mp/profiles/lowlight/webserver_lowlight_bayer/application_settings_detection.json",
+  "encoded_output_streams": [
+    {
+      "encoding": "/etc/imaging/cfg/hailo15l/imx675/theia_sl410m/5mp/profiles/lowlight/webserver_lowlight_bayer/encoder_sink0.json",
+      "masking": "/etc/imaging/cfg/hailo15l/imx675/theia_sl410m/5mp/profiles/lowlight/webserver_lowlight_bayer/masking_sink0.json",
+      "osd": "/etc/imaging/cfg/hailo15l/imx675/theia_sl410m/5mp/profiles/lowlight/webserver_lowlight_bayer/osd_sink0.json",
+      "stream_id": "sink0"
+    }
+  ],
+  "iq_settings": "/etc/imaging/cfg/hailo15l/imx675/theia_sl410m/5mp/profiles/lowlight/webserver_lowlight_bayer/iq_settings.json",
+  "sensor_config": "/etc/imaging/cfg/hailo15l/imx675/theia_sl410m/5mp/profiles/lowlight/webserver_lowlight_bayer/sensor_config.json",
+  "stabilizer_settings": "/etc/imaging/cfg/hailo15l/imx675/theia_sl410m/5mp/profiles/lowlight/webserver_lowlight_bayer/stabilizer_settings.json"
+}

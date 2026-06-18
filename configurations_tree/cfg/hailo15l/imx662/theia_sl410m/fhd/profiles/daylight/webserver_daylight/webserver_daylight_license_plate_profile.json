@@ -1,0 +1,21 @@
+{
+  "version": "1.0.0",
+  "metadata": {
+    "architecture": "hailo15l",
+    "content_hash": "98adc2c346c406b7f2f8dfb222fbe126b3fce2c28f95d68b8e60e281fc0b5a8e",
+    "description": "License plate recognition profile (daylight)",
+    "generation_timestamp": "2026-05-06T14:17:10.263055+00:00"
+  },
+  "application_settings": "/etc/imaging/cfg/hailo15l/imx662/theia_sl410m/fhd/profiles/daylight/webserver_daylight/application_settings_detection.json",
+  "encoded_output_streams": [
+    {
+      "encoding": "/etc/imaging/cfg/hailo15l/imx662/theia_sl410m/fhd/profiles/daylight/webserver_daylight/encoder_sink0.json",
+      "masking": "",
+      "osd": "/etc/imaging/cfg/hailo15l/imx662/theia_sl410m/fhd/profiles/daylight/webserver_daylight/osd_sink0.json",
+      "stream_id": "sink0"
+    }
+  ],
+  "iq_settings": "/etc/imaging/cfg/hailo15l/imx662/theia_sl410m/fhd/profiles/daylight/webserver_daylight/iq_settings.json",
+  "sensor_config": "/etc/imaging/cfg/hailo15l/imx662/theia_sl410m/fhd/profiles/daylight/webserver_daylight/sensor_config.json",
+  "stabilizer_settings": "/etc/imaging/cfg/hailo15l/imx662/theia_sl410m/fhd/profiles/daylight/webserver_daylight/stabilizer_settings.json"
+}

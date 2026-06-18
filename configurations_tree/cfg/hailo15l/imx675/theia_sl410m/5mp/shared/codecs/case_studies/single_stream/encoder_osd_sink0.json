@@ -1,10 +1,10 @@
 {
-  "version": "4.0.0",
+  "version": "5.0.0",
   "metadata": {
     "architecture": "hailo15l",
-    "content_hash": "05f6cf7f003b7ef288ab9b78eb879ac1d4169fee908bc21e0afb103d99e52b8a",
+    "content_hash": "7fb656cc472456526f0d78486ec81b4e1627ac4691a53bc7becc524aa094cfc2",
     "description": "",
-    "generation_timestamp": "2026-03-04T08:51:54.672431+00:00"
+    "generation_timestamp": "2026-04-28T17:44:54.620151+00:00"
   },
   "encoding": {
     "hailo_encoder": {
@@ -93,6 +93,7 @@
         }
       },
       "smart_encoder": {
+        "analytics_labels": [],
         "background_qp_delta": 10,
         "enabled": false,
         "rois": []

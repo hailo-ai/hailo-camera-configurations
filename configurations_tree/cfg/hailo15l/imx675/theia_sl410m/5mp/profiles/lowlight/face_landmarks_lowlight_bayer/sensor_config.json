@@ -1,0 +1,27 @@
+{
+  "version": "1.1.0",
+  "metadata": {
+    "architecture": "hailo15l",
+    "content_hash": "8defd2a89c96ef2a8f83822f9a111038bdbbbabe1f63569e2e7f9d2166a64949",
+    "description": "",
+    "generation_timestamp": "2026-06-01T13:03:20.001647+00:00"
+  },
+  "input_video": {
+    "resolution": {
+      "framerate": 30,
+      "height": 1944,
+      "width": 2592
+    },
+    "sensor_id": "SENSOR_0"
+  },
+  "sensor_calibration_file": "/etc/imaging/cfg/hailo15l/imx675/theia_sl410m/5mp/profiles/lowlight/face_landmarks_lowlight_bayer/calib.json",
+  "sensor_configuration": {
+    "af_i2c_addr": "0x0",
+    "af_i2c_bus": -1,
+    "drv": "HAILO_IMX675.drv",
+    "mode": 0,
+    "name": "imx675",
+    "pixel_mode": 0,
+    "sensor_only": 0
+  }
+}

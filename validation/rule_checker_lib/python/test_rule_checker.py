@@ -22,12 +22,18 @@ def get_profiles_from_medialib_configs(medialib_config_paths, base_path):
             profile_paths = []
             for profile in medialib_config.get('profiles', []):
                 config_file = profile.get('config_file')
-                if config_file:
-                    # Assuming the path in config_file is relative to /etc/imaging/ on the target,
-                    # and we need to construct the full path in the workspace.
-                    relative_path = config_file.replace('/etc/imaging/', '')
-                    full_path = os.path.join(base_path, relative_path)
-                    profile_paths.append(full_path)
+                if not config_file:
+                    continue
+                if os.path.isabs(config_file):
+                    # Legacy convention: device-absolute paths under /etc/imaging/ mirror to <base_path>/cfg/.
+                    relative_to_etc_imaging = config_file.replace('/etc/imaging/', '', 1)
+                    full_path = os.path.join(base_path, relative_to_etc_imaging)
+                else:
+                    # Relative refs anchor against the medialib_config's own directory,
+                    # matching the JsonParser per-file resolution rule in media-library.
+                    full_path = os.path.normpath(
+                        os.path.join(os.path.dirname(medialib_config_path), config_file))
+                profile_paths.append(full_path)
             if profile_paths:
                 profiles_map[medialib_config_path] = profile_paths
     return profiles_map
@@ -38,20 +44,13 @@ def test_check_profiles_with_default_rules():
     medialib_config_paths = [
         "cfg/hailo15h/imx678/theia_sl410m/4k/medialib_configs/",
         "cfg/hailo15h/imx678/theia_sl410m/4k/medialib_configs/case_studies",
-        "cfg/hailo15h/imx678/kit/4k/medialib_configs",
-        "cfg/hailo15h/imx678/kit/4k/medialib_configs/case_studies",
         "cfg/hailo15l/imx678/theia_sl410m/4k/medialib_configs/",
         "cfg/hailo15l/imx678/theia_sl410m/4k/medialib_configs/case_studies",
-        "cfg/hailo15l/imx678/kit/4k/medialib_configs",
-        "cfg/hailo15l/imx678/kit/4k/medialib_configs/case_studies",
     ]
 
     medialib_config_paths += [
         "cfg/hailo15h/imx664/theia_sl410m/4mp/medialib_configs/",
-        "cfg/hailo15h/imx715/kit/4k/medialib_configs/",
         "cfg/hailo15h/imx715/theia_sl410m/4k/medialib_configs/",
-        "cfg/hailo15l/imx675/kit/5mp/medialib_configs/",
-        "cfg/hailo15l/imx675/kit/5mp/medialib_configs/case_studies",
         "cfg/hailo15l/imx675/theia_sl410m/5mp/medialib_configs/",
         "cfg/hailo15l/imx675/theia_sl410m/5mp/medialib_configs/case_studies",
     ]
@@ -112,3 +111,57 @@ def test_check_profiles_with_default_rules():
         print(summary)
         error_messages.append(summary)
         assert not all_errors, "\n".join(error_messages)
+
+
+def test_relative_config_file_path_resolves_to_medialib_parent_dir(tmp_path):
+    """A medialib_config with a relative `config_file` must resolve against the
+    medialib_config's own parent directory, not against HAILO_CONFIG_BASE_PATH.
+    Uses a synthetic tempdir layout so no fixture leaks into the production
+    configurations_tree."""
+    medialib_dir = tmp_path / "medialib_configs"
+    profiles_dir = tmp_path / "profiles"
+    medialib_dir.mkdir()
+    profiles_dir.mkdir()
+
+    target_profile = profiles_dir / "synthetic_profile.json"
+    target_profile.write_text("{}")
+
+    medialib_config = medialib_dir / "synthetic_medialib_config.json"
+    medialib_config.write_text(json.dumps({
+        "profiles": [
+            {"name": "Daylight", "config_file": "../profiles/synthetic_profile.json"},
+        ],
+    }))
+
+    profiles_map = get_profiles_from_medialib_configs([str(medialib_config)], str(tmp_path))
+
+    expected = os.path.normpath(str(target_profile))
+    resolved = next(iter(profiles_map.values()))
+    assert resolved == [expected], (
+        f"relative config_file did not resolve against the medialib_config's parent.\n"
+        f"  expected: {expected}\n"
+        f"  got:      {resolved}")
+
+
+def test_absolute_config_file_path_keeps_legacy_mapping(tmp_path):
+    """Counterpart to the relative-path test: absolute `/etc/imaging/...` config_file
+    values must still be mapped to <base_path>/<rest>, preserving the legacy behaviour."""
+    medialib_dir = tmp_path / "medialib_configs"
+    medialib_dir.mkdir()
+
+    medialib_config = medialib_dir / "synthetic_medialib_config.json"
+    medialib_config.write_text(json.dumps({
+        "profiles": [
+            {"name": "Daylight",
+             "config_file": "/etc/imaging/cfg/hailo15h/.../daylight_profile.json"},
+        ],
+    }))
+
+    profiles_map = get_profiles_from_medialib_configs([str(medialib_config)], str(tmp_path))
+
+    expected = os.path.join(str(tmp_path), "cfg/hailo15h/.../daylight_profile.json")
+    resolved = next(iter(profiles_map.values()))
+    assert resolved == [expected], (
+        f"absolute config_file no longer maps to <base_path>/<rest>.\n"
+        f"  expected: {expected}\n"
+        f"  got:      {resolved}")
