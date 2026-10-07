@@ -4,7 +4,7 @@
     "architecture": "hailo15l",
     "content_hash": "c052f2a0dc8c17df044692c933e85d0715d8cdc41a7749e146307c801c4fa989",
     "description": "",
-    "generation_timestamp": "2026-06-03T11:12:04.087292+00:00"
+    "generation_timestamp": "2026-06-01T13:03:19.325307+00:00"
   },
   "backup_folder_path": "/etc/imaging/cfg/backups/webserver",
   "default_profile": "Daylight_Basic",

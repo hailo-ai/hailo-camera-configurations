@@ -2,9 +2,9 @@
   "version": "2.0.0",
   "metadata": {
     "architecture": "hailo15l",
-    "content_hash": "c6ae02f3e746dd93d8faad56fa99e3b3024323c745231a16884724de7000e981",
+    "content_hash": "d14cd58e5674f48d4e555848e2d90e325ae03d84729a9e04e637c9a49eadd4a2",
     "description": "",
-    "generation_timestamp": "2026-04-15T07:50:15.561802+00:00"
+    "generation_timestamp": "2026-08-11T11:54:32.574916+00:00"
   },
   "backup_folder_path": "/etc/imaging/cfg/backups/face_landmarks",
   "default_profile": "Daylight",
@@ -16,6 +16,10 @@
     {
       "config_file": "/etc/imaging/cfg/hailo15l/imx662/theia_sl410m/fhd/profiles/HDR/face_landmarks_HDR/face_landmarks_HDR_profile.json",
       "name": "High_Dynamic_Range"
+    },
+    {
+      "config_file": "/etc/imaging/cfg/hailo15l/imx662/theia_sl410m/fhd/profiles/lowlight/face_landmarks_lowlight_bayer/face_landmarks_lowlight_bayer_profile.json",
+      "name": "AI_ISP_Gen3"
     }
   ]
 }

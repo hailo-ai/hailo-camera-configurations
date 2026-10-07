@@ -2,9 +2,9 @@
   "version": "1.4.0",
   "metadata": {
     "architecture": "hailo15l",
-    "content_hash": "586b606f9a32662aa850edc39236c13093a630fce5e244987dd34ccc4e274c02",
+    "content_hash": "c28fe94452b17d71e59e0eaaa1eae896318ad0f53b66dcebb64e2eb617e5bc6f",
     "description": "",
-    "generation_timestamp": "2026-06-07T10:40:37.191786+00:00"
+    "generation_timestamp": "2026-09-28T13:41:14.840733+00:00"
   },
   "automatic_algorithms": {
     "A2dnrv5": {
@@ -412,7 +412,7 @@
   },
   "denoise": {
     "enabled": false,
-    "fast_denoise_switch": true,
+    "fast_denoise_switch": false,
     "loopback-count": 1,
     "method": "HIGH_QUALITY",
     "network": {
